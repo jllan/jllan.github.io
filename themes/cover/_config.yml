@@ -1,0 +1,46 @@
+menu:
+  Home: /
+  Archives: /archives
+ # Categories: /categories
+ # Tags: /tags
+  About: /about
+
+widgets:
+- search
+
+cover:
+  enable: true
+  #url: http://ww1.sinaimg.cn/large/6cea169fjw1edgyzma1xcj21kw16ohba.jpg
+  #url: http://ww4.sinaimg.cn/mw1024/93030917gw1f6z05wmr2ij21kw1ektm5.jpg
+  url: http://ww3.sinaimg.cn/mw1024/93030917gw1f6z0c6iermj21kw166tvd.jpg
+
+excerpt_link: Read More
+
+full_format: 'ddd, MMM D YYYY, h:mm:ss a'
+
+addthis:
+  enable: true
+  pubid:
+  facebook:
+  twitter:
+  google: true
+  pinterest:
+
+fancybox: true
+
+google_analytics: UA-368771XX-X
+rss:
+
+comment_provider: duoshuo
+
+# Duoshuo comment
+duoshuo:
+  short_name: jlan
+
+social:
+  #github: https://github.com/jllan
+  #weibo: http://weibo.com/jllan
+  google_plus: 
+
+auto_change:
+  enable: true
