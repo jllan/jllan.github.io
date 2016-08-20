@@ -1,8 +1,8 @@
 ---
 title: 在github上搭建个人博客（进阶）
 date: 2016-08-20 16:12:32
-tags: essay
-categories: Essay
+tags: hexo
+categories: Hexo
 ---
 
 
@@ -38,3 +38,6 @@ public/
 2. 编写文章
 3. git add -u, git commit, git push origin hexo把新写的文章同步到仓库，平时对hexo进行的配置也需要这样同步一下
 4. hexo g,hexo clean,hexo d来发布文章
+
+### 参考
+http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/
