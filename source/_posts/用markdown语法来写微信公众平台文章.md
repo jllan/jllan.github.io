@@ -1,7 +1,7 @@
 ---
 title: 用markdown语法来写微信公众平台文章
 date: 2016-08-25 18:05:59
-tags: 微信, markdown
+categories: 微信, markdown
 ---
 
 > 最近几乎只用markdown语法来些东西，当然我很少写东西，也不会写，只是偶尔写写笔记和博客，但是只要写就一定用markdown来写，因为markdown太迷人了，就算写的东西没什么涵养，光那优美的排版就让人看着很舒服。
