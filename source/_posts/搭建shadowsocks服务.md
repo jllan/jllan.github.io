@@ -1,7 +1,9 @@
 ---
 title: 搭建shadowsocks服务
 date: 2016-08-25 13:44:43
-tags: linux, 翻墙
+tags: 
+- linux
+- shadowsocks
 categories: Linux
 ---
 
