@@ -1,0 +1,261 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>在github上搭建个人博客（进阶） | 偏偏喜欢你</title>
+  <meta name="author" content="Jlan">
+  
+  <meta name="description" content="生活、学习记录">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="在github上搭建个人博客（进阶）"/>
+  <meta property="og:site_name" content="偏偏喜欢你"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="偏偏喜欢你" type="application/atom+xml">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<link rel="stylesheet" href="/css/style.css">
+  <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-368771XX-X']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+  <header id="header" class='normal_mode'>
+    <nav id="main-nav">
+  <ul class='container'>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="/about">About</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+  </header>
+  <div id="content" class="container">
+    <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+      <time datetime="2016-08-20T08:12:32.000Z"><a href="/2016/08/20/在github上搭建个人博客（进阶）/">Sat, Aug 20 2016, 4:12:32 pm</a></time>
+
+  
+    <h1 class="title">在github上搭建个人博客（进阶）</h1>
+  
+
+
+  
+  <div class="categories">
+  	<i class="fa fa-folder-open"></i>
+    <a href="/categories/Hexo/">Hexo</a>
+  </div>
+
+
+  
+  <div class="tags">
+  	<i class="fa fa-tag"></i>
+    <a href="/tags/hexo/">hexo</a>
+  </div>
+
+<div class="clear"></div>
+      
+    </header>
+    <div class="entry">
+      
+        <p>在github上搭建博客，博客分为两部分东西：本地的hexo和github上仓库。工作模式是这样的：</p>
+<ol>
+<li>在本地通过hexo new来生成md文件（所有文章的md文件都在source/_post/下）</li>
+<li>然后编辑md文件</li>
+<li>然后hexo g渲染出html文件</li>
+<li>最后hexo d来部署文章到github仓库<br>这样就会有个问题，如果哪天换电脑了，本地的hexo文件就没有了，所有文章的md文件也没有了。解决这个问题最笨的方法就是时刻备份本地的hexo的一堆文件，换电脑了，就把这堆文件拷到新电脑上，然后就可以继续写文章，发布文章了。但是这个方法极不方便，另外一个很高明的方法就是把本地这一堆hexo文件也放在github上。</li>
+</ol>
+<h3 id="具体搭建步骤如下"><a href="#具体搭建步骤如下" class="headerlink" title="具体搭建步骤如下"></a>具体搭建步骤如下</h3><ol>
+<li>在github上建仓库yourname.github.io，为youname.github.io建立一个分支hexo用来存放hexo的文件，master分支用来存放发布的文章，并设hexo为默认分支，好像空仓库没法建立分支，可以先随便写入一个文件，然后就可以创建分支，设立默认分支了。</li>
+<li>git clone yourname.github.io仓库到本地，当前在hexo分支。</li>
+<li>执行npm install hexo-cli,hexo init,npm install ,npm install hexo-deployer-git等命令安装hexo（<strong>注意:</strong><br><em>hexo init会清空当前目录，所以本地的.git目录就被删除了，所以要提前备份.git目录，hexo init后再把.git目录恢复到yourname.github.io</em>）</li>
+<li>配置hexo，安装配置主题等</li>
+<li>git add,git commit, git push origin hexo提交该分支的文件到github上yourname.github.io仓库的hexo分支。.gitignore文件一般会由hexo自动生成，如果没有这个文件，可以手动添加，内容如下<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.DS_Store</div><div class="line">Thumbs.db</div><div class="line">db.json</div><div class="line">*.log</div><div class="line">node_modules/</div><div class="line">public/</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这样就可以了，以后换电脑了，在新电脑上执行下2,3,4,5步就行了（<strong>注意：</strong>千万不要再执行hexo init了）</p>
+<hr>
+<h3 id="写文章，发布文章的流程"><a href="#写文章，发布文章的流程" class="headerlink" title="写文章，发布文章的流程"></a>写文章，发布文章的流程</h3><p>这种方式下，每次写完文章后，要把hexo的内容同步到github</p>
+<ol>
+<li><code>hexo new &#39;topic&#39; # 生成topic.md</code></li>
+<li>编写文章</li>
+<li>git add -u, git commit, git push origin hexo把新写的文章同步到仓库，平时对hexo进行的配置也需要这样同步一下</li>
+<li>hexo g,hexo clean,hexo d来发布文章</li>
+</ol>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" target="_blank" rel="external">http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</a></p>
+
+      
+    </div>
+    <footer>
+      
+          
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <span class="jiathis_txt">分享到：</span>
+  <a class="jiathis_button_weixin">微信</a>
+  <a class="jiathis_button_tsina">新浪微博</a>
+  <a class="jiathis_button_renren">人人网</a>
+  <a class="jiathis_button_qzone">QQ空间</a>
+  <a class="jiathis_button_douban">豆瓣</a>
+  <a class="jiathis_button_pocket">Pocket</a>
+  <a href="http://www.jiathis.com/share?uid=901656" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=901656" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+          <div class="clearfix"></div>
+          <nav id="pagination">
+  
+    <a href="/2016/08/25/搭建shadowsocks服务/" class="alignleft prev"><i class="fa fa-long-arrow-left"></i>Next</a>
+  
+  
+    <a href="/2016/08/20/在github上搭建个人博客/" class="alignright next">Prev<i class="fa fa-long-arrow-right"></i></a>
+  
+  <div class="clearfix"></div>
+</nav>
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">Kommentare</h1>
+
+  
+      <!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread" data-thread-key="/2016/08/20/在github上搭建个人博客（进阶）/"></div>
+<!-- Duoshuo Comment END -->
+  
+</section>
+
+
+
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div>
+  
+  &copy; 2016 Jlan
+  
+</div>
+Powered by <a href="http://zespia.tw/hexo/" title="Hexo" target="_blank" rel="external">Hexo</a> and <a href="http://pages.github.com/" title="GitHub Pages" target="_blank" rel="external">GitHub Pages</a>
+
+<div class="clearfix"></div></footer>
+  
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+
+
+
+    <script type="text/javascript">
+        (function(){
+
+            $(window).scroll(function(){
+
+                var scrollTop = $(window).scrollTop();
+                if ( scrollTop >200 ){
+                    $("#main-nav").removeClass('normal_mode').addClass('top_mode');
+                } else{
+                    $("#main-nav").removeClass('top_mode').addClass('normal_mode');
+                }
+
+            });
+
+        })();
+    </script>
+
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox({
+      'titlePosition': 'inside'
+    });
+  })(jQuery);
+  </script>
+
+
+
+    
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"jlan"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = 'http://static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] 
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+
+
+<script type="text/javascript">
+  
+  $(function(){
+
+    $('.title').hover(
+      function() {      
+        $(this).stop().animate(
+          {'marginLeft': '10px'}, 200
+        );   
+      }, 
+      function() {       
+        $(this).stop().animate({'marginLeft': '0px'}, 200);      
+      
+    });   
+
+  });
+
+</script>
+
+
+</body>
+</html>

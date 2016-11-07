@@ -1,0 +1,904 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>偏偏喜欢你</title>
+  <meta name="author" content="Jlan">
+  
+  <meta name="description" content="生活、学习记录">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="偏偏喜欢你"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="偏偏喜欢你" type="application/atom+xml">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<link rel="stylesheet" href="/css/style.css">
+  <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-368771XX-X']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+  <header id="header" class='normal_mode'>
+    <nav id="main-nav">
+  <ul class='container'>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="/about">About</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+  </header>
+  <div id="content" class="container">
+    <div id="cover">
+	<div id="profile" alt="http://ww3.sinaimg.cn/mw1024/93030917gw1f6z0c6iermj21kw166tvd.jpg">
+		<a href="/">
+			<div class="logo">
+				<img src="/logo.png" alt="Profile Picture">
+			</div>
+			<div id="title">偏偏喜欢你</div>
+		</a>
+
+		
+			<div id="subtitle">莫听穿林打叶声，何妨吟啸且徐行，竹杖芒鞋轻胜马，谁怕，一蓑烟雨任平生</div>
+		
+		 <ul class="my-socials">
+  
+ 
+</ul>
+	</div>
+</div>
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+      <time datetime="2016-11-07T05:36:57.000Z"><a href="/2016/11/07/deepin上安装pcl及python-pcl/">Mon, Nov 7 2016, 1:36:57 pm</a></time>
+
+  
+    <h1 class="title"><a href="/2016/11/07/deepin上安装pcl及python-pcl/">deepin上安装pcl及python-pcl</a></h1>
+  
+
+
+  
+  <div class="categories">
+  	<i class="fa fa-folder-open"></i>
+    <a href="/categories/Linux/">Linux</a>
+  </div>
+
+
+  
+  <div class="tags">
+  	<i class="fa fa-tag"></i>
+    <a href="/tags/linux/">linux</a>, <a href="/tags/python/">python</a>, <a href="/tags/pcl/">pcl</a>
+  </div>
+
+<div class="clear"></div>
+      
+    </header>
+    <div class="entry">
+      
+        <p>[TOC]</p>
+<h1 id="一-从预编译版本或从仓库安装pcl"><a href="#一-从预编译版本或从仓库安装pcl" class="headerlink" title="一 从预编译版本或从仓库安装pcl"></a>一 从预编译版本或从仓库安装pcl</h1><h2 id="1-安装pcl"><a href="#1-安装pcl" class="headerlink" title="1. 安装pcl"></a>1. 安装pcl</h2><ul>
+<li><h3 id="使用官方提供的预编译版本"><a href="#使用官方提供的预编译版本" class="headerlink" title="使用官方提供的预编译版本"></a>使用官方提供的预编译版本</h3>地址<br><a href="http://www.pointclouds.org/downloads/linux.html" target="_blank" rel="external">http://www.pointclouds.org/downloads/linux.html</a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key 19274DEF</div><div class="line">sudo echo &quot;deb http://ppa.launchpad.net/v-launchpad-jochen-sprickerhof-de/pcl/ubuntu maverick main&quot; &gt;&gt; /etc/apt/sources.list</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install libpcl-all</div></pre></td></tr></table></figure>
+<p><strong>问题</strong><br><code>sudo apt-get install libpcl-all</code>时有依赖问题无法解决</p>
+<ul>
+<li><h3 id="从deepin软件仓库直接安装"><a href="#从deepin软件仓库直接安装" class="headerlink" title="从deepin软件仓库直接安装"></a>从deepin软件仓库直接安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install libpcl1.7   # 也有其他版本</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>此方法安装成功</p>
+<h2 id="2-安装python-pcl"><a href="#2-安装python-pcl" class="headerlink" title="2. 安装python-pcl"></a>2. 安装python-pcl</h2><p>地址<br><a href="https://github.com/strawlab/python-pcl" target="_blank" rel="external">https://github.com/strawlab/python-pcl</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/strawlab/python-pcl</div><div class="line">cd python-pcl</div><div class="line">make </div><div class="line">sudo python setup.py install</div></pre></td></tr></table></figure></p>
+<p><strong>问题</strong><br>make时失败，提示</p>
+<blockquote>
+<p>python setup.py build_ext –inplace<br>setup.py: error: cannot find PCL, tried<br>    pkg-config pcl_common-1.7<br>    pkg-config pcl_common-1.6<br>    pkg-config pcl_common<br>Makefile: 5:  recipe for target ‘pcl/_pcl.so’ failed<br>make: <em>*</em> [pcl/_pcl.so] Error 1</p>
+</blockquote>
+<hr>
+<h1 id="二-以源码编译方式安装pcl"><a href="#二-以源码编译方式安装pcl" class="headerlink" title="二. 以源码编译方式安装pcl"></a>二. 以源码编译方式安装pcl</h1><h2 id="1-安装pcl-1"><a href="#1-安装pcl-1" class="headerlink" title="1. 安装pcl"></a>1. 安装pcl</h2><p>因为安装预编译过的或者从从仓库中安装pcl后，都存在问题，所以从源码编译安装试试<br><strong>参考</strong><br><a href="http://blog.csdn.net/u014222645/article/details/45232917" target="_blank" rel="external">http://blog.csdn.net/u014222645/article/details/45232917</a></p>
+<p><a href="http://blog.csdn.net/zhuquan945/article/details/52809064" target="_blank" rel="external">http://blog.csdn.net/zhuquan945/article/details/52809064</a></p>
+<h3 id="1-下载PCL源代码"><a href="#1-下载PCL源代码" class="headerlink" title="1. 下载PCL源代码"></a>1. 下载PCL源代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git clone https://github.com/PointCloudLibrary/pcl.git</div></pre></td></tr></table></figure>
+<h3 id="2-安装相关的库"><a href="#2-安装相关的库" class="headerlink" title="2. 安装相关的库"></a>2. 安装相关的库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install  libboost-all-dev libeigen3-dev libflann-dev python libusb-1.0-0-dev libudev-dev freeglut3-dev doxygen graphviz libpng12-dev libgtest-dev libxmu-dev libxi-dev libpcap-dev libqhull-dev libvtk5-qt4-dev python-vtk libvtk-java</div></pre></td></tr></table></figure>
+<p><strong>注意</strong>：libflann版本要大于1.7，libvtk5-qt4-dev和 libpng12-dev可能会有冲突</p>
+<h3 id="3-编译pcl源码"><a href="#3-编译pcl源码" class="headerlink" title="3. 编译pcl源码"></a>3. 编译pcl源码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">cd pcl</div><div class="line">mkdir build &amp; cd build</div><div class="line">cmake  -D CMAKE_BUILD_TYPE=None  -D BUILD_GPU=ON  -D BUILD_apps=ON  -D BUILD_examples=ON ..   # 如果这一步提示缺什么就再装什么</div><div class="line">make</div><div class="line">sudo make install</div></pre></td></tr></table></figure>
+<h2 id="2-安装python-pcl-1"><a href="#2-安装python-pcl-1" class="headerlink" title="2. 安装python-pcl"></a>2. 安装python-pcl</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/strawlab/python-pcl</div><div class="line">cd python-pcl</div><div class="line">make </div><div class="line">sudo python setup.py install</div></pre></td></tr></table></figure>
+<p><strong>注意</strong>：<br>make时如果出现如下错误</p>
+<blockquote>
+<p>Package pcl_2d-1.8 was not found in the pkg-config search path.<br>Perhaps you should add the directory containing pcl_2d-1.8.pc’ to the PKG_CONFIG_PATH ……</p>
+</blockquote>
+<p>需要修改<code>/usr/local/lib/pkgconfig/pcl_features-1.8.pc</code>文件，删除第10行的<code>pcl_2d-1.8</code></p>
+<p>参考<a href="https://github.com/strawlab/python-pcl/issues/97" target="_blank" rel="external">https://github.com/strawlab/python-pcl/issues/97</a></p>
+
+      
+    </div>
+    <footer>
+      
+        <div class="alignleft">
+            <a href="/2016/11/07/deepin上安装pcl及python-pcl/#more" class="more-link"><i class="fa fa-chevron-right"></i>Read More</a>
+        </div>
+        
+        
+          <div class="alignright"> 
+            <a href="http://yoursite.com/2016/11/07/deepin上安装pcl及python-pcl/#comment" class="comment-link">
+              <i class="fa fa-comments"></i><span class="ds-thread-count" data-thread-key="/2016/11/07/deepin上安装pcl及python-pcl/">&nbsp;
+              </span>
+            </a>
+          </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+      <time datetime="2016-09-19T05:46:25.000Z"><a href="/2016/09/19/用knn算法实现手写字符识别/">Mon, Sep 19 2016, 1:46:25 pm</a></time>
+
+  
+    <h1 class="title"><a href="/2016/09/19/用knn算法实现手写字符识别/">用knn算法实现手写字符识别</a></h1>
+  
+
+
+  
+  <div class="categories">
+  	<i class="fa fa-folder-open"></i>
+    <a href="/categories/机器学习/">机器学习</a>
+  </div>
+
+
+  
+  <div class="tags">
+  	<i class="fa fa-tag"></i>
+    <a href="/tags/机器学习/">机器学习</a>, <a href="/tags/knn/">knn</a>
+  </div>
+
+<div class="clear"></div>
+      
+    </header>
+    <div class="entry">
+      
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>kNN算法又称为k近邻分类(k-nearest neighbor classification)算法。kNN算法是从训练集中找到和新数据最接近的k条记录，然后根据这k挑记录的主要分类来决定新数据的类别。该算法涉及3个主要因素：训练集、距离或相似的衡量、k的大小。</p>
+<h1 id="优缺点及适用范围"><a href="#优缺点及适用范围" class="headerlink" title="优缺点及适用范围"></a>优缺点及适用范围</h1><ul>
+<li>优点</li>
+</ul>
+<p>精度高，对异常值不敏感，无数据输入假定</p>
+<ul>
+<li>缺点</li>
+</ul>
+<p>计算复杂度高，空间复杂度高</p>
+<ul>
+<li>适用范围</li>
+</ul>
+<p>数值型，标称型</p>
+<h1 id="相似度计算方法"><a href="#相似度计算方法" class="headerlink" title="相似度计算方法"></a>相似度计算方法</h1><p>相似度有两种最简单的计算方法：欧氏距离和余弦值</p>
+<p>A=[1,2,3], B=[0,0,0]</p>
+<ol>
+<li>欧氏距离</li>
+</ol>
+<p><code>dist(A,B) = numpy.linalg.norm(A-B)</code></p>
+<p>或</p>
+<p><code>dist(A-B) = (((A-B)**2).sum())**0.5</code></p>
+<ol>
+<li>余弦值</li>
+</ol>
+<p><code>cos(A,B) = A*B/|A||B|</code></p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><ul>
+<li>通过欧氏距离来计算</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">def knn_distance(self, test_data, train_data, labels, k):</div><div class="line">   data_size = train_data.shape[0]</div><div class="line">   diff_mat = np.tile(test_data, (data_size, 1)) - train_data</div><div class="line">   sq_diff_mate = diff_mat ** 2</div><div class="line">   distance = sq_diff_mate.sum(axis=1) ** 0.5</div><div class="line">   # distance = np.linalg.norm(diff_mat, axis=1)</div><div class="line">   sorted_dist_indicies = np.argsort(distance)</div><div class="line">   class_count = &#123;&#125;</div><div class="line">   for i in range(k):</div><div class="line">       vote_label = labels[sorted_dist_indicies[i]]</div><div class="line">       class_count[vote_label] = class_count.get(vote_label, 0) + 1</div><div class="line">   sorted_class_count = sorted(class_count.items(), key=operator.itemgetter(1), reverse=True)</div><div class="line">   return sorted_class_count[0][0]</div></pre></td></tr></table></figure>
+<ul>
+<li>通过余弦值来计算</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">def knn_cos(self, train_x, train_y, test_x):</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    归一化处理</div><div class="line">    linalg.norm(x), return sum(abs(xi)**2)**0.5</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    norms_train = np.apply_along_axis(np.linalg.norm, 1, train_x) + 1.0e-7</div><div class="line">    norms_test = np.apply_along_axis(np.linalg.norm, 1, test_x) + 1.0e-7</div><div class="line">    train_x = train_x / np.expand_dims(norms_train, -1)</div><div class="line">    test_x = test_x / np.expand_dims(norms_test, -1)</div><div class="line"></div><div class="line">    # cosine</div><div class="line">    corr = np.dot(test_x, np.transpose(train_x))</div><div class="line">    argmax = np.argmax(corr, axis=1)</div><div class="line">    preds = train_y[argmax]</div><div class="line">    return preds</div></pre></td></tr></table></figure>
+<ul>
+<li>通过scikit-learn包来计算</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">def knn_sklearn(self, train_data, train_label, test_data):</div><div class="line">    pca = PCA(n_components=0.8)</div><div class="line">    train_x = pca.fit_transform(train_data)</div><div class="line">    test_x = pca.transform(test_data)</div><div class="line">    # knn regression</div><div class="line">    neighbor = KNeighborsClassifier(n_neighbors=4)</div><div class="line">    neighbor.fit(train_x, train_label)</div><div class="line">    preds = neighbor.predict(test_x)</div><div class="line">    return preds</div></pre></td></tr></table></figure>
+<h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><p><img src="http://oceas72q5.bkt.clouddn.com/knn%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C.png" alt=""></p>
+<h1 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h1><p><a href="https://github.com/jllan/ml-knn" target="_blank" rel="external">knn算法</a></p>
+
+      
+    </div>
+    <footer>
+      
+        <div class="alignleft">
+            <a href="/2016/09/19/用knn算法实现手写字符识别/#more" class="more-link"><i class="fa fa-chevron-right"></i>Read More</a>
+        </div>
+        
+        
+          <div class="alignright"> 
+            <a href="http://yoursite.com/2016/09/19/用knn算法实现手写字符识别/#comment" class="comment-link">
+              <i class="fa fa-comments"></i><span class="ds-thread-count" data-thread-key="/2016/09/19/用knn算法实现手写字符识别/">&nbsp;
+              </span>
+            </a>
+          </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+      <time datetime="2016-09-09T14:25:40.000Z"><a href="/2016/09/09/用markdown来画流程图/">Fri, Sep 9 2016, 10:25:40 pm</a></time>
+
+  
+    <h1 class="title"><a href="/2016/09/09/用markdown来画流程图/">用markdown来画流程图</a></h1>
+  
+
+
+  
+  <div class="categories">
+  	<i class="fa fa-folder-open"></i>
+    <a href="/categories/markdown/">markdown</a>
+  </div>
+
+
+<div class="clear"></div>
+      
+    </header>
+    <div class="entry">
+      
+        <p>做为一个低端的非典型程序员，只写过一些烂代码，很少画流程图这样高大上的东西，由于这次需要做个项目总结，一直在用markdown（不得不说markdown语法真的太强大太简洁了，效果也太优美，没学过markdown语法的可以自己学下）写东西，知道用markdown可以画出来很性感的流程图，遂决定学下如何用markdown来画流程图。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">flow</div><div class="line">st=&gt;start: Start</div><div class="line">op=&gt;operation: Your Operation</div><div class="line">cond=&gt;condition: Yes or No?</div><div class="line">e=&gt;end</div><div class="line">st-&gt;op-&gt;cond</div><div class="line">cond(yes)-&gt;e</div><div class="line">cond(no)-&gt;op</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p><img src="http://oceas72q5.bkt.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20160909223653.png" alt=""></p>
+<hr>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>这样几行简单的代码就生成了一个优雅的流程图。<br>流程图大致分为两段，第一段是定义元素，第二段是定义元素之间的走向。</p>
+<h4 id="定义元素的语法"><a href="#定义元素的语法" class="headerlink" title="定义元素的语法"></a>定义元素的语法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tag=&gt;type: content:&gt;url</div></pre></td></tr></table></figure>
+<ul>
+<li>tag就是元素名字， </li>
+<li><p>type是这个元素的类型，有6中类型，分别为：</p>
+<blockquote>
+<ul>
+<li>start         # 开始</li>
+<li>end           # 结束</li>
+<li>operation     # 操作</li>
+<li>subroutine    # 子程序</li>
+<li>condition     # 条件</li>
+<li>inputoutput   # 输入或产出</li>
+</ul>
+</blockquote>
+</li>
+<li><p>content就是在框框中要写的内容，注意type后的冒号与文本之间一定要有个空格。 </p>
+</li>
+<li>url是一个连接，与框框中的文本相绑定</li>
+</ul>
+<h4 id="连接元素的语法"><a href="#连接元素的语法" class="headerlink" title="连接元素的语法"></a>连接元素的语法</h4><p>用<strong>-&gt;</strong>来连接两个元素，需要注意的是condition类型，因为他有yes和no两个分支，所以要写成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">c2(yes)-&gt;io-&gt;e </div><div class="line">c2(no)-&gt;op2-&gt;e</div></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="实际应用"><a href="#实际应用" class="headerlink" title="实际应用"></a>实际应用</h3><p>下边献上我的拙作</p>
+<h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">flow</div><div class="line">st=&gt;start: Start|past:&gt;http://www.google.com[blank]</div><div class="line">e=&gt;end: End:&gt;http://www.google.com</div><div class="line">op1=&gt;operation: get_hotel_ids|past</div><div class="line">op2=&gt;operation: get_proxy|current</div><div class="line">sub1=&gt;subroutine: get_proxy|current</div><div class="line">op3=&gt;operation: save_comment|current</div><div class="line">op4=&gt;operation: set_sentiment|current</div><div class="line">op5=&gt;operation: set_record|current</div><div class="line"></div><div class="line">cond1=&gt;condition: ids_remain空?</div><div class="line">cond2=&gt;condition: proxy_list空?</div><div class="line">cond3=&gt;condition: ids_got空?</div><div class="line">cond4=&gt;condition: 爬取成功??</div><div class="line">cond5=&gt;condition: ids_remain空?</div><div class="line"></div><div class="line">io1=&gt;inputoutput: ids-remain</div><div class="line">io2=&gt;inputoutput: proxy_list</div><div class="line">io3=&gt;inputoutput: ids-got</div><div class="line"></div><div class="line">st-&gt;op1(right)-&gt;io1-&gt;cond1</div><div class="line">cond1(yes)-&gt;sub1-&gt;io2-&gt;cond2</div><div class="line">cond2(no)-&gt;op3</div><div class="line">cond2(yes)-&gt;sub1</div><div class="line">cond1(no)-&gt;op3-&gt;cond4</div><div class="line">cond4(yes)-&gt;io3-&gt;cond3</div><div class="line">cond4(no)-&gt;io1</div><div class="line">cond3(no)-&gt;op4</div><div class="line">cond3(yes, right)-&gt;cond5</div><div class="line">cond5(yes)-&gt;op5</div><div class="line">cond5(no)-&gt;cond3</div><div class="line">op5-&gt;e</div></pre></td></tr></table></figure>
+<h4 id="效果-1"><a href="#效果-1" class="headerlink" title="效果"></a>效果</h4><p><img src="http://oceas72q5.bkt.clouddn.com/%E6%B5%81%E7%A8%8B%E5%9B%BE.png" alt=""><br>这个流程图有个问题，我希望remain_id的两个条件都为空，但是markdown语法没法实现我这需求（不知道我这需求是不是有毛病），只能先这样画着了。</p>
+<hr>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3>
+      
+    </div>
+    <footer>
+      
+        <div class="alignleft">
+            <a href="/2016/09/09/用markdown来画流程图/#more" class="more-link"><i class="fa fa-chevron-right"></i>Read More</a>
+        </div>
+        
+        
+          <div class="alignright"> 
+            <a href="http://yoursite.com/2016/09/09/用markdown来画流程图/#comment" class="comment-link">
+              <i class="fa fa-comments"></i><span class="ds-thread-count" data-thread-key="/2016/09/09/用markdown来画流程图/">&nbsp;
+              </span>
+            </a>
+          </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+      <time datetime="2016-08-25T10:05:59.000Z"><a href="/2016/08/25/用markdown语法来写微信公众平台文章/">Thu, Aug 25 2016, 6:05:59 pm</a></time>
+
+  
+    <h1 class="title"><a href="/2016/08/25/用markdown语法来写微信公众平台文章/">用markdown语法来写微信公众平台文章</a></h1>
+  
+
+
+  
+  <div class="categories">
+  	<i class="fa fa-folder-open"></i>
+    <a href="/categories/微信/">微信</a>
+  </div>
+
+
+  
+  <div class="tags">
+  	<i class="fa fa-tag"></i>
+    <a href="/tags/微信/">微信</a>, <a href="/tags/markdown/">markdown</a>
+  </div>
+
+<div class="clear"></div>
+      
+    </header>
+    <div class="entry">
+      
+        <blockquote>
+<p>最近几乎只用markdown语法来些东西，当然我很少写东西，也不会写，只是偶尔写写笔记和博客，但是只要写就一定用markdown来写，因为markdown太迷人了，就算写的东西没什么涵养，光那优美的排版就让人看着很舒服。</p>
+</blockquote>
+<p>这两天申请了个微信公众号玩玩，刚一申请，我就寻思怎么用markdown来写文章，微信原生的编辑器不支持markdown语法，网上搜索了一番，跟我有相同想法的人可不少，方法也真有，下面就简单讲一下如何用markdown语法来写微信公众号文章。</p>
+<hr>
+<h3 id="1-安装chrome插件"><a href="#1-安装chrome插件" class="headerlink" title="1. 安装chrome插件"></a>1. 安装chrome插件</h3><p>在chrome应用商店搜索<strong>markdown here</strong>（需要翻墙），装上。</p>
+<hr>
+<h3 id="2-写文章"><a href="#2-写文章" class="headerlink" title="2. 写文章"></a>2. 写文章</h3><p>可以先找个好用的markdown编辑器（我常用<strong>Cmd Markdown</strong>和<strong>为知笔记</strong>）来写文章。</p>
+<hr>
+<p><img src="http://oceas72q5.bkt.clouddn.com/3DB8.tmp.png" alt=""></p>
+<h3 id="3-渲染文章"><a href="#3-渲染文章" class="headerlink" title="3. 渲染文章"></a>3. 渲染文章</h3><p>把写好的文章复制到微信公众平台原生的编辑窗口中，然后点击chrome浏览器右上角工具栏中markdown here图标或者用ctrl+alt+m快捷键来渲染文章，没有意外的话，markdown的效果就出来了。最后保存发送就行了。</p>
+<p>欢迎关注我的微信公众号<br><img src="http://oceas72q5.bkt.clouddn.com/%E5%85%AC%E4%BC%97%E5%8F%B7%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg" alt="我的微信公众号"></p>
+
+      
+    </div>
+    <footer>
+      
+        <div class="alignleft">
+            <a href="/2016/08/25/用markdown语法来写微信公众平台文章/#more" class="more-link"><i class="fa fa-chevron-right"></i>Read More</a>
+        </div>
+        
+        
+          <div class="alignright"> 
+            <a href="http://yoursite.com/2016/08/25/用markdown语法来写微信公众平台文章/#comment" class="comment-link">
+              <i class="fa fa-comments"></i><span class="ds-thread-count" data-thread-key="/2016/08/25/用markdown语法来写微信公众平台文章/">&nbsp;
+              </span>
+            </a>
+          </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+      <time datetime="2016-08-25T05:44:43.000Z"><a href="/2016/08/25/搭建shadowsocks服务/">Thu, Aug 25 2016, 1:44:43 pm</a></time>
+
+  
+    <h1 class="title"><a href="/2016/08/25/搭建shadowsocks服务/">搭建shadowsocks服务</a></h1>
+  
+
+
+  
+  <div class="categories">
+  	<i class="fa fa-folder-open"></i>
+    <a href="/categories/Linux/">Linux</a>
+  </div>
+
+
+  
+  <div class="tags">
+  	<i class="fa fa-tag"></i>
+    <a href="/tags/linux/">linux</a>, <a href="/tags/shadowsocks/">shadowsocks</a>
+  </div>
+
+<div class="clear"></div>
+      
+    </header>
+    <div class="entry">
+      
+        <hr>
+<p>由于vpn是全局代理，如果开了vpn，所有网络都要走代理通道，这样的话要是访问国内的网站就会很慢，用起来挺不方便的。而shadowsocks可以自己决定让哪些网站走代理通道，所以还是shadowsocks用起来更爽，下边记录下在ubuntu上搭shadowsocks服务的步骤。</p>
+<hr>
+<h3 id="1-安装shadowsocks"><a href="#1-安装shadowsocks" class="headerlink" title="1. 安装shadowsocks"></a>1. 安装shadowsocks</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install python-gevent python-pip</div><div class="line">sudo pip install shadowsocks</div></pre></td></tr></table></figure>
+<p>如果这一步提示缺什么包，就安装上</p>
+<hr>
+<h3 id="2-配置shadowsocks"><a href="#2-配置shadowsocks" class="headerlink" title="2. 配置shadowsocks"></a>2. 配置shadowsocks</h3><p>编辑/etc/shadowsocks.json，如果没有该文件就手动创建<br>内容如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;server&quot;:&quot;server_ip&quot;,</div><div class="line">    &quot;server_port&quot;:8989,</div><div class="line">    &quot;local_address&quot;: &quot;127.0.0.1&quot;,</div><div class="line">    &quot;local_port&quot;:1080,</div><div class="line">    &quot;password&quot;:&quot;password&quot;,</div><div class="line">    &quot;timeout&quot;:300,</div><div class="line">    &quot;method&quot;:&quot;aes-256-cfb&quot;,</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>server,server_port,password需要根据你的情况修改</p>
+<hr>
+<h3 id="3-启动服务"><a href="#3-启动服务" class="headerlink" title="3. 启动服务"></a>3. 启动服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ssserver -c /etc/shadowsocks.json -d start</div></pre></td></tr></table></figure>
+<p>如果没有意外，服务就启动成功了</p>
+<hr>
+<h3 id="4-加入开机自动启动"><a href="#4-加入开机自动启动" class="headerlink" title="4. 加入开机自动启动"></a>4. 加入开机自动启动</h3><p>把命令<code>ssserver -c /etc/shadowsocks.json -d start</code>加入/etc/rc.local文件中，写在exit 0之前。</p>
+<hr>
+<h3 id="5-客户端使用"><a href="#5-客户端使用" class="headerlink" title="5. 客户端使用"></a>5. 客户端使用</h3><ul>
+<li><p>windows电脑<br>下载<a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="external">shadowsocks windows客户端</a>，然后chrome浏览器装SwitchyOmega插件，SwitchyOmega配置方法如下图所示<br><img src="http://oceas72q5.bkt.clouddn.com/shadowsocks%E9%85%8D%E7%BD%AE1.png" alt="shadowsocks配置1.png"><br><img src="http://oceas72q5.bkt.clouddn.com/shadowsocks%E9%85%8D%E7%BD%AE2.png" alt="shadowsocks配置2.png"></p>
+</li>
+<li><p>linux电脑<br>安装shadowsocks-qt5<br><code>sudo apt-get install shadowsocks-qt5</code><br>shadowscoks-qt5配置如下图所示<br><img src="http://oceas72q5.bkt.clouddn.com/shadowsocks-qt5%E9%85%8D%E7%BD%AE.png" alt="shadowsocks-qt5配置.png"><br>然后，chrome浏览器安装SwitchyOmega插件，SwitchyOmega配置方法如上图所示</p>
+</li>
+<li><p>安卓<br>下载<a href="https://github.com/shadowsocks/shadowsocks-android/releases" target="_blank" rel="external">影梭</a>，配置方法如下<br><img src="http://oceas72q5.bkt.clouddn.com/%E5%BD%B1%E6%A2%AD%E9%85%8D%E7%BD%AE.jpg" alt="406670196.jpg"></p>
+</li>
+</ul>
+<hr>
+<h3 id="6-可能出现问题"><a href="#6-可能出现问题" class="headerlink" title="6. 可能出现问题"></a>6. 可能出现问题</h3><p>我在使用过程中出现了google play,google map可以顺利连接，但是手机和电脑上的浏览器都无法通过ss上网的问题，首先这个不是配置问题（认证方式是正确的），因为之前我的手机和电脑浏览器都是可以顺利连接的。查看日志<code>/var/log/shadowsocks.log</code>，有提示<code>unsupported addrtype 108, maybe wrong password or encryption method</code>，搜索了一番，别人也出现过这问题，但没找到解决方法。后来我把windows上的客户端从<a href="https://github.com/shadowsocks/shadowsocks-qt5" target="_blank" rel="external">shadowsocks-qt5</a>换成<a href="https://github.com/shadowsocks/shadowsocks-windows" target="_blank" rel="external">shadowsocks-windows</a>，然后竟然可以了。安卓手机上浏览器换成chrome竟然也可以了，具体原因不明。</p>
+
+      
+    </div>
+    <footer>
+      
+        <div class="alignleft">
+            <a href="/2016/08/25/搭建shadowsocks服务/#more" class="more-link"><i class="fa fa-chevron-right"></i>Read More</a>
+        </div>
+        
+        
+          <div class="alignright"> 
+            <a href="http://yoursite.com/2016/08/25/搭建shadowsocks服务/#comment" class="comment-link">
+              <i class="fa fa-comments"></i><span class="ds-thread-count" data-thread-key="/2016/08/25/搭建shadowsocks服务/">&nbsp;
+              </span>
+            </a>
+          </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+      <time datetime="2016-08-20T08:12:32.000Z"><a href="/2016/08/20/在github上搭建个人博客（进阶）/">Sat, Aug 20 2016, 4:12:32 pm</a></time>
+
+  
+    <h1 class="title"><a href="/2016/08/20/在github上搭建个人博客（进阶）/">在github上搭建个人博客（进阶）</a></h1>
+  
+
+
+  
+  <div class="categories">
+  	<i class="fa fa-folder-open"></i>
+    <a href="/categories/Hexo/">Hexo</a>
+  </div>
+
+
+  
+  <div class="tags">
+  	<i class="fa fa-tag"></i>
+    <a href="/tags/hexo/">hexo</a>
+  </div>
+
+<div class="clear"></div>
+      
+    </header>
+    <div class="entry">
+      
+        <p>在github上搭建博客，博客分为两部分东西：本地的hexo和github上仓库。工作模式是这样的：</p>
+<ol>
+<li>在本地通过hexo new来生成md文件（所有文章的md文件都在source/_post/下）</li>
+<li>然后编辑md文件</li>
+<li>然后hexo g渲染出html文件</li>
+<li>最后hexo d来部署文章到github仓库<br>这样就会有个问题，如果哪天换电脑了，本地的hexo文件就没有了，所有文章的md文件也没有了。解决这个问题最笨的方法就是时刻备份本地的hexo的一堆文件，换电脑了，就把这堆文件拷到新电脑上，然后就可以继续写文章，发布文章了。但是这个方法极不方便，另外一个很高明的方法就是把本地这一堆hexo文件也放在github上。</li>
+</ol>
+<h3 id="具体搭建步骤如下"><a href="#具体搭建步骤如下" class="headerlink" title="具体搭建步骤如下"></a>具体搭建步骤如下</h3><ol>
+<li>在github上建仓库yourname.github.io，为youname.github.io建立一个分支hexo用来存放hexo的文件，master分支用来存放发布的文章，并设hexo为默认分支，好像空仓库没法建立分支，可以先随便写入一个文件，然后就可以创建分支，设立默认分支了。</li>
+<li>git clone yourname.github.io仓库到本地，当前在hexo分支。</li>
+<li>执行npm install hexo-cli,hexo init,npm install ,npm install hexo-deployer-git等命令安装hexo（<strong>注意:</strong><br><em>hexo init会清空当前目录，所以本地的.git目录就被删除了，所以要提前备份.git目录，hexo init后再把.git目录恢复到yourname.github.io</em>）</li>
+<li>配置hexo，安装配置主题等</li>
+<li>git add,git commit, git push origin hexo提交该分支的文件到github上yourname.github.io仓库的hexo分支。.gitignore文件一般会由hexo自动生成，如果没有这个文件，可以手动添加，内容如下<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.DS_Store</div><div class="line">Thumbs.db</div><div class="line">db.json</div><div class="line">*.log</div><div class="line">node_modules/</div><div class="line">public/</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这样就可以了，以后换电脑了，在新电脑上执行下2,3,4,5步就行了（<strong>注意：</strong>千万不要再执行hexo init了）</p>
+<hr>
+<h3 id="写文章，发布文章的流程"><a href="#写文章，发布文章的流程" class="headerlink" title="写文章，发布文章的流程"></a>写文章，发布文章的流程</h3><p>这种方式下，每次写完文章后，要把hexo的内容同步到github</p>
+<ol>
+<li><code>hexo new &#39;topic&#39; # 生成topic.md</code></li>
+<li>编写文章</li>
+<li>git add -u, git commit, git push origin hexo把新写的文章同步到仓库，平时对hexo进行的配置也需要这样同步一下</li>
+<li>hexo g,hexo clean,hexo d来发布文章</li>
+</ol>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" target="_blank" rel="external">http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</a></p>
+
+      
+    </div>
+    <footer>
+      
+        <div class="alignleft">
+            <a href="/2016/08/20/在github上搭建个人博客（进阶）/#more" class="more-link"><i class="fa fa-chevron-right"></i>Read More</a>
+        </div>
+        
+        
+          <div class="alignright"> 
+            <a href="http://yoursite.com/2016/08/20/在github上搭建个人博客（进阶）/#comment" class="comment-link">
+              <i class="fa fa-comments"></i><span class="ds-thread-count" data-thread-key="/2016/08/20/在github上搭建个人博客（进阶）/">&nbsp;
+              </span>
+            </a>
+          </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+      <time datetime="2016-08-20T07:14:04.000Z"><a href="/2016/08/20/在github上搭建个人博客/">Sat, Aug 20 2016, 3:14:04 pm</a></time>
+
+  
+    <h1 class="title"><a href="/2016/08/20/在github上搭建个人博客/">在github上搭建个人博客</a></h1>
+  
+
+
+  
+  <div class="categories">
+  	<i class="fa fa-folder-open"></i>
+    <a href="/categories/Hexo/">Hexo</a>
+  </div>
+
+
+  
+  <div class="tags">
+  	<i class="fa fa-tag"></i>
+    <a href="/tags/hexo/">hexo</a>
+  </div>
+
+<div class="clear"></div>
+      
+    </header>
+    <div class="entry">
+      
+        <p>之前在vps上用wordpress搭建的博客被我拆了，虽然平时也很少写东西，即使写了质量也不高，但是一下子没有了自己的博客还是挺不爽的，于是就研究了两天，终于在github上重新搭了一个。</p>
+<hr>
+<h3 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h3><ol>
+<li>随便建一个文件夹用来存放hexo相关的文件，如myblog</li>
+<li><p>安装nodejs和npm</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install nodejs-legacy</div><div class="line">sudo apt-get install npm</div></pre></td></tr></table></figure>
+</li>
+<li><p>进入myblog，安装hexo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo npm install -g cnpm --registry=https://registry.npm.taobao.org #设置淘宝镜像</div><div class="line">sudo npm install hexo-cli</div></pre></td></tr></table></figure>
+</li>
+<li><p>初始化</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure>
+</li>
+<li><p>配置_config.yml，安装主题，我装的是<a href="https://github.com/daisygao/hexo-themes-cover" target="_blank" rel="external">cover</a>，然后配置主题。</p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate # 生成内容</div></pre></td></tr></table></figure>
+</li>
+<li><p>发布，首先在github上建立一个仓库，名字格式为:youname.github.io，然后配置_config.yml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git</div><div class="line">hexo server # 在本地启动服务</div><div class="line">hexo d #部署到github上</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h3 id="写文章，发布文章的流程"><a href="#写文章，发布文章的流程" class="headerlink" title="写文章，发布文章的流程"></a>写文章，发布文章的流程</h3><ol>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new &apos;topic&apos; # 生成topic,md</div></pre></td></tr></table></figure>
+</li>
+<li><p>编写文章</p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo g</div><div class="line">hexo clean</div><div class="line">hexo d</div></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    <footer>
+      
+        <div class="alignleft">
+            <a href="/2016/08/20/在github上搭建个人博客/#more" class="more-link"><i class="fa fa-chevron-right"></i>Read More</a>
+        </div>
+        
+        
+          <div class="alignright"> 
+            <a href="http://yoursite.com/2016/08/20/在github上搭建个人博客/#comment" class="comment-link">
+              <i class="fa fa-comments"></i><span class="ds-thread-count" data-thread-key="/2016/08/20/在github上搭建个人博客/">&nbsp;
+              </span>
+            </a>
+          </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+      <time datetime="2016-08-20T05:30:41.000Z"><a href="/2016/08/20/在github安家/">Sat, Aug 20 2016, 1:30:41 pm</a></time>
+
+  
+    <h1 class="title"><a href="/2016/08/20/在github安家/">在github安家</a></h1>
+  
+
+
+  
+  <div class="categories">
+  	<i class="fa fa-folder-open"></i>
+    <a href="/categories/Essay/">Essay</a>
+  </div>
+
+
+  
+  <div class="tags">
+  	<i class="fa fa-tag"></i>
+    <a href="/tags/essay/">essay</a>
+  </div>
+
+<div class="clear"></div>
+      
+    </header>
+    <div class="entry">
+      
+        <p>  前一段把vps上用wordpress搭建博客给拆了，虽然平时也不会写博客，就算写了也没啥质量，但是没有自己的博客还是挺不舒服的，于是研究了两天，终于在github这个全球极客的集聚地又安了个家，使用github page + hexo，部署好之后，换了漂亮的主题，绑定好域名，一切ok！</p>
+
+      
+    </div>
+    <footer>
+      
+        <div class="alignleft">
+            <a href="/2016/08/20/在github安家/#more" class="more-link"><i class="fa fa-chevron-right"></i>Read More</a>
+        </div>
+        
+        
+          <div class="alignright"> 
+            <a href="http://yoursite.com/2016/08/20/在github安家/#comment" class="comment-link">
+              <i class="fa fa-comments"></i><span class="ds-thread-count" data-thread-key="/2016/08/20/在github安家/">&nbsp;
+              </span>
+            </a>
+          </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+<nav id="pagination">
+  
+  
+  <div class="clearfix"></div>
+</nav>
+
+<script src="/js/jquery.anystretch.min.js"></script>
+<script src="/js/cover.js"></script>
+
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div>
+  
+  &copy; 2016 Jlan
+  
+</div>
+Powered by <a href="http://zespia.tw/hexo/" title="Hexo" target="_blank" rel="external">Hexo</a> and <a href="http://pages.github.com/" title="GitHub Pages" target="_blank" rel="external">GitHub Pages</a>
+
+<div class="clearfix"></div></footer>
+  
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+
+
+
+    <script type="text/javascript">
+        (function(){
+
+            $(window).scroll(function(){
+
+                var scrollTop = $(window).scrollTop();
+                if ( scrollTop >200 ){
+                    $("#main-nav").removeClass('normal_mode').addClass('top_mode');
+                } else{
+                    $("#main-nav").removeClass('top_mode').addClass('normal_mode');
+                }
+
+            });
+
+        })();
+    </script>
+
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox({
+      'titlePosition': 'inside'
+    });
+  })(jQuery);
+  </script>
+
+
+
+    
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"jlan"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = 'http://static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] 
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+
+
+<script type="text/javascript">
+  
+  $(function(){
+
+    $('.title').hover(
+      function() {      
+        $(this).stop().animate(
+          {'marginLeft': '10px'}, 200
+        );   
+      }, 
+      function() {       
+        $(this).stop().animate({'marginLeft': '0px'}, 200);      
+      
+    });   
+
+  });
+
+</script>
+
+
+</body>
+</html>

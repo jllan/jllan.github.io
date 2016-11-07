@@ -1,0 +1,264 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>deepin上安装pcl及python-pcl | 偏偏喜欢你</title>
+  <meta name="author" content="Jlan">
+  
+  <meta name="description" content="生活、学习记录">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="deepin上安装pcl及python-pcl"/>
+  <meta property="og:site_name" content="偏偏喜欢你"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="偏偏喜欢你" type="application/atom+xml">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<link rel="stylesheet" href="/css/style.css">
+  <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-368771XX-X']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+  <header id="header" class='normal_mode'>
+    <nav id="main-nav">
+  <ul class='container'>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="/about">About</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+  </header>
+  <div id="content" class="container">
+    <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+      <time datetime="2016-11-07T05:36:57.000Z"><a href="/2016/11/07/deepin上安装pcl及python-pcl/">Mon, Nov 7 2016, 1:36:57 pm</a></time>
+
+  
+    <h1 class="title">deepin上安装pcl及python-pcl</h1>
+  
+
+
+  
+  <div class="categories">
+  	<i class="fa fa-folder-open"></i>
+    <a href="/categories/Linux/">Linux</a>
+  </div>
+
+
+  
+  <div class="tags">
+  	<i class="fa fa-tag"></i>
+    <a href="/tags/linux/">linux</a>, <a href="/tags/python/">python</a>, <a href="/tags/pcl/">pcl</a>
+  </div>
+
+<div class="clear"></div>
+      
+    </header>
+    <div class="entry">
+      
+        <p>[TOC]</p>
+<h1 id="一-从预编译版本或从仓库安装pcl"><a href="#一-从预编译版本或从仓库安装pcl" class="headerlink" title="一 从预编译版本或从仓库安装pcl"></a>一 从预编译版本或从仓库安装pcl</h1><h2 id="1-安装pcl"><a href="#1-安装pcl" class="headerlink" title="1. 安装pcl"></a>1. 安装pcl</h2><ul>
+<li><h3 id="使用官方提供的预编译版本"><a href="#使用官方提供的预编译版本" class="headerlink" title="使用官方提供的预编译版本"></a>使用官方提供的预编译版本</h3>地址<br><a href="http://www.pointclouds.org/downloads/linux.html" target="_blank" rel="external">http://www.pointclouds.org/downloads/linux.html</a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key 19274DEF</div><div class="line">sudo echo &quot;deb http://ppa.launchpad.net/v-launchpad-jochen-sprickerhof-de/pcl/ubuntu maverick main&quot; &gt;&gt; /etc/apt/sources.list</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install libpcl-all</div></pre></td></tr></table></figure>
+<p><strong>问题</strong><br><code>sudo apt-get install libpcl-all</code>时有依赖问题无法解决</p>
+<ul>
+<li><h3 id="从deepin软件仓库直接安装"><a href="#从deepin软件仓库直接安装" class="headerlink" title="从deepin软件仓库直接安装"></a>从deepin软件仓库直接安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install libpcl1.7   # 也有其他版本</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>此方法安装成功</p>
+<h2 id="2-安装python-pcl"><a href="#2-安装python-pcl" class="headerlink" title="2. 安装python-pcl"></a>2. 安装python-pcl</h2><p>地址<br><a href="https://github.com/strawlab/python-pcl" target="_blank" rel="external">https://github.com/strawlab/python-pcl</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/strawlab/python-pcl</div><div class="line">cd python-pcl</div><div class="line">make </div><div class="line">sudo python setup.py install</div></pre></td></tr></table></figure></p>
+<p><strong>问题</strong><br>make时失败，提示</p>
+<blockquote>
+<p>python setup.py build_ext –inplace<br>setup.py: error: cannot find PCL, tried<br>    pkg-config pcl_common-1.7<br>    pkg-config pcl_common-1.6<br>    pkg-config pcl_common<br>Makefile: 5:  recipe for target ‘pcl/_pcl.so’ failed<br>make: <em>*</em> [pcl/_pcl.so] Error 1</p>
+</blockquote>
+<hr>
+<h1 id="二-以源码编译方式安装pcl"><a href="#二-以源码编译方式安装pcl" class="headerlink" title="二. 以源码编译方式安装pcl"></a>二. 以源码编译方式安装pcl</h1><h2 id="1-安装pcl-1"><a href="#1-安装pcl-1" class="headerlink" title="1. 安装pcl"></a>1. 安装pcl</h2><p>因为安装预编译过的或者从从仓库中安装pcl后，都存在问题，所以从源码编译安装试试<br><strong>参考</strong><br><a href="http://blog.csdn.net/u014222645/article/details/45232917" target="_blank" rel="external">http://blog.csdn.net/u014222645/article/details/45232917</a></p>
+<p><a href="http://blog.csdn.net/zhuquan945/article/details/52809064" target="_blank" rel="external">http://blog.csdn.net/zhuquan945/article/details/52809064</a></p>
+<h3 id="1-下载PCL源代码"><a href="#1-下载PCL源代码" class="headerlink" title="1. 下载PCL源代码"></a>1. 下载PCL源代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git clone https://github.com/PointCloudLibrary/pcl.git</div></pre></td></tr></table></figure>
+<h3 id="2-安装相关的库"><a href="#2-安装相关的库" class="headerlink" title="2. 安装相关的库"></a>2. 安装相关的库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install  libboost-all-dev libeigen3-dev libflann-dev python libusb-1.0-0-dev libudev-dev freeglut3-dev doxygen graphviz libpng12-dev libgtest-dev libxmu-dev libxi-dev libpcap-dev libqhull-dev libvtk5-qt4-dev python-vtk libvtk-java</div></pre></td></tr></table></figure>
+<p><strong>注意</strong>：libflann版本要大于1.7，libvtk5-qt4-dev和 libpng12-dev可能会有冲突</p>
+<h3 id="3-编译pcl源码"><a href="#3-编译pcl源码" class="headerlink" title="3. 编译pcl源码"></a>3. 编译pcl源码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">cd pcl</div><div class="line">mkdir build &amp; cd build</div><div class="line">cmake  -D CMAKE_BUILD_TYPE=None  -D BUILD_GPU=ON  -D BUILD_apps=ON  -D BUILD_examples=ON ..   # 如果这一步提示缺什么就再装什么</div><div class="line">make</div><div class="line">sudo make install</div></pre></td></tr></table></figure>
+<h2 id="2-安装python-pcl-1"><a href="#2-安装python-pcl-1" class="headerlink" title="2. 安装python-pcl"></a>2. 安装python-pcl</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/strawlab/python-pcl</div><div class="line">cd python-pcl</div><div class="line">make </div><div class="line">sudo python setup.py install</div></pre></td></tr></table></figure>
+<p><strong>注意</strong>：<br>make时如果出现如下错误</p>
+<blockquote>
+<p>Package pcl_2d-1.8 was not found in the pkg-config search path.<br>Perhaps you should add the directory containing pcl_2d-1.8.pc’ to the PKG_CONFIG_PATH ……</p>
+</blockquote>
+<p>需要修改<code>/usr/local/lib/pkgconfig/pcl_features-1.8.pc</code>文件，删除第10行的<code>pcl_2d-1.8</code></p>
+<p>参考<a href="https://github.com/strawlab/python-pcl/issues/97" target="_blank" rel="external">https://github.com/strawlab/python-pcl/issues/97</a></p>
+
+      
+    </div>
+    <footer>
+      
+          
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <span class="jiathis_txt">分享到：</span>
+  <a class="jiathis_button_weixin">微信</a>
+  <a class="jiathis_button_tsina">新浪微博</a>
+  <a class="jiathis_button_renren">人人网</a>
+  <a class="jiathis_button_qzone">QQ空间</a>
+  <a class="jiathis_button_douban">豆瓣</a>
+  <a class="jiathis_button_pocket">Pocket</a>
+  <a href="http://www.jiathis.com/share?uid=901656" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=901656" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+          <div class="clearfix"></div>
+          <nav id="pagination">
+  
+  
+    <a href="/2016/09/19/用knn算法实现手写字符识别/" class="alignright next">Prev<i class="fa fa-long-arrow-right"></i></a>
+  
+  <div class="clearfix"></div>
+</nav>
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">Kommentare</h1>
+
+  
+      <!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread" data-thread-key="/2016/11/07/deepin上安装pcl及python-pcl/"></div>
+<!-- Duoshuo Comment END -->
+  
+</section>
+
+
+
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div>
+  
+  &copy; 2016 Jlan
+  
+</div>
+Powered by <a href="http://zespia.tw/hexo/" title="Hexo" target="_blank" rel="external">Hexo</a> and <a href="http://pages.github.com/" title="GitHub Pages" target="_blank" rel="external">GitHub Pages</a>
+
+<div class="clearfix"></div></footer>
+  
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+
+
+
+    <script type="text/javascript">
+        (function(){
+
+            $(window).scroll(function(){
+
+                var scrollTop = $(window).scrollTop();
+                if ( scrollTop >200 ){
+                    $("#main-nav").removeClass('normal_mode').addClass('top_mode');
+                } else{
+                    $("#main-nav").removeClass('top_mode').addClass('normal_mode');
+                }
+
+            });
+
+        })();
+    </script>
+
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox({
+      'titlePosition': 'inside'
+    });
+  })(jQuery);
+  </script>
+
+
+
+    
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"jlan"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = 'http://static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] 
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+
+
+<script type="text/javascript">
+  
+  $(function(){
+
+    $('.title').hover(
+      function() {      
+        $(this).stop().animate(
+          {'marginLeft': '10px'}, 200
+        );   
+      }, 
+      function() {       
+        $(this).stop().animate({'marginLeft': '0px'}, 200);      
+      
+    });   
+
+  });
+
+</script>
+
+
+</body>
+</html>

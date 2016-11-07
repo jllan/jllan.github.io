@@ -1,0 +1,275 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>用knn算法实现手写字符识别 | 偏偏喜欢你</title>
+  <meta name="author" content="Jlan">
+  
+  <meta name="description" content="生活、学习记录">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="用knn算法实现手写字符识别"/>
+  <meta property="og:site_name" content="偏偏喜欢你"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="偏偏喜欢你" type="application/atom+xml">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<link rel="stylesheet" href="/css/style.css">
+  <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-368771XX-X']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+  <header id="header" class='normal_mode'>
+    <nav id="main-nav">
+  <ul class='container'>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="/about">About</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+  </header>
+  <div id="content" class="container">
+    <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+      <time datetime="2016-09-19T05:46:25.000Z"><a href="/2016/09/19/用knn算法实现手写字符识别/">Mon, Sep 19 2016, 1:46:25 pm</a></time>
+
+  
+    <h1 class="title">用knn算法实现手写字符识别</h1>
+  
+
+
+  
+  <div class="categories">
+  	<i class="fa fa-folder-open"></i>
+    <a href="/categories/机器学习/">机器学习</a>
+  </div>
+
+
+  
+  <div class="tags">
+  	<i class="fa fa-tag"></i>
+    <a href="/tags/机器学习/">机器学习</a>, <a href="/tags/knn/">knn</a>
+  </div>
+
+<div class="clear"></div>
+      
+    </header>
+    <div class="entry">
+      
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>kNN算法又称为k近邻分类(k-nearest neighbor classification)算法。kNN算法是从训练集中找到和新数据最接近的k条记录，然后根据这k挑记录的主要分类来决定新数据的类别。该算法涉及3个主要因素：训练集、距离或相似的衡量、k的大小。</p>
+<h1 id="优缺点及适用范围"><a href="#优缺点及适用范围" class="headerlink" title="优缺点及适用范围"></a>优缺点及适用范围</h1><ul>
+<li>优点</li>
+</ul>
+<p>精度高，对异常值不敏感，无数据输入假定</p>
+<ul>
+<li>缺点</li>
+</ul>
+<p>计算复杂度高，空间复杂度高</p>
+<ul>
+<li>适用范围</li>
+</ul>
+<p>数值型，标称型</p>
+<h1 id="相似度计算方法"><a href="#相似度计算方法" class="headerlink" title="相似度计算方法"></a>相似度计算方法</h1><p>相似度有两种最简单的计算方法：欧氏距离和余弦值</p>
+<p>A=[1,2,3], B=[0,0,0]</p>
+<ol>
+<li>欧氏距离</li>
+</ol>
+<p><code>dist(A,B) = numpy.linalg.norm(A-B)</code></p>
+<p>或</p>
+<p><code>dist(A-B) = (((A-B)**2).sum())**0.5</code></p>
+<ol>
+<li>余弦值</li>
+</ol>
+<p><code>cos(A,B) = A*B/|A||B|</code></p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><ul>
+<li>通过欧氏距离来计算</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">def knn_distance(self, test_data, train_data, labels, k):</div><div class="line">   data_size = train_data.shape[0]</div><div class="line">   diff_mat = np.tile(test_data, (data_size, 1)) - train_data</div><div class="line">   sq_diff_mate = diff_mat ** 2</div><div class="line">   distance = sq_diff_mate.sum(axis=1) ** 0.5</div><div class="line">   # distance = np.linalg.norm(diff_mat, axis=1)</div><div class="line">   sorted_dist_indicies = np.argsort(distance)</div><div class="line">   class_count = &#123;&#125;</div><div class="line">   for i in range(k):</div><div class="line">       vote_label = labels[sorted_dist_indicies[i]]</div><div class="line">       class_count[vote_label] = class_count.get(vote_label, 0) + 1</div><div class="line">   sorted_class_count = sorted(class_count.items(), key=operator.itemgetter(1), reverse=True)</div><div class="line">   return sorted_class_count[0][0]</div></pre></td></tr></table></figure>
+<ul>
+<li>通过余弦值来计算</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">def knn_cos(self, train_x, train_y, test_x):</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    归一化处理</div><div class="line">    linalg.norm(x), return sum(abs(xi)**2)**0.5</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    norms_train = np.apply_along_axis(np.linalg.norm, 1, train_x) + 1.0e-7</div><div class="line">    norms_test = np.apply_along_axis(np.linalg.norm, 1, test_x) + 1.0e-7</div><div class="line">    train_x = train_x / np.expand_dims(norms_train, -1)</div><div class="line">    test_x = test_x / np.expand_dims(norms_test, -1)</div><div class="line"></div><div class="line">    # cosine</div><div class="line">    corr = np.dot(test_x, np.transpose(train_x))</div><div class="line">    argmax = np.argmax(corr, axis=1)</div><div class="line">    preds = train_y[argmax]</div><div class="line">    return preds</div></pre></td></tr></table></figure>
+<ul>
+<li>通过scikit-learn包来计算</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">def knn_sklearn(self, train_data, train_label, test_data):</div><div class="line">    pca = PCA(n_components=0.8)</div><div class="line">    train_x = pca.fit_transform(train_data)</div><div class="line">    test_x = pca.transform(test_data)</div><div class="line">    # knn regression</div><div class="line">    neighbor = KNeighborsClassifier(n_neighbors=4)</div><div class="line">    neighbor.fit(train_x, train_label)</div><div class="line">    preds = neighbor.predict(test_x)</div><div class="line">    return preds</div></pre></td></tr></table></figure>
+<h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><p><img src="http://oceas72q5.bkt.clouddn.com/knn%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C.png" alt=""></p>
+<h1 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h1><p><a href="https://github.com/jllan/ml-knn" target="_blank" rel="external">knn算法</a></p>
+
+      
+    </div>
+    <footer>
+      
+          
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <span class="jiathis_txt">分享到：</span>
+  <a class="jiathis_button_weixin">微信</a>
+  <a class="jiathis_button_tsina">新浪微博</a>
+  <a class="jiathis_button_renren">人人网</a>
+  <a class="jiathis_button_qzone">QQ空间</a>
+  <a class="jiathis_button_douban">豆瓣</a>
+  <a class="jiathis_button_pocket">Pocket</a>
+  <a href="http://www.jiathis.com/share?uid=901656" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=901656" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+          <div class="clearfix"></div>
+          <nav id="pagination">
+  
+    <a href="/2016/11/07/deepin上安装pcl及python-pcl/" class="alignleft prev"><i class="fa fa-long-arrow-left"></i>Next</a>
+  
+  
+    <a href="/2016/09/09/用markdown来画流程图/" class="alignright next">Prev<i class="fa fa-long-arrow-right"></i></a>
+  
+  <div class="clearfix"></div>
+</nav>
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">Kommentare</h1>
+
+  
+      <!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread" data-thread-key="/2016/09/19/用knn算法实现手写字符识别/"></div>
+<!-- Duoshuo Comment END -->
+  
+</section>
+
+
+
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div>
+  
+  &copy; 2016 Jlan
+  
+</div>
+Powered by <a href="http://zespia.tw/hexo/" title="Hexo" target="_blank" rel="external">Hexo</a> and <a href="http://pages.github.com/" title="GitHub Pages" target="_blank" rel="external">GitHub Pages</a>
+
+<div class="clearfix"></div></footer>
+  
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+
+
+
+    <script type="text/javascript">
+        (function(){
+
+            $(window).scroll(function(){
+
+                var scrollTop = $(window).scrollTop();
+                if ( scrollTop >200 ){
+                    $("#main-nav").removeClass('normal_mode').addClass('top_mode');
+                } else{
+                    $("#main-nav").removeClass('top_mode').addClass('normal_mode');
+                }
+
+            });
+
+        })();
+    </script>
+
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox({
+      'titlePosition': 'inside'
+    });
+  })(jQuery);
+  </script>
+
+
+
+    
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"jlan"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = 'http://static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] 
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+
+
+<script type="text/javascript">
+  
+  $(function(){
+
+    $('.title').hover(
+      function() {      
+        $(this).stop().animate(
+          {'marginLeft': '10px'}, 200
+        );   
+      }, 
+      function() {       
+        $(this).stop().animate({'marginLeft': '0px'}, 200);      
+      
+    });   
+
+  });
+
+</script>
+
+
+</body>
+</html>
