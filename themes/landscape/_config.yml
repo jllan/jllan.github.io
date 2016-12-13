@@ -2,6 +2,7 @@
 menu:
   Home: /
   Archives: /archives
+  tas: /tags
 rss: /atom.xml
 
 # Content
