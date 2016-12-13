@@ -86,7 +86,7 @@ category_generator:
 deploy:
   type: git
   repo: https://github.com/jllan/jllan.github.io.git
-  branch: landscape
+  branch: master
 
 duoshuo_shortname: jlan
 
