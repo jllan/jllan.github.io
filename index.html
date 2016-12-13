@@ -1,1010 +1,1327 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>偏偏喜欢你</title>
-  <meta name="author" content="Jlan">
-  
-  <meta name="description" content="生活、学习记录">
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <head>
+    <!-- Title -->
+    
+    <title>
+        偏偏喜欢你
+    </title>
+    
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.ico">
+    <link rel="icon" sizes="192x192" href="/img/favicon.ico">
+    <link rel="apple-touch-icon" href="/img/favicon.ico">
+    
+    <!-- Meta & INfo -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Jlan">
+    <meta name="description" content="生活、学习记录">
+    <meta name="keywords" content="null">
+    
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+    
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="偏偏喜欢你">
+    
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://jlan.me">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="偏偏喜欢你">
+    <meta property="og:description" content="生活、学习记录">
+    
+     <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+        
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
+    
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="/css/material.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!-- Config CSS -->
 
-  
-  <meta property="og:site_name" content="偏偏喜欢你"/>
 
-  
-    <meta property="og:image" content="undefined"/>
-  
+<!-- Other Styles -->
+<style>
+	body, html{
+		font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+	}
+	
+    a{
+        color: #00838F
+    }
+    
+    .mdl-card__media,
+    #search-label,
+    #search-form-label:after,
+    #scheme-Paradox .hot_tags-count,
+    #scheme-Paradox .sidebar_archives-count,
+    #scheme-Paradox .sidebar-colored .sidebar-header,
+    #scheme-Paradox .sidebar-colored .sidebar-badge{
+        background-color: #0097A7 !important
+    }
+    
+	/* Sidebar User Drop Down Menu Text Color */
+	#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus{
+        color: #0097A7 !important
+    }
+    
+    #post_entry-right-info,
+    .sidebar-colored .sidebar-nav li:hover > a,
+    .sidebar-colored .sidebar-nav li:hover > a i,
+    .sidebar-colored .sidebar-nav li > a:hover,
+    .sidebar-colored .sidebar-nav li > a:hover i,
+    .sidebar-colored .sidebar-nav li > a:focus i,
+    .sidebar-colored .sidebar-nav > .open > a,
+    .sidebar-colored .sidebar-nav > .open > a:hover,
+    .sidebar-colored .sidebar-nav > .open > a:focus,
+    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a{
+        color: #0097A7 !important
+    }
+    
+    .toTop{
+        background: #757575 !important
+    }
+		
+	.material-layout .material-post>.material-nav,
+	.material-layout .material-index>.material-nav,
+	.material-nav a{
+		color: #757575;
+	}
+		
+	#scheme-Paradox .MD-burger-layer {
+		background-color: #757575;
+	}
 
-  <link href="/favicon.ico" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="偏偏喜欢你" type="application/atom+xml">
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-<link rel="stylesheet" href="/css/style.css">
-  <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-368771XX-X']);
-  _gaq.push(['_trackPageview']);
+	#scheme-Paradox #post-toc-trigger-btn{
+		color: #757575;
+	}
+	
+	.post-toc a:hover{
+		color: #00838F;
+		text-decoration: underline;
+	}
+</style>
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+
+<!-- Theme Background Related-->
+
+    <style>
+        body{
+            background-color: #F5F5F5
+        }
+		
+		/* blog_info bottom background */
+        #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+            background-color: #fff;
+        }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+        .fade {
+            transition: all 800ms linear;
+            -webkit-transform: translate3d(0,0,0);
+            -moz-transform: translate3d(0,0,0);
+            -ms-transform: translate3d(0,0,0);
+            -o-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+            opacity: 1;
+        }
+
+        .fade.out{
+            opacity: 0;
+        }
+    </style>
+
+	<script src="/js/jquery.min.js"></script>
+	
+	<link rel="stylesheet" href="/css/highlight/solarized-white.css">
+	
+	<!-- UC Browser Compatible-->
+	<script>
+		var agent = navigator.userAgent.toLowerCase();
+		if(agent.indexOf('ucbrowser')>0) {
+			document.write('<link rel="stylesheet" href="/css/uc.css">');
+		   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+		}
+	</script>
+    
+    <!-- Custom Head -->
+    
+</head>
+	
+	
+
+    <body id="scheme-Paradox">
+
+		
+        <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+				
+			
+			
+            <!-- Main Container -->
+            <main class="material-layout__content" id="main">
+				
+                <!-- Top Anchor -->
+                <div id="top"></div>
+				
+				
+                <!-- Hamburger Button -->
+                <button class="MD-burger-icon sidebar-toggle">
+                    <span class="MD-burger-layer"></span>
+                </button>
+				
+				
+                <!-- Index Module -->
+
+<div class="material-index mdl-grid">
+	
+		<!-- Paradox Header -->
+		<!-- Daily pic -->
+<div class="mdl-card daily-pic mdl-cell mdl-cell--8-col index-top-block">
+    
+    <!-- Pic & Slogan -->
+    <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/earth.jpg)">
+        <p class="index-top-block-slogan"><a href="#">Hi, nice to meet you</a></p>
+    </div>
+
+    <!-- Avatar & Name -->
+    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+        <!-- Author Avatar -->
+        <div id="author-avatar">
+            <img src="/img/logo-me.jpg" width="32px" height="32px" alt="avatar">
+        </div>
+        <div>
+            <strong>Jlan</strong>
+        </div>
+    </div>
+</div>
+
+		<!-- Blog info -->
+<div class="mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop index-top-block">
+	
+    <!-- Search -->
+	
+	<!-- Google -->
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable" method="post" action="">
+		<label id="search-label" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent mdl-shadow--4dp" for="search">
+			<i class="material-icons mdl-color-text--white" role="presentation">search</i>
+		</label>
+
+		<form id="search-form" method="get" action="//google.com/search" accept-charset="UTF-8" class="mdl-textfield__expandable-holder" target="_blank">
+			<input class="mdl-textfield__input search-input" type="search" name="q" id="search" placeholder="">
+			<label id="search-form-label" class="mdl-textfield__label" for="search"></label>
+			
+			<input type="hidden" name="sitesearch" value="http://jlan.me">
+		</form>
+	</div>
+
+
+
+
+
+
+    <!-- LOGO -->
+    <div class="something-else-logo mdl-color--white mdl-color-text--grey-600">
+        <a href="null">
+            <img src="/img/logo.png" alt="logo" />
+        </a>
+    </div>
+
+    <!-- Infomation -->
+    <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
+        <!-- Blog Title -->
+        <div>
+            <strong>偏偏喜欢你</strong>
+        </div>
+        <div class="section-spacer"></div>
+        
+        <!-- Pages -->
+        <button id="show-pages-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">view_carousel</i>
+            <span class="visuallyhidden">Pages</span>
+        </button>
+        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="show-pages-button">
+            
+                <a class="index_share-link" href="/about" title="关于我">
+                    <l class="mdl-menu__item mdl-js-ripple-effect"i>
+                        关于我
+                    </li>
+                </a>
+            
+                <a class="index_share-link" href="/tags" title="标签">
+                    <l class="mdl-menu__item mdl-js-ripple-effect"i>
+                        标签
+                    </li>
+                </a>
+            
+        </ul>
+        
+        <!-- Menu -->
+        <button id="menubtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">more_vert</i>
+            <span class="visuallyhidden">show menu</span>
+        </button>
+        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="menubtn">
+            
+            <!-- All Site UV -->
+            <a class="index_share-link" href="#">
+                <li class="mdl-menu__item mdl-js-ripple-effect">
+                    <span id="busuanzi_container_site_uv">
+                        <span id="busuanzi_value_site_uv"></span>&nbsp;مشاهدات
+                    </span>
+                </li>
+            </a>
+            
+            
+            
+            <a class="index_share-link" href="https://twitter.com/intent/tweet?text=偏偏喜欢你&url=http://jlan.me/&via=Jlan" target="_blank">
+                <li class="mdl-menu__item mdl-js-ripple-effect">
+                    شارك على Twitter
+                </li>
+            </a>
+            <a class="index_share-link" href="https://plus.google.com/share?url=http://jlan.me/" target="_blank">
+                <li class="mdl-menu__item mdl-js-ripple-effect">
+                    شارك على Google+
+                </li>
+            </a>
+            <a class="index_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=偏偏喜欢你&url=http://jlan.me/&pic=&searchPic=false&style=simple" target="_blank">
+                <li class="mdl-menu__item mdl-js-ripple-effect">
+                    شارك على Weibo
+                </li>
+            </a>
+        </ul>
+    </div>
+</div>
+
+	
+    <div class="locate-thumbnail-symbol"></div>
+    
+    
+		
+			<!-- Paradox Thumbnail -->
+        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
+    
+    <!-- Post Thumbnail -->
+	
+		
+			<!-- Random Thumbnail -->
+			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+		
+	
+				
+		<!-- Post Title -->
+		<p class="article-headline-p"><a href="/2016/12/08/Flask介绍/">Flask介绍</a></p>
+	</div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            1. 简介...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2016/12/08/Flask介绍/" target="_self">واصل القراءة</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/logo-me.jpg" width="44px" height="44px" alt="Jlan's avatar">
+            </div>
+            <div>
+                <strong>Jlan</strong>
+                <span>Dec 08, 2016</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Flask/">Flask</a>
+            </span>
+            
+            
+                <!-- Comment Number -->
+                &nbsp;|&nbsp;
+                <span class="post_entry-comment" >
+                        <span class="ds-thread-count" data-thread-key="2016/12/08/Flask介绍/" data-count-type="comments"></span>
+                </span>
+            
+            
+            <!-- Post Views -->
+            <span class="post_entry-views">
+                
+            </span>
+        </div>
+    </div>
+            
+</div>
+
+		
+		
+    
+		
+			<!-- Paradox Thumbnail -->
+        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
+    
+    <!-- Post Thumbnail -->
+	
+		
+			<!-- Random Thumbnail -->
+			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+		
+	
+				
+		<!-- Post Title -->
+		<p class="article-headline-p"><a href="/2016/11/07/deepin上安装pcl及python-pcl/">deepin上安装pcl及python-pcl</a></p>
+	</div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            [TOC]
+
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2016/11/07/deepin上安装pcl及python-pcl/" target="_self">واصل القراءة</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/logo-me.jpg" width="44px" height="44px" alt="Jlan's avatar">
+            </div>
+            <div>
+                <strong>Jlan</strong>
+                <span>Nov 07, 2016</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Linux/">Linux</a>
+            </span>
+            
+            
+                <!-- Comment Number -->
+                &nbsp;|&nbsp;
+                <span class="post_entry-comment" >
+                        <span class="ds-thread-count" data-thread-key="2016/11/07/deepin上安装pcl及python-pcl/" data-count-type="comments"></span>
+                </span>
+            
+            
+            <!-- Post Views -->
+            <span class="post_entry-views">
+                
+            </span>
+        </div>
+    </div>
+            
+</div>
+
+		
+		
+    
+		
+			<!-- Paradox Thumbnail -->
+        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
+    
+    <!-- Post Thumbnail -->
+	
+		
+			<!-- Random Thumbnail -->
+			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+		
+	
+				
+		<!-- Post Title -->
+		<p class="article-headline-p"><a href="/2016/09/19/用knn算法实现手写字符识别/">用knn算法实现手写字符识别</a></p>
+	</div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            概述kNN算法又称...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2016/09/19/用knn算法实现手写字符识别/" target="_self">واصل القراءة</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/logo-me.jpg" width="44px" height="44px" alt="Jlan's avatar">
+            </div>
+            <div>
+                <strong>Jlan</strong>
+                <span>Sep 19, 2016</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/机器学习/">机器学习</a>
+            </span>
+            
+            
+                <!-- Comment Number -->
+                &nbsp;|&nbsp;
+                <span class="post_entry-comment" >
+                        <span class="ds-thread-count" data-thread-key="2016/09/19/用knn算法实现手写字符识别/" data-count-type="comments"></span>
+                </span>
+            
+            
+            <!-- Post Views -->
+            <span class="post_entry-views">
+                
+            </span>
+        </div>
+    </div>
+            
+</div>
+
+		
+		
+    
+		
+			<!-- Paradox Thumbnail -->
+        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
+    
+    <!-- Post Thumbnail -->
+	
+		
+			<!-- Random Thumbnail -->
+			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+		
+	
+				
+		<!-- Post Title -->
+		<p class="article-headline-p"><a href="/2016/09/09/用markdown来画流程图/">用markdown来画流程图</a></p>
+	</div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            做为一个低端的非典型程序员，只写过一些烂代码，很少画流程图这样高大上的东西，由于这次需要做个项目总结，一直在用markdown（不得不说markdo...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2016/09/09/用markdown来画流程图/" target="_self">واصل القراءة</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/logo-me.jpg" width="44px" height="44px" alt="Jlan's avatar">
+            </div>
+            <div>
+                <strong>Jlan</strong>
+                <span>Sep 09, 2016</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/markdown/">markdown</a>
+            </span>
+            
+            
+                <!-- Comment Number -->
+                &nbsp;|&nbsp;
+                <span class="post_entry-comment" >
+                        <span class="ds-thread-count" data-thread-key="2016/09/09/用markdown来画流程图/" data-count-type="comments"></span>
+                </span>
+            
+            
+            <!-- Post Views -->
+            <span class="post_entry-views">
+                
+            </span>
+        </div>
+    </div>
+            
+</div>
+
+		
+		
+    
+		
+			<!-- Paradox Thumbnail -->
+        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
+    
+    <!-- Post Thumbnail -->
+	
+		
+			<!-- Random Thumbnail -->
+			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+		
+	
+				
+		<!-- Post Title -->
+		<p class="article-headline-p"><a href="/2016/08/25/用markdown语法来写微信公众平台文章/">用markdown语法来写微信公众平台文章</a></p>
+	</div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
+最近几乎只用markdown语法来些东西，当然我很少写东西，也不会写，只是偶尔写写笔记和博客，但是只要写就一定用markd...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2016/08/25/用markdown语法来写微信公众平台文章/" target="_self">واصل القراءة</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/logo-me.jpg" width="44px" height="44px" alt="Jlan's avatar">
+            </div>
+            <div>
+                <strong>Jlan</strong>
+                <span>Aug 25, 2016</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/微信/">微信</a>
+            </span>
+            
+            
+                <!-- Comment Number -->
+                &nbsp;|&nbsp;
+                <span class="post_entry-comment" >
+                        <span class="ds-thread-count" data-thread-key="2016/08/25/用markdown语法来写微信公众平台文章/" data-count-type="comments"></span>
+                </span>
+            
+            
+            <!-- Post Views -->
+            <span class="post_entry-views">
+                
+            </span>
+        </div>
+    </div>
+            
+</div>
+
+		
+		
+    
+		
+			<!-- Paradox Thumbnail -->
+        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
+    
+    <!-- Post Thumbnail -->
+	
+		
+			<!-- Random Thumbnail -->
+			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+		
+	
+				
+		<!-- Post Title -->
+		<p class="article-headline-p"><a href="/2016/08/25/搭建shadowsocks服务/">搭建shadowsocks服务</a></p>
+	</div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
+由于vpn是全局代理，如果开了vpn，所有网络都要走代理通道，这样的话要是访问国内的网站就会很慢，用起来挺不方便的。而shadowsock...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2016/08/25/搭建shadowsocks服务/" target="_self">واصل القراءة</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/logo-me.jpg" width="44px" height="44px" alt="Jlan's avatar">
+            </div>
+            <div>
+                <strong>Jlan</strong>
+                <span>Aug 25, 2016</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Linux/">Linux</a>
+            </span>
+            
+            
+                <!-- Comment Number -->
+                &nbsp;|&nbsp;
+                <span class="post_entry-comment" >
+                        <span class="ds-thread-count" data-thread-key="2016/08/25/搭建shadowsocks服务/" data-count-type="comments"></span>
+                </span>
+            
+            
+            <!-- Post Views -->
+            <span class="post_entry-views">
+                
+            </span>
+        </div>
+    </div>
+            
+</div>
+
+		
+		
+    
+		
+			<!-- Paradox Thumbnail -->
+        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
+    
+    <!-- Post Thumbnail -->
+	
+		
+			<!-- Random Thumbnail -->
+			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+		
+	
+				
+		<!-- Post Title -->
+		<p class="article-headline-p"><a href="/2016/08/20/在github上搭建个人博客（进阶）/">在github上搭建个人博客（进阶）</a></p>
+	</div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            在github上搭建博客，博客分为两部分东西：本地的hexo和github上仓库。工作模式是这样的：
+
+在本地通过hexo ...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2016/08/20/在github上搭建个人博客（进阶）/" target="_self">واصل القراءة</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/logo-me.jpg" width="44px" height="44px" alt="Jlan's avatar">
+            </div>
+            <div>
+                <strong>Jlan</strong>
+                <span>Aug 20, 2016</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Hexo/">Hexo</a>
+            </span>
+            
+            
+                <!-- Comment Number -->
+                &nbsp;|&nbsp;
+                <span class="post_entry-comment" >
+                        <span class="ds-thread-count" data-thread-key="2016/08/20/在github上搭建个人博客（进阶）/" data-count-type="comments"></span>
+                </span>
+            
+            
+            <!-- Post Views -->
+            <span class="post_entry-views">
+                
+            </span>
+        </div>
+    </div>
+            
+</div>
+
+		
+		
+    
+		
+			<!-- Paradox Thumbnail -->
+        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
+    
+    <!-- Post Thumbnail -->
+	
+		
+			<!-- Random Thumbnail -->
+			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+		
+	
+				
+		<!-- Post Title -->
+		<p class="article-headline-p"><a href="/2016/08/20/在github上搭建个人博客/">在github上搭建个人博客</a></p>
+	</div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            之前在vps上用wordpress搭建的博客被我拆了，虽然平时也很少写东西，即使写了质量也不高，但是一下子没有了自己的博客还是挺不爽的，于是就研究了...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2016/08/20/在github上搭建个人博客/" target="_self">واصل القراءة</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/logo-me.jpg" width="44px" height="44px" alt="Jlan's avatar">
+            </div>
+            <div>
+                <strong>Jlan</strong>
+                <span>Aug 20, 2016</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Hexo/">Hexo</a>
+            </span>
+            
+            
+                <!-- Comment Number -->
+                &nbsp;|&nbsp;
+                <span class="post_entry-comment" >
+                        <span class="ds-thread-count" data-thread-key="2016/08/20/在github上搭建个人博客/" data-count-type="comments"></span>
+                </span>
+            
+            
+            <!-- Post Views -->
+            <span class="post_entry-views">
+                
+            </span>
+        </div>
+    </div>
+            
+</div>
+
+		
+		
+    
+		
+			<!-- Paradox Thumbnail -->
+        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
+    
+    <!-- Post Thumbnail -->
+	
+		
+			<!-- Random Thumbnail -->
+			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+		
+	
+				
+		<!-- Post Title -->
+		<p class="article-headline-p"><a href="/2016/08/20/在github安家/">在github安家</a></p>
+	</div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+              前一段把vps上用wordpress搭建博客给拆了，虽然平时也不会写博客，就算写了也没啥质量，但是没有自己的博客还是挺不舒服的，于是研究了两天，...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2016/08/20/在github安家/" target="_self">واصل القراءة</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/logo-me.jpg" width="44px" height="44px" alt="Jlan's avatar">
+            </div>
+            <div>
+                <strong>Jlan</strong>
+                <span>Aug 20, 2016</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Essay/">Essay</a>
+            </span>
+            
+            
+                <!-- Comment Number -->
+                &nbsp;|&nbsp;
+                <span class="post_entry-comment" >
+                        <span class="ds-thread-count" data-thread-key="2016/08/20/在github安家/" data-count-type="comments"></span>
+                </span>
+            
+            
+            <!-- Post Views -->
+            <span class="post_entry-views">
+                
+            </span>
+        </div>
+    </div>
+            
+</div>
+
+		
+		
+    
+    
+	
+		<script>
+    
+    var randomNum;
+    
+    var locatePost = $(".locate-thumbnail-symbol").next();
+    for(var i=0; i < 10; i++){
+        
+        randomNum = Math.floor(Math.random() * 5 + 1);
+        
+        locatePost.children(".post_thumbnail-random").attr('id', 'random_thumbnail-'+randomNum);
+        locatePost.children(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/' + randomNum + '.png' + ')')
+        
+        locatePost = locatePost.next();
+    }
+    
 </script>
 
-</head>
+	
 
-<body>
-  <header id="header" class='normal_mode'>
-    <nav id="main-nav">
-  <ul class='container'>
-    
-      <li><a href="/">Home</a></li>
-    
-      <li><a href="/archives">Archives</a></li>
-    
-      <li><a href="/about">About</a></li>
-    
-  </ul>
-  <div class="clearfix"></div>
-</nav>
-  </header>
-  <div id="content" class="container">
-    <div id="cover">
-	<div id="profile" alt="http://oceas72q5.bkt.clouddn.com/9.3%E9%98%85%E5%85%B5.jpg">
-		<a href="/">
-			<div class="logo">
-				<img src="/logo.png" alt="Profile Picture">
-			</div>
-			<div id="title">偏偏喜欢你</div>
-		</a>
+</div>
 
-		
-			<div id="subtitle">莫听穿林打叶声，何妨吟啸且徐行，竹杖芒鞋轻胜马，谁怕，一蓑烟雨任平生</div>
-		
-		 <ul class="my-socials">
-  
- 
+				
+				
+					<!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay "></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored  sidebar-fixed-left" role="navigation">
+	<div id="sidebar-main">
+	    <!-- Sidebar Header -->
+		<div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+    <i class="material-icons">clear_all</i>
+    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/logo-me.jpg" alt="Jlan's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        jlllan@126.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+		<!-- Sidebar Navigation  -->
+		<ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+			
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+						<i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    <li id="sidebar-first-li">
+        <a href="/" target="_self">
+            <i class="material-icons sidebar-material-icons">home</i>
+             الرئيسية
+        </a>
+    </li>
+
+    <!-- I'm Feeling Lucky -->
+<!--
+    <li class="dropdown">
+        <a href="" target="_self">
+            <i class="material-icons sidebar-material-icons">explore</i>
+             sidebar.imlucky
+        </a>
+    </li>
+-->
+
+	
+    <!-- Archives  -->
+    <li class="dropdown">
+        <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+            <i class="material-icons sidebar-material-icons">inbox</i>
+             أرشيف
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+            <a class="sidebar_archives-link" href="/archives/2016/12/">December 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">November 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">September 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">August 2016<span class="sidebar_archives-count">5</span></a>
+        </ul>
+    </li>
+
+    <!-- Divider -->
+    <li class="divider"></li>
+
+
+    <!-- Pages  -->
+	
+		<li>
+			<a href="/about" title="关于我">
+				关于我
+			</a>
+		</li>
+	
+		<li>
+			<a href="/tags" title="标签">
+				标签
+			</a>
+		</li>
+	
+
+    <!-- Article Numebr  -->
+    <li>
+        <a href="/archives">
+             رقم المقالة
+             <span class="sidebar-badge">9</span>
+        </a>
+    </li>
 </ul>
+
+		<!-- Sidebar Divider -->
+		<div class="sidebar-divider"></div>
+
+		<!-- Sidebar Footer -->
+		<!-- 
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持。 :) 
+-->
+
+<!-- Theme Material -->
+<a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+	<div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+		سمة - Material
+		<span class="sidebar-badge badge-circle">i</span>
 	</div>
+</a>
+
+<!-- Help & Support -->
+<!--
+<a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+		sidebar.help
+		<span class="mdl-button__ripple-container">
+			<span class="mdl-ripple"></span>
+		</span>
+	</div>
+</a>
+-->
+
+<!-- Feedback -->
+<!--
+<a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.feedback
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>
+-->
+
+<!-- Abount Theme -->
+<!--
+<a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.about_theme
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>-->
+
+	</div>
+    
+    <!-- Sidebar Sponsor -->
+    
+
+
+</aside>
+
+				
+				
+				
+					<!-- Footer Top Button -->
+					<div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+				
+				
+				<!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+	
+	
+		<!-- Paradox Footer Left Section -->
+		<div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+    
+    
+    <!-- Facebook -->
+    
+    
+    
+    <!-- Google + -->
+    
+    
+    
+    <!-- Weibo -->
+    
+    
+    
+    <!-- Instagram -->
+    
+    
+    
+    <!-- Tumblr -->
+    
+    
+    
+    <!-- Github -->
+    
+    <a href="https://github.com/jllan" target="view_window"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-github.png);">
+        <span class="visuallyhidden">Github</span>
+    </button></a>
+    
 </div>
 
 
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
+		<!--Copyright-->
+		<div id="copyright">Copyright&nbsp;©&nbsp;<script type="text/javascript">var fd = new Date();document.write(fd.getFullYear());</script>&nbsp;偏偏喜欢你</div>
+
+		<!-- Paradox Footer Right Section -->
+
+		<!-- 
+		I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+		It will not impact the appearance and can give developers a lot of support :)
+
+		很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+		它不会影响美观并可以给开发者很大的支持。 :) 
+		-->
+
+		<div class="mdl-mini-footer--right-section">
+			<div>
+				<div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+				<div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+			</div>
+		</div>
+	
     
-      <img src="">
+</footer>
+                
+				<!-- Import File -->
+<script src="/js/highlight.min.js"></script>
+<script src="/js/js.min.js"></script>
+<script src="/js/nprogress.js"></script>
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
     
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-      <time datetime="2016-12-08T06:45:58.000Z"><a href="/2016/12/08/Flask介绍/">Thu, Dec 8 2016, 2:45:58 pm</a></time>
-
-  
-    <h1 class="title"><a href="/2016/12/08/Flask介绍/">Flask介绍</a></h1>
-  
-
-
-  
-  <div class="categories">
-  	<i class="fa fa-folder-open"></i>
-    <a href="/categories/Flask/">Flask</a>
-  </div>
-
-
-  
-  <div class="tags">
-  	<i class="fa fa-tag"></i>
-    <a href="/tags/flask/">flask</a>
-  </div>
-
-<div class="clear"></div>
-      
-    </header>
-    <div class="entry">
-      
-        <h1 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h1><p>Flask是一个使用Python编写的轻量级Web应用框架。基于Werkzeug WSGI(<em>PythonWeb服务器<a href="http://baike.baidu.com/view/807.htm" target="_blank" rel="external">网关</a>接口（Python Web Server Gateway Interface，缩写为WSGI</em>)是Python应用程序或框架和Web服务器之间的一种接口，已经被广泛接受, 它已基本达成它的可移植性方面的目标)工具箱和Jinja2 模板引擎。 Flask使用BSD授权。 Flask也被称为“microframework”，因为它使用简单的核心，用extension增加其他功能。Flask没有默认使用的数据库、窗体验证工具。然而，Flask保留了扩增的弹性，可以用Flask-extension加入这些功能：ORM、窗体验证工具、文件上传、各种开放式身份验证技术。</p>
-<p><strong>小插曲</strong><br>Flask 的作者是 Armin Ronacher（他也是 Werkzeug 及 Jinja2 的作者。）。本来只是作者的一个愚人节玩笑，不过后来大受欢迎，进而成为一个正式的项目。</p>
-<hr>
-<h1 id="2-Flask的安装"><a href="#2-Flask的安装" class="headerlink" title="2. Flask的安装"></a>2. Flask的安装</h1><p>和大多数的Python第三方模块的安装方法一样，Flask可以直接通过pip来安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install flask</div></pre></td></tr></table></figure></p>
-<hr>
-<h1 id="3-一个最小的Flask应用"><a href="#3-一个最小的Flask应用" class="headerlink" title="3. 一个最小的Flask应用"></a>3. 一个最小的Flask应用</h1><ul>
-<li><strong>代码</strong></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">from flask import Flask</div><div class="line">app = Flask(__name__)</div><div class="line"> </div><div class="line">@app.route(&quot;/&quot;)</div><div class="line">def hello():</div><div class="line">    return &quot;Hello World!&quot;</div><div class="line"> </div><div class="line">if __name__ == &quot;__main__&quot;:</div><div class="line">    app.run()</div></pre></td></tr></table></figure>
-<ul>
-<li><strong>运行</strong></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python hello.py</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/1713353-62f8d07213068e6e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="深度截图20161208135148.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1713353-6c8a2410a5ef26f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="深度截图20161208135255.png"></p>
-<ul>
-<li><strong>代码解释</strong></li>
-</ul>
-<blockquote>
-<p>首先我们导入了 <a href="http://dormousehole.readthedocs.io/en/latest/api.html#flask.Flask" target="_blank" rel="external">Flask</a> 类。<br>接着我们创建了这个类的实例。第一个参数是应用模块或者包的名称。<br>然后我们使用 <a href="http://dormousehole.readthedocs.io/en/latest/api.html#flask.Flask.route" target="_blank" rel="external">route()</a> 装饰器来告诉 Flask 触发函数的 URL 。<br>函数名称可用于生成相关联的 URL ，并返回需要在用户浏览器中显示的信息。<br>最后，使用 <a href="http://dormousehole.readthedocs.io/en/latest/api.html#flask.Flask.run" target="_blank" rel="external">run()</a> 函数来运行本地服务器和我们的应用。 if <strong>name</strong> ==’<strong>main</strong>‘:<br> 确保服务器只会在使用 Python 解释器运行代码的 情况下运行，而不会在作为模块导入时运行。<br>按 control-C 可以停止服务器</p>
-</blockquote>
-<hr>
-<h1 id="4-Flask-框架分析"><a href="#4-Flask-框架分析" class="headerlink" title="4. Flask 框架分析"></a>4. Flask 框架分析</h1><p>为了理解 Flask 框架是如何抽象出Web开发中的共同部分，我们先来看看Web应用程序的一般流程。对于Web应用来说，当客户端想要获取 <strong>动态资源</strong> 时，就会发起一个HTTP请求（比如用浏览器访问一个 URL），Web应用程序会在后台进行相应的业务处理，（从数据库或者进行一些计算操作等）取出用户需要的数据，生成相应的HTTP响应（当然，如果访问静态资源，则直接返回资源即可，不需要进行业务处理）。整个处理过程如下图所示：<br><img src="http://upload-images.jianshu.io/upload_images/1713353-dbf7be5e3c31ffda.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>实际应用中， <strong>不同的请求可能会调用相同的处理逻辑</strong> 。这里有着相同业务处理逻辑的 HTTP 请求可以用一类 URL 来标识。比如论坛站点中，对于所有的获取Topic内容的请求而言，可以用 topic/<topic_id>/ 这类URL来表示，这里的 topic_id 用以区分不同的topic。接着在后台定义一个 get_topic(topic_id) 的函数，用来获取topic相应的数据，此外还需要建立URL和函数之间的一一对应关系。这就是Web开发中所谓的 <strong>路由分发</strong> ，如下图所示：<br><img src="http://upload-images.jianshu.io/upload_images/1713353-dfb1a47e078dbd20.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>Flask底层使用 werkzeug 来做路由分发，代码写起来十分简单，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@app.route(&apos;/topic/&lt;int:topic_id&gt;/&apos;) </div><div class="line">def get_topic(topic_id):</div><div class="line">  # Do some cal or read from database</div><div class="line">  # Get the data we need.</div></pre></td></tr></table></figure></topic_id></p>
-<p>通过业务逻辑函数拿到数据后，接下来需要根据这些数据生成HTTP响应（对于Web应用来说，HTTP响应一般是一个HTML文件）。Web开发中的一般做法是提供一个HTML模板文件，然后将数据传入模板，经过渲染后得到最终需要的HTML响应文件。<br>一种比较常见的场景是， <strong>请求虽然不同，但响应中数据的展示方式是相同的</strong> 。仍以论坛为例，对不同topic而言，其具体topic content虽然不同，但页面展示的方式是一样的，都有标题拦，内容栏等。也就是说，对于 topic 来说，我们只需提供一个HTML模板，然后传入不同topic数据，即得到不同的HTTP响应。这就是所谓的 <strong>模板渲染</strong> ，如下图所示：<br><img src="http://upload-images.jianshu.io/upload_images/1713353-07146b9e837d26cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>Flask 使用 Jinja2 模板渲染引擎来做模板渲染，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@app.route(&apos;/topic/&lt;int:topic_id&gt;/&apos;)</div><div class="line">def get_topic(topic_id):</div><div class="line">  # Do some cal or read from database</div><div class="line">  return render_template(&apos;path/to/template.html&apos;, data)</div></pre></td></tr></table></figure></p>
-<p>总结一下，Flask处理一个请求的流程就是，首先根据 URL 决定由那个函数来处理，然后在函数中进行操作，取得所需的数据。再将数据传给相应的模板文件中，由Jinja2 负责渲染得到 HTTP 响应内容，然后由Flask返回响应内容。</p>
-<hr>
-<h1 id="5-Flask的扩展"><a href="#5-Flask的扩展" class="headerlink" title="5. Flask的扩展"></a>5. Flask的扩展</h1><p>Flask是一个微型框架，自身没有提供数据库管理，表单验证，cookie处理等功能，很多功能需要通过扩展才能实现</p>
-<blockquote>
-<ul>
-<li><strong>Flask-sqlalchemy</strong>   # 数据库管理</li>
-<li><strong>Flask-script</strong>              # Flask-Script 为Flask程序添加了一个命令行解析， 自带了一组常用选项，而且还支持自定义命令。</li>
-<li><strong>Flask-wtform</strong>           # 表单验证</li>
-<li><strong>Flask-login</strong>              # 登陆管理<br>……</li>
-</ul>
-</blockquote>
-<p>可以在这个网站上寻找更多Flask的扩展的安装和使用方法<br><a href="http://flask.pocoo.org/extensions/" target="_blank" rel="external">http://flask.pocoo.org/extensions/</a></p>
-<hr>
-<h1 id="6-主页"><a href="#6-主页" class="headerlink" title="6. 主页"></a>6. 主页</h1><p>更多关于Flask的内容请到Flask的官网<br><a href="http://flask.pocoo.org/" target="_blank" rel="external">http://flask.pocoo.org/</a></p>
-
-      
-    </div>
-    <footer>
-      
-        <div class="alignleft">
-            <a href="/2016/12/08/Flask介绍/#more" class="more-link"><i class="fa fa-chevron-right"></i>Read More</a>
-        </div>
-        
-        
-          <div class="alignright"> 
-            <a href="http://yoursite.com/2016/12/08/Flask介绍/#comment" class="comment-link">
-              <i class="fa fa-comments"></i><span class="ds-thread-count" data-thread-key="/2016/12/08/Flask介绍/">&nbsp;
-              </span>
-            </a>
-          </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
+    $('#nprogress .bar').css({
+        'background': '#FF4081'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#FF4081',
+        'border-left-color': '#FF4081'
+    });
     
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-      <time datetime="2016-11-07T05:36:57.000Z"><a href="/2016/11/07/deepin上安装pcl及python-pcl/">Mon, Nov 7 2016, 1:36:57 pm</a></time>
-
-  
-    <h1 class="title"><a href="/2016/11/07/deepin上安装pcl及python-pcl/">deepin上安装pcl及python-pcl</a></h1>
-  
-
-
-  
-  <div class="categories">
-  	<i class="fa fa-folder-open"></i>
-    <a href="/categories/Linux/">Linux</a>
-  </div>
-
-
-  
-  <div class="tags">
-  	<i class="fa fa-tag"></i>
-    <a href="/tags/linux/">linux</a>, <a href="/tags/python/">python</a>, <a href="/tags/pcl/">pcl</a>
-  </div>
-
-<div class="clear"></div>
-      
-    </header>
-    <div class="entry">
-      
-        <p>[TOC]</p>
-<h1 id="一-从预编译版本或从仓库安装pcl"><a href="#一-从预编译版本或从仓库安装pcl" class="headerlink" title="一 从预编译版本或从仓库安装pcl"></a>一 从预编译版本或从仓库安装pcl</h1><h2 id="1-安装pcl"><a href="#1-安装pcl" class="headerlink" title="1. 安装pcl"></a>1. 安装pcl</h2><ul>
-<li><h3 id="使用官方提供的预编译版本"><a href="#使用官方提供的预编译版本" class="headerlink" title="使用官方提供的预编译版本"></a>使用官方提供的预编译版本</h3>地址<br><a href="http://www.pointclouds.org/downloads/linux.html" target="_blank" rel="external">http://www.pointclouds.org/downloads/linux.html</a></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key 19274DEF</div><div class="line">sudo echo &quot;deb http://ppa.launchpad.net/v-launchpad-jochen-sprickerhof-de/pcl/ubuntu maverick main&quot; &gt;&gt; /etc/apt/sources.list</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install libpcl-all</div></pre></td></tr></table></figure>
-<p><strong>问题</strong><br><code>sudo apt-get install libpcl-all</code>时有依赖问题无法解决</p>
-<ul>
-<li><h3 id="从deepin软件仓库直接安装"><a href="#从deepin软件仓库直接安装" class="headerlink" title="从deepin软件仓库直接安装"></a>从deepin软件仓库直接安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install libpcl1.7   # 也有其他版本</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>此方法安装成功</p>
-<h2 id="2-安装python-pcl"><a href="#2-安装python-pcl" class="headerlink" title="2. 安装python-pcl"></a>2. 安装python-pcl</h2><p>地址<br><a href="https://github.com/strawlab/python-pcl" target="_blank" rel="external">https://github.com/strawlab/python-pcl</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/strawlab/python-pcl</div><div class="line">cd python-pcl</div><div class="line">make </div><div class="line">sudo python setup.py install</div></pre></td></tr></table></figure></p>
-<p><strong>问题</strong><br>make时失败，提示</p>
-<blockquote>
-<p>python setup.py build_ext –inplace<br>setup.py: error: cannot find PCL, tried<br>    pkg-config pcl_common-1.7<br>    pkg-config pcl_common-1.6<br>    pkg-config pcl_common<br>Makefile: 5:  recipe for target ‘pcl/_pcl.so’ failed<br>make: <em>*</em> [pcl/_pcl.so] Error 1</p>
-</blockquote>
-<hr>
-<h1 id="二-以源码编译方式安装pcl"><a href="#二-以源码编译方式安装pcl" class="headerlink" title="二. 以源码编译方式安装pcl"></a>二. 以源码编译方式安装pcl</h1><h2 id="1-安装pcl-1"><a href="#1-安装pcl-1" class="headerlink" title="1. 安装pcl"></a>1. 安装pcl</h2><p>因为安装预编译过的或者从从仓库中安装pcl后，都存在问题，所以从源码编译安装试试<br><strong>参考</strong><br><a href="http://blog.csdn.net/u014222645/article/details/45232917" target="_blank" rel="external">http://blog.csdn.net/u014222645/article/details/45232917</a></p>
-<p><a href="http://blog.csdn.net/zhuquan945/article/details/52809064" target="_blank" rel="external">http://blog.csdn.net/zhuquan945/article/details/52809064</a></p>
-<h3 id="1-下载PCL源代码"><a href="#1-下载PCL源代码" class="headerlink" title="1. 下载PCL源代码"></a>1. 下载PCL源代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git clone https://github.com/PointCloudLibrary/pcl.git</div></pre></td></tr></table></figure>
-<h3 id="2-安装相关的库"><a href="#2-安装相关的库" class="headerlink" title="2. 安装相关的库"></a>2. 安装相关的库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install  libboost-all-dev libeigen3-dev libflann-dev python libusb-1.0-0-dev libudev-dev freeglut3-dev doxygen graphviz libpng12-dev libgtest-dev libxmu-dev libxi-dev libpcap-dev libqhull-dev libvtk5-qt4-dev python-vtk libvtk-java</div></pre></td></tr></table></figure>
-<p><strong>注意</strong>：libflann版本要大于1.7，libvtk5-qt4-dev和 libpng12-dev可能会有冲突</p>
-<h3 id="3-编译pcl源码"><a href="#3-编译pcl源码" class="headerlink" title="3. 编译pcl源码"></a>3. 编译pcl源码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">cd pcl</div><div class="line">mkdir build &amp; cd build</div><div class="line">cmake  -D CMAKE_BUILD_TYPE=None  -D BUILD_GPU=ON  -D BUILD_apps=ON  -D BUILD_examples=ON ..   # 如果这一步提示缺什么就再装什么</div><div class="line">make</div><div class="line">sudo make install</div></pre></td></tr></table></figure>
-<h2 id="2-安装python-pcl-1"><a href="#2-安装python-pcl-1" class="headerlink" title="2. 安装python-pcl"></a>2. 安装python-pcl</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/strawlab/python-pcl</div><div class="line">cd python-pcl</div><div class="line">make </div><div class="line">sudo python setup.py install</div></pre></td></tr></table></figure>
-<p><strong>注意</strong>：<br>make时如果出现如下错误</p>
-<blockquote>
-<p>Package pcl_2d-1.8 was not found in the pkg-config search path.<br>Perhaps you should add the directory containing pcl_2d-1.8.pc’ to the PKG_CONFIG_PATH ……</p>
-</blockquote>
-<p>需要修改<code>/usr/local/lib/pkgconfig/pcl_features-1.8.pc</code>文件，删除第10行的<code>pcl_2d-1.8</code></p>
-<p>参考<a href="https://github.com/strawlab/python-pcl/issues/97" target="_blank" rel="external">https://github.com/strawlab/python-pcl/issues/97</a></p>
-
-      
-    </div>
-    <footer>
-      
-        <div class="alignleft">
-            <a href="/2016/11/07/deepin上安装pcl及python-pcl/#more" class="more-link"><i class="fa fa-chevron-right"></i>Read More</a>
-        </div>
-        
-        
-          <div class="alignright"> 
-            <a href="http://yoursite.com/2016/11/07/deepin上安装pcl及python-pcl/#comment" class="comment-link">
-              <i class="fa fa-comments"></i><span class="ds-thread-count" data-thread-key="/2016/11/07/deepin上安装pcl及python-pcl/">&nbsp;
-              </span>
-            </a>
-          </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-      <time datetime="2016-09-19T05:46:25.000Z"><a href="/2016/09/19/用knn算法实现手写字符识别/">Mon, Sep 19 2016, 1:46:25 pm</a></time>
-
-  
-    <h1 class="title"><a href="/2016/09/19/用knn算法实现手写字符识别/">用knn算法实现手写字符识别</a></h1>
-  
-
-
-  
-  <div class="categories">
-  	<i class="fa fa-folder-open"></i>
-    <a href="/categories/机器学习/">机器学习</a>
-  </div>
-
-
-  
-  <div class="tags">
-  	<i class="fa fa-tag"></i>
-    <a href="/tags/机器学习/">机器学习</a>, <a href="/tags/knn/">knn</a>
-  </div>
-
-<div class="clear"></div>
-      
-    </header>
-    <div class="entry">
-      
-        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>kNN算法又称为k近邻分类(k-nearest neighbor classification)算法。kNN算法是从训练集中找到和新数据最接近的k条记录，然后根据这k挑记录的主要分类来决定新数据的类别。该算法涉及3个主要因素：训练集、距离或相似的衡量、k的大小。</p>
-<h1 id="优缺点及适用范围"><a href="#优缺点及适用范围" class="headerlink" title="优缺点及适用范围"></a>优缺点及适用范围</h1><ul>
-<li>优点</li>
-</ul>
-<p>精度高，对异常值不敏感，无数据输入假定</p>
-<ul>
-<li>缺点</li>
-</ul>
-<p>计算复杂度高，空间复杂度高</p>
-<ul>
-<li>适用范围</li>
-</ul>
-<p>数值型，标称型</p>
-<h1 id="相似度计算方法"><a href="#相似度计算方法" class="headerlink" title="相似度计算方法"></a>相似度计算方法</h1><p>相似度有两种最简单的计算方法：欧氏距离和余弦值</p>
-<p>A=[1,2,3], B=[0,0,0]</p>
-<ol>
-<li>欧氏距离</li>
-</ol>
-<p><code>dist(A,B) = numpy.linalg.norm(A-B)</code></p>
-<p>或</p>
-<p><code>dist(A-B) = (((A-B)**2).sum())**0.5</code></p>
-<ol>
-<li>余弦值</li>
-</ol>
-<p><code>cos(A,B) = A*B/|A||B|</code></p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><ul>
-<li>通过欧氏距离来计算</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">def knn_distance(self, test_data, train_data, labels, k):</div><div class="line">   data_size = train_data.shape[0]</div><div class="line">   diff_mat = np.tile(test_data, (data_size, 1)) - train_data</div><div class="line">   sq_diff_mate = diff_mat ** 2</div><div class="line">   distance = sq_diff_mate.sum(axis=1) ** 0.5</div><div class="line">   # distance = np.linalg.norm(diff_mat, axis=1)</div><div class="line">   sorted_dist_indicies = np.argsort(distance)</div><div class="line">   class_count = &#123;&#125;</div><div class="line">   for i in range(k):</div><div class="line">       vote_label = labels[sorted_dist_indicies[i]]</div><div class="line">       class_count[vote_label] = class_count.get(vote_label, 0) + 1</div><div class="line">   sorted_class_count = sorted(class_count.items(), key=operator.itemgetter(1), reverse=True)</div><div class="line">   return sorted_class_count[0][0]</div></pre></td></tr></table></figure>
-<ul>
-<li>通过余弦值来计算</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">def knn_cos(self, train_x, train_y, test_x):</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    归一化处理</div><div class="line">    linalg.norm(x), return sum(abs(xi)**2)**0.5</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    norms_train = np.apply_along_axis(np.linalg.norm, 1, train_x) + 1.0e-7</div><div class="line">    norms_test = np.apply_along_axis(np.linalg.norm, 1, test_x) + 1.0e-7</div><div class="line">    train_x = train_x / np.expand_dims(norms_train, -1)</div><div class="line">    test_x = test_x / np.expand_dims(norms_test, -1)</div><div class="line"></div><div class="line">    # cosine</div><div class="line">    corr = np.dot(test_x, np.transpose(train_x))</div><div class="line">    argmax = np.argmax(corr, axis=1)</div><div class="line">    preds = train_y[argmax]</div><div class="line">    return preds</div></pre></td></tr></table></figure>
-<ul>
-<li>通过scikit-learn包来计算</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">def knn_sklearn(self, train_data, train_label, test_data):</div><div class="line">    pca = PCA(n_components=0.8)</div><div class="line">    train_x = pca.fit_transform(train_data)</div><div class="line">    test_x = pca.transform(test_data)</div><div class="line">    # knn regression</div><div class="line">    neighbor = KNeighborsClassifier(n_neighbors=4)</div><div class="line">    neighbor.fit(train_x, train_label)</div><div class="line">    preds = neighbor.predict(test_x)</div><div class="line">    return preds</div></pre></td></tr></table></figure>
-<h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><p><img src="http://oceas72q5.bkt.clouddn.com/knn%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C.png" alt=""></p>
-<h1 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h1><p><a href="https://github.com/jllan/ml-knn" target="_blank" rel="external">knn算法</a></p>
-
-      
-    </div>
-    <footer>
-      
-        <div class="alignleft">
-            <a href="/2016/09/19/用knn算法实现手写字符识别/#more" class="more-link"><i class="fa fa-chevron-right"></i>Read More</a>
-        </div>
-        
-        
-          <div class="alignright"> 
-            <a href="http://yoursite.com/2016/09/19/用knn算法实现手写字符识别/#comment" class="comment-link">
-              <i class="fa fa-comments"></i><span class="ds-thread-count" data-thread-key="/2016/09/19/用knn算法实现手写字符识别/">&nbsp;
-              </span>
-            </a>
-          </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-      <time datetime="2016-09-09T14:25:40.000Z"><a href="/2016/09/09/用markdown来画流程图/">Fri, Sep 9 2016, 10:25:40 pm</a></time>
-
-  
-    <h1 class="title"><a href="/2016/09/09/用markdown来画流程图/">用markdown来画流程图</a></h1>
-  
-
-
-  
-  <div class="categories">
-  	<i class="fa fa-folder-open"></i>
-    <a href="/categories/markdown/">markdown</a>
-  </div>
-
-
-<div class="clear"></div>
-      
-    </header>
-    <div class="entry">
-      
-        <p>做为一个低端的非典型程序员，只写过一些烂代码，很少画流程图这样高大上的东西，由于这次需要做个项目总结，一直在用markdown（不得不说markdown语法真的太强大太简洁了，效果也太优美，没学过markdown语法的可以自己学下）写东西，知道用markdown可以画出来很性感的流程图，遂决定学下如何用markdown来画流程图。</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">flow</div><div class="line">st=&gt;start: Start</div><div class="line">op=&gt;operation: Your Operation</div><div class="line">cond=&gt;condition: Yes or No?</div><div class="line">e=&gt;end</div><div class="line">st-&gt;op-&gt;cond</div><div class="line">cond(yes)-&gt;e</div><div class="line">cond(no)-&gt;op</div></pre></td></tr></table></figure>
-<hr>
-<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p><img src="http://oceas72q5.bkt.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20160909223653.png" alt=""></p>
-<hr>
-<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>这样几行简单的代码就生成了一个优雅的流程图。<br>流程图大致分为两段，第一段是定义元素，第二段是定义元素之间的走向。</p>
-<h4 id="定义元素的语法"><a href="#定义元素的语法" class="headerlink" title="定义元素的语法"></a>定义元素的语法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tag=&gt;type: content:&gt;url</div></pre></td></tr></table></figure>
-<ul>
-<li>tag就是元素名字， </li>
-<li><p>type是这个元素的类型，有6中类型，分别为：</p>
-<blockquote>
-<ul>
-<li>start         # 开始</li>
-<li>end           # 结束</li>
-<li>operation     # 操作</li>
-<li>subroutine    # 子程序</li>
-<li>condition     # 条件</li>
-<li>inputoutput   # 输入或产出</li>
-</ul>
-</blockquote>
-</li>
-<li><p>content就是在框框中要写的内容，注意type后的冒号与文本之间一定要有个空格。 </p>
-</li>
-<li>url是一个连接，与框框中的文本相绑定</li>
-</ul>
-<h4 id="连接元素的语法"><a href="#连接元素的语法" class="headerlink" title="连接元素的语法"></a>连接元素的语法</h4><p>用<strong>-&gt;</strong>来连接两个元素，需要注意的是condition类型，因为他有yes和no两个分支，所以要写成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">c2(yes)-&gt;io-&gt;e </div><div class="line">c2(no)-&gt;op2-&gt;e</div></pre></td></tr></table></figure></p>
-<hr>
-<h3 id="实际应用"><a href="#实际应用" class="headerlink" title="实际应用"></a>实际应用</h3><p>下边献上我的拙作</p>
-<h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">flow</div><div class="line">st=&gt;start: Start|past:&gt;http://www.google.com[blank]</div><div class="line">e=&gt;end: End:&gt;http://www.google.com</div><div class="line">op1=&gt;operation: get_hotel_ids|past</div><div class="line">op2=&gt;operation: get_proxy|current</div><div class="line">sub1=&gt;subroutine: get_proxy|current</div><div class="line">op3=&gt;operation: save_comment|current</div><div class="line">op4=&gt;operation: set_sentiment|current</div><div class="line">op5=&gt;operation: set_record|current</div><div class="line"></div><div class="line">cond1=&gt;condition: ids_remain空?</div><div class="line">cond2=&gt;condition: proxy_list空?</div><div class="line">cond3=&gt;condition: ids_got空?</div><div class="line">cond4=&gt;condition: 爬取成功??</div><div class="line">cond5=&gt;condition: ids_remain空?</div><div class="line"></div><div class="line">io1=&gt;inputoutput: ids-remain</div><div class="line">io2=&gt;inputoutput: proxy_list</div><div class="line">io3=&gt;inputoutput: ids-got</div><div class="line"></div><div class="line">st-&gt;op1(right)-&gt;io1-&gt;cond1</div><div class="line">cond1(yes)-&gt;sub1-&gt;io2-&gt;cond2</div><div class="line">cond2(no)-&gt;op3</div><div class="line">cond2(yes)-&gt;sub1</div><div class="line">cond1(no)-&gt;op3-&gt;cond4</div><div class="line">cond4(yes)-&gt;io3-&gt;cond3</div><div class="line">cond4(no)-&gt;io1</div><div class="line">cond3(no)-&gt;op4</div><div class="line">cond3(yes, right)-&gt;cond5</div><div class="line">cond5(yes)-&gt;op5</div><div class="line">cond5(no)-&gt;cond3</div><div class="line">op5-&gt;e</div></pre></td></tr></table></figure>
-<h4 id="效果-1"><a href="#效果-1" class="headerlink" title="效果"></a>效果</h4><p><img src="http://oceas72q5.bkt.clouddn.com/%E6%B5%81%E7%A8%8B%E5%9B%BE.png" alt=""><br>这个流程图有个问题，我希望remain_id的两个条件都为空，但是markdown语法没法实现我这需求（不知道我这需求是不是有毛病），只能先这样画着了。</p>
-<hr>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3>
-      
-    </div>
-    <footer>
-      
-        <div class="alignleft">
-            <a href="/2016/09/09/用markdown来画流程图/#more" class="more-link"><i class="fa fa-chevron-right"></i>Read More</a>
-        </div>
-        
-        
-          <div class="alignright"> 
-            <a href="http://yoursite.com/2016/09/09/用markdown来画流程图/#comment" class="comment-link">
-              <i class="fa fa-comments"></i><span class="ds-thread-count" data-thread-key="/2016/09/09/用markdown来画流程图/">&nbsp;
-              </span>
-            </a>
-          </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-      <time datetime="2016-08-25T10:05:59.000Z"><a href="/2016/08/25/用markdown语法来写微信公众平台文章/">Thu, Aug 25 2016, 6:05:59 pm</a></time>
-
-  
-    <h1 class="title"><a href="/2016/08/25/用markdown语法来写微信公众平台文章/">用markdown语法来写微信公众平台文章</a></h1>
-  
-
-
-  
-  <div class="categories">
-  	<i class="fa fa-folder-open"></i>
-    <a href="/categories/微信/">微信</a>
-  </div>
-
-
-  
-  <div class="tags">
-  	<i class="fa fa-tag"></i>
-    <a href="/tags/微信/">微信</a>, <a href="/tags/markdown/">markdown</a>
-  </div>
-
-<div class="clear"></div>
-      
-    </header>
-    <div class="entry">
-      
-        <blockquote>
-<p>最近几乎只用markdown语法来些东西，当然我很少写东西，也不会写，只是偶尔写写笔记和博客，但是只要写就一定用markdown来写，因为markdown太迷人了，就算写的东西没什么涵养，光那优美的排版就让人看着很舒服。</p>
-</blockquote>
-<p>这两天申请了个微信公众号玩玩，刚一申请，我就寻思怎么用markdown来写文章，微信原生的编辑器不支持markdown语法，网上搜索了一番，跟我有相同想法的人可不少，方法也真有，下面就简单讲一下如何用markdown语法来写微信公众号文章。</p>
-<hr>
-<h3 id="1-安装chrome插件"><a href="#1-安装chrome插件" class="headerlink" title="1. 安装chrome插件"></a>1. 安装chrome插件</h3><p>在chrome应用商店搜索<strong>markdown here</strong>（需要翻墙），装上。</p>
-<hr>
-<h3 id="2-写文章"><a href="#2-写文章" class="headerlink" title="2. 写文章"></a>2. 写文章</h3><p>可以先找个好用的markdown编辑器（我常用<strong>Cmd Markdown</strong>和<strong>为知笔记</strong>）来写文章。</p>
-<hr>
-<p><img src="http://oceas72q5.bkt.clouddn.com/3DB8.tmp.png" alt=""></p>
-<h3 id="3-渲染文章"><a href="#3-渲染文章" class="headerlink" title="3. 渲染文章"></a>3. 渲染文章</h3><p>把写好的文章复制到微信公众平台原生的编辑窗口中，然后点击chrome浏览器右上角工具栏中markdown here图标或者用ctrl+alt+m快捷键来渲染文章，没有意外的话，markdown的效果就出来了。最后保存发送就行了。</p>
-<p>欢迎关注我的微信公众号<br><img src="http://oceas72q5.bkt.clouddn.com/%E5%85%AC%E4%BC%97%E5%8F%B7%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg" alt="我的微信公众号"></p>
-
-      
-    </div>
-    <footer>
-      
-        <div class="alignleft">
-            <a href="/2016/08/25/用markdown语法来写微信公众平台文章/#more" class="more-link"><i class="fa fa-chevron-right"></i>Read More</a>
-        </div>
-        
-        
-          <div class="alignright"> 
-            <a href="http://yoursite.com/2016/08/25/用markdown语法来写微信公众平台文章/#comment" class="comment-link">
-              <i class="fa fa-comments"></i><span class="ds-thread-count" data-thread-key="/2016/08/25/用markdown语法来写微信公众平台文章/">&nbsp;
-              </span>
-            </a>
-          </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-      <time datetime="2016-08-25T05:44:43.000Z"><a href="/2016/08/25/搭建shadowsocks服务/">Thu, Aug 25 2016, 1:44:43 pm</a></time>
-
-  
-    <h1 class="title"><a href="/2016/08/25/搭建shadowsocks服务/">搭建shadowsocks服务</a></h1>
-  
-
-
-  
-  <div class="categories">
-  	<i class="fa fa-folder-open"></i>
-    <a href="/categories/Linux/">Linux</a>
-  </div>
-
-
-  
-  <div class="tags">
-  	<i class="fa fa-tag"></i>
-    <a href="/tags/linux/">linux</a>, <a href="/tags/shadowsocks/">shadowsocks</a>
-  </div>
-
-<div class="clear"></div>
-      
-    </header>
-    <div class="entry">
-      
-        <hr>
-<p>由于vpn是全局代理，如果开了vpn，所有网络都要走代理通道，这样的话要是访问国内的网站就会很慢，用起来挺不方便的。而shadowsocks可以自己决定让哪些网站走代理通道，所以还是shadowsocks用起来更爽，下边记录下在ubuntu上搭shadowsocks服务的步骤。</p>
-<hr>
-<h3 id="1-安装shadowsocks"><a href="#1-安装shadowsocks" class="headerlink" title="1. 安装shadowsocks"></a>1. 安装shadowsocks</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install python-gevent python-pip</div><div class="line">sudo pip install shadowsocks</div></pre></td></tr></table></figure>
-<p>如果这一步提示缺什么包，就安装上</p>
-<hr>
-<h3 id="2-配置shadowsocks"><a href="#2-配置shadowsocks" class="headerlink" title="2. 配置shadowsocks"></a>2. 配置shadowsocks</h3><p>编辑/etc/shadowsocks.json，如果没有该文件就手动创建<br>内容如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;server&quot;:&quot;server_ip&quot;,</div><div class="line">    &quot;server_port&quot;:8989,</div><div class="line">    &quot;local_address&quot;: &quot;127.0.0.1&quot;,</div><div class="line">    &quot;local_port&quot;:1080,</div><div class="line">    &quot;password&quot;:&quot;password&quot;,</div><div class="line">    &quot;timeout&quot;:300,</div><div class="line">    &quot;method&quot;:&quot;aes-256-cfb&quot;,</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>server,server_port,password需要根据你的情况修改</p>
-<hr>
-<h3 id="3-启动服务"><a href="#3-启动服务" class="headerlink" title="3. 启动服务"></a>3. 启动服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ssserver -c /etc/shadowsocks.json -d start</div></pre></td></tr></table></figure>
-<p>如果没有意外，服务就启动成功了</p>
-<hr>
-<h3 id="4-加入开机自动启动"><a href="#4-加入开机自动启动" class="headerlink" title="4. 加入开机自动启动"></a>4. 加入开机自动启动</h3><p>把命令<code>ssserver -c /etc/shadowsocks.json -d start</code>加入/etc/rc.local文件中，写在exit 0之前。</p>
-<hr>
-<h3 id="5-客户端使用"><a href="#5-客户端使用" class="headerlink" title="5. 客户端使用"></a>5. 客户端使用</h3><ul>
-<li><p>windows电脑<br>下载<a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="external">shadowsocks windows客户端</a>，然后chrome浏览器装SwitchyOmega插件，SwitchyOmega配置方法如下图所示<br><img src="http://oceas72q5.bkt.clouddn.com/shadowsocks%E9%85%8D%E7%BD%AE1.png" alt="shadowsocks配置1.png"><br><img src="http://oceas72q5.bkt.clouddn.com/shadowsocks%E9%85%8D%E7%BD%AE2.png" alt="shadowsocks配置2.png"></p>
-</li>
-<li><p>linux电脑<br>安装shadowsocks-qt5<br><code>sudo apt-get install shadowsocks-qt5</code><br>shadowscoks-qt5配置如下图所示<br><img src="http://oceas72q5.bkt.clouddn.com/shadowsocks-qt5%E9%85%8D%E7%BD%AE.png" alt="shadowsocks-qt5配置.png"><br>然后，chrome浏览器安装SwitchyOmega插件，SwitchyOmega配置方法如上图所示</p>
-</li>
-<li><p>安卓<br>下载<a href="https://github.com/shadowsocks/shadowsocks-android/releases" target="_blank" rel="external">影梭</a>，配置方法如下<br><img src="http://oceas72q5.bkt.clouddn.com/%E5%BD%B1%E6%A2%AD%E9%85%8D%E7%BD%AE.jpg" alt="406670196.jpg"></p>
-</li>
-</ul>
-<hr>
-<h3 id="6-可能出现问题"><a href="#6-可能出现问题" class="headerlink" title="6. 可能出现问题"></a>6. 可能出现问题</h3><p>我在使用过程中出现了google play,google map可以顺利连接，但是手机和电脑上的浏览器都无法通过ss上网的问题，首先这个不是配置问题（认证方式是正确的），因为之前我的手机和电脑浏览器都是可以顺利连接的。查看日志<code>/var/log/shadowsocks.log</code>，有提示<code>unsupported addrtype 108, maybe wrong password or encryption method</code>，搜索了一番，别人也出现过这问题，但没找到解决方法。后来我把windows上的客户端从<a href="https://github.com/shadowsocks/shadowsocks-qt5" target="_blank" rel="external">shadowsocks-qt5</a>换成<a href="https://github.com/shadowsocks/shadowsocks-windows" target="_blank" rel="external">shadowsocks-windows</a>，然后竟然可以了。安卓手机上浏览器换成chrome竟然也可以了，具体原因不明。</p>
-
-      
-    </div>
-    <footer>
-      
-        <div class="alignleft">
-            <a href="/2016/08/25/搭建shadowsocks服务/#more" class="more-link"><i class="fa fa-chevron-right"></i>Read More</a>
-        </div>
-        
-        
-          <div class="alignright"> 
-            <a href="http://yoursite.com/2016/08/25/搭建shadowsocks服务/#comment" class="comment-link">
-              <i class="fa fa-comments"></i><span class="ds-thread-count" data-thread-key="/2016/08/25/搭建shadowsocks服务/">&nbsp;
-              </span>
-            </a>
-          </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-      <time datetime="2016-08-20T08:12:32.000Z"><a href="/2016/08/20/在github上搭建个人博客（进阶）/">Sat, Aug 20 2016, 4:12:32 pm</a></time>
-
-  
-    <h1 class="title"><a href="/2016/08/20/在github上搭建个人博客（进阶）/">在github上搭建个人博客（进阶）</a></h1>
-  
-
-
-  
-  <div class="categories">
-  	<i class="fa fa-folder-open"></i>
-    <a href="/categories/Hexo/">Hexo</a>
-  </div>
-
-
-  
-  <div class="tags">
-  	<i class="fa fa-tag"></i>
-    <a href="/tags/hexo/">hexo</a>
-  </div>
-
-<div class="clear"></div>
-      
-    </header>
-    <div class="entry">
-      
-        <p>在github上搭建博客，博客分为两部分东西：本地的hexo和github上仓库。工作模式是这样的：</p>
-<ol>
-<li>在本地通过hexo new来生成md文件（所有文章的md文件都在source/_post/下）</li>
-<li>然后编辑md文件</li>
-<li>然后hexo g渲染出html文件</li>
-<li>最后hexo d来部署文章到github仓库<br>这样就会有个问题，如果哪天换电脑了，本地的hexo文件就没有了，所有文章的md文件也没有了。解决这个问题最笨的方法就是时刻备份本地的hexo的一堆文件，换电脑了，就把这堆文件拷到新电脑上，然后就可以继续写文章，发布文章了。但是这个方法极不方便，另外一个很高明的方法就是把本地这一堆hexo文件也放在github上。</li>
-</ol>
-<h3 id="具体搭建步骤如下"><a href="#具体搭建步骤如下" class="headerlink" title="具体搭建步骤如下"></a>具体搭建步骤如下</h3><ol>
-<li>在github上建仓库yourname.github.io，为youname.github.io建立一个分支hexo用来存放hexo的文件，master分支用来存放发布的文章，并设hexo为默认分支，好像空仓库没法建立分支，可以先随便写入一个文件，然后就可以创建分支，设立默认分支了。</li>
-<li>git clone yourname.github.io仓库到本地，当前在hexo分支。</li>
-<li>执行npm install hexo-cli,hexo init,npm install ,npm install hexo-deployer-git等命令安装hexo（<strong>注意:</strong><br><em>hexo init会清空当前目录，所以本地的.git目录就被删除了，所以要提前备份.git目录，hexo init后再把.git目录恢复到yourname.github.io</em>）</li>
-<li>配置hexo，安装配置主题等</li>
-<li>git add,git commit, git push origin hexo提交该分支的文件到github上yourname.github.io仓库的hexo分支。.gitignore文件一般会由hexo自动生成，如果没有这个文件，可以手动添加，内容如下<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.DS_Store</div><div class="line">Thumbs.db</div><div class="line">db.json</div><div class="line">*.log</div><div class="line">node_modules/</div><div class="line">public/</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>这样就可以了，以后换电脑了，在新电脑上执行下2,3,4,5步就行了（<strong>注意：</strong>千万不要再执行hexo init了）</p>
-<hr>
-<h3 id="写文章，发布文章的流程"><a href="#写文章，发布文章的流程" class="headerlink" title="写文章，发布文章的流程"></a>写文章，发布文章的流程</h3><p>这种方式下，每次写完文章后，要把hexo的内容同步到github</p>
-<ol>
-<li><code>hexo new &#39;topic&#39; # 生成topic.md</code></li>
-<li>编写文章</li>
-<li>git add -u, git commit, git push origin hexo把新写的文章同步到仓库，平时对hexo进行的配置也需要这样同步一下</li>
-<li>hexo g,hexo clean,hexo d来发布文章</li>
-</ol>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" target="_blank" rel="external">http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</a></p>
-
-      
-    </div>
-    <footer>
-      
-        <div class="alignleft">
-            <a href="/2016/08/20/在github上搭建个人博客（进阶）/#more" class="more-link"><i class="fa fa-chevron-right"></i>Read More</a>
-        </div>
-        
-        
-          <div class="alignright"> 
-            <a href="http://yoursite.com/2016/08/20/在github上搭建个人博客（进阶）/#comment" class="comment-link">
-              <i class="fa fa-comments"></i><span class="ds-thread-count" data-thread-key="/2016/08/20/在github上搭建个人博客（进阶）/">&nbsp;
-              </span>
-            </a>
-          </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-      <time datetime="2016-08-20T07:14:04.000Z"><a href="/2016/08/20/在github上搭建个人博客/">Sat, Aug 20 2016, 3:14:04 pm</a></time>
-
-  
-    <h1 class="title"><a href="/2016/08/20/在github上搭建个人博客/">在github上搭建个人博客</a></h1>
-  
-
-
-  
-  <div class="categories">
-  	<i class="fa fa-folder-open"></i>
-    <a href="/categories/Hexo/">Hexo</a>
-  </div>
-
-
-  
-  <div class="tags">
-  	<i class="fa fa-tag"></i>
-    <a href="/tags/hexo/">hexo</a>
-  </div>
-
-<div class="clear"></div>
-      
-    </header>
-    <div class="entry">
-      
-        <p>之前在vps上用wordpress搭建的博客被我拆了，虽然平时也很少写东西，即使写了质量也不高，但是一下子没有了自己的博客还是挺不爽的，于是就研究了两天，终于在github上重新搭了一个。</p>
-<hr>
-<h3 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h3><ol>
-<li>随便建一个文件夹用来存放hexo相关的文件，如myblog</li>
-<li><p>安装nodejs和npm</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install nodejs-legacy</div><div class="line">sudo apt-get install npm</div></pre></td></tr></table></figure>
-</li>
-<li><p>进入myblog，安装hexo</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo npm install -g cnpm --registry=https://registry.npm.taobao.org #设置淘宝镜像</div><div class="line">sudo npm install hexo-cli</div></pre></td></tr></table></figure>
-</li>
-<li><p>初始化</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure>
-</li>
-<li><p>配置_config.yml，安装主题，我装的是<a href="https://github.com/daisygao/hexo-themes-cover" target="_blank" rel="external">cover</a>，然后配置主题。</p>
-</li>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate # 生成内容</div></pre></td></tr></table></figure>
-</li>
-<li><p>发布，首先在github上建立一个仓库，名字格式为:youname.github.io，然后配置_config.yml</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git</div><div class="line">hexo server # 在本地启动服务</div><div class="line">hexo d #部署到github上</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<h3 id="写文章，发布文章的流程"><a href="#写文章，发布文章的流程" class="headerlink" title="写文章，发布文章的流程"></a>写文章，发布文章的流程</h3><ol>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new &apos;topic&apos; # 生成topic,md</div></pre></td></tr></table></figure>
-</li>
-<li><p>编写文章</p>
-</li>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo g</div><div class="line">hexo clean</div><div class="line">hexo d</div></pre></td></tr></table></figure>
-</li>
-</ol>
-
-      
-    </div>
-    <footer>
-      
-        <div class="alignleft">
-            <a href="/2016/08/20/在github上搭建个人博客/#more" class="more-link"><i class="fa fa-chevron-right"></i>Read More</a>
-        </div>
-        
-        
-          <div class="alignright"> 
-            <a href="http://yoursite.com/2016/08/20/在github上搭建个人博客/#comment" class="comment-link">
-              <i class="fa fa-comments"></i><span class="ds-thread-count" data-thread-key="/2016/08/20/在github上搭建个人博客/">&nbsp;
-              </span>
-            </a>
-          </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-      <time datetime="2016-08-20T05:30:41.000Z"><a href="/2016/08/20/在github安家/">Sat, Aug 20 2016, 1:30:41 pm</a></time>
-
-  
-    <h1 class="title"><a href="/2016/08/20/在github安家/">在github安家</a></h1>
-  
-
-
-  
-  <div class="categories">
-  	<i class="fa fa-folder-open"></i>
-    <a href="/categories/Essay/">Essay</a>
-  </div>
-
-
-  
-  <div class="tags">
-  	<i class="fa fa-tag"></i>
-    <a href="/tags/essay/">essay</a>
-  </div>
-
-<div class="clear"></div>
-      
-    </header>
-    <div class="entry">
-      
-        <p>  前一段把vps上用wordpress搭建博客给拆了，虽然平时也不会写博客，就算写了也没啥质量，但是没有自己的博客还是挺不舒服的，于是研究了两天，终于在github这个全球极客的集聚地又安了个家，使用github page + hexo，部署好之后，换了漂亮的主题，绑定好域名，一切ok！</p>
-
-      
-    </div>
-    <footer>
-      
-        <div class="alignleft">
-            <a href="/2016/08/20/在github安家/#more" class="more-link"><i class="fa fa-chevron-right"></i>Read More</a>
-        </div>
-        
-        
-          <div class="alignright"> 
-            <a href="http://yoursite.com/2016/08/20/在github安家/#comment" class="comment-link">
-              <i class="fa fa-comments"></i><span class="ds-thread-count" data-thread-key="/2016/08/20/在github安家/">&nbsp;
-              </span>
-            </a>
-          </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-<nav id="pagination">
-  
-  
-  <div class="clearfix"></div>
-</nav>
-
-<script src="/js/jquery.anystretch.min.js"></script>
-<script src="/js/cover.js"></script>
-
-    <div class="clearfix"></div>
-  </div>
-  <footer id="footer" class="inner"><div>
-  
-  &copy; 2016 Jlan
-  
-</div>
-Powered by <a href="http://zespia.tw/hexo/" title="Hexo" target="_blank" rel="external">Hexo</a> and <a href="http://pages.github.com/" title="GitHub Pages" target="_blank" rel="external">GitHub Pages</a>
-
-<div class="clearfix"></div></footer>
-  
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-
-
-
-
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+    <!-- Leancloud -->
+	<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+	<script>
+		AV.initialize("cyjkk2z5AV3M4RAyXfqB7rYp-gzGzoHsz", "P3JDhpWCA20eB7J1YR8R7q3v");
+	</script>
+    <script>
+	function showTime(Counter) {
+		var query = new AV.Query(Counter);
+		$(".leancloud-views_num").each(function() {
+			var url = $(this).attr("id").trim();
+			query.equalTo("url", url);
+			query.find({
+				success: function(results) {
+					if (results.length == 0) {
+						var content = '0 ' + $(document.getElementById(url)).text();
+						$(document.getElementById(url)).text(content);
+						return;
+					}
+					for (var i = 0; i < results.length; i++) {
+						var object = results[i];
+						var content = object.get('time') + ' ' + $(document.getElementById(url)).text();
+						$(document.getElementById(url)).text(content);
+					}
+				},
+				error: function(object, error) {
+					console.log("Error: " + error.code + " " + error.message);
+				}
+			});
+
+		});
+	}
+
+	function addCount(Counter) {
+		var Counter = AV.Object.extend("Counter");
+		url = $(".leancloud-views_num").attr('id').trim();
+		title = $(".leancloud-views_num").attr('data-flag-title').trim();
+		var query = new AV.Query(Counter);
+		query.equalTo("url", url);
+		query.find({
+			success: function(results) {
+				if (results.length > 0) {
+					var counter = results[0];
+					counter.fetchWhenSave(true);
+					counter.increment("time");
+					counter.save(null, {
+						success: function(counter) {
+							var content =  counter.get('time') + ' ' + $(document.getElementById(url)).text();
+							$(document.getElementById(url)).text(content);
+						},
+						error: function(counter, error) {
+							console.log('Failed to save Visitor num, with error message: ' + error.message);
+						}
+					});
+				} else {
+					var newcounter = new Counter();
+					newcounter.set("title", title);
+					newcounter.set("url", url);
+					newcounter.set("time", 1);
+					newcounter.save(null, {
+						success: function(newcounter) {
+							console.log("newcounter.get('time')="+newcounter.get('time'));
+							var content = newcounter.get('time') + ' ' + $(document.getElementById(url)).text();
+							$(document.getElementById(url)).text(content);
+						},
+						error: function(newcounter, error) {
+							console.log('Failed to create');
+						}
+					});
+				}
+			},
+			error: function(error) {
+				console.log('Error:' + error.code + " " + error.message);
+			}
+		});
+	}
+	$(function() {
+		var Counter = AV.Object.extend("Counter");
+		if ($('.leancloud-views_num').length == 1) {
+			addCount(Counter);
+		} else if ($('.post-title-link').length > 1) {
+			showTime(Counter);
+		}
+	}); 
+</script>
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    <!-- 多说公共 js 代码 start -->
     <script type="text/javascript">
-        (function(){
-
-            $(window).scroll(function(){
-
-                var scrollTop = $(window).scrollTop();
-                if ( scrollTop >200 ){
-                    $("#main-nav").removeClass('normal_mode').addClass('top_mode');
-                } else{
-                    $("#main-nav").removeClass('top_mode').addClass('normal_mode');
-                }
-
-            });
-
+    var duoshuoQuery = {short_name:"jlan"};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = 'https://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
         })();
     </script>
+    <!-- 多说公共 js 代码 end -->
 
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript">
-  (function($){
-    $('.fancybox').fancybox({
-      'titlePosition': 'inside'
+
+<!-- Swiftye -->
+
+
+<!-- Local Search-->
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $(".post-toc-wrap").parent(".mdl-menu__container").css("position", "fixed");
     });
-  })(jQuery);
-  </script>
-
-
-
-    
-    <script type="text/javascript">
-      var duoshuoQuery = {short_name:"jlan"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.src = 'http://static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0] 
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-
-
-<script type="text/javascript">
-  
-  $(function(){
-
-    $('.title').hover(
-      function() {      
-        $(this).stop().animate(
-          {'marginLeft': '10px'}, 200
-        );   
-      }, 
-      function() {       
-        $(this).stop().animate({'marginLeft': '0px'}, 200);      
-      
-    });   
-
-  });
-
 </script>
 
+<!-- MathJax Load-->
 
-</body>
+            </main>
+        </div>
+		
+    </body>
+		
+	
 </html>
