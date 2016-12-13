@@ -57,7 +57,7 @@
   </header>
   <div id="content" class="container">
     <div id="cover">
-	<div id="profile" alt="http://ww3.sinaimg.cn/mw1024/93030917gw1f6z0c6iermj21kw166tvd.jpg">
+	<div id="profile" alt="http://oceas72q5.bkt.clouddn.com/9.3%E9%98%85%E5%85%B5.jpg">
 		<a href="/">
 			<div class="logo">
 				<img src="/logo.png" alt="Profile Picture">
@@ -74,6 +74,112 @@
 </ul>
 	</div>
 </div>
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+      <time datetime="2016-12-08T06:45:58.000Z"><a href="/2016/12/08/Flask介绍/">Thu, Dec 8 2016, 2:45:58 pm</a></time>
+
+  
+    <h1 class="title"><a href="/2016/12/08/Flask介绍/">Flask介绍</a></h1>
+  
+
+
+  
+  <div class="categories">
+  	<i class="fa fa-folder-open"></i>
+    <a href="/categories/Flask/">Flask</a>
+  </div>
+
+
+  
+  <div class="tags">
+  	<i class="fa fa-tag"></i>
+    <a href="/tags/flask/">flask</a>
+  </div>
+
+<div class="clear"></div>
+      
+    </header>
+    <div class="entry">
+      
+        <h1 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h1><p>Flask是一个使用Python编写的轻量级Web应用框架。基于Werkzeug WSGI(<em>PythonWeb服务器<a href="http://baike.baidu.com/view/807.htm" target="_blank" rel="external">网关</a>接口（Python Web Server Gateway Interface，缩写为WSGI</em>)是Python应用程序或框架和Web服务器之间的一种接口，已经被广泛接受, 它已基本达成它的可移植性方面的目标)工具箱和Jinja2 模板引擎。 Flask使用BSD授权。 Flask也被称为“microframework”，因为它使用简单的核心，用extension增加其他功能。Flask没有默认使用的数据库、窗体验证工具。然而，Flask保留了扩增的弹性，可以用Flask-extension加入这些功能：ORM、窗体验证工具、文件上传、各种开放式身份验证技术。</p>
+<p><strong>小插曲</strong><br>Flask 的作者是 Armin Ronacher（他也是 Werkzeug 及 Jinja2 的作者。）。本来只是作者的一个愚人节玩笑，不过后来大受欢迎，进而成为一个正式的项目。</p>
+<hr>
+<h1 id="2-Flask的安装"><a href="#2-Flask的安装" class="headerlink" title="2. Flask的安装"></a>2. Flask的安装</h1><p>和大多数的Python第三方模块的安装方法一样，Flask可以直接通过pip来安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install flask</div></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="3-一个最小的Flask应用"><a href="#3-一个最小的Flask应用" class="headerlink" title="3. 一个最小的Flask应用"></a>3. 一个最小的Flask应用</h1><ul>
+<li><strong>代码</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">from flask import Flask</div><div class="line">app = Flask(__name__)</div><div class="line"> </div><div class="line">@app.route(&quot;/&quot;)</div><div class="line">def hello():</div><div class="line">    return &quot;Hello World!&quot;</div><div class="line"> </div><div class="line">if __name__ == &quot;__main__&quot;:</div><div class="line">    app.run()</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>运行</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python hello.py</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-62f8d07213068e6e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="深度截图20161208135148.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-6c8a2410a5ef26f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="深度截图20161208135255.png"></p>
+<ul>
+<li><strong>代码解释</strong></li>
+</ul>
+<blockquote>
+<p>首先我们导入了 <a href="http://dormousehole.readthedocs.io/en/latest/api.html#flask.Flask" target="_blank" rel="external">Flask</a> 类。<br>接着我们创建了这个类的实例。第一个参数是应用模块或者包的名称。<br>然后我们使用 <a href="http://dormousehole.readthedocs.io/en/latest/api.html#flask.Flask.route" target="_blank" rel="external">route()</a> 装饰器来告诉 Flask 触发函数的 URL 。<br>函数名称可用于生成相关联的 URL ，并返回需要在用户浏览器中显示的信息。<br>最后，使用 <a href="http://dormousehole.readthedocs.io/en/latest/api.html#flask.Flask.run" target="_blank" rel="external">run()</a> 函数来运行本地服务器和我们的应用。 if <strong>name</strong> ==’<strong>main</strong>‘:<br> 确保服务器只会在使用 Python 解释器运行代码的 情况下运行，而不会在作为模块导入时运行。<br>按 control-C 可以停止服务器</p>
+</blockquote>
+<hr>
+<h1 id="4-Flask-框架分析"><a href="#4-Flask-框架分析" class="headerlink" title="4. Flask 框架分析"></a>4. Flask 框架分析</h1><p>为了理解 Flask 框架是如何抽象出Web开发中的共同部分，我们先来看看Web应用程序的一般流程。对于Web应用来说，当客户端想要获取 <strong>动态资源</strong> 时，就会发起一个HTTP请求（比如用浏览器访问一个 URL），Web应用程序会在后台进行相应的业务处理，（从数据库或者进行一些计算操作等）取出用户需要的数据，生成相应的HTTP响应（当然，如果访问静态资源，则直接返回资源即可，不需要进行业务处理）。整个处理过程如下图所示：<br><img src="http://upload-images.jianshu.io/upload_images/1713353-dbf7be5e3c31ffda.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>实际应用中， <strong>不同的请求可能会调用相同的处理逻辑</strong> 。这里有着相同业务处理逻辑的 HTTP 请求可以用一类 URL 来标识。比如论坛站点中，对于所有的获取Topic内容的请求而言，可以用 topic/<topic_id>/ 这类URL来表示，这里的 topic_id 用以区分不同的topic。接着在后台定义一个 get_topic(topic_id) 的函数，用来获取topic相应的数据，此外还需要建立URL和函数之间的一一对应关系。这就是Web开发中所谓的 <strong>路由分发</strong> ，如下图所示：<br><img src="http://upload-images.jianshu.io/upload_images/1713353-dfb1a47e078dbd20.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>Flask底层使用 werkzeug 来做路由分发，代码写起来十分简单，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@app.route(&apos;/topic/&lt;int:topic_id&gt;/&apos;) </div><div class="line">def get_topic(topic_id):</div><div class="line">  # Do some cal or read from database</div><div class="line">  # Get the data we need.</div></pre></td></tr></table></figure></topic_id></p>
+<p>通过业务逻辑函数拿到数据后，接下来需要根据这些数据生成HTTP响应（对于Web应用来说，HTTP响应一般是一个HTML文件）。Web开发中的一般做法是提供一个HTML模板文件，然后将数据传入模板，经过渲染后得到最终需要的HTML响应文件。<br>一种比较常见的场景是， <strong>请求虽然不同，但响应中数据的展示方式是相同的</strong> 。仍以论坛为例，对不同topic而言，其具体topic content虽然不同，但页面展示的方式是一样的，都有标题拦，内容栏等。也就是说，对于 topic 来说，我们只需提供一个HTML模板，然后传入不同topic数据，即得到不同的HTTP响应。这就是所谓的 <strong>模板渲染</strong> ，如下图所示：<br><img src="http://upload-images.jianshu.io/upload_images/1713353-07146b9e837d26cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>Flask 使用 Jinja2 模板渲染引擎来做模板渲染，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@app.route(&apos;/topic/&lt;int:topic_id&gt;/&apos;)</div><div class="line">def get_topic(topic_id):</div><div class="line">  # Do some cal or read from database</div><div class="line">  return render_template(&apos;path/to/template.html&apos;, data)</div></pre></td></tr></table></figure></p>
+<p>总结一下，Flask处理一个请求的流程就是，首先根据 URL 决定由那个函数来处理，然后在函数中进行操作，取得所需的数据。再将数据传给相应的模板文件中，由Jinja2 负责渲染得到 HTTP 响应内容，然后由Flask返回响应内容。</p>
+<hr>
+<h1 id="5-Flask的扩展"><a href="#5-Flask的扩展" class="headerlink" title="5. Flask的扩展"></a>5. Flask的扩展</h1><p>Flask是一个微型框架，自身没有提供数据库管理，表单验证，cookie处理等功能，很多功能需要通过扩展才能实现</p>
+<blockquote>
+<ul>
+<li><strong>Flask-sqlalchemy</strong>   # 数据库管理</li>
+<li><strong>Flask-script</strong>              # Flask-Script 为Flask程序添加了一个命令行解析， 自带了一组常用选项，而且还支持自定义命令。</li>
+<li><strong>Flask-wtform</strong>           # 表单验证</li>
+<li><strong>Flask-login</strong>              # 登陆管理<br>……</li>
+</ul>
+</blockquote>
+<p>可以在这个网站上寻找更多Flask的扩展的安装和使用方法<br><a href="http://flask.pocoo.org/extensions/" target="_blank" rel="external">http://flask.pocoo.org/extensions/</a></p>
+<hr>
+<h1 id="6-主页"><a href="#6-主页" class="headerlink" title="6. 主页"></a>6. 主页</h1><p>更多关于Flask的内容请到Flask的官网<br><a href="http://flask.pocoo.org/" target="_blank" rel="external">http://flask.pocoo.org/</a></p>
+
+      
+    </div>
+    <footer>
+      
+        <div class="alignleft">
+            <a href="/2016/12/08/Flask介绍/#more" class="more-link"><i class="fa fa-chevron-right"></i>Read More</a>
+        </div>
+        
+        
+          <div class="alignright"> 
+            <a href="http://yoursite.com/2016/12/08/Flask介绍/#comment" class="comment-link">
+              <i class="fa fa-comments"></i><span class="ds-thread-count" data-thread-key="/2016/12/08/Flask介绍/">&nbsp;
+              </span>
+            </a>
+          </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
 
 
   <article class="post">
