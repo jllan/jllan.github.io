@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        Python之生成器 | 偏偏喜欢你
+        Python之生成器和协程 | 偏偏喜欢你
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://jlan.me">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Python之生成器 | 偏偏喜欢你">
+    <meta property="og:title" content="Python之生成器和协程 | 偏偏喜欢你">
     <meta property="og:description" content="生活、学习记录">
     
      <!--[if lte IE 9]>
@@ -217,7 +217,7 @@
 	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
 		for="post-toc-trigger-btn">
 			
-			<ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Python之生成器"><span class="post-toc-number">1.</span> <span class="post-toc-text">Python之生成器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#用列表生成式的方式来创建generator"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">用列表生成式的方式来创建generator</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#用yield来创建generator"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">用yield来创建generator</span></a></li></ol></li></ol></li></ol>
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#生成器"><span class="post-toc-number">1.</span> <span class="post-toc-text">生成器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#用列表生成式的方式来创建generator"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">用列表生成式的方式来创建generator</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#用yield来创建generator"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">用yield来创建generator</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#协程"><span class="post-toc-number">2.</span> <span class="post-toc-text">协程</span></a></li></ol>
 		
 <!--			<li class="mdl-menu__item">Some Action</li>-->
 	</ul>
@@ -251,7 +251,7 @@
 		
 	
         <p class="article-headline-p">
-            Python之生成器
+            Python之生成器和协程
         </p>
     </div>
 
@@ -313,21 +313,21 @@
     
     
     <!-- Share Twitter -->
-    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Python之生成器&url=http://jlan.me//2016/12/26/Python之生成器/index.html&via=Jlan" target="_blank">
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Python之生成器和协程&url=http://jlan.me//2016/12/26/Python之生成器和协程/index.html&via=Jlan" target="_blank">
         <li class="mdl-menu__item">
             分享到 Twitter
         </li>
     </a>
     
     <!-- Share Google+ -->
-    <a class="post_share-link" href="https://plus.google.com/share?url=http://jlan.me//2016/12/26/Python之生成器/index.html" target="_blank">
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://jlan.me//2016/12/26/Python之生成器和协程/index.html" target="_blank">
         <li class="mdl-menu__item">
             分享到 Google+
         </li>
     </a>
     
     <!-- Share Weibo -->
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Python之生成器&url=http://jlan.me//2016/12/26/Python之生成器/index.html&pic=&searchPic=false&style=simple" target="_blank">
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Python之生成器和协程&url=http://jlan.me//2016/12/26/Python之生成器和协程/index.html&pic=&searchPic=false&style=simple" target="_blank">
         <li class="mdl-menu__item">
             分享到微博
         </li>
@@ -339,7 +339,7 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
-		<h1 id="Python之生成器"><a href="#Python之生成器" class="headerlink" title="Python之生成器"></a>Python之生成器</h1><p>Python中，为避免创建完整的list，从而节省大量的空间而在循环的过程中不断推算出后续的元素，这种一边循环一边计算的机制，称为生成器：generator。</p>
+		<h2 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h2><p>Python中，为避免创建完整的list，从而节省大量的空间而在循环的过程中不断推算出后续的元素，这种一边循环一边计算的机制，称为生成器：generator。</p>
 <p>要创建一个generator，有很多种方法。</p>
 <h3 id="用列表生成式的方式来创建generator"><a href="#用列表生成式的方式来创建generator" class="headerlink" title="用列表生成式的方式来创建generator"></a>用列表生成式的方式来创建generator</h3><p>只要把一个列表生成式的[]改成()，就创建了一个generator：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; L = [x * x for x in range(5)]</div><div class="line">&gt;&gt;&gt; L</div><div class="line">[0, 1, 4, 9, 16, 25]</div><div class="line">&gt;&gt;&gt; g = (x * x for x in range(5))</div><div class="line">&gt;&gt;&gt; g</div><div class="line">&lt;generator object &lt;genexpr&gt; at 0x1022ef630&gt;</div></pre></td></tr></table></figure></p>
 <p>创建L和g的区别仅在于最外层的[]和()，L是一个list，而g是一个generator。<br>如果要一个一个打印出来，可以通过next()函数获得generator的下一个返回值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; next(g)</div><div class="line">0</div><div class="line">&gt;&gt;&gt; next(g)</div><div class="line">1</div><div class="line">&gt;&gt;&gt; next(g)</div><div class="line">4</div><div class="line">&gt;&gt;&gt; next(g)</div><div class="line">9</div><div class="line">&gt;&gt;&gt; next(g)</div><div class="line">16</div><div class="line">&gt;&gt;&gt; next(g)</div><div class="line">25</div><div class="line">&gt;&gt;&gt; next(g)</div><div class="line">Traceback (most recent call last):</div><div class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</div><div class="line">StopIteration</div></pre></td></tr></table></figure></p>
@@ -353,6 +353,11 @@
 <p>但是用for循环调用generator时，发现拿不到generator的return语句的返回值。如果想要拿到返回值，必须捕获StopIteration错误，返回值包含在StopIteration的value中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; g = fib(6)</div><div class="line">&gt;&gt;&gt; while True:</div><div class="line">...     try:</div><div class="line">...         x = next(g)</div><div class="line">...         print(&apos;g:&apos;, x)</div><div class="line">...     except StopIteration as e:</div><div class="line">...         print(&apos;Generator return value:&apos;, e.value)</div><div class="line">...         break</div><div class="line">...</div><div class="line">g: 1</div><div class="line">g: 1</div><div class="line">g: 2</div><div class="line">g: 3</div><div class="line">g: 5</div><div class="line">g: 8</div><div class="line">Generator return value: done</div></pre></td></tr></table></figure></p>
 <p><strong>用生成器来生成杨辉三角</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">triangles</span><span class="params">()</span>:</span></div><div class="line">    L = [<span class="number">1</span>]</div><div class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">        <span class="keyword">yield</span> L</div><div class="line">        L.append(<span class="number">0</span>)</div><div class="line">        L = [L[i - <span class="number">1</span>] + L[i] <span class="keyword">for</span> i <span class="keyword">in</span> range(len(L))]</div></pre></td></tr></table></figure></p>
 <p>下面调用traingles函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">n = 0</div><div class="line">for t in triangles():</div><div class="line">    print(t)</div><div class="line">    n = n + 1</div><div class="line">    if n == 10:</div><div class="line">        break</div><div class="line">        </div><div class="line"># 运行结果</div><div class="line">[1]</div><div class="line">[1, 1]</div><div class="line">[1, 2, 1]</div><div class="line">[1, 3, 3, 1]</div><div class="line">[1, 4, 6, 4, 1]</div><div class="line">[1, 5, 10, 10, 5, 1]</div><div class="line">[1, 6, 15, 20, 15, 6, 1]</div><div class="line">[1, 7, 21, 35, 35, 21, 7, 1]</div><div class="line">[1, 8, 28, 56, 70, 56, 28, 8, 1]</div><div class="line">[1, 9, 36, 84, 126, 126, 84, 36, 9, 1]</div></pre></td></tr></table></figure></p>
+<h2 id="协程"><a href="#协程" class="headerlink" title="协程"></a>协程</h2><p>Python对协程的支持是通过generator实现的。<br>在generator中，我们不但可以通过for循环来迭代，还可以不断调用next()函数获取由yield语句返回的下一个值。<br>但是Python的yield不但可以返回一个值，它还可以接收调用者发出的参数。</p>
+<p>来看例子：<br>传统的生产者-消费者模型是一个线程写消息，一个线程取消息，通过锁机制控制队列和等待，但一不小心就可能死锁。<br>如果改用协程，生产者生产消息后，直接通过yield跳转到消费者开始执行，待消费者执行完毕后，切换回生产者继续生产，效率极高：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">def consumer():</div><div class="line">    r = &apos;&apos;</div><div class="line">    while True:</div><div class="line">        n = yield r</div><div class="line">        if not n:</div><div class="line">            return</div><div class="line">        print(&apos;[CONSUMER] Consuming %s...&apos; % n)</div><div class="line">        r = &apos;200 OK&apos;</div><div class="line"></div><div class="line">def produce(c):</div><div class="line">    c.send(None)</div><div class="line">    n = 0</div><div class="line">    while n &lt; 5:</div><div class="line">        n = n + 1</div><div class="line">        print(&apos;[PRODUCER] Producing %s...&apos; % n)</div><div class="line">        r = c.send(n)</div><div class="line">        print(&apos;[PRODUCER] Consumer return: %s&apos; % r)</div><div class="line">    c.close()</div></pre></td></tr></table></figure></p>
+<p><code>c = consumer()
+produce(c)</code><br>执行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">[PRODUCER] Producing 1...</div><div class="line">[CONSUMER] Consuming 1...</div><div class="line">[PRODUCER] Consumer return: 200 OK</div><div class="line">[PRODUCER] Producing 2...</div><div class="line">[CONSUMER] Consuming 2...</div><div class="line">[PRODUCER] Consumer return: 200 OK</div><div class="line">[PRODUCER] Producing 3...</div><div class="line">[CONSUMER] Consuming 3...</div><div class="line">[PRODUCER] Consumer return: 200 OK</div><div class="line">[PRODUCER] Producing 4...</div><div class="line">[CONSUMER] Consuming 4...</div><div class="line">[PRODUCER] Consumer return: 200 OK</div><div class="line">[PRODUCER] Producing 5...</div><div class="line">[CONSUMER] Consuming 5...</div><div class="line">[PRODUCER] Consumer return: 200 OK</div></pre></td></tr></table></figure></p>
+<p>注意到consumer函数是一个generator，把一个consumer传入produce后：<br>首先调用c.send(None)启动生成器；<br>然后，一旦生产了东西，通过c.send(n)切换到consumer执行；<br>consumer通过yield拿到消息，处理，又通过yield把结果传回；<br>produce拿到consumer处理的结果，继续生产下一条消息；<br>produce决定不生产了，通过c.close()关闭consumer，整个过程结束。<br>整个流程无锁，由一个线程执行，produce和consumer协作完成任务，所以称为“协程”，而非线程的抢占式多任务。<br>最后套用Donald Knuth的一句话总结协程的特点：<br>“子程序就是协程的一种特例。”</p>
 
 	
 	
@@ -381,9 +386,9 @@
 <div id="comments">
     <!-- 多说评论框 start -->
         <div class="ds-thread" 
-            data-thread-key="2016/12/26/Python之生成器/" 
-            data-url="http://jlan.me/2016/12/26/Python之生成器/"
-            data-title="Python之生成器"></div>
+            data-thread-key="2016/12/26/Python之生成器和协程/" 
+            data-url="http://jlan.me/2016/12/26/Python之生成器和协程/"
+            data-title="Python之生成器和协程"></div>
     <!-- 多说评论框 end -->
 </div>
 
