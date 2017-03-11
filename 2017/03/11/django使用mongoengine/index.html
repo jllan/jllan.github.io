@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        分类 | 偏偏喜欢你
+        django使用mongoengine | 偏偏喜欢你
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://jlan.me">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类 | 偏偏喜欢你">
+    <meta property="og:title" content="django使用mongoengine | 偏偏喜欢你">
     <meta property="og:description" content="生活、学习记录">
     
      <!--[if lte IE 9]>
@@ -196,6 +196,33 @@
 				
                 <!-- Post TOC -->
 
+    
+	<!-- Back Button -->
+<!--
+	<div class="material-back" id="backhome-div" tabindex="0">
+		<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="#" onclick="window.history.back();return false;" target="_self" role="button" data-upgraded=",MaterialButton,MaterialRipple">
+			<i class="material-icons" role="presentation">arrow_back</i>
+			<span class="mdl-button__ripple-container">
+				<span class="mdl-ripple"></span>
+			</span>
+		</a>
+	</div>			
+-->
+	<!-- Left aligned menu below button -->
+	<button id="post-toc-trigger-btn"
+			class="mdl-button mdl-js-button mdl-button--icon">
+	  <i class="material-icons">format_list_numbered</i>
+	</button>
+
+	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+		for="post-toc-trigger-btn">
+			
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据库配置"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据库配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#models"><span class="post-toc-number">2.</span> <span class="post-toc-text">models</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#分页"><span class="post-toc-number">3.</span> <span class="post-toc-text">分页</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-使用mongoengine自带的分页功能"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">1. 使用mongoengine自带的分页功能</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-使用django的分页功能"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">2. 使用django的分页功能</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其他问题"><span class="post-toc-number">4.</span> <span class="post-toc-text">其他问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-object-id问题"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">1. object._id问题</span></a></li></ol></li></ol>
+		
+<!--			<li class="mdl-menu__item">Some Action</li>-->
+	</ul>
+
+
 
 <!-- Layouts -->
 
@@ -224,7 +251,7 @@
 		
 	
         <p class="article-headline-p">
-            分类
+            django使用mongoengine
         </p>
     </div>
 
@@ -242,7 +269,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Jlan</strong>
-        <span>Dec 13, 2016</span>
+        <span>Mar 11, 2017</span>
     </div>
     
     <div class="section-spacer"></div>
@@ -262,7 +289,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        
+        <a class="post_tag-link" href="/tags/django/">django</a>
     </ul>
     
     <!-- Share -->
@@ -286,21 +313,21 @@
     
     
     <!-- Share Twitter -->
-    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=分类&url=http://jlan.me//categories/index.html&via=Jlan" target="_blank">
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=django使用mongoengine&url=http://jlan.me//2017/03/11/django使用mongoengine/index.html&via=Jlan" target="_blank">
         <li class="mdl-menu__item">
             分享到 Twitter
         </li>
     </a>
     
     <!-- Share Google+ -->
-    <a class="post_share-link" href="https://plus.google.com/share?url=http://jlan.me//categories/index.html" target="_blank">
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://jlan.me//2017/03/11/django使用mongoengine/index.html" target="_blank">
         <li class="mdl-menu__item">
             分享到 Google+
         </li>
     </a>
     
     <!-- Share Weibo -->
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=分类&url=http://jlan.me//categories/index.html&pic=&searchPic=false&style=simple" target="_blank">
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=django使用mongoengine&url=http://jlan.me//2017/03/11/django使用mongoengine/index.html&pic=&searchPic=false&style=simple" target="_blank">
         <li class="mdl-menu__item">
             分享到微博
         </li>
@@ -312,7 +339,35 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
-		
+		<h2 id="数据库配置"><a href="#数据库配置" class="headerlink" title="数据库配置"></a>数据库配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DBNAME = &apos;Questions&apos;</div></pre></td></tr></table></figure>
+<h2 id="models"><a href="#models" class="headerlink" title="models"></a>models</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"># from django.db import models</div><div class="line">from mongoengine import *</div><div class="line">from QADoorWebDjango.settings import DBNAME</div><div class="line"></div><div class="line">connect(DBNAME)</div><div class="line"></div><div class="line"># Create your models here.</div><div class="line">class Questions(Document):</div><div class="line"></div><div class="line">    _id = IntField(primary_key=True)</div><div class="line">    url = URLField()</div><div class="line">    title = StringField()</div><div class="line">    content = StringField()</div><div class="line">    is_solved = BooleanField(default=0)</div><div class="line">    answer_count = IntField()</div><div class="line">    view_count = StringField()</div><div class="line">    vote_count = StringField()</div><div class="line">    tags = ListField()</div><div class="line">    answers = ListField()</div><div class="line">    source = StringField()</div><div class="line"></div><div class="line">    meta = &#123;&apos;collection&apos;: &apos;questions&apos;&#125;  # 指明连接数据库的哪张表</div><div class="line"></div><div class="line">for i in Questions.objects[:10]:  # 测试是否连接成功</div><div class="line">    print(i._id)</div></pre></td></tr></table></figure>
+<h2 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h2><h3 id="1-使用mongoengine自带的分页功能"><a href="#1-使用mongoengine自带的分页功能" class="headerlink" title="1. 使用mongoengine自带的分页功能"></a>1. 使用mongoengine自带的分页功能</h3><ul>
+<li>视图函数<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">page = request.GET.get(&apos;page&apos;, 1)</div><div class="line">pagination = Questions.objects.paginate(page=page, per_page=PER_PAGE)</div><div class="line">return render(request, &apos;app/index.html&apos;, &#123;&apos;questions&apos;: pagination.items, &apos;pagination&apos;: pagination&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>问题</strong>：这里<strong>Questions.objects</strong>被当成了django orm的<strong>QuerySet</strong>类型，会提示<strong>AttributeError: ‘QuerySet’ object has no attribute ‘paginate’</strong>，暂时还不知道改怎么解决。</p>
+<ul>
+<li>模板<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;div class=pagination&gt;</div><div class="line">        &#123;% if pagination.has_prev %&#125;</div><div class="line">            &lt;li class=&quot;waves-effect&quot;&gt;&lt;a href=&quot;./&#123;&#123; pagination.prev_num &#125;&#125;&quot; &gt;上一页&lt;/a&gt;&lt;/li&gt;</div><div class="line">        &#123;% endif %&#125;</div><div class="line"></div><div class="line">        &lt;li class=&quot;active&quot;&gt;&lt;strong&gt;&lt;a href=&quot;&quot;&gt;当前页 &#123;&#123; pagination.page &#125;&#125; of &#123;&#123; pagination.pages &#125;&#125;.&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;</div><div class="line"></div><div class="line">        &#123;% if pagination.has_next %&#125;</div><div class="line">            &lt;li class=&quot;waves-effect&quot;&gt;&lt;a href=&quot;./&#123;&#123; pagination.next_num &#125;&#125;&quot;&gt;下一页&lt;/a&gt;&lt;/li&gt;</div><div class="line">        &#123;% endif %&#125;</div><div class="line">   &lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-使用django的分页功能"><a href="#2-使用django的分页功能" class="headerlink" title="2. 使用django的分页功能"></a>2. 使用django的分页功能</h3><ul>
+<li><p>视图函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">from django.core.paginator import Paginator</div><div class="line">question_list = Questions.objects</div><div class="line">page = request.GET.get(&apos;page&apos;, 1)</div><div class="line">paginator = Paginator(question_list, PER_PAGE)</div><div class="line">questions = paginator.page(page)</div><div class="line">context = &#123;</div><div class="line">    &apos;questions&apos;: questions,</div><div class="line">    &apos;total_pages&apos;: paginator.page_range</div><div class="line">&#125;</div><div class="line">return render(request, &apos;app/index.html&apos;, context)</div></pre></td></tr></table></figure>
+</li>
+<li><p>模板</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&lt;ul class=&quot;pagination&quot;&gt;</div><div class="line">    &#123;# 上一页 #&#125;</div><div class="line">    &#123;% if questions.has_previous %&#125;</div><div class="line">        &lt;li class=&quot;waves-effect&quot;&gt;&lt;a href=&quot;?page=&#123;&#123; questions.previous_page_number &#125;&#125;&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;chevron_left&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;</div><div class="line">    &#123;% else %&#125;</div><div class="line">        &lt;li class=&quot;disabled&quot;&gt;&lt;a href=&quot;#!&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;chevron_left&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;</div><div class="line">    &#123;% endif %&#125;</div><div class="line">    &#123;% for page in total_pages %&#125;</div><div class="line">        &#123;% if page %&#125;</div><div class="line">            &#123;% ifequal page questions.number %&#125;</div><div class="line">                &#123;# 当前页页 #&#125;</div><div class="line">                &lt;li class=&quot;active&quot;&gt;&lt;a&gt;&#123;&#123; page &#125;&#125;&lt;/a&gt;&lt;/li&gt;</div><div class="line">            &#123;% else %&#125;</div><div class="line">                &#123;# 指定页 #&#125;</div><div class="line">                &lt;li class=&quot;waves-effect&quot;&gt;&lt;a href=&quot;?page=&#123;&#123; page &#125;&#125;&quot;&gt;&#123;&#123; page &#125;&#125;&lt;/a&gt;&lt;/li&gt;</div><div class="line">            &#123;% endifequal %&#125;</div><div class="line">        &#123;% else %&#125;</div><div class="line">            &lt;li class=&quot;waves-effect&quot;&gt;&lt;a href=&quot;#&quot;&gt;...&lt;/a&gt;&lt;/li&gt;</div><div class="line">        &#123;% endif %&#125;</div><div class="line">    &#123;% endfor %&#125;</div><div class="line">    &#123;# 下一页 #&#125;</div><div class="line">    &#123;% questions.has_next %&#125;</div><div class="line">        &lt;li class=&quot;waves-effect&quot;&gt;&lt;a href=&quot;?page=&#123;&#123; questions.next_page_number &#125;&#125;&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;chevron_right&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;</div><div class="line">    &#123;% else %&#125;</div><div class="line">        &lt;li class=&quot;disabled&quot;&gt;&lt;a href=&quot;#!&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;chevron_right&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;</div><div class="line">    &#123;% endif %&#125;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><h3 id="1-object-id问题"><a href="#1-object-id问题" class="headerlink" title="1. object._id问题"></a>1. object._id问题</h3><ul>
+<li>问题描述<blockquote>
+<p>在django模板中使用mongodb对象的<strong>_id</strong>属性时会提示：<strong>Variables and attributes may not begin with underscores: ‘value._id’</strong></p>
+</blockquote>
+</li>
+<li>解决方法<br>建立模板标签<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">from django import template</div><div class="line">register = template.Library()</div><div class="line">@register.filter(name=&apos;private&apos;)</div><div class="line">def private(obj, attribute):</div><div class="line">    return getattr(obj, attribute)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>在模板中使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123; value|private:&apos;_id&apos; &#125;&#125;</div></pre></td></tr></table></figure></p>
+
 	
 	
 	
@@ -340,9 +395,9 @@
 <div id="comments">
     <!-- 多说评论框 start -->
         <div class="ds-thread" 
-            data-thread-key="categories/index.html" 
-            data-url="http://jlan.me/categories/index.html"
-            data-title="分类"></div>
+            data-thread-key="2017/03/11/django使用mongoengine/" 
+            data-url="http://jlan.me/2017/03/11/django使用mongoengine/"
+            data-title="django使用mongoengine"></div>
     <!-- 多说评论框 end -->
 </div>
 
@@ -361,6 +416,14 @@
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2017/03/03/Ubuntu上搭建pptp服务/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
         </div>
@@ -533,6 +596,13 @@ It will not impact the appearance and can give developers a lot of support :)
 
 				
 				
+				
+					<!-- Footer Top Button -->
+					<div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 				
 				
 				<!--Footer-->
