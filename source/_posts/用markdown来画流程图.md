@@ -2,9 +2,10 @@
 title: 用markdown来画流程图
 date: 2016-09-09 22:25:40
 categories: markdown
+tag: markdown
 ---
 
-做为一个低端的非典型程序员，只写过一些烂代码，很少画流程图这样高大上的东西，由于这次需要做个项目总结，一直在用markdown（不得不说markdown语法真的太强大太简洁了，效果也太优美，没学过markdown语法的可以自己学下）写东西，知道用markdown可以画出来很性感的流程图，遂决定学下如何用markdown来画流程图。
+一直在用markdown（不得不说markdown语法真的太强大太简洁了，效果也太优美，没学过markdown语法的可以自己学下）写东西，知道用markdown可以画出来很性感的流程图，遂决定学下如何用markdown来画流程图。
 
 ### 代码
 ```
