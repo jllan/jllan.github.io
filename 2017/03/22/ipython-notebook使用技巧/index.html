@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        分类: 微信 | 穿林打叶又何妨
+        ipython notebook使用技巧 | 穿林打叶又何妨
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://jlan.me">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: 微信 | 穿林打叶又何妨">
+    <meta property="og:title" content="ipython notebook使用技巧 | 穿林打叶又何妨">
     <meta property="og:description" content="生活、学习记录">
     
      <!--[if lte IE 9]>
@@ -194,100 +194,231 @@
                 </button>
 				
 				
-                <!-- Index Module -->
+                <!-- Post TOC -->
 
-<div class="material-index mdl-grid">
-	
-    <div class="locate-thumbnail-symbol"></div>
     
-    
+	<!-- Back Button -->
+<!--
+	<div class="material-back" id="backhome-div" tabindex="0">
+		<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="#" onclick="window.history.back();return false;" target="_self" role="button" data-upgraded=",MaterialButton,MaterialRipple">
+			<i class="material-icons" role="presentation">arrow_back</i>
+			<span class="mdl-button__ripple-container">
+				<span class="mdl-ripple"></span>
+			</span>
+		</a>
+	</div>			
+-->
+	<!-- Left aligned menu below button -->
+	<button id="post-toc-trigger-btn"
+			class="mdl-button mdl-js-button mdl-button--icon">
+	  <i class="material-icons">format_list_numbered</i>
+	</button>
+
+	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+		for="post-toc-trigger-btn">
+			
+			
 		
-			<!-- Paradox Thumbnail -->
-        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    
-    <!-- Post Thumbnail -->
+<!--			<li class="mdl-menu__item">Some Action</li>-->
+	</ul>
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+		
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+	<!-- Paradox Post Header -->
 	
 		
 			<!-- Random Thumbnail -->
 			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-		
-	
-				
-		<!-- Post Title -->
-		<p class="article-headline-p"><a href="/2016/08/25/用markdown语法来写微信公众平台文章/">用markdown语法来写微信公众平台文章</a></p>
-	</div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-最近几乎只用markdown语法来些东西，当然我很少写东西，也不会写，只是偶尔写写笔记和博客，但是只要写就一定用markd...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/08/25/用markdown语法来写微信公众平台文章/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/logo-me.jpg" width="44px" height="44px" alt="Jlan's avatar">
-            </div>
-            <div>
-                <strong>Jlan</strong>
-                <span>Aug 25, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/微信/">微信</a>
-            </span>
-            
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="2016/08/25/用markdown语法来写微信公众平台文章/" data-count-type="comments"></span>
-                </span>
-            
-            
-            <!-- Post Views -->
-            <span class="post_entry-views">
-                
-            </span>
-        </div>
-    </div>
-            
-</div>
-
-		
-		
-    
-    
-	
-		<script>
+				<script>
     
     var randomNum;
+    randomNum = Math.floor(Math.random() * 5 + 1);
     
-    var locatePost = $(".locate-thumbnail-symbol").next();
-    for(var i=0; i < 10; i++){
-        
-        randomNum = Math.floor(Math.random() * 5 + 1);
-        
-        locatePost.children(".post_thumbnail-random").attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/' + randomNum + '.png' + ')')
-        
-        locatePost = locatePost.next();
-    }
+    $(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/' + randomNum + '.png' + ')');
     
 </script>
 
+		
+	
+        <p class="article-headline-p">
+            ipython notebook使用技巧
+        </p>
+    </div>
+
 	
 
+				
+				
+					<!-- Paradox Post Info -->
+					<div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+    
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/logo-me.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Jlan</strong>
+        <span>Mar 22, 2017</span>
+    </div>
+    
+    <div class="section-spacer"></div>
+	
+    <!-- Favorite -->
+<!--
+    <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+        <i class="material-icons" role="presentation">favorite</i>
+        <span class="visuallyhidden">favorites</span>
+    </button>
+-->
+    
+    <!-- Tags (bookmark) -->
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/python/">python</a>
+    </ul>
+    
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    
+    
+    
+    <!-- Busuanzi Views -->
+    <a class="post_share-link" href="#">
+        <li class="mdl-menu__item">
+            <span id="busuanzi_container_page_pv">
+                <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+            </span>
+        </li>
+    </a>
+    
+    
+    <!-- Share Twitter -->
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=ipython notebook使用技巧&url=http://jlan.me//2017/03/22/ipython-notebook使用技巧/index.html&via=Jlan" target="_blank">
+        <li class="mdl-menu__item">
+            分享到 Twitter
+        </li>
+    </a>
+    
+    <!-- Share Google+ -->
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://jlan.me//2017/03/22/ipython-notebook使用技巧/index.html" target="_blank">
+        <li class="mdl-menu__item">
+            分享到 Google+
+        </li>
+    </a>
+    
+    <!-- Share Weibo -->
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=ipython notebook使用技巧&url=http://jlan.me//2017/03/22/ipython-notebook使用技巧/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <li class="mdl-menu__item">
+            分享到微博
+        </li>
+    </a>
+</ul>
 </div>
+				
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+	
+		<ol>
+<li>可以选择MarkDown，用MarkDown来写说明</li>
+<li>如果在函数、模块、类后面输入‘?’，按住Ctrl-Entry的话就回跳出帮助文档。如果是两个‘??’的话连,源代码都会给出来的。</li>
+<li>在网页中输入%matplotlib inline将matplotlib库导入，要显示的图片就可以嵌入到网页中了</li>
+<li><p>使用ipython nbconvert [.ipynb文件]命令来生成默认格式(html格式)还可以使用–to选项来转换为指定的格式，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ipython nbconvert --to latex mynotebook.ipynb</div><div class="line">ipython nbconvert mynotebook.ipynb --to pdf</div><div class="line">ipython nbconvert --to html --template basic mynotebook.ipynb</div><div class="line">ipython nbconvert mynotebook.ipynb --to markdown</div></pre></td></tr></table></figure>
+</li>
+<li><p>%load可以从文件或者网址载入代码到一个新的单元中，例如下面载入某个matplotlib的示例程序，并执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">%load http://matplotlib.org/mpl_examples/pylab_examples/histogram_demo.py</div></pre></td></tr></table></figure>
+</li>
+<li><p>IPython中Magic命令有两种执行方式，以%开始的命令被称为行命令，它只对单行有效，以%%开头的为单元命令，它放在单元的第一行，对整个单元有效。</p>
+</li>
+<li>%prun用于代码的执行性能分析，可以作为行命令和单元命令使用</li>
+</ol>
+<p>参考</p>
+<ul>
+<li><a href="http://ipython.org/ipython-doc/1/interactive/nbconvert.html" target="_blank" rel="external">http://ipython.org/ipython-doc/1/interactive/nbconvert.html</a></li>
+<li><a href="http://www.jianshu.com/p/0b7a834b2c1e" target="_blank" rel="external">http://www.jianshu.com/p/0b7a834b2c1e</a></li>
+</ul>
+
+	
+	
+	
+	
+</div>
+				
+				
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #0097A7 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #0097A7 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #0097A7 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+        <div class="ds-thread" 
+            data-thread-key="2017/03/22/ipython-notebook使用技巧/" 
+            data-url="http://jlan.me/2017/03/22/ipython-notebook使用技巧/"
+            data-title="ipython notebook使用技巧"></div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/03/19/使用nginx-uwsgi来部署django服务/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+        </div>
+    </div>
 
 				
 				
