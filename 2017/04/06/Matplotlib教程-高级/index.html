@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <!-- Title -->
+    
+    <title>
+        Matplotlib教程-高级 | 穿林打叶又何妨
+    </title>
+    
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.ico">
+    <link rel="icon" sizes="192x192" href="/img/favicon.ico">
+    <link rel="apple-touch-icon" href="/img/favicon.ico">
+    
+    <!-- Meta & INfo -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Jlan">
+    <meta name="description" content="生活、学习记录">
+    <meta name="keywords" content="null">
+    
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+    
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="穿林打叶又何妨">
+    
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://jlan.me">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Matplotlib教程-高级 | 穿林打叶又何妨">
+    <meta property="og:description" content="生活、学习记录">
+    
+     <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+        
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
+    
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="/css/material.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+	body, html{
+		font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+	}
+	
+    a{
+        color: #00838F
+    }
+    
+    .mdl-card__media,
+    #search-label,
+    #search-form-label:after,
+    #scheme-Paradox .hot_tags-count,
+    #scheme-Paradox .sidebar_archives-count,
+    #scheme-Paradox .sidebar-colored .sidebar-header,
+    #scheme-Paradox .sidebar-colored .sidebar-badge{
+        background-color: #0097A7 !important
+    }
+    
+	/* Sidebar User Drop Down Menu Text Color */
+	#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus{
+        color: #0097A7 !important
+    }
+    
+    #post_entry-right-info,
+    .sidebar-colored .sidebar-nav li:hover > a,
+    .sidebar-colored .sidebar-nav li:hover > a i,
+    .sidebar-colored .sidebar-nav li > a:hover,
+    .sidebar-colored .sidebar-nav li > a:hover i,
+    .sidebar-colored .sidebar-nav li > a:focus i,
+    .sidebar-colored .sidebar-nav > .open > a,
+    .sidebar-colored .sidebar-nav > .open > a:hover,
+    .sidebar-colored .sidebar-nav > .open > a:focus,
+    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a{
+        color: #0097A7 !important
+    }
+    
+    .toTop{
+        background: #757575 !important
+    }
+		
+	.material-layout .material-post>.material-nav,
+	.material-layout .material-index>.material-nav,
+	.material-nav a{
+		color: #757575;
+	}
+		
+	#scheme-Paradox .MD-burger-layer {
+		background-color: #757575;
+	}
+
+	#scheme-Paradox #post-toc-trigger-btn{
+		color: #757575;
+	}
+	
+	.post-toc a:hover{
+		color: #00838F;
+		text-decoration: underline;
+	}
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+        body{
+            background-color: #F5F5F5
+        }
+		
+		/* blog_info bottom background */
+        #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+            background-color: #fff;
+        }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+        .fade {
+            transition: all 800ms linear;
+            -webkit-transform: translate3d(0,0,0);
+            -moz-transform: translate3d(0,0,0);
+            -ms-transform: translate3d(0,0,0);
+            -o-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+            opacity: 1;
+        }
+
+        .fade.out{
+            opacity: 0;
+        }
+    </style>
+
+	<script src="/js/jquery.min.js"></script>
+	
+	<link rel="stylesheet" href="/css/highlight/solarized-white.css">
+	
+	<!-- UC Browser Compatible-->
+	<script>
+		var agent = navigator.userAgent.toLowerCase();
+		if(agent.indexOf('ucbrowser')>0) {
+			document.write('<link rel="stylesheet" href="/css/uc.css">');
+		   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+		}
+	</script>
+    
+    <!-- Custom Head -->
+    
+</head>
+	
+	
+
+    <body id="scheme-Paradox">
+
+		
+        <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+				
+			
+			
+            <!-- Main Container -->
+            <main class="material-layout__content" id="main">
+				
+                <!-- Top Anchor -->
+                <div id="top"></div>
+				
+				
+                <!-- Hamburger Button -->
+                <button class="MD-burger-icon sidebar-toggle">
+                    <span class="MD-burger-layer"></span>
+                </button>
+				
+				
+                <!-- Post TOC -->
+
+    
+	<!-- Back Button -->
+<!--
+	<div class="material-back" id="backhome-div" tabindex="0">
+		<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="#" onclick="window.history.back();return false;" target="_self" role="button" data-upgraded=",MaterialButton,MaterialRipple">
+			<i class="material-icons" role="presentation">arrow_back</i>
+			<span class="mdl-button__ripple-container">
+				<span class="mdl-ripple"></span>
+			</span>
+		</a>
+	</div>			
+-->
+	<!-- Left aligned menu below button -->
+	<button id="post-toc-trigger-btn"
+			class="mdl-button mdl-js-button mdl-button--icon">
+	  <i class="material-icons">format_list_numbered</i>
+	</button>
+
+	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+		for="post-toc-trigger-btn">
+			
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-饼状图"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 饼状图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-柱状图"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. 柱状图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-散点图"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. 散点图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-概率分布"><span class="post-toc-number">4.</span> <span class="post-toc-text">4. 概率分布</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-组合图"><span class="post-toc-number">5.</span> <span class="post-toc-text">5.组合图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-三维数据图"><span class="post-toc-number">6.</span> <span class="post-toc-text">6. 三维数据图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-美化"><span class="post-toc-number">7.</span> <span class="post-toc-text">7. 美化</span></a></li></ol>
+		
+<!--			<li class="mdl-menu__item">Some Action</li>-->
+	</ul>
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+		
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+	<!-- Paradox Post Header -->
+	
+		
+			<!-- Random Thumbnail -->
+			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+				<script>
+    
+    var randomNum;
+    randomNum = Math.floor(Math.random() * 5 + 1);
+    
+    $(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/' + randomNum + '.png' + ')');
+    
+</script>
+
+		
+	
+        <p class="article-headline-p">
+            Matplotlib教程-高级
+        </p>
+    </div>
+
+	
+
+				
+				
+					<!-- Paradox Post Info -->
+					<div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+    
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/logo-me.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Jlan</strong>
+        <span>Apr 06, 2017</span>
+    </div>
+    
+    <div class="section-spacer"></div>
+	
+    <!-- Favorite -->
+<!--
+    <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+        <i class="material-icons" role="presentation">favorite</i>
+        <span class="visuallyhidden">favorites</span>
+    </button>
+-->
+    
+    <!-- Tags (bookmark) -->
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/matplotlib/">matplotlib</a>
+    </ul>
+    
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    
+    
+    
+    <!-- Busuanzi Views -->
+    <a class="post_share-link" href="#">
+        <li class="mdl-menu__item">
+            <span id="busuanzi_container_page_pv">
+                <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+            </span>
+        </li>
+    </a>
+    
+    
+    <!-- Share Twitter -->
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Matplotlib教程-高级&url=http://jlan.me//2017/04/06/Matplotlib教程-高级/index.html&via=Jlan" target="_blank">
+        <li class="mdl-menu__item">
+            分享到 Twitter
+        </li>
+    </a>
+    
+    <!-- Share Google+ -->
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://jlan.me//2017/04/06/Matplotlib教程-高级/index.html" target="_blank">
+        <li class="mdl-menu__item">
+            分享到 Google+
+        </li>
+    </a>
+    
+    <!-- Share Weibo -->
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Matplotlib教程-高级&url=http://jlan.me//2017/04/06/Matplotlib教程-高级/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <li class="mdl-menu__item">
+            分享到微博
+        </li>
+    </a>
+</ul>
+</div>
+				
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+	
+		<h2 id="1-饼状图"><a href="#1-饼状图" class="headerlink" title="1. 饼状图"></a>1. 饼状图</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line"></div><div class="line">plt.figure(figsize=(<span class="number">9</span>,<span class="number">6</span>))  <span class="comment"># fig的宽高</span></div><div class="line"></div><div class="line"><span class="comment"># The slices will be ordered and plotted counter-clockwise.</span></div><div class="line">labels = [<span class="string">u'直接访问'</span>, <span class="string">u'外部链接'</span>, <span class="string">u'搜索引擎'</span>]</div><div class="line">sizes = [<span class="number">160</span>, <span class="number">130</span>, <span class="number">110</span>] <span class="comment"># sum(sizes)不一定是100，会自动按照百分比调整</span></div><div class="line">colors = [<span class="string">'yellowgreen'</span>, <span class="string">'gold'</span>, <span class="string">'lightskyblue'</span>]</div><div class="line"></div><div class="line"><span class="comment">#explode 爆炸出来</span></div><div class="line">explode = (<span class="number">0.05</span>, <span class="number">0.0</span>, <span class="number">0.0</span>)  <span class="comment"># 间距</span></div><div class="line"></div><div class="line">patches, l_texts, p_texts = plt.pie(sizes, explode=explode, labels=labels, colors=colors, labeldistance=<span class="number">0.8</span>,</div><div class="line">        autopct=<span class="string">'%3.1f%%'</span>, shadow=<span class="keyword">True</span>, startangle=<span class="number">90</span>, pctdistance=<span class="number">0.6</span>)</div><div class="line"></div><div class="line"><span class="comment"># plt.axis('equal') # 设置x，y轴刻度一致，这样饼图才能是圆的</span></div><div class="line">plt.legend()</div><div class="line"></div><div class="line"><span class="string">"""</span></div><div class="line"># 设置labels和百分比文字大小</div><div class="line">for t in l_texts:</div><div class="line">    t.set_size(20)</div><div class="line"></div><div class="line">for t in p_texts:</div><div class="line">    t.set_size(20)</div><div class="line">"""</div><div class="line">plt.show()</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-eb69c93438dc4baa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="output_2_0.png"></p>
+<h2 id="2-柱状图"><a href="#2-柱状图" class="headerlink" title="2. 柱状图"></a>2. 柱状图</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</div><div class="line"></div><div class="line">plt.figure(figsize=(<span class="number">9</span>,<span class="number">6</span>))</div><div class="line"></div><div class="line">n = <span class="number">12</span></div><div class="line">X = np.arange(n)+<span class="number">1</span></div><div class="line"><span class="comment"># numpy.random.uniform(low=0.0, high=1.0, size=None), normal</span></div><div class="line"><span class="comment"># uniform 均匀分布；normal 正态分布</span></div><div class="line">Y1 = (<span class="number">1</span>-X/float(n+<span class="number">1</span>)) * np.random.uniform(<span class="number">0.5</span>, <span class="number">1.0</span>, n)</div><div class="line">Y2 = (<span class="number">1</span>-X/float(n+<span class="number">1</span>)) * np.random.uniform(<span class="number">0.5</span>, <span class="number">1.0</span>, n)</div><div class="line"></div><div class="line"><span class="comment"># bar and barh</span></div><div class="line">width = <span class="number">0.5</span></div><div class="line">plt.bar(X, Y1, width=width, facecolor=<span class="string">'g'</span>, edgecolor=<span class="string">'white'</span>)</div><div class="line"><span class="comment"># plt.bar(X+width, Y2, width=width, facecolor='r', edgecolor='white')</span></div><div class="line">plt.bar(X, -Y2, width=width, facecolor=<span class="string">'#ff9999'</span>, edgecolor=<span class="string">'white'</span>) <span class="comment"># -Y表示y轴负半轴</span></div><div class="line"><span class="comment"># plt.barh(X, Y2, height=width, facecolor='#ff9999', edgecolor='white') # barh表示横向</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">for</span> x,y <span class="keyword">in</span> zip(X,Y1):</div><div class="line">    <span class="comment"># x+0.1: 向x轴正向偏移0.1</span></div><div class="line">    plt.text(x+<span class="number">0.4</span>, y+<span class="number">0.05</span>, <span class="string">'%.2f'</span> % y, ha=<span class="string">'center'</span>, va= <span class="string">'bottom'</span>)</div><div class="line">    </div><div class="line"><span class="keyword">for</span> x,y <span class="keyword">in</span> zip(X,-Y2):</div><div class="line">    plt.text(x+<span class="number">0.4</span>, y<span class="number">-0.15</span>, <span class="string">'%.2f'</span> % y, ha=<span class="string">'center'</span>, va= <span class="string">'bottom'</span>)</div><div class="line"></div><div class="line"></div><div class="line">plt.ylim(<span class="number">-1</span>,+<span class="number">1</span>) <span class="comment"># y轴正负半轴对称</span></div><div class="line">plt.show()</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-6571f193205b3c8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="output_4_0.png"></p>
+<h2 id="3-散点图"><a href="#3-散点图" class="headerlink" title="3. 散点图"></a>3. 散点图</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"></div><div class="line">plt.figure(figsize=(<span class="number">9</span>,<span class="number">6</span>))</div><div class="line"></div><div class="line">n = <span class="number">1024</span></div><div class="line"></div><div class="line"><span class="comment"># rand 和 randn</span></div><div class="line">X = np.random.randn(<span class="number">1</span>,n)</div><div class="line">Y = np.random.randn(<span class="number">1</span>,n)</div><div class="line"></div><div class="line">T = np.arctan2(Y,X)</div><div class="line"></div><div class="line"><span class="comment"># alpha: 透明度</span></div><div class="line">plt.scatter(X,Y, s=<span class="number">75</span>, c=T, alpha=<span class="number">.4</span>, marker=<span class="string">'o'</span>)</div><div class="line"></div><div class="line"><span class="comment">#plt.xlim(-1.5,1.5), plt.xticks([])</span></div><div class="line"><span class="comment">#plt.ylim(-1.5,1.5), plt.yticks([])</span></div><div class="line"></div><div class="line">plt.show()</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-3fba1e73c30b9ed1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="output_6_0.png"></p>
+<h2 id="4-概率分布"><a href="#4-概率分布" class="headerlink" title="4. 概率分布"></a>4. 概率分布</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"></div><div class="line">mu = <span class="number">0</span> <span class="comment"># 均值</span></div><div class="line">sigma = <span class="number">4</span> <span class="comment"># 标准差</span></div><div class="line">x = mu + sigma*np.random.randn(<span class="number">10000</span>)</div><div class="line"></div><div class="line">fig,(ax0,ax1)=plt.subplots(ncols=<span class="number">2</span>, figsize=(<span class="number">9</span>,<span class="number">6</span>))</div><div class="line"></div><div class="line"><span class="comment"># 概率密度</span></div><div class="line">ax0.hist(x, <span class="number">40</span>, normed=<span class="number">1</span>, histtype=<span class="string">'bar'</span>, facecolor=<span class="string">'g'</span>, alpha=<span class="number">0.75</span>)</div><div class="line">ax0.set_title(<span class="string">'pdf'</span>)</div><div class="line"></div><div class="line"><span class="comment"># 累计密度</span></div><div class="line">ax1.hist(x, <span class="number">20</span>, normed=<span class="number">1</span>, histtype=<span class="string">'bar'</span>, rwidth=<span class="number">0.8</span>, cumulative=<span class="keyword">True</span>)</div><div class="line">ax1.set_title(<span class="string">'cdf'</span>)</div><div class="line"></div><div class="line">plt.show()</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-0c73eea1855c4c18.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="output_8_0.png"></p>
+<h2 id="5-组合图"><a href="#5-组合图" class="headerlink" title="5.组合图"></a>5.组合图</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># ref : http://matplotlib.org/examples/pylab_examples/scatter_hist.html</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line"></div><div class="line"><span class="comment"># the random data</span></div><div class="line">x = np.random.randn(<span class="number">1000</span>)</div><div class="line">y = np.random.randn(<span class="number">1000</span>)</div><div class="line"></div><div class="line"><span class="comment"># 定义子图区域</span></div><div class="line">left, width = <span class="number">0.1</span>, <span class="number">0.65</span></div><div class="line">bottom, height = <span class="number">0.1</span>, <span class="number">0.65</span></div><div class="line">bottom_h = left_h = left + width + <span class="number">0.02</span></div><div class="line"></div><div class="line">rect_scatter = [left, bottom, width, height]</div><div class="line">rect_histx = [left, bottom_h, width, <span class="number">0.2</span>]</div><div class="line">rect_histy = [left_h, bottom, <span class="number">0.2</span>, height]</div><div class="line"></div><div class="line">plt.figure(<span class="number">1</span>, figsize=(<span class="number">6</span>, <span class="number">6</span>))</div><div class="line"></div><div class="line"><span class="comment"># 根据子图区域来生成子图</span></div><div class="line">axScatter = plt.axes(rect_scatter)</div><div class="line">axHistx = plt.axes(rect_histx)</div><div class="line">axHisty = plt.axes(rect_histy)</div><div class="line"></div><div class="line"><span class="comment"># no labels</span></div><div class="line"><span class="comment">#axHistx.xaxis.set_ticks([])</span></div><div class="line"><span class="comment">#axHisty.yaxis.set_ticks([])</span></div><div class="line"></div><div class="line"><span class="comment"># now determine nice limits by hand:</span></div><div class="line">N_bins=<span class="number">20</span></div><div class="line">xymax = np.max([np.max(np.fabs(x)), np.max(np.fabs(y))])</div><div class="line">binwidth = xymax/N_bins</div><div class="line">lim = (int(xymax/binwidth) + <span class="number">1</span>) * binwidth</div><div class="line">nlim = -lim</div><div class="line"></div><div class="line"><span class="comment"># 画散点图，概率分布图</span></div><div class="line">axScatter.scatter(x, y)</div><div class="line">axScatter.set_xlim((nlim, lim))</div><div class="line">axScatter.set_ylim((nlim, lim))</div><div class="line"></div><div class="line">bins = np.arange(nlim, lim + binwidth, binwidth)</div><div class="line">axHistx.hist(x, bins=bins)</div><div class="line">axHisty.hist(y, bins=bins, orientation=<span class="string">'horizontal'</span>)</div><div class="line"></div><div class="line"><span class="comment"># 共享刻度</span></div><div class="line">axHistx.set_xlim(axScatter.get_xlim())</div><div class="line">axHisty.set_ylim(axScatter.get_ylim())</div><div class="line"></div><div class="line">plt.show()</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-2265fe24ebe7fd2b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="output_10_0.png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># ref http://matplotlib.org/examples/showcase/integral_demo.html</span></div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(x)</span>:</span></div><div class="line">    <span class="keyword">return</span> (x - <span class="number">3</span>) * (x - <span class="number">5</span>) * (x - <span class="number">7</span>) + <span class="number">85</span></div><div class="line"></div><div class="line">a, b = <span class="number">2</span>, <span class="number">9</span>  <span class="comment"># integral limits</span></div><div class="line">x = np.linspace(<span class="number">0</span>, <span class="number">10</span>)</div><div class="line">y = func(x)</div><div class="line"></div><div class="line"><span class="comment"># 画线</span></div><div class="line">fig, ax = plt.subplots()</div><div class="line">plt.plot(x, y, <span class="string">'r'</span>, linewidth=<span class="number">2</span>)</div><div class="line">plt.ylim(ymin=<span class="number">0</span>)</div><div class="line"></div><div class="line"><span class="comment"># 画阴影区域</span></div><div class="line">xf = x[np.where((x&gt;a)&amp;(x&lt;b))]</div><div class="line">plt.fill_between(xf, np.zeros(len(xf)), func(xf), color=<span class="string">'blue'</span>, alpha=<span class="number">.25</span>)</div><div class="line"></div><div class="line"><span class="comment"># 画文本</span></div><div class="line">plt.text(<span class="number">0.5</span> * (a + b), <span class="number">30</span>, <span class="string">r"$\int_a^b f(x)\mathrm&#123;d&#125;x$"</span>,</div><div class="line">         horizontalalignment=<span class="string">'center'</span>, fontsize=<span class="number">20</span>)</div><div class="line"></div><div class="line">plt.show()</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-774d920cb3ac5288.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="output_11_0.png"></p>
+<h2 id="6-三维数据图"><a href="#6-三维数据图" class="headerlink" title="6. 三维数据图"></a>6. 三维数据图</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line"></div><div class="line">fig = plt.figure(figsize=(<span class="number">9</span>,<span class="number">6</span>),facecolor=<span class="string">'white'</span>)</div><div class="line"></div><div class="line"><span class="comment"># Number of ring</span></div><div class="line">n = <span class="number">50</span></div><div class="line">size_min = <span class="number">50</span></div><div class="line">size_max = <span class="number">50</span>*<span class="number">50</span></div><div class="line"></div><div class="line"><span class="comment"># Ring position</span></div><div class="line">P = np.random.rand(n,<span class="number">2</span>)</div><div class="line"></div><div class="line"><span class="comment"># Ring colors R,G,B,A</span></div><div class="line">C = np.ones((n,<span class="number">4</span>)) * (<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>)</div><div class="line"><span class="comment"># Alpha color channel goes from 0 (transparent) to 1 (opaque)</span></div><div class="line">C[:,<span class="number">3</span>] = np.linspace(<span class="number">0</span>,<span class="number">1</span>,n)</div><div class="line"></div><div class="line"><span class="comment"># Ring sizes</span></div><div class="line">S = np.linspace(size_min, size_max, n)</div><div class="line"></div><div class="line"><span class="comment"># Scatter plot</span></div><div class="line">plt.scatter(P[:,<span class="number">0</span>], P[:,<span class="number">1</span>], s=S, lw = <span class="number">0.5</span>,</div><div class="line">                  edgecolors = C, facecolors=<span class="string">'None'</span>)</div><div class="line"></div><div class="line">plt.xlim(<span class="number">0</span>,<span class="number">1</span>), plt.xticks([])</div><div class="line">plt.ylim(<span class="number">0</span>,<span class="number">1</span>), plt.yticks([])</div><div class="line"></div><div class="line">plt.show()</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-5895f1c3d40e9cf1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="output_13_0.png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> mpl_toolkits.mplot3d <span class="keyword">import</span> Axes3D</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line"></div><div class="line">fig = plt.figure(figsize=(<span class="number">9</span>,<span class="number">6</span>))</div><div class="line">ax = fig.add_subplot(<span class="number">111</span>,projection=<span class="string">'3d'</span>)</div><div class="line"></div><div class="line">z = np.linspace(<span class="number">0</span>, <span class="number">6</span>, <span class="number">1000</span>)</div><div class="line">r = <span class="number">1</span></div><div class="line">x = r * np.sin(np.pi*<span class="number">2</span>*z)</div><div class="line">y = r * np.cos(np.pi*<span class="number">2</span>*z)</div><div class="line"></div><div class="line">ax.plot(x, y, z, label=<span class="string">u'螺旋线'</span>, c=<span class="string">'r'</span>)</div><div class="line">ax.legend()</div><div class="line"></div><div class="line"><span class="comment"># dpi每英寸长度的点数</span></div><div class="line">plt.savefig(<span class="string">'3d_fig.png'</span>,dpi=<span class="number">200</span>)</div><div class="line">plt.show()</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-804328afcaa6afb1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="output_14_0.png"></p>
+<p>3d画图种类很多，可参考：<a href="http://matplotlib.org/mpl_toolkits/mplot3d/tutorial.html" target="_blank" rel="external">http://matplotlib.org/mpl_toolkits/mplot3d/tutorial.html</a></p>
+<p>其他种类图可参考：<a href="http://matplotlib.org/gallery.html" target="_blank" rel="external">http://matplotlib.org/gallery.html</a></p>
+<h2 id="7-美化"><a href="#7-美化" class="headerlink" title="7. 美化"></a>7. 美化</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">print(plt.style.available) <span class="comment">#ggplot, bmh, dark_background, fivethirtyeight, grayscale</span></div><div class="line"><span class="comment">#plt.style.use('bmh')</span></div></pre></td></tr></table></figure>
+<pre><code>[&apos;seaborn-pastel&apos;, &apos;seaborn-dark&apos;, &apos;seaborn-whitegrid&apos;, &apos;grayscale&apos;, &apos;seaborn-dark-palette&apos;, &apos;seaborn-paper&apos;, &apos;seaborn-bright&apos;, &apos;seaborn-deep&apos;, &apos;classic&apos;, &apos;fivethirtyeight&apos;, &apos;ggplot&apos;, &apos;seaborn-ticks&apos;, &apos;seaborn-poster&apos;, &apos;seaborn&apos;, &apos;seaborn-colorblind&apos;, &apos;seaborn-muted&apos;, &apos;dark_background&apos;, &apos;seaborn-talk&apos;, &apos;bmh&apos;, &apos;seaborn-white&apos;, &apos;seaborn-darkgrid&apos;, &apos;seaborn-notebook&apos;]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+
+	
+	
+	
+	
+</div>
+				
+				
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #0097A7 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #0097A7 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #0097A7 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+        <div class="ds-thread" 
+            data-thread-key="2017/04/06/Matplotlib教程-高级/" 
+            data-url="http://jlan.me/2017/04/06/Matplotlib教程-高级/"
+            data-title="Matplotlib教程-高级"></div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/03/23/Matplotlib教程-初级/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+        </div>
+    </div>
+
+				
+				
+					<!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay "></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored  sidebar-fixed-left" role="navigation">
+	<div id="sidebar-main">
+	    <!-- Sidebar Header -->
+		<div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+    <i class="material-icons">clear_all</i>
+    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/logo-me.jpg" alt="Jlan's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        jllan@126.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+		<!-- Sidebar Navigation  -->
+		<ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+			
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+						<i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    <li id="sidebar-first-li">
+        <a href="/" target="_self">
+            <i class="material-icons sidebar-material-icons">home</i>
+             主页
+        </a>
+    </li>
+
+    <!-- I'm Feeling Lucky -->
+<!--
+    <li class="dropdown">
+        <a href="" target="_self">
+            <i class="material-icons sidebar-material-icons">explore</i>
+             sidebar.imlucky
+        </a>
+    </li>
+-->
+
+	
+    <!-- Archives  -->
+    <li class="dropdown">
+        <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+            <i class="material-icons sidebar-material-icons">inbox</i>
+             归档
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+            <a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">December 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">November 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">September 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">August 2016<span class="sidebar_archives-count">5</span></a>
+        </ul>
+    </li>
+
+    <!-- Divider -->
+    <li class="divider"></li>
+
+
+    <!-- Pages  -->
+	
+		<li>
+			<a href="/about" title="关于我">
+				关于我
+			</a>
+		</li>
+	
+		<li>
+			<a href="/tags" title="标签">
+				标签
+			</a>
+		</li>
+	
+
+    <!-- Article Numebr  -->
+    <li>
+        <a href="/archives">
+             文章总数
+             <span class="sidebar-badge">19</span>
+        </a>
+    </li>
+</ul>
+
+		<!-- Sidebar Divider -->
+		<div class="sidebar-divider"></div>
+
+		<!-- Sidebar Footer -->
+		<!-- 
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持。 :) 
+-->
+
+<!-- Theme Material -->
+<a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+	<div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+		主题 - Material
+		<span class="sidebar-badge badge-circle">i</span>
+	</div>
+</a>
+
+<!-- Help & Support -->
+<!--
+<a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+		sidebar.help
+		<span class="mdl-button__ripple-container">
+			<span class="mdl-ripple"></span>
+		</span>
+	</div>
+</a>
+-->
+
+<!-- Feedback -->
+<!--
+<a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.feedback
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>
+-->
+
+<!-- Abount Theme -->
+<!--
+<a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.about_theme
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>-->
+
+	</div>
+    
+    <!-- Sidebar Sponsor -->
+    
+
+
+</aside>
+
+				
+				
+				
+					<!-- Footer Top Button -->
+					<div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+				
+				
+				<!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+	
+	
+		<!-- Paradox Footer Left Section -->
+		<div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+    
+    
+    <!-- Facebook -->
+    
+    
+    
+    <!-- Google + -->
+    
+    
+    
+    <!-- Weibo -->
+    
+    
+    
+    <!-- Instagram -->
+    
+    
+    
+    <!-- Tumblr -->
+    
+    
+    
+    <!-- Github -->
+    
+    <a href="https://github.com/jllan" target="view_window"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-github.png);">
+        <span class="visuallyhidden">Github</span>
+    </button></a>
+    
+</div>
+
+
+		<!--Copyright-->
+		<div id="copyright">Copyright&nbsp;©&nbsp;<script type="text/javascript">var fd = new Date();document.write(fd.getFullYear());</script>&nbsp;穿林打叶又何妨</div>
+
+		<!-- Paradox Footer Right Section -->
+
+		<!-- 
+		I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+		It will not impact the appearance and can give developers a lot of support :)
+
+		很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+		它不会影响美观并可以给开发者很大的支持。 :) 
+		-->
+
+		<div class="mdl-mini-footer--right-section">
+			<div>
+				<div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+				<div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+			</div>
+		</div>
+	
+    
+</footer>
+                
+				<!-- Import File -->
+<script src="/js/highlight.min.js"></script>
+<script src="/js/js.min.js"></script>
+<script src="/js/nprogress.js"></script>
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    
+    $('#nprogress .bar').css({
+        'background': '#FF4081'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#FF4081',
+        'border-left-color': '#FF4081'
+    });
+    
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    <!-- 多说公共 js 代码 start -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jlan"};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = 'https://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+    <!-- 多说公共 js 代码 end -->
+
+
+
+
+<!-- Swiftye -->
+
+
+<!-- Local Search-->
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $(".post-toc-wrap").parent(".mdl-menu__container").css("position", "fixed");
+    });
+</script>
+
+<!-- MathJax Load-->
+
+            </main>
+        </div>
+		
+    </body>
+		
+	
+</html>
