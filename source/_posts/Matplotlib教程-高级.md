@@ -1,7 +1,9 @@
 ---
 title: Matplotlib教程-高级
 date: 2017-04-06 22:08:10
-tags: matplotlib
+tags: 
+- python
+- matplotlib
 ---
 ## 1. 饼状图
 

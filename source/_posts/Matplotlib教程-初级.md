@@ -1,7 +1,9 @@
 ---
 title: Matplotlib教程-初级
 date: 2017-03-23 11:42:00
-tags: matplotlib
+tags: 
+- python
+- matplotlib
 ---
 [TOC]
 
