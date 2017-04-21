@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        分类 | 穿林打叶又何妨
+        《Python CookBook》读书笔记-数据结构和算法（一） | 穿林打叶又何妨
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://jlan.me">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类 | 穿林打叶又何妨">
+    <meta property="og:title" content="《Python CookBook》读书笔记-数据结构和算法（一） | 穿林打叶又何妨">
     <meta property="og:description" content="生活、学习记录">
     
      <!--[if lte IE 9]>
@@ -196,6 +196,33 @@
 				
                 <!-- Post TOC -->
 
+    
+	<!-- Back Button -->
+<!--
+	<div class="material-back" id="backhome-div" tabindex="0">
+		<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="#" onclick="window.history.back();return false;" target="_self" role="button" data-upgraded=",MaterialButton,MaterialRipple">
+			<i class="material-icons" role="presentation">arrow_back</i>
+			<span class="mdl-button__ripple-container">
+				<span class="mdl-ripple"></span>
+			</span>
+		</a>
+	</div>			
+-->
+	<!-- Left aligned menu below button -->
+	<button id="post-toc-trigger-btn"
+			class="mdl-button mdl-js-button mdl-button--icon">
+	  <i class="material-icons">format_list_numbered</i>
+	</button>
+
+	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+		for="post-toc-trigger-btn">
+			
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-把一个序列L拆分为包含n-n-lt-len-l-个单独的变量"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 把一个序列L拆分为包含n(n<=len(l))个单独的变量</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#用法"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">用法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#说明"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">说明</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#例子"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">例子</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-通过heapq模块来找最大或最小的N个元素"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. 通过heapq模块来找最大或最小的N个元素</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#用法-1"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">用法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#说明-1"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">说明</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-实现优先级队列"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. 实现优先级队列</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#问题"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解决方案"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">解决方案</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#说明（详解见P10）"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">说明（详解见P10）</span></a></li></ol></li></ol>
+		
+<!--			<li class="mdl-menu__item">Some Action</li>-->
+	</ul>
+
+
 
 <!-- Layouts -->
 
@@ -224,7 +251,7 @@
 		
 	
         <p class="article-headline-p">
-            分类
+            《Python CookBook》读书笔记-数据结构和算法（一）
         </p>
     </div>
 
@@ -242,7 +269,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Jlan</strong>
-        <span>Dec 13, 2016</span>
+        <span>Apr 21, 2017</span>
     </div>
     
     <div class="section-spacer"></div>
@@ -262,7 +289,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        
+        <a class="post_tag-link" href="/tags/python/">python</a>
     </ul>
     
     <!-- Share -->
@@ -286,21 +313,21 @@
     
     
     <!-- Share Twitter -->
-    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=分类&url=http://jlan.me//categories/index.html&via=Jlan" target="_blank">
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=《Python CookBook》读书笔记-数据结构和算法（一）&url=http://jlan.me//2017/04/21/《Python-CookBook》读书笔记-数据结构和算法（一）/index.html&via=Jlan" target="_blank">
         <li class="mdl-menu__item">
             分享到 Twitter
         </li>
     </a>
     
     <!-- Share Google+ -->
-    <a class="post_share-link" href="https://plus.google.com/share?url=http://jlan.me//categories/index.html" target="_blank">
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://jlan.me//2017/04/21/《Python-CookBook》读书笔记-数据结构和算法（一）/index.html" target="_blank">
         <li class="mdl-menu__item">
             分享到 Google+
         </li>
     </a>
     
     <!-- Share Weibo -->
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=分类&url=http://jlan.me//categories/index.html&pic=&searchPic=false&style=simple" target="_blank">
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=《Python CookBook》读书笔记-数据结构和算法（一）&url=http://jlan.me//2017/04/21/《Python-CookBook》读书笔记-数据结构和算法（一）/index.html&pic=&searchPic=false&style=simple" target="_blank">
         <li class="mdl-menu__item">
             分享到微博
         </li>
@@ -312,7 +339,40 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
-		
+		<h2 id="1-把一个序列L拆分为包含n-n-lt-len-l-个单独的变量"><a href="#1-把一个序列L拆分为包含n-n-lt-len-l-个单独的变量" class="headerlink" title="1. 把一个序列L拆分为包含n(n&lt;=len(l))个单独的变量"></a>1. 把一个序列L拆分为包含n(n&lt;=len(l))个单独的变量</h2><h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">data = [<span class="string">'ACME'</span>, <span class="number">50</span>, <span class="number">90</span>, (<span class="number">2017</span>, <span class="number">3</span>, <span class="number">8</span>)]</div><div class="line">name, shares, price, date = data</div><div class="line">print(name, date)</div><div class="line">name, _, _, (year, *_) = data    <span class="comment"># 只取某几个元素而忽略其他元素</span></div><div class="line">print(name, year)</div></pre></td></tr></table></figure>
+<pre><code>ACME (2017, 3, 8)
+ACME 2017
+</code></pre><h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>做分解操作，有时可能需要丢弃某些值，通常可以选一个一般用不到的变量名来表示这些要被丢弃的元素，如可以用 ‘<strong>_</strong>‘，’<strong>*_</strong>‘, ‘<strong>ign(ignored)</strong>‘, ‘<strong>*ign</strong>‘。对于分解未知或者任意长度的可迭代对象时，使用这种*式的语法特别有用。</p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 计算平均分时一般要去掉最高和最低分</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">drop_first_last</span><span class="params">(grades)</span>:</span></div><div class="line">    first, *middle, last = grades</div><div class="line">    <span class="keyword">return</span> avg(middle)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 实现递归</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum</span><span class="params">(items)</span>:</span></div><div class="line">    head, *tail = items</div><div class="line">    <span class="keyword">return</span> head + sum(tail) <span class="keyword">if</span> tail <span class="keyword">else</span> head</div></pre></td></tr></table></figure>
+<h2 id="2-通过heapq模块来找最大或最小的N个元素"><a href="#2-通过heapq模块来找最大或最小的N个元素" class="headerlink" title="2. 通过heapq模块来找最大或最小的N个元素"></a>2. 通过heapq模块来找最大或最小的N个元素</h2><h3 id="用法-1"><a href="#用法-1" class="headerlink" title="用法"></a>用法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> heapq</div><div class="line"><span class="keyword">import</span> random</div><div class="line"></div><div class="line">nums = random.sample(range(<span class="number">-20</span>, <span class="number">50</span>), <span class="number">10</span>) <span class="comment"># 从range(-20, 50)中随机取出10个元素</span></div><div class="line">print(nums)</div><div class="line">print(heapq.nlargest(<span class="number">3</span>, nums))</div><div class="line">print(heapq.nsmallest(<span class="number">3</span>, nums))</div><div class="line"></div><div class="line">dict_nums = [dict.fromkeys(<span class="string">'a'</span>, i) <span class="keyword">for</span> i <span class="keyword">in</span> nums]</div><div class="line">print(dict_nums)</div><div class="line">print(heapq.nlargest(<span class="number">3</span>, dict_nums, key=<span class="keyword">lambda</span> s: s[<span class="string">'a'</span>])) <span class="comment"># 通过接受参数key，可以在更复杂的数据结构上进行操作</span></div><div class="line">print(heapq.nsmallest(<span class="number">3</span>, dict_nums, key=<span class="keyword">lambda</span> s: s[<span class="string">'a'</span>]))</div><div class="line"></div><div class="line">heap = list(nums)</div><div class="line">heapq.heapify(heap) <span class="comment"># 把nums以堆的顺序进行排列</span></div><div class="line">print(heap)</div><div class="line">print(heapq.heappop(heap)) <span class="comment"># heap[0]总是最小那个元素，heappop取出最小的元素，取出最小元素后会重新构造堆</span></div><div class="line">print(heapq.heappop(heap))</div></pre></td></tr></table></figure>
+<pre><code>[-1, 43, 16, 47, 31, -11, 4, 49, 13, 28]
+[49, 47, 43]
+[-11, -1, 4]
+[{&apos;a&apos;: -1}, {&apos;a&apos;: 43}, {&apos;a&apos;: 16}, {&apos;a&apos;: 47}, {&apos;a&apos;: 31}, {&apos;a&apos;: -11}, {&apos;a&apos;: 4}, {&apos;a&apos;: 49}, {&apos;a&apos;: 13}, {&apos;a&apos;: 28}]
+[{&apos;a&apos;: 49}, {&apos;a&apos;: 47}, {&apos;a&apos;: 43}]
+[{&apos;a&apos;: -11}, {&apos;a&apos;: -1}, {&apos;a&apos;: 4}]
+[-11, 13, -1, 43, 28, 16, 4, 49, 47, 31]
+-11
+-1
+</code></pre><h3 id="说明-1"><a href="#说明-1" class="headerlink" title="说明"></a>说明</h3><ul>
+<li>堆最重要的特性是heap[0]总是最小那个元素</li>
+<li>当要找的元素数量相对较小时，适用nlargest()和nsmallest()，注意nlargest()和nsmallest()的实际实现会根据适用他们的不同方式而有所不同，如N仅仅集合大小时会先排序</li>
+<li>如果只是简单的找到最小或最大的元素，则用min()和max()合适</li>
+<li>如果N和集合本身大小差不多，通常更快的方法是先对集合排序，然后做切片操作</li>
+</ul>
+<h2 id="3-实现优先级队列"><a href="#3-实现优先级队列" class="headerlink" title="3. 实现优先级队列"></a>3. 实现优先级队列</h2><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>实现一个队列，它能以给定的优先级来对元素进行排序，每次pop操作都会返回优先级最高的那个元素</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> heapq</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">PriorityQueue</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        self._queue = []</div><div class="line">        self._index = <span class="number">0</span></div><div class="line">        </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">push</span><span class="params">(self, item, priority)</span>:</span></div><div class="line">        heapq.heappush(self._queue, (-priority, self._index, item))</div><div class="line">        self._index += <span class="number">1</span></div><div class="line">        </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pop</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> heapq.heappop(self._queue)[<span class="number">-1</span>]</div><div class="line">    </div><div class="line">pq = PriorityQueue()</div><div class="line">pq.push(<span class="string">'jlan'</span>, <span class="number">5</span>)</div><div class="line">pq.push(<span class="string">'hua'</span>, <span class="number">2</span>)</div><div class="line">pq.push(<span class="string">'lann'</span>, <span class="number">4</span>)</div><div class="line">pq.push(<span class="string">'bob'</span>, <span class="number">1</span>)</div><div class="line">pq.push(<span class="string">'han'</span>, <span class="number">3</span>)</div><div class="line">print(pq._queue)</div><div class="line">print(pq.pop())</div><div class="line">print(pq._queue)</div><div class="line">print(pq.pop())</div></pre></td></tr></table></figure>
+<pre><code>[(-5, 0, &apos;jlan&apos;), (-3, 4, &apos;han&apos;), (-4, 2, &apos;lann&apos;), (-1, 3, &apos;bob&apos;), (-2, 1, &apos;hua&apos;)]
+jlan
+[(-4, 2, &apos;lann&apos;), (-3, 4, &apos;han&apos;), (-2, 1, &apos;hua&apos;), (-1, 3, &apos;bob&apos;)]
+lann
+</code></pre><h3 id="说明（详解见P10）"><a href="#说明（详解见P10）" class="headerlink" title="说明（详解见P10）"></a>说明（详解见P10）</h3><ol>
+<li>这个方案的核心在于heapq模块的使用。heappush()和heappop()分别从_queue中插入和移除，且保证列表中第一个元素的优先级最低。heappop()总是返回‘最小’元素，因此这是队列能弹出正确元素的关键。</li>
+<li>在这段代码中，队列以元组(-priority, index, item)的形式组成，priority取负值是为了让队列能够按优先级从高到底排序（正常情况下，堆是按从小到大排序的）,构造堆时按-priority排序，当priority相同时按index排序。</li>
+<li>变量index的作用是为了将具有相同优先级的元素以适当的顺序排列（以入队顺序）。</li>
+</ol>
+
 	
 	
 	
@@ -340,9 +400,9 @@
 <div id="comments">
     <!-- 多说评论框 start -->
         <div class="ds-thread" 
-            data-thread-key="categories/index.html" 
-            data-url="http://jlan.me/categories/index.html"
-            data-title="分类"></div>
+            data-thread-key="2017/04/21/《Python-CookBook》读书笔记-数据结构和算法（一）/" 
+            data-url="http://jlan.me/2017/04/21/《Python-CookBook》读书笔记-数据结构和算法（一）/"
+            data-title="《Python CookBook》读书笔记-数据结构和算法（一）"></div>
     <!-- 多说评论框 end -->
 </div>
 
@@ -361,6 +421,14 @@
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2017/04/21/numpy基础入门/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
         </div>
@@ -533,6 +601,13 @@ It will not impact the appearance and can give developers a lot of support :)
 
 				
 				
+				
+					<!-- Footer Top Button -->
+					<div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 				
 				
 				<!--Footer-->
