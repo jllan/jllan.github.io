@@ -1,6 +1,7 @@
 ---
 title: 《Python CookBook》读书笔记-数据结构和算法（一）
 date: 2017-04-21 10:03:40
+categories: IT技术
 tags: python
 ---
 ## 1. 把一个序列L拆分为包含n(n<=len(l))个单独的变量

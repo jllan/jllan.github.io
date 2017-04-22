@@ -1,7 +1,7 @@
 ---
 title: 用markdown来画流程图
 date: 2016-09-09 22:25:40
-categories: markdown
+categories: IT技术
 tag: markdown
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: ipython notebook使用技巧
 date: 2017-03-22 22:25:38
+categories: IT技术
 tags: python
 ---
 1.  可以选择MarkDown，用MarkDown来写说明

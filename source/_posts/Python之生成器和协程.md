@@ -1,7 +1,7 @@
 ---
 title: Python之生成器和协程
 date: 2016-12-26 20:47:16
-categories: Python
+categories: IT技术
 tags: python
 ---
 

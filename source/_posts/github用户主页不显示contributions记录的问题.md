@@ -1,7 +1,10 @@
 ---
 title: github用户主页不显示contributions记录的问题
 date: 2017-03-14 23:41:24
-tags: github
+categories: IT技术
+tags:
+- git
+- github
 ---
 ## 缘起
 一直纠结为啥自己的github个人主页不显示contributions记录中的commit记录，而只显示了create repo的记录。看着那寥寥无几的绿方格，想着自己好歹也经常commit呢，这连个鼓励都看不到好伤心，今天忍不住在网上查了下，终于找到问题原因。

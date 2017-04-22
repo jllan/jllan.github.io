@@ -1,6 +1,7 @@
 ---
 title: django分页方法
 date: 2017-03-11 15:48:01
+categories: IT技术
 tags: django
 ---
 ## 1. 使用pure_pagination进行分页

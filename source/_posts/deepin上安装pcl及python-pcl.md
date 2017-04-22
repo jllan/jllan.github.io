@@ -5,7 +5,7 @@ tags:
 - linux
 - python
 - pcl
-categories: Linux
+categories: IT技术
 ---
 
 [TOC]

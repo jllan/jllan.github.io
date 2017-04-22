@@ -1,9 +1,8 @@
 ---
 title: 用knn算法实现手写字符识别
 date: 2016-09-19 13:46:25
-tags: 
-- 机器学习
-categories: 机器学习
+tags: 机器学习
+categories: IT技术
 ---
 
 # 概述

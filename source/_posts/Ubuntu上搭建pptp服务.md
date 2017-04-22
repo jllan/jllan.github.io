@@ -2,7 +2,7 @@
 title: Ubuntu上搭建pptp服务
 date: 2017-03-03 14:26:55
 tags: linux
-categories: Linux
+categories: IT技术
 ---
 
 ## 1. 安装PPTP

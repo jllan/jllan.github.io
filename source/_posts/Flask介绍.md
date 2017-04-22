@@ -1,7 +1,7 @@
 ---
 title: Flask介绍
 date: 2016-12-08 14:45:58
-categories: Flask
+categories: IT技术
 tags: flask
 ---
 

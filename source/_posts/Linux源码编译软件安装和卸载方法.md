@@ -1,7 +1,7 @@
 ---
 title: Linux源码编译软件安装和卸载方法
 date: 2016-12-30 18:13:38
-categories: Linux
+categories: IT技术
 tags: linux
 ---
 

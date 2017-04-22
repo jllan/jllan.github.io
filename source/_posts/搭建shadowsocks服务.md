@@ -4,7 +4,7 @@ date: 2016-08-25 13:44:43
 tags: 
 - linux
 - shadowsocks
-categories: Linux
+categories: IT技术
 ---
 
 ------

@@ -1,6 +1,7 @@
 ---
 title: django使用mongoengine
 date: 2017-03-11 15:36:01
+categories: IT技术
 tags: django
 ---
 ## 数据库配置

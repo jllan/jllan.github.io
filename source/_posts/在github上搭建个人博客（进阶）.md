@@ -1,8 +1,10 @@
 ---
 title: 在github上搭建个人博客（进阶）
 date: 2016-08-20 16:12:32
-tags: hexo
-categories: Hexo
+tags: 
+- hexo
+- github
+categories: IT技术
 ---
 
 

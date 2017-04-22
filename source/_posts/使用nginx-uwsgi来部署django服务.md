@@ -1,6 +1,7 @@
 ---
 title: 使用nginx+uwsgi来部署django服务
 date: 2017-03-19 14:11:53
+categories: IT技术
 tags: 
 - django
 - nginx
