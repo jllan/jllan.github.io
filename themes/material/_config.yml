@@ -7,13 +7,13 @@ head:
     favicon: "/img/favicon.ico"
     high_res_favicon: "/img/favicon.ico"
     apple_touch_icon: "/img/favicon.ico"
-    keywords: 
+    keywords:
 
 # Jump Links Settings
 url:
-    rss: 
+    rss:
     daily_pic: "#"
-    logo: 
+    logo: "#"
 
 
 # ---------------------------------------------------------------
@@ -26,32 +26,28 @@ scheme: Paradox
 
 # UI & UX: slogan, color, effect
 uiux:
-    slogan: ""
+    #slogan: "Hi, nice to meet you"
     theme_color: "#0097A7"
     theme_sub_color: "#00838F"
     hyperlink_color: "#00838F"
     button_color: "#757575"
     android_chrome_color: "#0097A7"
-    nprogress_color: "#FF4081"
+    nprogress_color: "#29d"
     nprogress_buffer: "800"
-    
+
 # JS Effect Switches
 js_effect:
     fade: true
     smoothscroll: false
 
 # Reading experience
-# markdown available value:
-#     Material | Github | Plain
 reading:
-    markdown: Github
     entry_excerpt: 80
-    code_highlight: solarized-white
 
 # Thumbnail Settings
 thumbnail:
-    purecolor: 
-    random_amount: 5
+    purecolor:
+    random_amount: 19
 
 # Background Settings
 # bing available parameter:
@@ -61,9 +57,9 @@ thumbnail:
 background:
     purecolor: "#F5F5F5"
     #bgimg: "/img/bg.png"
-    bing: 
+    bing:
         enable: false
-        parameter: 
+        parameter:
 
 # Images Settings
 img:
@@ -74,9 +70,17 @@ img:
     footerico: "/img/footer/footer_ico-"
     #upyun_logo: "/img/upyun_logo.png"
     random_thumbnail: "/img/random/"
+    footer_image:
+        #upyun_logo:
+            #link: "https://www.upyun.com/"
+            #src: "/img/upyun_logo.svg"
 
 # Custom Fonts
 fonts: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif
+
+# Card Elevation Level
+card_elevation: 2
+
 
 # ---------------------------------------------------------------
 # Menu Settings
@@ -88,49 +92,100 @@ sns:
     zhihu: https://www.zhihu.com/people/jlan
     github: https://github.com/jllan
 
-# Sidebar User Dropdown
-dropdown: 
-    Email Me: 
-        link: "#"
-        icon: email
+# SNS Share Switch
+sns_share:
+    twitter: true
+    facebook: true
+    googleplus: true
+    weibo: true
+    linkedin: false
+    qq: false
+    telegram: false
 
-# Pages Menu
-pages:
-    关于我: "/about"
-    标签: "/tags"
-    
+# Sidebar Customize
+sidebar:
+    dropdown:
+        Email Me:
+            link: "#"
+            icon: email
+    homepage:
+        use: true
+        icon: home
+        divider: false
+    archives:
+        use: true
+        icon: inbox
+        divider: false
+    categories:
+        use: true
+        icon: chrome_reader_mode
+        divider: false
+    pages:
+        关于:
+            link: "/about"
+            icon: person
+            divider: false
+        标签云:
+            link: "/tags"
+            icon: label
+            divider: false
+    article_num:
+        use: true
+        divider: true
+    footer:
+        divider: true
+        theme: true
+        support: false
+        feedback: false
+        material: false
 
+# Qrcode for redirect at other device
+qrcode: false
 
 # ---------------------------------------------------------------
 # Integrated Services
 # ---------------------------------------------------------------
-    
+
+# MaterialCDN
+# When you set 'use' as true, the needed css, js, font file will have a new src.
+# The new src will have the base domain you configured in 'base'.
+materialcdn: 
+    use: true
+    base: https://materialcdn.nfz.moe/hexo/1.3.2
+
 # Comment Systems
-# Available value:
-#     duoshuo | disqus
+# Available value of "use":
+#     duoshuo | disqus | disqus_click | changyan
 comment:
     use: duoshuo
     shortname: jlan
-    duoshuo_thread_key: path
+    duoshuo_thread_key_type: path
     duoshuo_embed_js_url: "https://static.duoshuo.com/embed.js"
-
+    changyan_appid:
+    changyan_conf:
+    changyan_thread_key_type: path
 # Search Systems
 # Available value:
 #     swiftype | google | local
 search:
     use: google
-        
+    swiftype_key:
+
+# Analytics Systems
+analytics:
+    baidu_id:
+    google_id:
+
 # Leancloud Views
 leancloud:
     enable: false
-    app_id: #你的app_id
-    app_key: #你的app_key
+    app_id: #你的 app_id
+    app_key: #你的 app_key
     av_core_mini: "https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"
-    
+
 # Busuanzi 不蒜子 Views
 busuanzi:
     enable: true
     all_site_uv: true
     post_pv: true
     busuanzi_pure_mini_js: "https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
-
