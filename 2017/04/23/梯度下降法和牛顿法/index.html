@@ -10,7 +10,7 @@
     
     <title>
         
-            搭建shadowsocks服务 | 
+            梯度下降法和牛顿法 | 
         
         穿林打叶又何妨
     </title>
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Jlan">
     <meta name="description" content="生活、学习记录">
-    <meta name="keywords" content="null,linux,shadowsocks">
+    <meta name="keywords" content="null,机器学习">
 
     <!-- Favicons -->
     <link rel="icon shortcut" type="image/ico" href="/img/favicon.ico">
@@ -62,9 +62,9 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://jlan.me">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="搭建shadowsocks服务 | 穿林打叶又何妨">
+    <meta property="og:title" content="梯度下降法和牛顿法 | 穿林打叶又何妨">
     <meta property="og:description" content="生活、学习记录">
-    <meta property="og:article:tag" content="linux"> <meta property="og:article:tag" content="shadowsocks"> 
+    <meta property="og:article:tag" content="机器学习"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -251,7 +251,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-安装shadowsocks"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 安装shadowsocks</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-配置shadowsocks"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. 配置shadowsocks</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-启动服务"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. 启动服务</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-加入开机自动启动"><span class="post-toc-number">4.</span> <span class="post-toc-text">4. 加入开机自动启动</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-客户端使用"><span class="post-toc-number">5.</span> <span class="post-toc-text">5. 客户端使用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-可能出现问题"><span class="post-toc-number">6.</span> <span class="post-toc-text">6. 可能出现问题</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-梯度下降法"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 梯度下降法</span></a></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -288,7 +288,7 @@
         
     
             <p class="article-headline-p">
-                搭建shadowsocks服务
+                梯度下降法和牛顿法
             </p>
         </div>
 
@@ -307,7 +307,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Jlan</strong>
-        <span>Aug 25, 2016</span>
+        <span>Apr 23, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -331,7 +331,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/linux/">linux</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/shadowsocks/">shadowsocks</a>
+        <a class="post_tag-link" href="/tags/机器学习/">机器学习</a>
     </ul>
     
 
@@ -358,7 +358,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=搭建shadowsocks服务&url=http://jlan.me//2016/08/25/搭建shadowsocks服务/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=梯度下降法和牛顿法&url=http://jlan.me//2017/04/23/梯度下降法和牛顿法/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -367,7 +367,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=搭建shadowsocks服务&url=http://jlan.me//2016/08/25/搭建shadowsocks服务/index.html&via=Jlan" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=梯度下降法和牛顿法&url=http://jlan.me//2017/04/23/梯度下降法和牛顿法/index.html&via=Jlan" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -376,7 +376,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://jlan.me//2016/08/25/搭建shadowsocks服务/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://jlan.me//2017/04/23/梯度下降法和牛顿法/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -385,7 +385,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://jlan.me//2016/08/25/搭建shadowsocks服务/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://jlan.me//2017/04/23/梯度下降法和牛顿法/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -409,30 +409,32 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <hr>
-<p>由于vpn是全局代理，如果开了vpn，所有网络都要走代理通道，这样的话要是访问国内的网站就会很慢，用起来挺不方便的。而shadowsocks可以自己决定让哪些网站走代理通道，所以还是shadowsocks用起来更爽，下边记录下在ubuntu上搭shadowsocks服务的步骤。</p>
-<hr>
-<h3 id="1-安装shadowsocks"><a href="#1-安装shadowsocks" class="headerlink" title="1. 安装shadowsocks"></a>1. 安装shadowsocks</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install python-gevent python-pip</div><div class="line">sudo pip install shadowsocks</div></pre></td></tr></table></figure>
-<p>如果这一步提示缺什么包，就安装上</p>
-<hr>
-<h3 id="2-配置shadowsocks"><a href="#2-配置shadowsocks" class="headerlink" title="2. 配置shadowsocks"></a>2. 配置shadowsocks</h3><p>编辑/etc/shadowsocks.json，如果没有该文件就手动创建<br>内容如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;server&quot;:&quot;server_ip&quot;,</div><div class="line">    &quot;server_port&quot;:8989,</div><div class="line">    &quot;local_address&quot;: &quot;127.0.0.1&quot;,</div><div class="line">    &quot;local_port&quot;:1080,</div><div class="line">    &quot;password&quot;:&quot;password&quot;,</div><div class="line">    &quot;timeout&quot;:300,</div><div class="line">    &quot;method&quot;:&quot;aes-256-cfb&quot;,</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>server,server_port,password需要根据你的情况修改</p>
-<hr>
-<h3 id="3-启动服务"><a href="#3-启动服务" class="headerlink" title="3. 启动服务"></a>3. 启动服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ssserver -c /etc/shadowsocks.json -d start</div></pre></td></tr></table></figure>
-<p>如果没有意外，服务就启动成功了</p>
-<hr>
-<h3 id="4-加入开机自动启动"><a href="#4-加入开机自动启动" class="headerlink" title="4. 加入开机自动启动"></a>4. 加入开机自动启动</h3><p>把命令<code>ssserver -c /etc/shadowsocks.json -d start</code>加入/etc/rc.local文件中，写在exit 0之前。</p>
-<hr>
-<h3 id="5-客户端使用"><a href="#5-客户端使用" class="headerlink" title="5. 客户端使用"></a>5. 客户端使用</h3><ul>
-<li><p>windows电脑<br>下载<a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="external">shadowsocks windows客户端</a>，然后chrome浏览器装SwitchyOmega插件，SwitchyOmega配置方法如下图所示<br><img src="http://oceas72q5.bkt.clouddn.com/shadowsocks%E9%85%8D%E7%BD%AE1.png" alt="shadowsocks配置1.png"><br><img src="http://oceas72q5.bkt.clouddn.com/shadowsocks%E9%85%8D%E7%BD%AE2.png" alt="shadowsocks配置2.png"></p>
-</li>
-<li><p>linux电脑<br>安装shadowsocks-qt5<br><code>sudo apt-get install shadowsocks-qt5</code><br>shadowscoks-qt5配置如下图所示<br><img src="http://oceas72q5.bkt.clouddn.com/shadowsocks-qt5%E9%85%8D%E7%BD%AE.png" alt="shadowsocks-qt5配置.png"><br>然后，chrome浏览器安装SwitchyOmega插件，SwitchyOmega配置方法如上图所示</p>
-</li>
-<li><p>安卓<br>下载<a href="https://github.com/shadowsocks/shadowsocks-android/releases" target="_blank" rel="external">影梭</a>，配置方法如下<br><img src="http://oceas72q5.bkt.clouddn.com/%E5%BD%B1%E6%A2%AD%E9%85%8D%E7%BD%AE.jpg" alt="406670196.jpg"></p>
-</li>
-</ul>
-<hr>
-<h3 id="6-可能出现问题"><a href="#6-可能出现问题" class="headerlink" title="6. 可能出现问题"></a>6. 可能出现问题</h3><p>我在使用过程中出现了google play,google map可以顺利连接，但是手机和电脑上的浏览器都无法通过ss上网的问题，首先这个不是配置问题（认证方式是正确的），因为之前我的手机和电脑浏览器都是可以顺利连接的。查看日志<code>/var/log/shadowsocks.log</code>，有提示<code>unsupported addrtype 108, maybe wrong password or encryption method</code>，搜索了一番，别人也出现过这问题，但没找到解决方法。后来我把windows上的客户端从<a href="https://github.com/shadowsocks/shadowsocks-qt5" target="_blank" rel="external">shadowsocks-qt5</a>换成<a href="https://github.com/shadowsocks/shadowsocks-windows" target="_blank" rel="external">shadowsocks-windows</a>，然后竟然可以了。安卓手机上浏览器换成chrome竟然也可以了，具体原因不明。</p>
+        <p>使用梯度下降法和牛顿法求解最优解</p>
+<p><strong>问题描述</strong></p>
+<p>$ A = \begin{bmatrix} 4 &amp; 2 \ 1 &amp; 3 \ \end{bmatrix} $,<br>$ B = \begin{bmatrix} 3 \ 2 \ \end{bmatrix} $</p>
+<p>Ax=B，求x</p>
+<h2 id="1-梯度下降法"><a href="#1-梯度下降法" class="headerlink" title="1. 梯度下降法"></a>1. 梯度下降法</h2><p>算法流程</p>
+<ol>
+<li>根据模型构造代价方程</li>
+<li>x复初始值</li>
+<li>计算x位置的梯度</li>
+<li>x=x-step*梯度，更新x</li>
+<li>判断是否达到要求，是则退出，否则回到step3</li>
+</ol>
+<p>代价方程及求导:</p>
+<p> J = (AX-B)T*(AX-B)</p>
+<p> J = XATAX-BTAX-XATB+BTB</p>
+<p> R = ATA, P = ATB</p>
+<p> $ \nabla J = 2RX-2P $</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> mpl_toolkits.mplot3d <span class="keyword">import</span> Axes3D</div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"></div><div class="line"><span class="comment"># numpy.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None)创建num个start～stop之间的等差数列</span></div><div class="line"><span class="comment"># meshgrid()产生格点矩阵，用于三维曲面的分格线座标</span></div><div class="line"><span class="comment"># meshgrid(range(-3,4),range(-2,3))产生两个都是5*7的矩阵X和Y,其中X是由第一个行向量产生，Y是由第二个行向量产生</span></div><div class="line">X, Y = np.meshgrid(np.linspace(<span class="number">-5</span>, <span class="number">10</span>, <span class="number">100</span>), np.linspace(<span class="number">-5</span>, <span class="number">10</span>, <span class="number">100</span>))</div><div class="line"></div><div class="line">A = np.matrix([[<span class="number">4.0</span>,<span class="number">2.0</span>],[<span class="number">1.0</span>,<span class="number">3.0</span>]])</div><div class="line">B = np.matrix([[<span class="number">3.0</span>],[<span class="number">2.0</span>]])</div><div class="line"></div><div class="line">R = A.T.dot(A)</div><div class="line">P = A.T.dot(B)</div><div class="line"></div><div class="line">print(R)</div><div class="line">print(P)</div><div class="line">print(B.T.dot(B))</div><div class="line"></div><div class="line"><span class="comment"># 定义代价方程</span></div><div class="line"><span class="comment"># 不明白这个代价方程怎么来的</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">cost_func</span><span class="params">(X,Y)</span>:</span></div><div class="line">    <span class="keyword">return</span> R[<span class="number">0</span>,<span class="number">0</span>]*(X**<span class="number">2</span>)+R[<span class="number">1</span>,<span class="number">1</span>]*(Y**<span class="number">2</span>)+(R[<span class="number">0</span>,<span class="number">1</span>]+R[<span class="number">1</span>,<span class="number">0</span>])*X*Y<span class="number">-2</span>*P[<span class="number">0</span>,<span class="number">0</span>]*X<span class="number">-2</span>*P[<span class="number">1</span>,<span class="number">0</span>]*Y</div><div class="line"></div><div class="line"><span class="comment"># 如果这样定义代价方程，计算出的结果有些问题，暂时还没搞明白</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">cost_func2</span><span class="params">(X)</span>:</span></div><div class="line">    <span class="keyword">return</span> X.T.dot(R).dot(X) - X.T.dot(P) - P.T.dot(X) + B.T.dot(B)</div><div class="line"></div><div class="line">z = cost_func(X,Y)</div></pre></td></tr></table></figure>
+<pre><code>[[ 17.  11.]
+ [ 11.  13.]]
+[[ 14.]
+ [ 12.]]
+[[ 13.]]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># w, w_n分别用来存最速下降和牛顿法的迭代过程</span></div><div class="line">w=np.matrix([[<span class="number">0</span>],[<span class="number">-4</span>]])</div><div class="line">w_n=np.matrix([[<span class="number">0</span>],[<span class="number">-4</span>]])</div><div class="line"></div><div class="line"><span class="comment"># 梯度下降法</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>):</div><div class="line">    w_t = w[:,<span class="number">-1</span>]</div><div class="line">    w=np.hstack((w,w_t<span class="number">-0.01</span>*(R.dot(w_t)-P)))</div><div class="line"></div><div class="line"><span class="comment"># NewTon法 </span></div><div class="line"></div><div class="line"><span class="comment">#Hessian matrix，这里不明白    </span></div><div class="line">H=np.matrix([[<span class="number">2.0</span>*R[<span class="number">0</span>,<span class="number">0</span>],R[<span class="number">0</span>,<span class="number">1</span>]+R[<span class="number">1</span>,<span class="number">0</span>]],[R[<span class="number">0</span>,<span class="number">1</span>]+R[<span class="number">1</span>,<span class="number">0</span>],<span class="number">2.0</span>*R[<span class="number">1</span>,<span class="number">1</span>]]])</div><div class="line"></div><div class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> range(<span class="number">30</span>):</div><div class="line">    w_t = w_n[:,<span class="number">-1</span>]</div><div class="line">    w_n=np.hstack((w_n,w_t-H.I.dot(R.dot(w_t)-P)))</div><div class="line">    </div><div class="line">w = np.array(w)</div><div class="line">w_n = np.array(w_n)</div><div class="line"></div><div class="line"><span class="comment"># 学习曲线</span></div><div class="line">L=cost_func(w[<span class="number">0</span>,:], w[<span class="number">1</span>,:])</div><div class="line">L_n=cost_func(w_n[<span class="number">0</span>,:], w_n[<span class="number">1</span>,:])</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># 输出图形</span></div><div class="line"><span class="comment"># 2d plot</span></div><div class="line"></div><div class="line">f, (ax1, ax2) = plt.subplots(<span class="number">1</span>, <span class="number">2</span>)</div><div class="line">CS = ax1.contour(X, Y, z)</div><div class="line">ax1.plot(w[<span class="number">0</span>,:], w[<span class="number">1</span>,:], <span class="string">'bo'</span>,w_n[<span class="number">0</span>,:],w_n[<span class="number">1</span>,:], <span class="string">'ro'</span>)</div><div class="line"></div><div class="line">ax1.clabel(CS, inline=<span class="number">1</span>, fontsize=<span class="number">10</span>)</div><div class="line">ax1.set_title(<span class="string">'contour'</span>)</div><div class="line">ax1.set_xlabel(<span class="string">'w0'</span>)</div><div class="line">ax1.set_ylabel(<span class="string">'w1'</span>)</div><div class="line">ax1.legend((<span class="string">'grad'</span>, <span class="string">'Newton'</span>))</div><div class="line">ax1.grid(<span class="keyword">True</span>)</div><div class="line"></div><div class="line"></div><div class="line">ax2.plot(range(<span class="number">101</span>),L,<span class="string">'b'</span>,range(<span class="number">31</span>),L_n,<span class="string">'r'</span>)</div><div class="line">ax2.set_title(<span class="string">'cost learn curve'</span>)</div><div class="line">ax2.set_ylabel(<span class="string">'cost'</span>)</div><div class="line">ax2.legend((<span class="string">'grad'</span>, <span class="string">'Newton'</span>))</div><div class="line">ax2.grid(<span class="keyword">True</span>)</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># 3d plot</span></div><div class="line">fig = plt.figure()</div><div class="line">ax = fig.add_subplot(<span class="number">111</span>, projection=<span class="string">'3d'</span>)</div><div class="line"><span class="comment"># 先画出整个大曲面，然后在大曲面上画出迭代过程中的每个点</span></div><div class="line">ax.plot_surface(X,Y, z, rstride=<span class="number">4</span>, cstride=<span class="number">4</span>, color=<span class="string">'b'</span>)</div><div class="line">ax.plot(w[<span class="number">0</span>,:],w[<span class="number">1</span>,:],L,<span class="string">'ro'</span>)</div><div class="line">ax.plot(w_n[<span class="number">0</span>,:],w_n[<span class="number">1</span>,:],L_n,<span class="string">'go'</span>)</div><div class="line">ax.legend((<span class="string">'grad'</span>, <span class="string">'Newton'</span>))</div><div class="line"></div><div class="line">plt.show()</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-afbffbcccc495767.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="output_4_0.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-dd048c7e0fa8030f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="output_4_1.png"></p>
 
     
 
@@ -461,9 +463,9 @@
 <div id="comments">
     <!-- 多说评论框 start -->
     <div class="ds-thread"
-        data-thread-key="2016/08/25/搭建shadowsocks服务/"
-        data-url="http://jlan.me/2016/08/25/搭建shadowsocks服务/"
-        data-title="搭建shadowsocks服务">
+        data-thread-key="2017/04/23/梯度下降法和牛顿法/"
+        data-url="http://jlan.me/2017/04/23/梯度下降法和牛顿法/"
+        data-title="梯度下降法和牛顿法">
     </div>
     <!-- 多说评论框 end -->
 </div>
@@ -483,21 +485,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2016/08/25/用markdown语法来写微信公众平台文章/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2016/08/20/在github上搭建个人博客（进阶）/" id="post_nav-older" class="next-content">
+        <a href="/2017/04/22/梯度下降法/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
