@@ -130,3 +130,89 @@ print(pq.pop())
 1. 这个方案的核心在于heapq模块的使用。heappush()和heappop()分别从_queue中插入和移除，且保证列表中第一个元素的优先级最低。heappop()总是返回‘最小’元素，因此这是队列能弹出正确元素的关键。
 2. 在这段代码中，队列以元组(-priority, index, item)的形式组成，priority取负值是为了让队列能够按优先级从高到底排序（正常情况下，堆是按从小到大排序的）,构造堆时按-priority排序，当priority相同时按index排序。
 3. 变量index的作用是为了将具有相同优先级的元素以适当的顺序排列（以入队顺序）。
+
+## 字典操作
+
+- 将键映射到多个值上
+
+
+```python
+from collections import defaultdict
+
+d = defaultdict(list)
+d['a'].append(1)
+d['a'].append(2)
+print(d)
+```
+
+    defaultdict(<class 'list'>, {'a': [1, 2]})
+
+
+- 有序字典
+使用collections.OrderedDict可以保持字典有序，OrderedDict内部维护了一个双向链表，会根据元素加入的顺序来排列键的位置。OrderedDict的大小是普通字典的2倍多。
+
+- 在字典上进行求最大值，最小值等操作
+
+
+```python
+prices = {
+    'apple': 2,
+    'banada': 3,
+    'orange': 1,
+    'peach': 4
+}
+
+# 在字典上执行常见的操作，只会处理键，而不是值
+min(prices) # 返回'apple'
+max(prices) # 返回'peach'
+
+# 可以用dict.values()来处理值
+min(prices.values()) # 返回 1
+max(prices.values()) # 返回 4
+
+min(prices, key=lambda x: prices[x]) # 返回'orange'
+max(prices, key=lambda x: prices[x]) # 返回'peach'
+
+# 对字典进行求最大值，最小值等操作一般用下边的方法
+min(zip(prices.values(), prices.keys())) # 返回(1, 'orange')
+max(zip(prices.values(), prices.keys())) # 返回(4, 'orange')
+# zip()创建了一个迭代器，其内容只能被消费一次
+# 涉及(value, key)对的比较时，如果多个条目有相同的value，此时将根据key进行判定
+```
+
+
+
+
+    (4, 'peach')
+
+
+
+- 在字典中寻找相同点
+
+
+```python
+# 找出两个字典可能相同的地方（相同的键或者值）
+a = {'x': 1, 'y': 2, 'z': 3}
+b = {'w': 11, 'y': 2, 'z': 13}
+
+# a和b相同的键
+a.keys() & b.keys() # 返回 {'y', 'z'}
+
+# 在a中但是不在b中的键
+a.keys() - b.keys() # 返回 {'x'}
+
+# a和b中相同的{key: value}
+a.items() & b.items() # 返回 {('y', 2)}
+```
+
+
+
+
+    {('y', 2)}
+
+
+
+
+```python
+
+```
