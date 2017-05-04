@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.3.4 -->
+
+    <!-- Title -->
+    
+    <title>
+        
+            机器学习之决策树算法 | 
+        
+        穿林打叶又何妨
+    </title>
+
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+        <link rel="dns-prefetch" href="http://oceas72q5.bkt.clouddn.com/hexo/material"/>
+    
+    
+    
+    
+    
+    
+        <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+    
+
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Jlan">
+    <meta name="description" content="生活、学习记录">
+    <meta name="keywords" content="null,机器学习">
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.ico">
+    <link rel="icon" sizes="192x192" href="/img/favicon.ico">
+    <link rel="apple-touch-icon" href="/img/favicon.ico">
+
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="穿林打叶又何妨">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://jlan.me">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="机器学习之决策树算法 | 穿林打叶又何妨">
+    <meta property="og:description" content="生活、学习记录">
+    <meta property="og:article:tag" content="机器学习"> 
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS & jQuery -->
+    
+        <link rel="stylesheet" href="http://oceas72q5.bkt.clouddn.com/hexo/material/css/material.min.css">
+        <link rel="stylesheet" href="http://oceas72q5.bkt.clouddn.com/hexo/material/css/style.min.css">
+        <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+        <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/jquery.min.js"></script>
+        <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/queue.js"></script>
+    
+
+    <!-- UC Browser Compatible -->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write("<link rel=\"stylesheet\" href=\"/css/uc.css\">");
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
+
+    
+
+    
+
+
+    <!-- Bing Background -->
+    
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#决策树原理介绍"><span class="post-toc-number">1.</span> <span class="post-toc-text">决策树原理介绍</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#决策树的构造"><span class="post-toc-number">2.</span> <span class="post-toc-text">决策树的构造</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#信息熵"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">信息熵</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#划分数据集"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">划分数据集</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#递归构建决策树"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">递归构建决策树</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码实现"><span class="post-toc-number">3.</span> <span class="post-toc-text">代码实现</span></a></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                机器学习之决策树算法
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/logo-me.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Jlan</strong>
+        <span>May 04, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/机器学习/">机器学习</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=机器学习之决策树算法&url=http://jlan.me//2017/05/04/机器学习之决策树算法/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=机器学习之决策树算法&url=http://jlan.me//2017/05/04/机器学习之决策树算法/index.html&via=Jlan" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://jlan.me//2017/05/04/机器学习之决策树算法/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://jlan.me//2017/05/04/机器学习之决策树算法/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="决策树原理介绍"><a href="#决策树原理介绍" class="headerlink" title="决策树原理介绍"></a>决策树原理介绍</h2><p>决策树是用样本的属性作为结点，用属性的取值作为分支的树结构，是通过一系列规则对数据进行分类的过程，它提供一种在什么条件下会得到什么值的类似规则的方法。决策树分为分类树和回归树两种，分类树对离散变量做决策树，回归树对连续变量做决策树。下图是一个相亲时候的决策图，女方根据男方的条件来决定是否见面（仅为解释）。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-567bc40ea378db61.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="相亲图.png"></p>
+<h2 id="决策树的构造"><a href="#决策树的构造" class="headerlink" title="决策树的构造"></a>决策树的构造</h2><p>一棵决策树的生成过程主要分为以下3个部分:</p>
+<ol>
+<li><strong>特征选择</strong><br>特征选择是指从训练数据中众多的特征中选择一个特征作为当前节点的分裂标准，比如相亲时要根据男方的一系列特征[年龄，长相，收入，是否公务员]来决定见不见面，特征选择就是每次选择哪个特征才能得到一个最好的决策结果。如何选择特征有着很多不同量化评估标准标准，从而衍生出不同的决策树算法。</li>
+<li><strong>决策树生成</strong><br>根据选择的特征评估标准，从上至下递归地生成子节点，直到数据集不可分则停止决策树停止生长。</li>
+<li><strong>剪枝</strong><br>决策树容易过拟合，一般来需要剪枝，缩小树结构规模、缓解过拟合。剪枝技术有预剪枝和后剪枝两种。</li>
+</ol>
+<p>在构造决策树时，需要解决的第一个问题是，当前数据集上那个特征在划分数据分类时起决定作用。为找到决定性的特征，划分出最好的结果，需要评估每个特征。当根据第一个特征进行数据划分后，原始数据集会分布在第一个决策点的所有分支上。如果某个分支下的数据属于同一类型，则该分支无需继续划分。如果数据子集内的数据不属于同一类型则需要根据新的特征继续划分。<br>创建分支的伪代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">def create_branch():</div><div class="line">    根据数据集中的每个子项是否属于同一分类:</div><div class="line">        if so:</div><div class="line">            return 类标签</div><div class="line">        else:</div><div class="line">            寻找划分数据集的最好特征</div><div class="line">            划分数据集</div><div class="line">            创建分支节点</div><div class="line">            for 每个划分的子集:</div><div class="line">                create_branch()</div><div class="line">            return 分支节点</div></pre></td></tr></table></figure></p>
+<h3 id="信息熵"><a href="#信息熵" class="headerlink" title="信息熵"></a>信息熵</h3><p>每次划分数据集时如何选择合适的特征才能产生最优的划分结果，可以用信息熵来评估。在概率论中，信息熵给了我们一种度量不确定性的方式，是用来衡量随机变量不确定性的，<strong>熵就是信息的期望值</strong>。若待分类的事物可能划分在N类中，分别是x1，x2，……，xn，每一种取到的概率分别是P1，P2，……，Pn，那么X的熵就定义为：<br>$$ H(X) = -\sum_{i=1}^{n} p_i log_2 p_i $$</p>
+<p>熵越高就表明数据越混乱，不确定性越高。</p>
+<p>举个例子，掷一枚筛子的结果的信息熵$ H = -\sum_{i=1}^{6} \frac{1}{6} log_2 \frac{1}{6} =  2.58 $。</p>
+<p>划分数据集的最大原则是：将无序的数据变得更加有序。划分数据集前后信息熵发生的变化叫做信息增益，信息增益是熵的减少或数据无序度的减少，获得信息增益最高的特征就是最好的选择。<br><code>Gain(A) = Info(D) - Info(D-a)</code></p>
+<p>使用特征a进行划分后的信息增益 =（原始数据的信息熵）-（使用特征a进行划分后得到的新数据集的信息熵）。</p>
+<h3 id="划分数据集"><a href="#划分数据集" class="headerlink" title="划分数据集"></a>划分数据集</h3><p>有了信息熵的概念，我们就可以依此来选择特征划分数据集了。具体过程是遍历数据集的每个特征，用每个特征的不同值去划分数据集，计算信息增益。最后返回信息增益最大的那个特征。</p>
+<h3 id="递归构建决策树"><a href="#递归构建决策树" class="headerlink" title="递归构建决策树"></a>递归构建决策树</h3><p>得到原始数据集，基于最好特征划分一次数据集。第一次划分后，数据将被向下传递到树分支的下一节点，在这个节点熵再次划分数据。递归结束的条件是程序遍历完所有属性或者每个分之下的所有实力都属于同一分类。</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>生成如下数据集</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th style="text-align:center">年龄</th>
+<th style="text-align:right">长相</th>
+<th>收入</th>
+<th>公务员</th>
+<th>是否见面</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align:center">&lt;30</td>
+<td style="text-align:right">帅</td>
+<td>低</td>
+<td>是</td>
+<td>no</td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align:center">&lt;30</td>
+<td style="text-align:right">丑</td>
+<td>高</td>
+<td>否</td>
+<td>no</td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align:center">&lt;30</td>
+<td style="text-align:right">帅</td>
+<td>中等</td>
+<td>是</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>4</td>
+<td style="text-align:center">&gt;30</td>
+<td style="text-align:right">帅</td>
+<td>高</td>
+<td>否</td>
+<td>no</td>
+</tr>
+<tr>
+<td>5</td>
+<td style="text-align:center">&lt;30</td>
+<td style="text-align:right">丑</td>
+<td>低</td>
+<td>是</td>
+<td>no</td>
+</tr>
+<tr>
+<td>6</td>
+<td style="text-align:center">&lt;30</td>
+<td style="text-align:right">帅</td>
+<td>低</td>
+<td>否</td>
+<td>no</td>
+</tr>
+<tr>
+<td>7</td>
+<td style="text-align:center">&lt;30</td>
+<td style="text-align:right">帅</td>
+<td>高</td>
+<td>否</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>8</td>
+<td style="text-align:center">&lt;30</td>
+<td style="text-align:right">帅</td>
+<td>中等</td>
+<td>否</td>
+<td>no</td>
+</tr>
+<tr>
+<td>9</td>
+<td style="text-align:center">&gt;30</td>
+<td style="text-align:right">帅</td>
+<td>中等</td>
+<td>是</td>
+<td>no</td>
+</tr>
+<tr>
+<td>10</td>
+<td style="text-align:center">&lt;30</td>
+<td style="text-align:right">丑</td>
+<td>中等</td>
+<td>是</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> math <span class="keyword">import</span> log</div><div class="line"></div><div class="line"><span class="comment"># 构造数据集</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">createDataSet</span><span class="params">()</span>:</span></div><div class="line">    dataSet = [</div><div class="line">        [<span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="string">'no'</span>],</div><div class="line">        [<span class="number">1</span>, <span class="number">0</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="string">'no'</span>],</div><div class="line">        [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="string">'yes'</span>],</div><div class="line">        [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="string">'no'</span>],</div><div class="line">        [<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="string">'no'</span>],</div><div class="line">        [<span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="string">'no'</span>],</div><div class="line">        [<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="string">'yes'</span>],</div><div class="line">        [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="string">'no'</span>],</div><div class="line">        [<span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="string">'no'</span>],</div><div class="line">        [<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="string">'no'</span>],</div><div class="line">    ]</div><div class="line">    labels = [<span class="string">'年龄'</span>,<span class="string">'长相'</span>,<span class="string">'收入'</span>,<span class="string">'公务员'</span>]</div><div class="line">    <span class="keyword">return</span> dataSet, labels</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 计算香农熵</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">calcShannonEnt</span><span class="params">(dataSet)</span>:</span></div><div class="line">    numEntries = len(dataSet)</div><div class="line">    labelCounts = &#123;&#125;</div><div class="line">    <span class="comment"># 统计数据集中每个分类的数量</span></div><div class="line">    <span class="keyword">for</span> featVec <span class="keyword">in</span> dataSet: </div><div class="line">        currentLabel = featVec[<span class="number">-1</span>]</div><div class="line">        labelCounts[currentLabel] = labelCounts.get(currentLabel, <span class="number">0</span>) + <span class="number">1</span></div><div class="line">    shannonEnt = <span class="number">0.0</span></div><div class="line">    <span class="comment"># 计算每个分类的熵，然后就和得到整个数据集的熵</span></div><div class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> labelCounts:</div><div class="line">        prob = float(labelCounts[key])/numEntries <span class="comment"># 每个分类的数量/总数据集的数量=每个分类的概率</span></div><div class="line">        shannonEnt -= prob * log(prob,<span class="number">2</span>) <span class="comment">#log base 2</span></div><div class="line">    <span class="keyword">return</span> shannonEnt</div><div class="line"></div><div class="line"><span class="comment"># 划分数据集，根据每个特征的不同值把整个数据集划分为多个数据子集</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">splitDataSet</span><span class="params">(dataSet, axis, value)</span>:</span></div><div class="line">    retDataSet = []</div><div class="line">    <span class="keyword">for</span> featVec <span class="keyword">in</span> dataSet:</div><div class="line">        <span class="keyword">if</span> featVec[axis] == value:</div><div class="line">            reducedFeatVec = featVec[:axis]     </div><div class="line">            reducedFeatVec.extend(featVec[axis+<span class="number">1</span>:])</div><div class="line">            retDataSet.append(reducedFeatVec)</div><div class="line">    <span class="keyword">return</span> retDataSet</div><div class="line"></div><div class="line"><span class="comment"># 用第i个特征的一个value划分一次数据集得到一个数据子集，计算该数据子集的熵</span></div><div class="line"><span class="comment"># 对每个value划分得到的数据子集的熵就和得到用该特征划分数据集后的熵</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">chooseBestFeatureToSplit</span><span class="params">(dataSet)</span>:</span></div><div class="line">    numFeatures = len(dataSet[<span class="number">0</span>]) - <span class="number">1</span>      <span class="comment"># 最后一列是标签</span></div><div class="line">    baseEntropy = calcShannonEnt(dataSet)</div><div class="line">    bestInfoGain = <span class="number">0.0</span>; bestFeature = <span class="number">-1</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(numFeatures):        <span class="comment"># 遍历每个特征</span></div><div class="line">        featList = [example[i] <span class="keyword">for</span> example <span class="keyword">in</span> dataSet] <span class="comment"># 所有数据的第i个特征</span></div><div class="line">        uniqueVals = set(featList)       <span class="comment"># 对特征值去重</span></div><div class="line">        newEntropy = <span class="number">0.0</span></div><div class="line">        <span class="keyword">for</span> value <span class="keyword">in</span> uniqueVals:</div><div class="line">            subDataSet = splitDataSet(dataSet, i, value) <span class="comment"># 用第i个特征的一个value来划分数据集</span></div><div class="line">            prob = len(subDataSet)/float(len(dataSet)) <span class="comment"># 第i个特征等于value的个数/整个数据集的数量</span></div><div class="line">            newEntropy += prob * calcShannonEnt(subDataSet)     </div><div class="line">        infoGain = baseEntropy - newEntropy     <span class="comment">#用第i个特征进行数据划分后的信息增益</span></div><div class="line">        <span class="keyword">if</span> (infoGain &gt; bestInfoGain):       <span class="comment">#compare this to the best gain so far</span></div><div class="line">            bestInfoGain = infoGain         <span class="comment">#if better than current best, set to best</span></div><div class="line">            bestFeature = i</div><div class="line">    <span class="keyword">return</span> bestFeature   </div><div class="line">    </div><div class="line"><span class="comment"># 返回类别中数量最多的那个分类</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">majorityCnt</span><span class="params">(classList)</span>:</span></div><div class="line">    classCount=&#123;&#125;</div><div class="line">    <span class="keyword">for</span> vote <span class="keyword">in</span> classList:</div><div class="line">        classCount[vote] = classCount.get(vote, <span class="number">0</span>) + <span class="number">1</span></div><div class="line">    sortedClassCount = sorted(classCount.iteritems(), key=operator.itemgetter(<span class="number">1</span>), reverse=<span class="keyword">True</span>)</div><div class="line">    <span class="keyword">return</span> sortedClassCount[<span class="number">0</span>][<span class="number">0</span>]</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">createTree</span><span class="params">(dataSet,labels)</span>:</span></div><div class="line">    classList = [example[<span class="number">-1</span>] <span class="keyword">for</span> example <span class="keyword">in</span> dataSet]</div><div class="line">    <span class="keyword">if</span> classList.count(classList[<span class="number">0</span>]) == len(classList): </div><div class="line">        <span class="keyword">return</span> classList[<span class="number">0</span>]<span class="comment"># 类别完全相同则停止划分</span></div><div class="line">    <span class="keyword">if</span> len(dataSet[<span class="number">0</span>]) == <span class="number">1</span>: <span class="comment"># 遍历完所有特征时返回出现次数最多的</span></div><div class="line">        <span class="keyword">return</span> majorityCnt(classList)</div><div class="line">    bestFeat = chooseBestFeatureToSplit(dataSet)</div><div class="line">    bestFeatLabel = labels[bestFeat]</div><div class="line">    myTree = &#123;bestFeatLabel:&#123;&#125;&#125;</div><div class="line">    <span class="keyword">del</span>(labels[bestFeat])</div><div class="line">    featValues = [example[bestFeat] <span class="keyword">for</span> example <span class="keyword">in</span> dataSet]</div><div class="line">    uniqueVals = set(featValues)</div><div class="line">    <span class="keyword">for</span> value <span class="keyword">in</span> uniqueVals:</div><div class="line">        subLabels = labels[:]       <span class="comment">#copy all of labels, so trees don't mess up existing labels</span></div><div class="line">        myTree[bestFeatLabel][value] = createTree(splitDataSet(dataSet, bestFeat, value),subLabels)</div><div class="line">    <span class="keyword">return</span> myTree  </div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    dataSet, labels = createDataSet()</div><div class="line">    tree = createTree(dataSet, labels)</div><div class="line">    print(tree)</div></pre></td></tr></table></figure>
+<pre><code>{&apos;收入&apos;: {0: &apos;no&apos;, 1: {&apos;年龄&apos;: {0: &apos;no&apos;, 1: {&apos;长相&apos;: {0: &apos;no&apos;, 1: {&apos;公务员&apos;: {0: &apos;no&apos;, 1: &apos;yes&apos;}}}}}}, 2: {&apos;年龄&apos;: {0: &apos;no&apos;, 1: {&apos;长相&apos;: {0: &apos;no&apos;, 1: &apos;yes&apos;}}}}}}
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 根据决策树来构建分类器</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">classify</span><span class="params">(inputTree, featLabels, testVec)</span>:</span></div><div class="line">    firstStr = list(inputTree.keys())[<span class="number">0</span>]</div><div class="line">    secondDict = inputTree[firstStr]</div><div class="line">    featIndex = featLabels.index(firstStr)</div><div class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> secondDict.keys():</div><div class="line">        <span class="keyword">if</span> testVec[featIndex] == key:</div><div class="line">            <span class="keyword">if</span> type(secondDict[key]).__name__ == <span class="string">'dict'</span>:</div><div class="line">                classLabel = classify(secondDict[key], featLabels, testVec)</div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                classLabel = secondDict[key]</div><div class="line">    <span class="keyword">return</span> classLabel</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 测试</span></div><div class="line">labels = [<span class="string">'年龄'</span>,<span class="string">'长相'</span>,<span class="string">'收入'</span>,<span class="string">'公务员'</span>]</div><div class="line">label = classify(tree, labels, [<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>])</div><div class="line">print(label)</div></pre></td></tr></table></figure>
+<pre><code>no
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 用pickle模块存储决策树</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">storeTree</span><span class="params">(inputTree,filename)</span>:</span></div><div class="line">    <span class="keyword">import</span> pickle</div><div class="line">    fw = open(filename,<span class="string">'wb'</span>)</div><div class="line">    pickle.dump(inputTree,fw)</div><div class="line">    fw.close()</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">grabTree</span><span class="params">(filename)</span>:</span></div><div class="line">    <span class="keyword">import</span> pickle</div><div class="line">    fr = open(filename, <span class="string">'rb'</span>)</div><div class="line">    <span class="keyword">return</span> pickle.load(fr)</div><div class="line"></div><div class="line">storeTree(tree, <span class="string">'决策树.txt'</span>)</div><div class="line">dt = grabTree(<span class="string">'决策树.txt'</span>)</div><div class="line">print(dt)</div></pre></td></tr></table></figure>
+<pre><code>{&apos;收入&apos;: {0: &apos;no&apos;, 1: {&apos;年龄&apos;: {0: &apos;no&apos;, 1: {&apos;长相&apos;: {0: &apos;no&apos;, 1: {&apos;公务员&apos;: {0: &apos;no&apos;, 1: &apos;yes&apos;}}}}}}, 2: {&apos;年龄&apos;: {0: &apos;no&apos;, 1: {&apos;长相&apos;: {0: &apos;no&apos;, 1: &apos;yes&apos;}}}}}}
+</code></pre>
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #0097A7 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #0097A7 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #0097A7 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread"
+        data-thread-key="2017/05/04/机器学习之决策树算法/"
+        data-url="http://jlan.me/2017/05/04/机器学习之决策树算法/"
+        data-title="机器学习之决策树算法">
+    </div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/04/23/机器学习之逻辑回归/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/logo-me.jpg" alt="Jlan's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        jllan@126.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/" target="_self">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">December 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">November 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">September 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">August 2016<span class="sidebar_archives-count">5</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/IT技术/">IT技术<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="关于">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">label</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">25</span>
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/jllan" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-github.svg);">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/jlan" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-zhihu.svg);">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;穿林打叶又何妨
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+    <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/lazyload.min.js"></script>
+    <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/js.min.js"></script>
+
+
+
+    <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/nprogress.js"></script>
+
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    <!-- 多说公共 js 代码 start -->
+    <script type="text/javascript">
+        queue.offer(function(){
+            var duoshuoQuery = {
+                short_name: 'jlan'
+            };
+            (function() {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';
+                ds.async = true;
+                ds.src = 'https://static.duoshuo.com/embed.js';
+                ds.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0]
+                 || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+        });
+    </script>
+    <!-- 多说公共 js 代码 end -->
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+    <!--<script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/mathjax.js"></script>-->
+	<script charset="utf-8" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script>
+    <!-- Offer LazyLoad -->
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    <!-- Start Queue -->
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
