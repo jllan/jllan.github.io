@@ -1,6 +1,6 @@
 <script>
-    var randomNum = Math.floor(Math.random() * <%= theme.thumbnail.random_amount %> + 1);
+    var randomNum = Math.floor(Math.random() * <%= theme.thumbnail.random_amount %> );
 
-    $('.post_thumbnail-random').attr('data-original', '<%= theme.img.random_thumbnail %>' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '<%= theme.img.random_thumbnail %>' + randomNum + '.gif');
     $('.post_thumbnail-random').addClass('lazy');
 </script>
