@@ -183,6 +183,7 @@
 
         <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/jquery.min.js"></script>
         <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/queue.js"></script>
+		
     
 
     <!-- UC Browser Compatible -->
@@ -255,7 +256,7 @@
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
             有时候没有现成的deb包或者rpm包的话，我们需要从源码编译来安装软件，下边介绍了源码编译安装的方法和卸载方法。
-
+不指定安装路径
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -320,7 +321,9 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            生成器Pyt...
+            生成器Python中，为避免创建完整的list，从而节省大量的空间而在循环的过程中不断推算出后续的元素，这种一边循环一边计算的机制，称为生成器：generator。
+要创建一个generator，有很多种方法。
+
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -385,7 +388,7 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            1. 简介...
+            1. 简介Flask是一个使用Python编写的轻量级Web应用框架。基于Werkzeug WSGI(PythonWeb服务器
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -451,7 +454,7 @@
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
             [TOC]
-
+一 从预编译版本或从仓库安装pcl
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -516,7 +519,7 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            
+            用knn算法实现手写字符识别概述kNN算法又称为k近邻分...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -581,7 +584,8 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            一直在用markdown（不得不说markdown语法真的太强大太简洁了，效果也太优美，没学过markdown语法的可以自己学下）写东西，知道用ma...
+            一直在用markdown（不得不说markdown语法真的太强大太简洁了，效果也太优美，没学过markdown语法的可以自己学下）写东西，知道用markdown可以画出来很性感的流程图，遂决定学下如何用markdown来画流程图。
+代码
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -647,7 +651,9 @@
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
             
-最近几乎只用markdown语法来些东西，当然我很少写东西，也不会写，只是偶尔写写笔记和博客，但是只要写就一定用markd...
+最近几乎只用markdown语法来些东西，当然我很少写东西，也不会写，只是偶尔写写笔记和博客，但是只要写就一定用markdown来写，因为markdown太迷人了，就算写的东西没什么涵养，光那优美的排版就让人看着很舒服。
+
+这两天申请了个微信公众号玩玩，刚一申请，我就寻思怎么用markdown来写文章，微信原生的编辑器不...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -713,7 +719,9 @@
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
             
-由于vpn是全局代理，如果开了vpn，所有网络都要走代理通道，这样的话要是访问国内的网站就会很慢，用起来挺不方便的。而shadowsock...
+由于vpn是全局代理，如果开了vpn，所有网络都要走代理通道，这样的话要是访问国内的网站就会很慢，用起来挺不方便的。而shadowsocks可以自己决定让哪些网站走代理通道，所以还是shadowsocks用起来更爽，下边记录下在ubuntu上搭shadowsocks服务的步骤。
+
+
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -780,7 +788,10 @@
         
             在github上搭建博客，博客分为两部分东西：本地的hexo和github上仓库。工作模式是这样的：
 
-在本地通过hexo ...
+在本地通过hexo new来生成md文件（所有文章的md文件都在source/_post/下）
+然后编辑md文件
+然后hexo g渲染出html文件
+最后hexo d来部署文章到github仓库这样...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -845,7 +856,10 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            之前在vps上用wordpress搭建的博客被我拆了，虽然平时也很少写东西，即使写了质量也不高，但是一下子没有了自己的博客还是挺不爽的，于是就研究了...
+            之前在vps上用wordpress搭建的博客被我拆了，虽然平时也很少写东西，即使写了质量也不高，但是一下子没有了自己的博客还是挺不爽的，于是就研究了两天，终于在github上重新搭了一个。
+
+搭建步骤
+随便建一个文...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -905,10 +919,11 @@
 
     var locatePost = $('.locate-thumbnail-symbol').next();
     for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
+        randomNum = Math.floor(Math.random() * 19 );
 
         locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.png');
+		// locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.png');
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.gif');
     $('.post_thumbnail-random').addClass('lazy');
 
         locatePost = locatePost.next();

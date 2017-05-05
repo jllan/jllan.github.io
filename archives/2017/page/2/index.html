@@ -183,6 +183,7 @@
 
         <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/jquery.min.js"></script>
         <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/queue.js"></script>
+		
     
 
     <!-- UC Browser Compatible -->
@@ -254,7 +255,7 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            缘起一直纠结为啥自...
+            缘起一直纠结为啥自己的github个人主页不显示contributions记录中的commit记录，而只显示了create repo的记录。看着那寥寥无几的绿方格，想着自己好歹也经常commit呢，这连个鼓励都看不到好伤心，今天忍不住在网上查了下，终于找到问...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -319,7 +320,7 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            
+            1. 使用pure_pagination进行分页
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -384,7 +385,7 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            数据库配置
+            数据库配置1
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -449,7 +450,7 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            
+            1. 安装PPTP1
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -509,10 +510,11 @@
 
     var locatePost = $('.locate-thumbnail-symbol').next();
     for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
+        randomNum = Math.floor(Math.random() * 19 );
 
         locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.png');
+		// locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.png');
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.gif');
     $('.post_thumbnail-random').addClass('lazy');
 
         locatePost = locatePost.next();

@@ -183,6 +183,7 @@
 
         <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/jquery.min.js"></script>
         <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/queue.js"></script>
+		
     
 
     <!-- UC Browser Compatible -->
@@ -256,7 +257,10 @@
         
             在github上搭建博客，博客分为两部分东西：本地的hexo和github上仓库。工作模式是这样的：
 
-在本地通过hexo ...
+在本地通过hexo new来生成md文件（所有文章的md文件都在source/_post/下）
+然后编辑md文件
+然后hexo g渲染出html文件
+最后hexo d来部署文章到github仓库这样...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -321,7 +325,10 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            之前在vps上用wordpress搭建的博客被我拆了，虽然平时也很少写东西，即使写了质量也不高，但是一下子没有了自己的博客还是挺不爽的，于是就研究了...
+            之前在vps上用wordpress搭建的博客被我拆了，虽然平时也很少写东西，即使写了质量也不高，但是一下子没有了自己的博客还是挺不爽的，于是就研究了两天，终于在github上重新搭了一个。
+
+搭建步骤
+随便建一个文...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -376,10 +383,11 @@
 
     var locatePost = $('.locate-thumbnail-symbol').next();
     for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
+        randomNum = Math.floor(Math.random() * 19 );
 
         locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.png');
+		// locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.png');
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.gif');
     $('.post_thumbnail-random').addClass('lazy');
 
         locatePost = locatePost.next();

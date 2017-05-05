@@ -183,6 +183,7 @@
 
         <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/jquery.min.js"></script>
         <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/queue.js"></script>
+		
     
 
     <!-- UC Browser Compatible -->
@@ -254,7 +255,7 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            
+            用knn算法实现手写字符识别概述kNN算法又称为k近邻分...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -319,7 +320,8 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            一直在用markdown（不得不说markdown语法真的太强大太简洁了，效果也太优美，没学过markdown语法的可以自己学下）写东西，知道用ma...
+            一直在用markdown（不得不说markdown语法真的太强大太简洁了，效果也太优美，没学过markdown语法的可以自己学下）写东西，知道用markdown可以画出来很性感的流程图，遂决定学下如何用markdown来画流程图。
+代码
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -374,10 +376,11 @@
 
     var locatePost = $('.locate-thumbnail-symbol').next();
     for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
+        randomNum = Math.floor(Math.random() * 19 );
 
         locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.png');
+		// locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.png');
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.gif');
     $('.post_thumbnail-random').addClass('lazy');
 
         locatePost = locatePost.next();

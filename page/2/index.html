@@ -181,6 +181,7 @@
 
         <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/jquery.min.js"></script>
         <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/queue.js"></script>
+		
     
 
     <!-- UC Browser Compatible -->
@@ -252,7 +253,7 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            缘起一直纠结为啥自...
+            缘起一直纠结为啥自己的github个人主页不显示contributions记录中的commit记录，而只显示了create repo的记录。看着那寥寥无几的绿方格，想着自己好歹也经常commit呢，这连个鼓励都看不到好伤心，今天忍不住在网上查了下，终于找到问...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -317,7 +318,7 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            
+            1. 使用pure_pagination进行分页
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -382,7 +383,7 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            数据库配置
+            数据库配置1
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -447,7 +448,7 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            
+            1. 安装PPTP1
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -513,7 +514,7 @@
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
             有时候没有现成的deb包或者rpm包的话，我们需要从源码编译来安装软件，下边介绍了源码编译安装的方法和卸载方法。
-
+不指定安装路径
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -578,7 +579,9 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            生成器Pyt...
+            生成器Python中，为避免创建完整的list，从而节省大量的空间而在循环的过程中不断推算出后续的元素，这种一边循环一边计算的机制，称为生成器：generator。
+要创建一个generator，有很多种方法。
+
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -643,7 +646,7 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            1. 简介...
+            1. 简介Flask是一个使用Python编写的轻量级Web应用框架。基于Werkzeug WSGI(PythonWeb服务器
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -709,7 +712,7 @@
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
             [TOC]
-
+一 从预编译版本或从仓库安装pcl
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -774,7 +777,7 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            
+            用knn算法实现手写字符识别概述kNN算法又称为k近邻分...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -839,7 +842,8 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            一直在用markdown（不得不说markdown语法真的太强大太简洁了，效果也太优美，没学过markdown语法的可以自己学下）写东西，知道用ma...
+            一直在用markdown（不得不说markdown语法真的太强大太简洁了，效果也太优美，没学过markdown语法的可以自己学下）写东西，知道用markdown可以画出来很性感的流程图，遂决定学下如何用markdown来画流程图。
+代码
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -899,10 +903,11 @@
 
     var locatePost = $('.locate-thumbnail-symbol').next();
     for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
+        randomNum = Math.floor(Math.random() * 19 );
 
         locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.png');
+		// locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.png');
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.gif');
     $('.post_thumbnail-random').addClass('lazy');
 
         locatePost = locatePost.next();

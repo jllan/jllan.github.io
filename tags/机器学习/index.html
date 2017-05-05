@@ -183,6 +183,7 @@
 
         <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/jquery.min.js"></script>
         <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/queue.js"></script>
+		
     
 
     <!-- UC Browser Compatible -->
@@ -254,7 +255,7 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            决策...
+            决策树原理介绍决策树是用样本的属性作为结点，用属性的取值作为分支的树结构，是通过一系列规则对数据进行分类的过程，它提供一种在什么条件下会得到什么值的类似规则的方法。决策树分为分类树和回归树两种，分类树对离散变量做决策树，回归树对...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -319,7 +320,8 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            逻辑回归介...
+            逻辑回归介绍在介绍Logistic Regression之前我们先简单说一下线性回归，线性回归的主要思想就是通过历史数据拟合出一条直线，用这条直线对新的数据进行预测。线性回归的公式如下：
+$$ z = {\theta_0...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -384,7 +386,7 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            
+            使用梯度下降法和牛顿法求解最优解问题描述
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -449,7 +451,8 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            
+            寻找到N个点距离和最小的点思路
+构造代价方程：$$ L= \sum_{i=1}^{n} \sqrt{(x-x_i)^2 + (y-y_i...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -514,7 +517,7 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            
+            用knn算法实现手写字符识别概述kNN算法又称为k近邻分...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -569,10 +572,11 @@
 
     var locatePost = $('.locate-thumbnail-symbol').next();
     for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
+        randomNum = Math.floor(Math.random() * 19 );
 
         locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.png');
+		// locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.png');
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.gif');
     $('.post_thumbnail-random').addClass('lazy');
 
         locatePost = locatePost.next();

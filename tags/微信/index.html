@@ -183,6 +183,7 @@
 
         <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/jquery.min.js"></script>
         <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/queue.js"></script>
+		
     
 
     <!-- UC Browser Compatible -->
@@ -255,7 +256,9 @@
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
             
-最近几乎只用markdown语法来些东西，当然我很少写东西，也不会写，只是偶尔写写笔记和博客，但是只要写就一定用markd...
+最近几乎只用markdown语法来些东西，当然我很少写东西，也不会写，只是偶尔写写笔记和博客，但是只要写就一定用markdown来写，因为markdown太迷人了，就算写的东西没什么涵养，光那优美的排版就让人看着很舒服。
+
+这两天申请了个微信公众号玩玩，刚一申请，我就寻思怎么用markdown来写文章，微信原生的编辑器不...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -310,10 +313,11 @@
 
     var locatePost = $('.locate-thumbnail-symbol').next();
     for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
+        randomNum = Math.floor(Math.random() * 19 );
 
         locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.png');
+		// locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.png');
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.gif');
     $('.post_thumbnail-random').addClass('lazy');
 
         locatePost = locatePost.next();

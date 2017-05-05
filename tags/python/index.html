@@ -183,6 +183,7 @@
 
         <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/jquery.min.js"></script>
         <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/queue.js"></script>
+		
     
 
     <!-- UC Browser Compatible -->
@@ -254,7 +255,7 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            
+            1. 把一个序列L拆分为包含n(n&lt;=len(l))个单独的变量
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -319,7 +320,7 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            
+            1import numpy 
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -384,7 +385,7 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            1. 饼状图
+            1. 饼状图12
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -450,7 +451,7 @@
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
             [TOC]
-
+1. 画图——基础了解图的基本组成部分
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -517,7 +518,9 @@
         
             
 可以选择MarkDown，用MarkDown来写说明
-如果在函数、模块、类后面输入‘?’，按住Ctrl-Entry的话...
+如果在函数、模块、类后面输入‘?’，按住Ctrl-Entry的话就回跳出帮助文档。如果是两个‘??’的话连,源代码都会给出来的。
+在网页中输入%matplotlib inline将matplotlib库导入，要显示的图片就可以嵌入到网页中了
+使用ipython ...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -582,7 +585,9 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            生成器Pyt...
+            生成器Python中，为避免创建完整的list，从而节省大量的空间而在循环的过程中不断推算出后续的元素，这种一边循环一边计算的机制，称为生成器：generator。
+要创建一个generator，有很多种方法。
+
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -648,7 +653,7 @@
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
             [TOC]
-
+一 从预编译版本或从仓库安装pcl
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -703,10 +708,11 @@
 
     var locatePost = $('.locate-thumbnail-symbol').next();
     for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
+        randomNum = Math.floor(Math.random() * 19 );
 
         locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.png');
+		// locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.png');
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.gif');
     $('.post_thumbnail-random').addClass('lazy');
 
         locatePost = locatePost.next();

@@ -183,6 +183,7 @@
 
         <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/jquery.min.js"></script>
         <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/queue.js"></script>
+		
     
 
     <!-- UC Browser Compatible -->
@@ -254,7 +255,7 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            
+            1. 安装PPTP1
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -320,7 +321,7 @@
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
             有时候没有现成的deb包或者rpm包的话，我们需要从源码编译来安装软件，下边介绍了源码编译安装的方法和卸载方法。
-
+不指定安装路径
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -386,7 +387,7 @@
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
             [TOC]
-
+一 从预编译版本或从仓库安装pcl
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -452,7 +453,9 @@
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
             
-由于vpn是全局代理，如果开了vpn，所有网络都要走代理通道，这样的话要是访问国内的网站就会很慢，用起来挺不方便的。而shadowsock...
+由于vpn是全局代理，如果开了vpn，所有网络都要走代理通道，这样的话要是访问国内的网站就会很慢，用起来挺不方便的。而shadowsocks可以自己决定让哪些网站走代理通道，所以还是shadowsocks用起来更爽，下边记录下在ubuntu上搭shadowsocks服务的步骤。
+
+
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -507,10 +510,11 @@
 
     var locatePost = $('.locate-thumbnail-symbol').next();
     for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
+        randomNum = Math.floor(Math.random() * 19 );
 
         locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.png');
+		// locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.png');
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.gif');
     $('.post_thumbnail-random').addClass('lazy');
 
         locatePost = locatePost.next();

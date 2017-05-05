@@ -183,6 +183,7 @@
 
         <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/jquery.min.js"></script>
         <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/queue.js"></script>
+		
     
 
     <!-- UC Browser Compatible -->
@@ -255,7 +256,9 @@
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
             
-最近几乎只用markdown语法来些东西，当然我很少写东西，也不会写，只是偶尔写写笔记和博客，但是只要写就一定用markd...
+最近几乎只用markdown语法来些东西，当然我很少写东西，也不会写，只是偶尔写写笔记和博客，但是只要写就一定用markdown来写，因为markdown太迷人了，就算写的东西没什么涵养，光那优美的排版就让人看着很舒服。
+
+这两天申请了个微信公众号玩玩，刚一申请，我就寻思怎么用markdown来写文章，微信原生的编辑器不...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -321,7 +324,9 @@
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
             
-由于vpn是全局代理，如果开了vpn，所有网络都要走代理通道，这样的话要是访问国内的网站就会很慢，用起来挺不方便的。而shadowsock...
+由于vpn是全局代理，如果开了vpn，所有网络都要走代理通道，这样的话要是访问国内的网站就会很慢，用起来挺不方便的。而shadowsocks可以自己决定让哪些网站走代理通道，所以还是shadowsocks用起来更爽，下边记录下在ubuntu上搭shadowsocks服务的步骤。
+
+
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -388,7 +393,10 @@
         
             在github上搭建博客，博客分为两部分东西：本地的hexo和github上仓库。工作模式是这样的：
 
-在本地通过hexo ...
+在本地通过hexo new来生成md文件（所有文章的md文件都在source/_post/下）
+然后编辑md文件
+然后hexo g渲染出html文件
+最后hexo d来部署文章到github仓库这样...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -453,7 +461,10 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            之前在vps上用wordpress搭建的博客被我拆了，虽然平时也很少写东西，即使写了质量也不高，但是一下子没有了自己的博客还是挺不爽的，于是就研究了...
+            之前在vps上用wordpress搭建的博客被我拆了，虽然平时也很少写东西，即使写了质量也不高，但是一下子没有了自己的博客还是挺不爽的，于是就研究了两天，终于在github上重新搭了一个。
+
+搭建步骤
+随便建一个文...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -518,7 +529,8 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-              前一段把vps上用wordpress搭建博客给拆了，虽然平时也不会写博客，就算写了也没啥质量，但是没有自己的博客还是挺不舒服的，于是研究了两天，...
+              前一段把vps上用wordpress搭建博客给拆了，虽然平时也不会写博客，就算写了也没啥质量，但是没有自己的博客还是挺不舒服的，于是研究了两天，终于在github这个全球极客的集聚地又安了个家，使用github page + hexo，部署好之后，换了漂亮的主题，绑定好域名，一切ok！
+
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -573,10 +585,11 @@
 
     var locatePost = $('.locate-thumbnail-symbol').next();
     for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
+        randomNum = Math.floor(Math.random() * 19 );
 
         locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.png');
+		// locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.png');
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.gif');
     $('.post_thumbnail-random').addClass('lazy');
 
         locatePost = locatePost.next();
