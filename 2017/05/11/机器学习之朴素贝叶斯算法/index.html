@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.3.4 -->
+
+    <!-- Title -->
+    
+    <title>
+        
+            机器学习之朴素贝叶斯算法 | 
+        
+        穿林打叶又何妨
+    </title>
+
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+        <link rel="dns-prefetch" href="http://oceas72q5.bkt.clouddn.com/hexo/material"/>
+    
+    
+    
+    
+    
+    
+        <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+    
+
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Jlan">
+    <meta name="description" content="生活、学习记录">
+    <meta name="keywords" content="null,机器学习">
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.ico">
+    <link rel="icon" sizes="192x192" href="/img/favicon.ico">
+    <link rel="apple-touch-icon" href="/img/favicon.ico">
+
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="穿林打叶又何妨">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://jlan.me">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="机器学习之朴素贝叶斯算法 | 穿林打叶又何妨">
+    <meta property="og:description" content="生活、学习记录">
+    <meta property="og:article:tag" content="机器学习"> 
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS & jQuery -->
+    
+        <link rel="stylesheet" href="http://oceas72q5.bkt.clouddn.com/hexo/material/css/material.min.css">
+        <link rel="stylesheet" href="http://oceas72q5.bkt.clouddn.com/hexo/material/css/style.min.css">
+        <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+        <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/jquery.min.js"></script>
+        <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/queue.js"></script>
+		
+    
+
+    <!-- UC Browser Compatible -->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write("<link rel=\"stylesheet\" href=\"/css/uc.css\">");
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
+
+    
+
+    
+
+
+    <!-- Bing Background -->
+    
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#贝叶斯简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">贝叶斯简介</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#贝叶斯公式"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">贝叶斯公式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#朴素贝叶斯"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">朴素贝叶斯</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#用一个例子来理解机器学习中贝叶斯相关的几个概念"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">用一个例子来理解机器学习中贝叶斯相关的几个概念</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#贝叶斯"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">贝叶斯</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#朴素贝叶斯-1"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">朴素贝叶斯</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#三种模型"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">三种模型</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#平滑技术"><span class="post-toc-number">1.3.4.</span> <span class="post-toc-text">平滑技术</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#机器学习中朴素贝叶斯分类器的构建方法"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">机器学习中朴素贝叶斯分类器的构建方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码实现"><span class="post-toc-number">2.</span> <span class="post-toc-text">代码实现</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">3.</span> <span class="post-toc-text">参考</span></a></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 19 );
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.gif');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                机器学习之朴素贝叶斯算法
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/logo-me.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Jlan</strong>
+        <span>May 11, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/机器学习/">机器学习</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=机器学习之朴素贝叶斯算法&url=http://jlan.me//2017/05/11/机器学习之朴素贝叶斯算法/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=机器学习之朴素贝叶斯算法&url=http://jlan.me//2017/05/11/机器学习之朴素贝叶斯算法/index.html&via=Jlan" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://jlan.me//2017/05/11/机器学习之朴素贝叶斯算法/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://jlan.me//2017/05/11/机器学习之朴素贝叶斯算法/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="贝叶斯简介"><a href="#贝叶斯简介" class="headerlink" title="贝叶斯简介"></a>贝叶斯简介</h2><p>贝叶斯定理是一个特别简单但是特别有用的定理，这个定理解决了生活中经常遇到的一个问题：在已知P(A|B)的情况下如何计算P(B|A)，既交换条件与结果。朴素贝叶斯是在假设各个条件完全独立的情况下对贝叶斯定理的一种简化算法。在机器学习中，朴素贝叶斯是一种简单但是非常强大的线性分类器，它在垃圾邮件分类，疾病诊断中都取得了很大的成功。</p>
+<p>以下摘一段 wikipedia 上的简介：</p>
+<blockquote>
+<p>所谓的贝叶斯方法源于他生前为解决一个“逆概”问题写的一篇文章，而这篇文章是在他死后才由他的一位朋友发表出来的。在贝叶斯写这篇文章之前，人们已经能够计算“正向概率”，如“假设袋子里面有N个白球，M个黑球，你伸手进去摸一把，摸出黑球的概率是多大”。而一个自然而然的问题是反过来：“如果我们事先并不知道袋子里面黑白球的比例，而是闭着眼睛摸出一个（或好几个）球，观察这些取出来的球的颜色之后，那么我们可以就此对袋子里面的黑白球的比例作出什么样的推测”。这个问题，就是所谓的逆概问题。</p>
+</blockquote>
+<p>实际上，贝叶斯当时的论文只是对这个问题的一个直接的求解尝试，并不清楚他当时是不是已经意识到这里面包含着的深刻的思想。然而后来，贝叶斯方法席卷了概率论，并将应用延伸到各个问题领域，所有需要作出概率预测的地方都可以见到贝叶斯方法的影子，特别地，贝叶斯是机器学习的核心方法之一。这背后的深刻原因在于，现实世界本身就是不确定的，人类的观察能力是有局限性的（否则有很大一部分科学就没有必要做了——设想我们能够直接观察到电子的运行，还需要对原子模型争吵不休吗？），我们日常所观察到的只是事物表面上的结果，沿用刚才那个袋子里面取球的比方，我们往往只能知道从里面取出来的球是什么颜色，而并不能直接看到袋子里面实际的情况。这个时候，我们就需要提供一个猜测，所谓猜测，当然就是不确定的，但也绝对不是两眼一抹黑瞎蒙——具体地说，我们需要做两件事情：1. 算出各种不同猜测的可能性大小。2. 算出最靠谱的猜测是什么。第一个就是计算特定猜测的后验概率，对于连续的猜测空间则是计算猜测的概率密度函数。第二个则是所谓的模型比较，模型比较如果不考虑先验概率的话就是最大似然方法。</p>
+<h3 id="贝叶斯公式"><a href="#贝叶斯公式" class="headerlink" title="贝叶斯公式"></a>贝叶斯公式</h3><p>贝叶斯公式是怎么来的？我们还是使用 wikipedia 上的一个例子：</p>
+<blockquote>
+<p>一所学校里面有 60% 的男生，40% 的女生。男生总是穿长裤，女生则一半穿长裤一半穿裙子。有了这些信息之后我们可以容易地计算“随机选取一个学生，他（她）穿长裤的概率和穿裙子的概率是多大”，这个就是前面说的“正向概率”的计算。然而，假设你走在校园中，迎面走来一个穿长裤的学生（很不幸的是你高度近似，你只看得见他（她）穿的是否长裤，而无法确定他（她）的性别），你能够推断出他（她）是男生的概率是多大吗？</p>
+</blockquote>
+<p>我们来算一算：假设学校里面人的总数是 U 个。60% 的男生都穿长裤，于是我们得到了 U <em> P(Boy) </em> P(Pants|Boy) 个穿长裤的（男生）（其中 P(Boy) 是男生的概率 = 60%，这里可以简单的理解为男生的比例；P(Pants|Boy) 是条件概率，即在 Boy 这个条件下穿长裤的概率是多大，这里是 100% ，因为所有男生都穿长裤）。40% 的女生里面又有一半（50%）是穿长裤的，于是我们又得到了 U <em> P(Girl) </em> P(Pants|Girl) 个穿长裤的（女生）。加起来一共是 U <em> P(Boy) </em> P(Pants|Boy) + U <em> P(Girl) </em> P(Pants|Girl) 个穿长裤的，其中有 U <em> P(Girl) </em> P(Pants|Girl) 个女生。两者一比就是你要求的答案。</p>
+<p>下面我们把这个答案形式化一下：我们要求的是 P(Girl|Pants)，我们计算的结果是 U <em> P(Girl) </em> P(Pants|Girl) / [U <em> P(Boy) </em> P(Pants|Boy) + U <em> P(Girl) </em> P(Pants|Girl)] 。容易发现这里校园内人的总数是无关的，可以消去。于是得到</p>
+<p><strong><code>P(Girl|Pants) = P(Girl) * P(Pants|Girl) / [P(Boy) * P(Pants|Boy) + P(Girl) * P(Pants|Girl)]</code></strong></p>
+<p>把上式收缩起来，分母其实就是 P(Pants) ，分子其实就是 P(Pants, Girl) 。而这个比例很自然地就读作：在穿长裤的人（ P(Pants) ）里面有多少（穿长裤）的女孩（ P(Pants, Girl) ）。</p>
+<p>上式中的 Pants 和 Boy/Girl 可以指代一切东西，所以其一般形式就是：</p>
+<p><strong><code>P(B|A) = P(A|B) * P(B) / [P(A|B) * P(B) + P(A|~B) * P(~B) ]</code></strong></p>
+<p>收缩起来就是：</p>
+<p><strong><code>P(B|A) = P(AB) / P(A)</code></strong></p>
+<p>其实这个就等于：</p>
+<p><strong><code>P(B|A) * P(A) = P(AB)</code></strong></p>
+<h3 id="朴素贝叶斯"><a href="#朴素贝叶斯" class="headerlink" title="朴素贝叶斯"></a>朴素贝叶斯</h3><p>朴素贝叶斯就是在贝叶斯的基础上引入了条件独立假设。<br>对于贝叶斯公式<strong><code>P(B|A) = P(AB) / P(A)</code></strong>，<br>从机器学习的角度来理解，我们把A理解成‘具有某些特征’，把B理解成‘类别标签’，贝叶斯方法是把计算<strong>具有某些特征的条件下属于某类别</strong>的概率转换成计算<strong>属于某类别的条件下具有某些特征</strong>。</p>
+<p>假设某个体有n项特征（Feature），分别为F1、F2、…、Fn，当个体具有不同特征时属于不同的类别，即<br><strong><code>P(C|F1F2...Fn) = P(F1F2...Fn|C)P(C) / P(F1F2...Fn)</code></strong>。<br>现在假设特征F1,F2…Fn之间是相互独立的，就得到<strong><code>P(F1F2...Fn|C)P(C) = P(F1|C)P(F2|C) ... P(Fn|C)P(C)</code></strong>，等式右边每一项都可以从统计资料中获得，由此就可以计算了具有某些特征条件下属于某个类别的概率。</p>
+<h3 id="用一个例子来理解机器学习中贝叶斯相关的几个概念"><a href="#用一个例子来理解机器学习中贝叶斯相关的几个概念" class="headerlink" title="用一个例子来理解机器学习中贝叶斯相关的几个概念"></a>用一个例子来理解机器学习中贝叶斯相关的几个概念</h3><p>对于一封邮件“我司可办理正规发票”，该邮件是垃圾邮件的概率有多少。</p>
+<p>P(属于某个分类|具有某种特征) = P(具有某种特征|属于某个分类)/P(具有某种特征)</p>
+<h4 id="贝叶斯"><a href="#贝叶斯" class="headerlink" title="贝叶斯"></a>贝叶斯</h4><p>P(S|我司可办理正规发票) = P(我司可办理正规发票|S)/P(我司可办理正规发票)</p>
+<h4 id="朴素贝叶斯-1"><a href="#朴素贝叶斯-1" class="headerlink" title="朴素贝叶斯"></a>朴素贝叶斯</h4><p>假设“我司可办理正规发票”这几个词在邮件中的出现是相互独立的，则<br>P(S|我司可办理正规发票) = P(我|S)P(司|S)P(可|S)P(办理|S)P(正规|S)P(发票|S)</p>
+<h4 id="三种模型"><a href="#三种模型" class="headerlink" title="三种模型"></a>三种模型</h4><ul>
+<li>多项式模型：考虑一个词重复出现，统计多次</li>
+<li>伯努利模型：不考虑一个词重复出现，只统计一次</li>
+<li>混合模型：训练时考虑一个词重复出现，预测时不考虑</li>
+</ul>
+<h4 id="平滑技术"><a href="#平滑技术" class="headerlink" title="平滑技术"></a>平滑技术</h4><p>如果训练集中没有“正规发票”这个词，测试集中有，那么预测时P(正规|S)P(发票|S)=0，于是整个概率都成0，这就需要平滑技术来处理。<br>这种情况很常见，因为哪怕训练集再大，也可能有未覆盖的词语。这本质上还是样本数量太少，不满足大数定律，计算出来的概率失真。平滑技术就是为了处理这样的问题。</p>
+<p>对于伯努利模型的一种平滑算法是：</p>
+<p>P(正规发票|S)=（出现’正规发票’的垃圾邮件的数量+1）/ 每封垃圾邮件中所有词出现的次数（不考虑重复出现的词）和+2</p>
+<h3 id="机器学习中朴素贝叶斯分类器的构建方法"><a href="#机器学习中朴素贝叶斯分类器的构建方法" class="headerlink" title="机器学习中朴素贝叶斯分类器的构建方法"></a>机器学习中朴素贝叶斯分类器的构建方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">计算每个类别中的文档数目</div><div class="line">对每篇训练文档：</div><div class="line">    对每个类别：</div><div class="line">        如果词条出现文档中―增加该词条的计数值</div><div class="line">        增加所有词条的计数值</div><div class="line">    对每个类别：</div><div class="line">        对每个词条：</div><div class="line">            将该词条的数目除以总词条数目得到条件概率</div><div class="line">    返回每个类别的条件概率</div></pre></td></tr></table></figure>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>用朴素贝叶斯算法实现一个情分分析的分类器</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_data</span><span class="params">(self, pos_file, neg_file)</span>:</span></div><div class="line">    <span class="string">"""载入数据"""</span></div><div class="line">    neg_docs = codecs.open(neg_file, <span class="string">'r'</span>, <span class="string">'utf-8'</span>).readlines()</div><div class="line">    pos_docs = codecs.open(pos_file, <span class="string">'r'</span>, <span class="string">'utf-8'</span>).readlines()</div><div class="line">    <span class="keyword">return</span> pos_docs, neg_docs</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">handle_data</span><span class="params">(self, sentence, stop_words=<span class="string">'data/stop_words.txt'</span>)</span>:</span></div><div class="line">    <span class="string">"""进行分词，去除停止词"""</span></div><div class="line">    stop_words = [word.strip() <span class="keyword">for</span> word <span class="keyword">in</span> open(stop_words, <span class="string">'r'</span>)]</div><div class="line">    <span class="keyword">return</span> [word.strip() <span class="keyword">for</span> word <span class="keyword">in</span> jieba.cut(sentence.strip()) <span class="keyword">if</span> word <span class="keyword">and</span> word <span class="keyword">not</span> <span class="keyword">in</span> stop_words]</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_vocal_list</span><span class="params">(self, sentence_list)</span>:</span></div><div class="line">    <span class="string">"""创建词汇表，词汇表包含了所有训练样本中出现的词（不包含停止词）"""</span></div><div class="line">    vocab_list = set([])</div><div class="line">    <span class="keyword">for</span> sentence <span class="keyword">in</span> sentence_list:</div><div class="line">        vocab_list = vocab_list | set(sentence)</div><div class="line">    <span class="keyword">return</span> list(vocab_list)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">word_to_vec</span><span class="params">(self, vocab_list, sentence)</span>:</span></div><div class="line">    <span class="string">"""把一组词转换成词向量，词向量的长度等于词汇表的长度"""</span></div><div class="line">    words_vec = [<span class="number">0</span>]*len(vocab_list)</div><div class="line">    <span class="keyword">for</span> word <span class="keyword">in</span> sentence:</div><div class="line">        <span class="keyword">if</span> word <span class="keyword">in</span> vocab_list:</div><div class="line">            words_vec[vocab_list.index(word)] = <span class="number">1</span> <span class="comment"># 伯努利模型，不考虑重复出现的词，对于一条数据中的每个词，如果改词存在于词汇表中，则把词向量对应位置设为1</span></div><div class="line"><span class="comment">#             words_vec[vocab_list.index(word)] += 1 # 多项式模型，考虑重复出现的词</span></div><div class="line">    <span class="keyword">return</span> words_vec</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">train</span><span class="params">(self, train_data, label)</span>:</span></div><div class="line">    num_sentence = len(train_data)</div><div class="line">    pos_each_word = np.ones(len(train_data[<span class="number">0</span>])) <span class="comment"># 统计正向文本中每个词出现的次数，默认每个词出现至少一次</span></div><div class="line">    neg_each_word = np.ones(len(train_data[<span class="number">0</span>])) <span class="comment"># 统计负向文本中每个词出现的次数，默认每个词出现至少一次</span></div><div class="line">    pos_words = <span class="number">2.0</span> <span class="comment"># 正向文本中所有词的总数</span></div><div class="line">    neg_words = <span class="number">2.0</span> <span class="comment"># 负向文本中所有词的总数</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(num_sentence):</div><div class="line">        <span class="keyword">if</span> label[i] == <span class="number">1</span>:</div><div class="line">            pos_each_word += train_data[i]</div><div class="line">            pos_words += sum(train_data[i])</div><div class="line">        <span class="keyword">if</span> label[i] == <span class="number">0</span>:</div><div class="line">            neg_each_word += train_data[i]</div><div class="line">            neg_words += sum(train_data[i])</div><div class="line">    <span class="comment"># 对每个词出现的概率取对数，这是因为大多数概率都很小，如果再对很多很小的数进行乘法操作，会下溢或得不得正确答案。</span></div><div class="line">    <span class="comment"># 比如a=0.001， b=0.0003, a*b = exp(ln(a)+ln(b))</span></div><div class="line">    pos_each_word_prob = np.log(pos_each_word/pos_words) </div><div class="line">    neg_each_word_prob = np.log(neg_each_word/neg_words)</div><div class="line">    print(pos_each_word_prob, neg_each_word_prob, sum(label)/num_sentence)</div><div class="line">    <span class="keyword">return</span> pos_each_word_prob, neg_each_word_prob, sum(label)/num_sentence</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">classify</span><span class="params">(self, test_data, pos_each_word_prob, neg_each_word_prob, pos_prob)</span>:</span></div><div class="line">    p1 = sum(test_data*pos_each_word_prob) + np.log(pos_prob)</div><div class="line">    p0 = sum(test_data*neg_each_word_prob) + np.log(<span class="number">1</span>-pos_prob)</div><div class="line">    <span class="keyword">if</span> p1 &gt; p0:</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>, np.exp(p1), np.exp(p0)</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>, np.exp(p1), np.exp(p0)</div></pre></td></tr></table></figure>
+<p>这里对<code>pos_each_word = np.ones(len(train_data[0]))</code>，<code>p1 = sum(test_data*pos_each_word_prob) + np.log(pos_prob)</code>这几个地方简单解释下：</p>
+<p>假如词汇表vocal=[…..,我,……爱……]，其中包含了“我爱”两个词</p>
+<p>正向样本中某条数据中有“我爱”，而负样本中没有“爱”这个词。如果每个词的出现次数不加一的话，则</p>
+<p>正样本中每个词出现的概率为P正=[…….p(我)&gt;0,……..p(爱)&gt;0,…….]</p>
+<p>负样本中每个词出现的概率为P负=[…….p(我)&gt;0,……..p(爱)=0,…….]</p>
+<p>现在来一个测试数据“我爱学习”，转换为词向量为test=[0,0,…..1(我),0,0…….1(爱),0,0…….]</p>
+<p>计算“我爱学习”属于正样本的概率就是计算”我爱学习”中每个词在正样本中出现的概率的乘积，由于概率值都是很小的数，如果再对多个很小的数进行乘法操作，可能会出现下溢或得不到正确结果。解决方法就是对每个词的概率值取对数，a*b=exp(lna+lnb)，这样就可以避免很多乘法操作</p>
+<p>P(正|我爱学习) = ln(P(正|我))+ln(P(正|爱))+ln(P(正|学习)))=test*ln(P正)=[0,0,…..1(我),0,0…….1(爱),0,0…….]*[…….ln(p(我)),……..ln(p(爱)),…….]=ln(p(我))+ln(p(爱))。</p>
+<p>当计算“我爱学习”是负样本的概率时，因为负样本中没有“爱”，所以“我爱学习”属于负样本的概率就是0，这显然不合理，所以需要进行调整，让训练集中正负样本中每个词的出现次数=出现次数+1，保证最少出现一次。</p>
+<p>如果测试数据中某个词在词汇表中不存在，比如“学习”就不存在词汇表中，当把“我爱学习”转换为词向量的时候，词向量中只有“我”和“爱”对应的位置为1，直接忽略了“学习”，也就不会出现“学习”出现的概率为0这个问题了。当然，这样计算的结果不是太准确，但是也不可能那么准确，因为训练样本不可能包含了所有词。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">predict</span><span class="params">(self, test_data)</span>:</span></div><div class="line">    pos_sentence_list, neg_sentence_list = self.load_data(pos_data, neg_data)</div><div class="line">    sentences = []</div><div class="line">    <span class="comment"># 把正负样本集合到一起</span></div><div class="line">    <span class="keyword">for</span> sentence <span class="keyword">in</span> pos_sentence_list:</div><div class="line">        sentence = self.handle_data(sentence)</div><div class="line">        sentences.append(sentence)</div><div class="line">    <span class="keyword">for</span> sentence <span class="keyword">in</span> neg_sentence_list:</div><div class="line">        sentence = self.handle_data(sentence)</div><div class="line">        sentences.append(sentence)</div><div class="line">    label = [<span class="number">1</span>] * len(pos_sentence_list) + [<span class="number">0</span>] * len(neg_sentence_list)  <span class="comment"># 每个正负样本对应的类别    </span></div><div class="line">    vocab_list = self.create_vocal_list(sentences)</div><div class="line">    train_data = []</div><div class="line">    <span class="keyword">for</span> sentence <span class="keyword">in</span> sentences:</div><div class="line">        sentence_vec = self.word_to_vec(vocab_list, sentence)</div><div class="line">        train_data.append(sentence_vec)</div><div class="line">    <span class="comment"># 需要对train_data和label转换成矩阵，因为训练时要进行矩阵运算    </span></div><div class="line">    pos_each_word_prob, neg_each_word_prob, pos_prob = self.train(np.array(train_data), np.array(label)) </div><div class="line"></div><div class="line">    test_data = self.handle_data(test_data)</div><div class="line">    test_vec = self.word_to_vec(vocab_list, test_data)</div><div class="line">    pred = self.classify(np.array(test_vec), pos_each_word_prob, neg_each_word_prob, pos_prob)</div><div class="line">    <span class="keyword">return</span> pred</div></pre></td></tr></table></figure>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://mindhacks.cn/2008/09/21/the-magical-bayesian-method/" target="_blank" rel="external">http://mindhacks.cn/2008/09/21/the-magical-bayesian-method/</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2013/12/naive_bayes_classifier.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2013/12/naive_bayes_classifier.html</a></li>
+</ul>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #0097A7 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #0097A7 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #0097A7 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread"
+        data-thread-key="2017/05/11/机器学习之朴素贝叶斯算法/"
+        data-url="http://jlan.me/2017/05/11/机器学习之朴素贝叶斯算法/"
+        data-title="机器学习之朴素贝叶斯算法">
+    </div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/05/04/机器学习之决策树算法/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/logo-me.jpg" alt="Jlan's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        jllan@126.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/" target="_self">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">December 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">November 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">September 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">August 2016<span class="sidebar_archives-count">5</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/IT技术/">IT技术<span class="sidebar_archives-count">25</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="关于">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">label</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">26</span>
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/jllan" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-github.svg);">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/jlan" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-zhihu.svg);">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;穿林打叶又何妨
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+    <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/lazyload.min.js"></script>
+    <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/js.min.js"></script>
+
+
+
+    <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/nprogress.js"></script>
+
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    <!-- 多说公共 js 代码 start -->
+    <script type="text/javascript">
+        queue.offer(function(){
+            var duoshuoQuery = {
+                short_name: 'jlan'
+            };
+            (function() {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';
+                ds.async = true;
+                ds.src = 'https://static.duoshuo.com/embed.js';
+                ds.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0]
+                 || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+        });
+    </script>
+    <!-- 多说公共 js 代码 end -->
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+    <!--<script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/mathjax.js"></script>-->
+	<script charset="utf-8" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script>
+    <!-- Offer LazyLoad -->
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    <!-- Start Queue -->
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
