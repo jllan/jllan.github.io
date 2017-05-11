@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.3.4 -->
+
+    <!-- Title -->
+    
+    <title>
+        
+            《Python CookBook》读书笔记-数据结构和算法（二） | 
+        
+        穿林打叶又何妨
+    </title>
+
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+        <link rel="dns-prefetch" href="http://oceas72q5.bkt.clouddn.com/hexo/material"/>
+    
+    
+    
+    
+    
+    
+        <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+    
+
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Jlan">
+    <meta name="description" content="生活、学习记录">
+    <meta name="keywords" content="null,python">
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.ico">
+    <link rel="icon" sizes="192x192" href="/img/favicon.ico">
+    <link rel="apple-touch-icon" href="/img/favicon.ico">
+
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="穿林打叶又何妨">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://jlan.me">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="《Python CookBook》读书笔记-数据结构和算法（二） | 穿林打叶又何妨">
+    <meta property="og:description" content="生活、学习记录">
+    <meta property="og:article:tag" content="python"> 
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS & jQuery -->
+    
+        <link rel="stylesheet" href="http://oceas72q5.bkt.clouddn.com/hexo/material/css/material.min.css">
+        <link rel="stylesheet" href="http://oceas72q5.bkt.clouddn.com/hexo/material/css/style.min.css">
+        <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+        <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/jquery.min.js"></script>
+        <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/queue.js"></script>
+		
+    
+
+    <!-- UC Browser Compatible -->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write("<link rel=\"stylesheet\" href=\"/css/uc.css\">");
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
+
+    
+
+    
+
+
+    <!-- Bing Background -->
+    
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#从序列中移除重复项且保持元素间顺序不变"><span class="post-toc-number">1.</span> <span class="post-toc-text">从序列中移除重复项且保持元素间顺序不变</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方法"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#找出序列中出现次数最多的元素"><span class="post-toc-number">2.</span> <span class="post-toc-text">找出序列中出现次数最多的元素</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方法-1"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#对字典列表的排序"><span class="post-toc-number">3.</span> <span class="post-toc-text">对字典列表的排序</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#根据字段将记录分组"><span class="post-toc-number">4.</span> <span class="post-toc-text">根据字段将记录分组</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#说明"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">说明</span></a></li></ol></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 19 );
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.gif');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                《Python CookBook》读书笔记-数据结构和算法（二）
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/logo-me.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Jlan</strong>
+        <span>May 11, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/python/">python</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=《Python CookBook》读书笔记-数据结构和算法（二）&url=http://jlan.me//2017/05/11/《Python-CookBook》读书笔记-数据结构和算法（二）/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=《Python CookBook》读书笔记-数据结构和算法（二）&url=http://jlan.me//2017/05/11/《Python-CookBook》读书笔记-数据结构和算法（二）/index.html&via=Jlan" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://jlan.me//2017/05/11/《Python-CookBook》读书笔记-数据结构和算法（二）/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://jlan.me//2017/05/11/《Python-CookBook》读书笔记-数据结构和算法（二）/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="从序列中移除重复项且保持元素间顺序不变"><a href="#从序列中移除重复项且保持元素间顺序不变" class="headerlink" title="从序列中移除重复项且保持元素间顺序不变"></a>从序列中移除重复项且保持元素间顺序不变</h2><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>可以用集合和生成器来解决</p>
+<p>先来了解下什么是可哈希(hashable)：<br>如果一个对象在自己的生命周期中有一哈希值（hash value）是不可改变的，那么它就是可哈希的（hashable）的。可哈希对象是对象有<strong>hash</strong>(self)内置函数的对象。对于可哈希的对象执行这个函数将会返回一个整数。可哈希对象判断相等的唯一条件就是两者的哈希值相等。Python中所有不可改变的的对象（imutable objects）都是可哈希的，比如字符串，元组，也就是说可改变的容器如字典，列表不可哈希（unhashable）。我们用户所定义的类的实例对象默认是可哈希的（hashable），它们都是唯一的，而hash值也就是它们的id()。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">t = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</div><div class="line">s = <span class="string">'123'</span></div><div class="line">l = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</div><div class="line">d = [&#123;<span class="string">'a'</span>: <span class="number">1</span>&#125;,&#123;<span class="string">'b'</span>:<span class="number">2</span>&#125;]</div><div class="line">print(t.__hash__())</div><div class="line">print(s.__hash__())</div><div class="line">print(l.__hash__) <span class="comment"># list不是可哈希的</span></div><div class="line">print(l[<span class="number">1</span>].__hash__()) <span class="comment"># list的对象可哈希</span></div><div class="line">print(d.__hash__) <span class="comment"># dict不是可哈希的</span></div><div class="line"><span class="comment"># set(d)            # 列表的元素是字典，字典是不可哈希的，所以返回TypeError: unhashable type: 'dict'</span></div><div class="line">print(set([(<span class="number">1</span>,<span class="number">2</span>), (<span class="number">1</span>,<span class="number">2</span>), (<span class="number">2</span>,)])) <span class="comment"># 列表的元素是元组，元组是可哈希的</span></div></pre></td></tr></table></figure>
+<pre><code>2528502973977326415
+-8527273320470595707
+None
+2
+None
+{(1, 2), (2,)}
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 当序列中的元素是可哈希时</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">dedupe</span><span class="params">(items)</span>:</span></div><div class="line">    seen = set()</div><div class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> items:</div><div class="line">        <span class="keyword">if</span> item <span class="keyword">not</span> <span class="keyword">in</span> seen:</div><div class="line">            <span class="keyword">yield</span> item</div><div class="line">            seen.add(item)</div><div class="line">            </div><div class="line">a= [<span class="number">1</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">5</span>, <span class="number">9</span> ,<span class="number">0</span>]</div><div class="line">b = set(a)</div><div class="line">c = dedupe(a)</div><div class="line">print(b)</div><div class="line">print(list(c))</div></pre></td></tr></table></figure>
+<pre><code>{0, 1, 2, 5, 7, 9}
+[1, 5, 2, 7, 9, 0]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 当不确定序列中的元素是否可哈希时，需要对程序改造如下</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">dedupe</span><span class="params">(items, key=None)</span>:</span></div><div class="line">    seen = set()</div><div class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> items:</div><div class="line">        val = item <span class="keyword">if</span> key <span class="keyword">is</span> <span class="keyword">None</span> <span class="keyword">else</span> key(item)</div><div class="line">        <span class="keyword">if</span> val <span class="keyword">not</span> <span class="keyword">in</span> seen:</div><div class="line">            <span class="keyword">yield</span> item</div><div class="line">            seen.add(val)</div><div class="line">            </div><div class="line">a= [&#123;<span class="string">'x'</span>:<span class="number">1</span>, <span class="string">'y'</span>:<span class="number">2</span>&#125;, &#123;<span class="string">'x'</span>:<span class="number">1</span>, <span class="string">'y'</span>:<span class="number">3</span>&#125;, &#123;<span class="string">'x'</span>:<span class="number">1</span>, <span class="string">'y'</span>:<span class="number">2</span>&#125;, &#123;<span class="string">'x'</span>:<span class="number">2</span>, <span class="string">'y'</span>:<span class="number">4</span>&#125;]</div><div class="line"><span class="comment"># b = set(a) # a的元素是字典，字典不是可哈希的，所以返回TypeError: unhashable type: 'dict'</span></div><div class="line">c = dedupe(a, key=<span class="keyword">lambda</span> d: (d[<span class="string">'x'</span>], d[<span class="string">'y'</span>]))</div><div class="line">d = dedupe(a, key=<span class="keyword">lambda</span> d: (d[<span class="string">'x'</span>]))</div><div class="line">print(list(c))</div><div class="line">print(list(d))</div></pre></td></tr></table></figure>
+<pre><code>[{&apos;y&apos;: 2, &apos;x&apos;: 1}, {&apos;y&apos;: 3, &apos;x&apos;: 1}, {&apos;y&apos;: 4, &apos;x&apos;: 2}]
+[{&apos;y&apos;: 2, &apos;x&apos;: 1}, {&apos;y&apos;: 4, &apos;x&apos;: 2}]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 读取一个文件，去除其中的重复行</span></div><div class="line"><span class="keyword">with</span> open(<span class="string">'a.txt'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f:</div><div class="line"><span class="comment">#     print(list(f)) # ['abc\n', 'a\n', 'df\n', 'abc\n', 'df\n', '123\n']</span></div><div class="line">    print(list(dedupe(f))) <span class="comment"># ['abc\n', 'a\n', 'df\n', '123\n']</span></div></pre></td></tr></table></figure>
+<pre><code>[&apos;abc\n&apos;, &apos;a\n&apos;, &apos;df\n&apos;, &apos;123\n&apos;]
+</code></pre><h2 id="找出序列中出现次数最多的元素"><a href="#找出序列中出现次数最多的元素" class="headerlink" title="找出序列中出现次数最多的元素"></a>找出序列中出现次数最多的元素</h2><h3 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h3><p>可以用collections模块中的Counter类来实现<br>Counter的底层是一个字典，在元素和它们出现的次数间做了一个映射。Counter对象提供任何可哈希的对象序列作为输入。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</div><div class="line"></div><div class="line">words = [<span class="string">'a'</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>, <span class="string">'a'</span>, <span class="string">'e'</span>, <span class="string">'e'</span>, <span class="string">'d'</span>, <span class="string">'d'</span>]</div><div class="line">count = Counter(words)</div><div class="line">print(count) </div><div class="line">print(count.most_common(<span class="number">3</span>)) <span class="comment"># 出现次数最多的前三个元素</span></div></pre></td></tr></table></figure>
+<pre><code>Counter({&apos;a&apos;: 4, &apos;e&apos;: 3, &apos;d&apos;: 2, &apos;f&apos;: 1, &apos;b&apos;: 1})
+[(&apos;a&apos;, 4), (&apos;e&apos;, 3), (&apos;d&apos;, 2)]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">print(count[<span class="string">'f'</span>])</div><div class="line">count[<span class="string">'f'</span>] += <span class="number">1</span> <span class="comment"># 还可以手动增加某个元素的出现次数</span></div><div class="line">print(count[<span class="string">'f'</span>])</div></pre></td></tr></table></figure>
+<pre><code>1
+2
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">print(count)</div><div class="line">words_2 = [<span class="string">'b'</span>, <span class="string">'a'</span>, <span class="string">'c'</span>]</div><div class="line">count.update(words_2) <span class="comment"># update方法可以更新count的数据</span></div><div class="line">print(count)</div></pre></td></tr></table></figure>
+<pre><code>Counter({&apos;a&apos;: 8, &apos;e&apos;: 6, &apos;d&apos;: 4, &apos;f&apos;: 3, &apos;b&apos;: 2})
+Counter({&apos;a&apos;: 9, &apos;e&apos;: 6, &apos;d&apos;: 4, &apos;f&apos;: 3, &apos;b&apos;: 3, &apos;c&apos;: 1})
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Counter对象的各种运算</span></div><div class="line">a = Counter(words)</div><div class="line">b = Counter(words_2)</div><div class="line">print(a)</div><div class="line">print(b)</div><div class="line">print(a + b)</div><div class="line">print(a- b)</div></pre></td></tr></table></figure>
+<pre><code>Counter({&apos;a&apos;: 4, &apos;e&apos;: 3, &apos;d&apos;: 2, &apos;f&apos;: 1, &apos;b&apos;: 1})
+Counter({&apos;c&apos;: 1, &apos;b&apos;: 1, &apos;a&apos;: 1})
+Counter({&apos;a&apos;: 5, &apos;e&apos;: 3, &apos;b&apos;: 2, &apos;d&apos;: 2, &apos;f&apos;: 1, &apos;c&apos;: 1})
+Counter({&apos;a&apos;: 3, &apos;e&apos;: 3, &apos;d&apos;: 2, &apos;f&apos;: 1})
+</code></pre><h2 id="对字典列表的排序"><a href="#对字典列表的排序" class="headerlink" title="对字典列表的排序"></a>对字典列表的排序</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">friends = [</div><div class="line">    &#123;<span class="string">'name'</span>: <span class="string">'jlan'</span>, <span class="string">'age'</span>: <span class="number">27</span>, <span class="string">'gender'</span>: <span class="string">'m'</span>&#125;,</div><div class="line">    &#123;<span class="string">'name'</span>: <span class="string">'lann'</span>, <span class="string">'age'</span>: <span class="number">25</span>, <span class="string">'gender'</span>: <span class="string">'f'</span>&#125;,</div><div class="line">    &#123;<span class="string">'name'</span>: <span class="string">'bob'</span>, <span class="string">'age'</span>: <span class="number">23</span>, <span class="string">'gender'</span>: <span class="string">'m'</span>&#125;,</div><div class="line">    &#123;<span class="string">'name'</span>: <span class="string">'herry'</span>, <span class="string">'age'</span>: <span class="number">28</span>, <span class="string">'gender'</span>: <span class="string">'f'</span>&#125;,</div><div class="line">    &#123;<span class="string">'name'</span>: <span class="string">'dairy'</span>, <span class="string">'age'</span>: <span class="number">26</span>, <span class="string">'gender'</span>: <span class="string">'m'</span>&#125;</div><div class="line">]</div><div class="line"></div><div class="line">print(friends)</div><div class="line"><span class="keyword">from</span> operator <span class="keyword">import</span> itemgetter</div><div class="line">print(sorted(friends, key=itemgetter(<span class="string">'age'</span>)))</div><div class="line">print(sorted(friends, key=itemgetter(<span class="string">'age'</span>, <span class="string">'name'</span>)))</div><div class="line"></div><div class="line"><span class="comment"># itemgetter()的参数可以是字典的键、用数字表示的列表元素等任何可以穿给对象的__getitem__()方法的值。</span></div><div class="line"><span class="comment"># 用lambda也可以实现这样的功能，但是用itemgetter通常效率更高</span></div><div class="line">print(sorted(friends, key=<span class="keyword">lambda</span> f: f[<span class="string">'age'</span>]))</div><div class="line">print(sorted(friends, key=<span class="keyword">lambda</span> f: (f[<span class="string">'age'</span>], f[<span class="string">'name'</span>])))</div></pre></td></tr></table></figure>
+<pre><code>[{&apos;gender&apos;: &apos;m&apos;, &apos;age&apos;: 27, &apos;name&apos;: &apos;jlan&apos;}, {&apos;gender&apos;: &apos;f&apos;, &apos;age&apos;: 25, &apos;name&apos;: &apos;lann&apos;}, {&apos;gender&apos;: &apos;m&apos;, &apos;age&apos;: 23, &apos;name&apos;: &apos;bob&apos;}, {&apos;gender&apos;: &apos;f&apos;, &apos;age&apos;: 28, &apos;name&apos;: &apos;herry&apos;}, {&apos;gender&apos;: &apos;m&apos;, &apos;age&apos;: 26, &apos;name&apos;: &apos;dairy&apos;}]
+[{&apos;gender&apos;: &apos;m&apos;, &apos;age&apos;: 23, &apos;name&apos;: &apos;bob&apos;}, {&apos;gender&apos;: &apos;f&apos;, &apos;age&apos;: 25, &apos;name&apos;: &apos;lann&apos;}, {&apos;gender&apos;: &apos;m&apos;, &apos;age&apos;: 26, &apos;name&apos;: &apos;dairy&apos;}, {&apos;gender&apos;: &apos;m&apos;, &apos;age&apos;: 27, &apos;name&apos;: &apos;jlan&apos;}, {&apos;gender&apos;: &apos;f&apos;, &apos;age&apos;: 28, &apos;name&apos;: &apos;herry&apos;}]
+[{&apos;gender&apos;: &apos;m&apos;, &apos;age&apos;: 23, &apos;name&apos;: &apos;bob&apos;}, {&apos;gender&apos;: &apos;f&apos;, &apos;age&apos;: 25, &apos;name&apos;: &apos;lann&apos;}, {&apos;gender&apos;: &apos;m&apos;, &apos;age&apos;: 26, &apos;name&apos;: &apos;dairy&apos;}, {&apos;gender&apos;: &apos;m&apos;, &apos;age&apos;: 27, &apos;name&apos;: &apos;jlan&apos;}, {&apos;gender&apos;: &apos;f&apos;, &apos;age&apos;: 28, &apos;name&apos;: &apos;herry&apos;}]
+[{&apos;gender&apos;: &apos;m&apos;, &apos;age&apos;: 23, &apos;name&apos;: &apos;bob&apos;}, {&apos;gender&apos;: &apos;f&apos;, &apos;age&apos;: 25, &apos;name&apos;: &apos;lann&apos;}, {&apos;gender&apos;: &apos;m&apos;, &apos;age&apos;: 26, &apos;name&apos;: &apos;dairy&apos;}, {&apos;gender&apos;: &apos;m&apos;, &apos;age&apos;: 27, &apos;name&apos;: &apos;jlan&apos;}, {&apos;gender&apos;: &apos;f&apos;, &apos;age&apos;: 28, &apos;name&apos;: &apos;herry&apos;}]
+[{&apos;gender&apos;: &apos;m&apos;, &apos;age&apos;: 23, &apos;name&apos;: &apos;bob&apos;}, {&apos;gender&apos;: &apos;f&apos;, &apos;age&apos;: 25, &apos;name&apos;: &apos;lann&apos;}, {&apos;gender&apos;: &apos;m&apos;, &apos;age&apos;: 26, &apos;name&apos;: &apos;dairy&apos;}, {&apos;gender&apos;: &apos;m&apos;, &apos;age&apos;: 27, &apos;name&apos;: &apos;jlan&apos;}, {&apos;gender&apos;: &apos;f&apos;, &apos;age&apos;: 28, &apos;name&apos;: &apos;herry&apos;}]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># key=itemgetter()或lambda方法同样也可以用于min，max之类的函数</span></div></pre></td></tr></table></figure>
+<h2 id="根据字段将记录分组"><a href="#根据字段将记录分组" class="headerlink" title="根据字段将记录分组"></a>根据字段将记录分组</h2><p>用itertools.groupby()方法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> operator <span class="keyword">import</span> itemgetter</div><div class="line"><span class="keyword">from</span> itertools <span class="keyword">import</span> groupby</div><div class="line"></div><div class="line"><span class="comment"># 字符串压缩，面试经常会出现这样的问题</span></div><div class="line">l = <span class="string">'aabbbbcccddeddff'</span></div><div class="line"><span class="keyword">for</span> key, group <span class="keyword">in</span> groupby(l):</div><div class="line">    print(key)</div><div class="line">    print(list(group))</div></pre></td></tr></table></figure>
+<pre><code>a
+[&apos;a&apos;, &apos;a&apos;]
+b
+[&apos;b&apos;, &apos;b&apos;, &apos;b&apos;, &apos;b&apos;]
+c
+[&apos;c&apos;, &apos;c&apos;, &apos;c&apos;]
+d
+[&apos;d&apos;, &apos;d&apos;]
+e
+[&apos;e&apos;]
+d
+[&apos;d&apos;, &apos;d&apos;]
+f
+[&apos;f&apos;, &apos;f&apos;]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">friends = [</div><div class="line">    &#123;<span class="string">'name'</span>: <span class="string">'jlan'</span>, <span class="string">'age'</span>: <span class="number">27</span>, <span class="string">'gender'</span>: <span class="string">'m'</span>&#125;,</div><div class="line">    &#123;<span class="string">'name'</span>: <span class="string">'lann'</span>, <span class="string">'age'</span>: <span class="number">25</span>, <span class="string">'gender'</span>: <span class="string">'f'</span>&#125;,</div><div class="line">    &#123;<span class="string">'name'</span>: <span class="string">'bob'</span>, <span class="string">'age'</span>: <span class="number">23</span>, <span class="string">'gender'</span>: <span class="string">'m'</span>&#125;,</div><div class="line">    &#123;<span class="string">'name'</span>: <span class="string">'herry'</span>, <span class="string">'age'</span>: <span class="number">28</span>, <span class="string">'gender'</span>: <span class="string">'f'</span>&#125;,</div><div class="line">    &#123;<span class="string">'name'</span>: <span class="string">'dairy'</span>, <span class="string">'age'</span>: <span class="number">26</span>, <span class="string">'gender'</span>: <span class="string">'m'</span>&#125;</div><div class="line">]</div><div class="line"><span class="comment"># 对friends按性别分组</span></div><div class="line">friends.sort(key=itemgetter(<span class="string">'gender'</span>))</div><div class="line"><span class="keyword">for</span> key, group <span class="keyword">in</span> groupby(friends, key=itemgetter(<span class="string">'gender'</span>)):</div><div class="line">    print(key)</div><div class="line">    print(list(group))</div></pre></td></tr></table></figure>
+<pre><code>f
+[{&apos;gender&apos;: &apos;f&apos;, &apos;age&apos;: 25, &apos;name&apos;: &apos;lann&apos;}, {&apos;gender&apos;: &apos;f&apos;, &apos;age&apos;: 28, &apos;name&apos;: &apos;herry&apos;}]
+m
+[{&apos;gender&apos;: &apos;m&apos;, &apos;age&apos;: 27, &apos;name&apos;: &apos;jlan&apos;}, {&apos;gender&apos;: &apos;m&apos;, &apos;age&apos;: 23, &apos;name&apos;: &apos;bob&apos;}, {&apos;gender&apos;: &apos;m&apos;, &apos;age&apos;: 26, &apos;name&apos;: &apos;dairy&apos;}]
+</code></pre><h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>groupby()方法通过扫描序列找出拥有相同值（或是由参数key指定的函数返回的值）的序列项，并将它们分组。groupby()创建了一个迭代器，每次迭代都返回一个值（分组的key）和一个子迭代器（属于该分组的group）。对与friends这样序列如果要按照性别分组，需要先对friends按性别进行排序，把相同性别的项放在一块，然后才能按groupby()进行分组。</p>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #0097A7 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #0097A7 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #0097A7 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread"
+        data-thread-key="2017/05/11/《Python-CookBook》读书笔记-数据结构和算法（二）/"
+        data-url="http://jlan.me/2017/05/11/《Python-CookBook》读书笔记-数据结构和算法（二）/"
+        data-title="《Python CookBook》读书笔记-数据结构和算法（二）">
+    </div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/05/11/机器学习之朴素贝叶斯算法/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/logo-me.jpg" alt="Jlan's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        jllan@126.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/" target="_self">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">December 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">November 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">September 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">August 2016<span class="sidebar_archives-count">5</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/IT技术/">IT技术<span class="sidebar_archives-count">26</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="关于">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">label</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">27</span>
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/jllan" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-github.svg);">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/jlan" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-zhihu.svg);">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;穿林打叶又何妨
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+    <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/lazyload.min.js"></script>
+    <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/js.min.js"></script>
+
+
+
+    <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/nprogress.js"></script>
+
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    <!-- 多说公共 js 代码 start -->
+    <script type="text/javascript">
+        queue.offer(function(){
+            var duoshuoQuery = {
+                short_name: 'jlan'
+            };
+            (function() {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';
+                ds.async = true;
+                ds.src = 'https://static.duoshuo.com/embed.js';
+                ds.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0]
+                 || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+        });
+    </script>
+    <!-- 多说公共 js 代码 end -->
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+    <!--<script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/mathjax.js"></script>-->
+	<script charset="utf-8" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script>
+    <!-- Offer LazyLoad -->
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    <!-- Start Queue -->
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
