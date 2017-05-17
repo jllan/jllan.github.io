@@ -10,7 +10,7 @@
     
     <title>
         
-            Python之生成器和协程 | 
+            Python之collections模块 | 
         
         穿林打叶又何妨
     </title>
@@ -62,7 +62,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://jlan.me">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Python之生成器和协程 | 穿林打叶又何妨">
+    <meta property="og:title" content="Python之collections模块 | 穿林打叶又何妨">
     <meta property="og:description" content="生活、学习记录">
     <meta property="og:article:tag" content="python"> 
 
@@ -252,7 +252,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#生成器"><span class="post-toc-number">1.</span> <span class="post-toc-text">生成器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#用列表生成式的方式来创建generator"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">用列表生成式的方式来创建generator</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#用yield来创建generator"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">用yield来创建generator</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#协程"><span class="post-toc-number">2.</span> <span class="post-toc-text">协程</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#defaultdict"><span class="post-toc-number">1.</span> <span class="post-toc-text">defaultdict</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#OrderedDict"><span class="post-toc-number">2.</span> <span class="post-toc-text">OrderedDict</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#namedtuple"><span class="post-toc-number">3.</span> <span class="post-toc-text">namedtuple()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Counter"><span class="post-toc-number">4.</span> <span class="post-toc-text">Counter</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#deque"><span class="post-toc-number">5.</span> <span class="post-toc-text">deque</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number"></span> <span class="post-toc-text">参考</span></a>
 
         <!--
         <li class="mdl-menu__item">
@@ -289,7 +289,7 @@
         
     
             <p class="article-headline-p">
-                Python之生成器和协程
+                Python之collections模块
             </p>
         </div>
 
@@ -308,7 +308,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Jlan</strong>
-        <span>Dec 26, 2016</span>
+        <span>May 18, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -359,7 +359,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Python之生成器和协程&url=http://jlan.me//2016/12/26/Python之生成器和协程/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Python之collections模块&url=http://jlan.me//2017/05/18/Python之collections模块/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -368,7 +368,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Python之生成器和协程&url=http://jlan.me//2016/12/26/Python之生成器和协程/index.html&via=Jlan" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Python之collections模块&url=http://jlan.me//2017/05/18/Python之collections模块/index.html&via=Jlan" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -377,7 +377,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://jlan.me//2016/12/26/Python之生成器和协程/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://jlan.me//2017/05/18/Python之collections模块/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -386,7 +386,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://jlan.me//2016/12/26/Python之生成器和协程/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://jlan.me//2017/05/18/Python之collections模块/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -410,25 +410,95 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h2 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h2><p>Python中，为避免创建完整的list，从而节省大量的空间而在循环的过程中不断推算出后续的元素，这种一边循环一边计算的机制，称为生成器：generator。</p>
-<p>要创建一个generator，有很多种方法。</p>
-<h3 id="用列表生成式的方式来创建generator"><a href="#用列表生成式的方式来创建generator" class="headerlink" title="用列表生成式的方式来创建generator"></a>用列表生成式的方式来创建generator</h3><p>只要把一个列表生成式的[]改成()，就创建了一个generator：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; L = [x * x for x in range(5)]</div><div class="line">&gt;&gt;&gt; L</div><div class="line">[0, 1, 4, 9, 16, 25]</div><div class="line">&gt;&gt;&gt; g = (x * x for x in range(5))</div><div class="line">&gt;&gt;&gt; g</div><div class="line">&lt;generator object &lt;genexpr&gt; at 0x1022ef630&gt;</div></pre></td></tr></table></figure></p>
-<p>创建L和g的区别仅在于最外层的[]和()，L是一个list，而g是一个generator。<br>如果要一个一个打印出来，可以通过next()函数获得generator的下一个返回值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; next(g)</div><div class="line">0</div><div class="line">&gt;&gt;&gt; next(g)</div><div class="line">1</div><div class="line">&gt;&gt;&gt; next(g)</div><div class="line">4</div><div class="line">&gt;&gt;&gt; next(g)</div><div class="line">9</div><div class="line">&gt;&gt;&gt; next(g)</div><div class="line">16</div><div class="line">&gt;&gt;&gt; next(g)</div><div class="line">25</div><div class="line">&gt;&gt;&gt; next(g)</div><div class="line">Traceback (most recent call last):</div><div class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</div><div class="line">StopIteration</div></pre></td></tr></table></figure></p>
-<p>我们讲过，generator保存的是算法，每次调用next(g)，就计算出g的下一个元素的值，直到计算到最后一个元素，没有更多的元素时，抛出StopIteration的错误。<br>一般不使用next(g)这种方法，而是使用for循环，因为generator也是可迭代对象：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; g = (x * x for x in range(5))</div><div class="line">&gt;&gt;&gt; for n in g:</div><div class="line">...     print(n)</div><div class="line">... </div><div class="line">0</div><div class="line">1</div><div class="line">4</div><div class="line">9</div><div class="line">16</div><div class="line">25</div></pre></td></tr></table></figure></p>
-<h3 id="用yield来创建generator"><a href="#用yield来创建generator" class="headerlink" title="用yield来创建generator"></a>用yield来创建generator</h3><p>如果一个函数定义中包含yield关键字，那么这个函数就不再是一个普通函数，而是一个generator。</p>
-<p><strong>用生成器来生成斐波拉契数列</strong><br>著名的斐波拉契数列（Fibonacci），除第一个和第二个数外，任意一个数都可由前两个数相加得到：<br><code>1, 1, 2, 3, 5, 8, 13, 21, 34, ...</code><br>斐波拉契数列用列表生成式写不出来，但是，用函数把它打印出来却很容易：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">def fib(max):</div><div class="line">    n, a, b = 0, 0, 1</div><div class="line">    while n &lt; max:</div><div class="line">        print(b)</div><div class="line">        a, b = b, a + b</div><div class="line">        n = n + 1</div><div class="line">    return &apos;done&apos;</div></pre></td></tr></table></figure></p>
-<p>仔细观察，可以看出，fib函数实际上是定义了斐波拉契数列的推算规则，可以从第一个元素开始，推算出后续任意的元素，这种逻辑其实非常类似generator。要把fib函数变成generator，只需要把print(b)改为yield b就可以了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">def fib(max):</div><div class="line">    n, a, b = 0, 0, 1</div><div class="line">    while n &lt; max:</div><div class="line">        yield b</div><div class="line">        a, b = b, a + b</div><div class="line">        n = n + 1</div><div class="line">    return &apos;done&apos;</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; f = fib(6)</div><div class="line">&gt;&gt;&gt; f</div><div class="line">&lt;generator object fib at 0x104feaaa0&gt;</div></pre></td></tr></table></figure>
-<p>这里，最难理解的就是generator和函数的执行流程不一样。函数是顺序执行，遇到return语句或者最后一行函数语句就返回。而变成generator的函数，在每次调用next()的时候执行，遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。</p>
-<p>我们在循环过程中不断调用yield，就会不断中断。当然要给循环设置一个条件来退出循环，不然就会产生一个无限数列出来。<br>同样的，把函数改成generator后，我们基本上从来不会用next()来获取下一个返回值，而是直接使用for循环来迭代：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; for n in fib(6):</div><div class="line">...     print(n)</div><div class="line">...</div><div class="line">1</div><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">5</div><div class="line">8</div></pre></td></tr></table></figure></p>
-<p>但是用for循环调用generator时，发现拿不到generator的return语句的返回值。如果想要拿到返回值，必须捕获StopIteration错误，返回值包含在StopIteration的value中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; g = fib(6)</div><div class="line">&gt;&gt;&gt; while True:</div><div class="line">...     try:</div><div class="line">...         x = next(g)</div><div class="line">...         print(&apos;g:&apos;, x)</div><div class="line">...     except StopIteration as e:</div><div class="line">...         print(&apos;Generator return value:&apos;, e.value)</div><div class="line">...         break</div><div class="line">...</div><div class="line">g: 1</div><div class="line">g: 1</div><div class="line">g: 2</div><div class="line">g: 3</div><div class="line">g: 5</div><div class="line">g: 8</div><div class="line">Generator return value: done</div></pre></td></tr></table></figure></p>
-<p><strong>用生成器来生成杨辉三角</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">triangles</span><span class="params">()</span>:</span></div><div class="line">    L = [<span class="number">1</span>]</div><div class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">        <span class="keyword">yield</span> L</div><div class="line">        L.append(<span class="number">0</span>)</div><div class="line">        L = [L[i - <span class="number">1</span>] + L[i] <span class="keyword">for</span> i <span class="keyword">in</span> range(len(L))]</div></pre></td></tr></table></figure></p>
-<p>下面调用traingles函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">n = 0</div><div class="line">for t in triangles():</div><div class="line">    print(t)</div><div class="line">    n = n + 1</div><div class="line">    if n == 10:</div><div class="line">        break</div><div class="line">        </div><div class="line"># 运行结果</div><div class="line">[1]</div><div class="line">[1, 1]</div><div class="line">[1, 2, 1]</div><div class="line">[1, 3, 3, 1]</div><div class="line">[1, 4, 6, 4, 1]</div><div class="line">[1, 5, 10, 10, 5, 1]</div><div class="line">[1, 6, 15, 20, 15, 6, 1]</div><div class="line">[1, 7, 21, 35, 35, 21, 7, 1]</div><div class="line">[1, 8, 28, 56, 70, 56, 28, 8, 1]</div><div class="line">[1, 9, 36, 84, 126, 126, 84, 36, 9, 1]</div></pre></td></tr></table></figure></p>
-<h2 id="协程"><a href="#协程" class="headerlink" title="协程"></a>协程</h2><p>Python对协程的支持是通过generator实现的。<br>在generator中，我们不但可以通过for循环来迭代，还可以不断调用next()函数获取由yield语句返回的下一个值。<br>但是Python的yield不但可以返回一个值，它还可以接收调用者发出的参数。</p>
-<p>来看例子：<br>传统的生产者-消费者模型是一个线程写消息，一个线程取消息，通过锁机制控制队列和等待，但一不小心就可能死锁。<br>如果改用协程，生产者生产消息后，直接通过yield跳转到消费者开始执行，待消费者执行完毕后，切换回生产者继续生产，效率极高：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">def consumer():</div><div class="line">    r = &apos;&apos;</div><div class="line">    while True:</div><div class="line">        n = yield r</div><div class="line">        if not n:</div><div class="line">            return</div><div class="line">        print(&apos;[CONSUMER] Consuming %s...&apos; % n)</div><div class="line">        r = &apos;200 OK&apos;</div><div class="line"></div><div class="line">def produce(c):</div><div class="line">    c.send(None)</div><div class="line">    n = 0</div><div class="line">    while n &lt; 5:</div><div class="line">        n = n + 1</div><div class="line">        print(&apos;[PRODUCER] Producing %s...&apos; % n)</div><div class="line">        r = c.send(n)</div><div class="line">        print(&apos;[PRODUCER] Consumer return: %s&apos; % r)</div><div class="line">    c.close()</div></pre></td></tr></table></figure></p>
-<p><code>c = consumer()
-produce(c)</code><br>执行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">[PRODUCER] Producing 1...</div><div class="line">[CONSUMER] Consuming 1...</div><div class="line">[PRODUCER] Consumer return: 200 OK</div><div class="line">[PRODUCER] Producing 2...</div><div class="line">[CONSUMER] Consuming 2...</div><div class="line">[PRODUCER] Consumer return: 200 OK</div><div class="line">[PRODUCER] Producing 3...</div><div class="line">[CONSUMER] Consuming 3...</div><div class="line">[PRODUCER] Consumer return: 200 OK</div><div class="line">[PRODUCER] Producing 4...</div><div class="line">[CONSUMER] Consuming 4...</div><div class="line">[PRODUCER] Consumer return: 200 OK</div><div class="line">[PRODUCER] Producing 5...</div><div class="line">[CONSUMER] Consuming 5...</div><div class="line">[PRODUCER] Consumer return: 200 OK</div></pre></td></tr></table></figure></p>
-<p>注意到consumer函数是一个generator，把一个consumer传入produce后：<br>首先调用c.send(None)启动生成器；<br>然后，一旦生产了东西，通过c.send(n)切换到consumer执行；<br>consumer通过yield拿到消息，处理，又通过yield把结果传回；<br>produce拿到consumer处理的结果，继续生产下一条消息；<br>produce决定不生产了，通过c.close()关闭consumer，整个过程结束。<br>整个流程无锁，由一个线程执行，produce和consumer协作完成任务，所以称为“协程”，而非线程的抢占式多任务。<br>最后套用Donald Knuth的一句话总结协程的特点：<br>“子程序就是协程的一种特例。”</p>
+        <p>collections是Python内建的一个集合模块，提供了许多有用的集合类。</p>
+<h3 id="defaultdict"><a href="#defaultdict" class="headerlink" title="defaultdict"></a>defaultdict</h3><p>我们都知道，在使用Python原生的数据结构dict的时候，如果用d[key]这样的方式访问，当指定的key不存在时，是会抛出KeyError异常的。<br>但是，如果使用defaultdict，只要你传入一个默认的工厂方法，那么请求一个不存在的key时，便会调用这个工厂方法使用其结果来作为这个key的默认值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</div><div class="line"></div><div class="line"><span class="comment"># 当ｄ[key]不存在时返回默认值</span></div><div class="line"><span class="comment"># 默认值是调用函数返回的，而函数在创建defaultdict对象时传入</span></div><div class="line">dd = defaultdict(<span class="keyword">lambda</span>: <span class="string">'N/A'</span>)</div><div class="line">dd[<span class="string">'key1'</span>] = <span class="string">'abc'</span></div><div class="line">print(dd[<span class="string">'key1'</span>]) <span class="comment"># key1存在</span></div><div class="line">print(dd[<span class="string">'key2'</span>]) <span class="comment"># key2不存在，返回默认值</span></div></pre></td></tr></table></figure>
+<pre><code>abc
+N/A
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 将键映射到多个值上</span></div><div class="line">members = [</div><div class="line">    <span class="comment"># Age, name</span></div><div class="line">    [<span class="string">'male'</span>, <span class="string">'John'</span>],</div><div class="line">    [<span class="string">'male'</span>, <span class="string">'Jack'</span>],</div><div class="line">    [<span class="string">'female'</span>, <span class="string">'Lily'</span>],</div><div class="line">    [<span class="string">'male'</span>, <span class="string">'Pony'</span>],</div><div class="line">    [<span class="string">'female'</span>, <span class="string">'Lucy'</span>],</div><div class="line">]</div><div class="line"></div><div class="line">result = defaultdict(list)</div><div class="line"><span class="keyword">for</span> sex, name <span class="keyword">in</span> members:</div><div class="line">    result[sex].append(name)</div><div class="line"></div><div class="line">print(result)</div></pre></td></tr></table></figure>
+<pre><code>defaultdict(&lt;class &apos;list&apos;&gt;, {&apos;female&apos;: [&apos;Lily&apos;, &apos;Lucy&apos;], &apos;male&apos;: [&apos;John&apos;, &apos;Jack&apos;, &apos;Pony&apos;]})
+</code></pre><h3 id="OrderedDict"><a href="#OrderedDict" class="headerlink" title="OrderedDict"></a>OrderedDict</h3><p>在Python中，dict这个数据结构由于hash的特性，是无序的，这在有的时候会给我们带来一些麻烦，幸运的是，collections模块为我们提供了一个有序的字典对象OrderedDict。</p>
+<p>OrderedDict内部维护了一个双向链表，会根据元素加入的顺序来排列键的位置。OrderedDict的大小是普通字典的2倍多。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> OrderedDict</div><div class="line"></div><div class="line">items = (</div><div class="line">    (<span class="string">'A'</span>, <span class="number">1</span>),</div><div class="line">    (<span class="string">'B'</span>, <span class="number">2</span>),</div><div class="line">    (<span class="string">'C'</span>, <span class="number">3</span>)</div><div class="line">)</div><div class="line"></div><div class="line">regular_dict = dict(items)</div><div class="line">ordered_dict = OrderedDict(items)</div><div class="line"></div><div class="line">print(regular_dict)</div><div class="line">print(ordered_dict)</div></pre></td></tr></table></figure>
+<pre><code>{&apos;A&apos;: 1, &apos;C&apos;: 3, &apos;B&apos;: 2}
+OrderedDict([(&apos;A&apos;, 1), (&apos;B&apos;, 2), (&apos;C&apos;, 3)])
+</code></pre><h3 id="namedtuple"><a href="#namedtuple" class="headerlink" title="namedtuple()"></a>namedtuple()</h3><p>对列表和元组一般是通过下表来访问的，有时这种访问方式有些难以阅读。我们想要通过名字来访问元素以此减少结构中对位置的依赖，这时就可以使用namedtuple()。namedtuple()是一个工厂方法，它返回的是python中标准元组类型的子类。我们提供给它一个类型名称及相应的字段，它返回一个可实例化的类、为你已经定义好的字段传入值等。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">records = [</div><div class="line">    (<span class="string">'apple'</span>, <span class="number">2.8</span>, <span class="number">6</span>),</div><div class="line">    (<span class="string">'banada'</span>, <span class="number">1.5</span>, <span class="number">8</span>),</div><div class="line">    (<span class="string">'peach'</span>, <span class="number">2.2</span>, <span class="number">12</span>),</div><div class="line">    (<span class="string">'pear'</span>, <span class="number">1.8</span>, <span class="number">5</span>)</div><div class="line">]</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">compute_cost</span><span class="params">(records)</span>:</span></div><div class="line">    total = <span class="number">0</span></div><div class="line">    <span class="keyword">for</span> rec <span class="keyword">in</span> records:</div><div class="line">        total += rec[<span class="number">1</span>]*rec[<span class="number">2</span>]</div><div class="line">    <span class="keyword">return</span> total</div><div class="line"></div><div class="line">print(compute_cost(records))</div></pre></td></tr></table></figure>
+<pre><code>64.2
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> namedtuple</div><div class="line"></div><div class="line">Fruit = namedtuple(<span class="string">'Fruit'</span>, [<span class="string">'name'</span>, <span class="string">'price'</span>, <span class="string">'count'</span>])</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">compute_cost2</span><span class="params">(records)</span>:</span></div><div class="line">    total = <span class="number">0</span></div><div class="line">    <span class="keyword">for</span> rec <span class="keyword">in</span> records:</div><div class="line">        fruit = Fruit(*rec)</div><div class="line">        total += fruit.price*fruit.count</div><div class="line">    <span class="keyword">return</span> total</div><div class="line"></div><div class="line">print(compute_cost2(records))</div></pre></td></tr></table></figure>
+<pre><code>64.2
+</code></pre><p>namedtuple()的一种可能用法是用来代替dict，与普通dict不同的是，namedtuple是不可变的，如果需要改变属性，可以通过namedtuple实例的_replace()方法。该方法创建一个全新的命名组，并对相应值进行替换。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Fruit = namedtuple(<span class="string">'Fruit'</span>, [<span class="string">'name'</span>, <span class="string">'price'</span>, <span class="string">'count'</span>])</div><div class="line">fruit = Fruit(<span class="string">'apple'</span>, <span class="number">2.8</span>, <span class="number">6</span>)</div><div class="line">print(fruit)</div><div class="line"><span class="comment"># fruit.price=3 # 返回AttributeError: can't set attribute</span></div><div class="line">fruit = fruit._replace(price=<span class="number">3</span>)</div><div class="line">print(fruit)</div></pre></td></tr></table></figure>
+<pre><code>Fruit(name=&apos;apple&apos;, price=2.8, count=6)
+Fruit(name=&apos;apple&apos;, price=3, count=6)
+</code></pre><h3 id="Counter"><a href="#Counter" class="headerlink" title="Counter"></a>Counter</h3><p>找出序列中出现次数最多的元素可以用collections模块中的Counter类来实现 Counter的底层是一个字典，在元素和它们出现的次数间做了一个映射。Counter对象提供任何可哈希的对象序列作为输入。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</div><div class="line"></div><div class="line">words = [<span class="string">'a'</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>, <span class="string">'a'</span>, <span class="string">'e'</span>, <span class="string">'e'</span>, <span class="string">'d'</span>, <span class="string">'d'</span>]</div><div class="line">count = Counter(words)</div><div class="line">print(count) </div><div class="line">print(count.most_common(<span class="number">3</span>)) <span class="comment"># 出现次数最多的前三个元素</span></div></pre></td></tr></table></figure>
+<pre><code>Counter({&apos;a&apos;: 4, &apos;e&apos;: 3, &apos;d&apos;: 2, &apos;f&apos;: 1, &apos;b&apos;: 1})
+[(&apos;a&apos;, 4), (&apos;e&apos;, 3), (&apos;d&apos;, 2)]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">print(count[<span class="string">'f'</span>])</div><div class="line">count[<span class="string">'f'</span>] += <span class="number">1</span> <span class="comment"># 还可以手动增加某个元素的出现次数</span></div><div class="line">print(count[<span class="string">'f'</span>])</div></pre></td></tr></table></figure>
+<pre><code>1
+2
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">print(count)</div><div class="line">words_2 = [<span class="string">'b'</span>, <span class="string">'a'</span>, <span class="string">'c'</span>]</div><div class="line">count.update(words_2) <span class="comment"># update方法可以更新count的数据</span></div><div class="line">print(count)</div></pre></td></tr></table></figure>
+<pre><code>Counter({&apos;a&apos;: 4, &apos;e&apos;: 3, &apos;f&apos;: 2, &apos;d&apos;: 2, &apos;b&apos;: 1})
+Counter({&apos;a&apos;: 5, &apos;e&apos;: 3, &apos;d&apos;: 2, &apos;f&apos;: 2, &apos;b&apos;: 2, &apos;c&apos;: 1})
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Counter对象的各种运算</span></div><div class="line">a = Counter(words)</div><div class="line">b = Counter(words_2)</div><div class="line">print(a)</div><div class="line">print(b)</div><div class="line">print(a + b)</div><div class="line">print(a - b)</div></pre></td></tr></table></figure>
+<pre><code>Counter({&apos;a&apos;: 4, &apos;e&apos;: 3, &apos;d&apos;: 2, &apos;f&apos;: 1, &apos;b&apos;: 1})
+Counter({&apos;c&apos;: 1, &apos;b&apos;: 1, &apos;a&apos;: 1})
+Counter({&apos;a&apos;: 5, &apos;e&apos;: 3, &apos;d&apos;: 2, &apos;b&apos;: 2, &apos;c&apos;: 1, &apos;f&apos;: 1})
+Counter({&apos;e&apos;: 3, &apos;a&apos;: 3, &apos;d&apos;: 2, &apos;f&apos;: 1})
+</code></pre><h3 id="deque"><a href="#deque" class="headerlink" title="deque"></a>deque</h3><p>使用list存储数据时，按索引访问元素很快，但是插入和删除元素就很慢了，因为list是线性存储，数据量大的时候，插入和删除效率很低。<br>deque是为了高效实现插入和删除操作的双向列表，deque其实是double-ended queue的缩写，翻译过来就是双端队列。deque除了实现list的append()和pop()外，还支持appendleft()和popleft()，这样就可以非常高效地往头部添加或删除元素。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</div><div class="line">q = deque([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>])</div><div class="line">q.append(<span class="string">'x'</span>)</div><div class="line">q.appendleft(<span class="string">'y'</span>)</div><div class="line">print(q)</div><div class="line">q.popleft()</div><div class="line">print(q)</div></pre></td></tr></table></figure>
+<pre><code>deque([&apos;y&apos;, &apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;x&apos;])
+deque([&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;x&apos;])
+</code></pre><p>作为一个双端队列，deque还提供了一些其他的好用方法，比如 rotate 等</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sys</div><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</div><div class="line"></div><div class="line">fancy_loading = deque(<span class="string">'&gt;--------------------'</span>)</div><div class="line">n = <span class="number">0</span></div><div class="line"><span class="keyword">while</span> n&lt;<span class="number">2</span>*len(fancy_loading):</div><div class="line">    print(<span class="string">''</span>.join(fancy_loading))</div><div class="line">    fancy_loading.rotate(<span class="number">1</span>)</div><div class="line">    sys.stdout.flush()</div><div class="line">    time.sleep(<span class="number">0.1</span>)</div><div class="line">    n += <span class="number">1</span></div></pre></td></tr></table></figure>
+<pre><code>&gt;--------------------
+-&gt;-------------------
+--&gt;------------------
+---&gt;-----------------
+----&gt;----------------
+-----&gt;---------------
+------&gt;--------------
+-------&gt;-------------
+--------&gt;------------
+---------&gt;-----------
+----------&gt;----------
+-----------&gt;---------
+------------&gt;--------
+-------------&gt;-------
+--------------&gt;------
+---------------&gt;-----
+----------------&gt;----
+-----------------&gt;---
+------------------&gt;--
+-------------------&gt;-
+--------------------&gt;
+&gt;--------------------
+-&gt;-------------------
+--&gt;------------------
+---&gt;-----------------
+----&gt;----------------
+-----&gt;---------------
+------&gt;--------------
+-------&gt;-------------
+--------&gt;------------
+---------&gt;-----------
+----------&gt;----------
+-----------&gt;---------
+------------&gt;--------
+-------------&gt;-------
+--------------&gt;------
+---------------&gt;-----
+----------------&gt;----
+-----------------&gt;---
+------------------&gt;--
+-------------------&gt;-
+--------------------&gt;
+</code></pre><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://www.zlovezl.cn/articles/collections-in-python/" target="_blank" rel="external">http://www.zlovezl.cn/articles/collections-in-python/</a></li>
+<li><a href="http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000/001411031239400f7181f65f33a4623bc42276a605debf6000" target="_blank" rel="external">http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000/001411031239400f7181f65f33a4623bc42276a605debf6000</a>    </li>
+<li><a href="https://docs.python.org/3/library/collections.html#collections.defaultdict" target="_blank" rel="external">https://docs.python.org/3/library/collections.html#collections.defaultdict</a></li>
+</ul>
 
     
 
@@ -457,9 +527,9 @@ produce(c)</code><br>执行结果：<br><figure class="highlight plain"><table><
 <div id="comments">
     <!-- 多说评论框 start -->
     <div class="ds-thread"
-        data-thread-key="2016/12/26/Python之生成器和协程/"
-        data-url="http://jlan.me/2016/12/26/Python之生成器和协程/"
-        data-title="Python之生成器和协程">
+        data-thread-key="2017/05/18/Python之collections模块/"
+        data-url="http://jlan.me/2017/05/18/Python之collections模块/"
+        data-title="Python之collections模块">
     </div>
     <!-- 多说评论框 end -->
 </div>
@@ -479,21 +549,13 @@ produce(c)</code><br>执行结果：<br><figure class="highlight plain"><table><
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2016/12/30/Linux源码编译软件安装和卸载方法/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2016/12/08/Flask介绍/" id="post_nav-older" class="next-content">
+        <a href="/2017/05/17/卡西欧5174说明书/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
