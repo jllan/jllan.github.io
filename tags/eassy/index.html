@@ -10,7 +10,7 @@
     
     <title>
         
-            标签 | 
+            标签: eassy | 
         
         穿林打叶又何妨
     </title>
@@ -62,7 +62,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://jlan.me">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签 | 穿林打叶又何妨">
+    <meta property="og:title" content="标签: eassy | 穿林打叶又何妨">
     <meta property="og:description" content="生活、学习记录">
     
 
@@ -226,63 +226,104 @@
                         </button>
                     
 
-                    <!-- Post TOC -->
+                    <!-- Index Module -->
+<div class="material-index mdl-grid">
+    
+    <div class="locate-thumbnail-symbol"></div>
 
+    <!-- Pin on top -->
+    
 
-<!-- Layouts -->
+    <!-- Normal Post -->
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
 
-    <!-- Tags Cloud -->
-    <style>
-    #bottom{
-        position: relative;
-    }
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/05/17/卡西欧5174说明书/">卡西欧5174说明书</a></p>
+    </div>
 
-    @media screen and (max-width: 480px) {
-        .material-tagscloud{
-            margin: 6em 2em 0;
-        }
-    }
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
 
-    .material-tagscloud a{
-        text-decoration:none;
-        padding: 1px 9px;
-        margin: 9px 1px;
-        line-height: 40px;
-        white-space: nowrap;
-        transition: .6s;
-        opacity: .85;
-    }
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/05/17/卡西欧5174说明书/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/logo-me.jpg" width="44px" height="44px" alt="Jlan's avatar">
+            </div>
+            <div>
+                <strong>Jlan</strong>
+                <span>May 17, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/随笔/">随笔</a>
+            </span>
 
-    .material-tagscloud a:hover{
-        transition: .6s;
-        opacity: 1;
-        background: #FAFAFA;
-        box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-    }
-</style>
+            
+                <!-- Comment Number -->
+                &nbsp;|&nbsp;
+                <span class="post_entry-comment" >
+                        <span class="ds-thread-count" data-thread-key="2017/05/17/卡西欧5174说明书/" data-count-type="comments"></span>
+                </span>
+            
 
-<div class=" material-tagscloud">
-    <div class="material-post mdl-grid">
-        <a href="/tags/django/" style="font-size: 23.6px; color: #535353">django</a> <a href="/tags/eassy/" style="font-size: 16px; color: #757575">eassy</a> <a href="/tags/essay/" style="font-size: 16px; color: #757575">essay</a> <a href="/tags/flask/" style="font-size: 16px; color: #757575">flask</a> <a href="/tags/git/" style="font-size: 16px; color: #757575">git</a> <a href="/tags/github/" style="font-size: 27.4px; color: #434343">github</a> <a href="/tags/hexo/" style="font-size: 19.8px; color: #646464">hexo</a> <a href="/tags/linux/" style="font-size: 27.4px; color: #434343">linux</a> <a href="/tags/markdown/" style="font-size: 19.8px; color: #646464">markdown</a> <a href="/tags/matplotlib/" style="font-size: 19.8px; color: #646464">matplotlib</a> <a href="/tags/nginx/" style="font-size: 16px; color: #757575">nginx</a> <a href="/tags/numpy/" style="font-size: 16px; color: #757575">numpy</a> <a href="/tags/pcl/" style="font-size: 16px; color: #757575">pcl</a> <a href="/tags/python/" style="font-size: 35px; color: #212121">python</a> <a href="/tags/shadowsocks/" style="font-size: 16px; color: #757575">shadowsocks</a> <a href="/tags/微信/" style="font-size: 16px; color: #757575">微信</a> <a href="/tags/机器学习/" style="font-size: 31.2px; color: #323232">机器学习</a>
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
     </div>
 </div>
 
+            
+            
+        
+    
 
-<script>
-    var adjustFooter = function() {
-        if( ($('#bottom').offset().top + $('#bottom').outerHeight() ) < $(window).height() ) {
-            var footerBottom = $(window).height() - $('#bottom').outerHeight() - $('#bottom').offset().top;
-            $('#bottom').css('bottom', '-' + footerBottom + 'px');
-        }
-    };
+    
 
-    $(document).ready(function() {
-        adjustFooter();
-    });
+    
+        <script>
+    var randomNum;
+
+    var locatePost = $('.locate-thumbnail-symbol').next();
+    for(var i = 0; i < 10; i++) {
+        randomNum = Math.floor(Math.random() * 19 );
+
+        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
+		// locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.png');
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.gif');
+    $('.post_thumbnail-random').addClass('lazy');
+
+        locatePost = locatePost.next();
+    }
 </script>
 
-
-
+    
+</div>
 
 
                     
