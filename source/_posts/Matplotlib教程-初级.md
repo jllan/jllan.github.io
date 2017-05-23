@@ -2,9 +2,7 @@
 title: Matplotlib教程-初级
 date: 2017-03-23 11:42:00
 categories: IT技术
-tags: 
-- python
-- matplotlib
+tags: matplotlib
 ---
 [TOC]
 

@@ -2,9 +2,7 @@
 title: numpy基础入门
 date: 2017-04-21 09:50:46
 categories: IT技术
-tags: 
-- python
-- numpy
+tags: numpy
 ---
 ```python
 import numpy as np
