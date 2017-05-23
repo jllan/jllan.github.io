@@ -4,8 +4,7 @@ date: 2017-05-23 09:39:20
 categories: IT技术
 tags: pandas
 ---
-## 转载：http://www.cnblogs.com/chaosimple/p/4153083.html
-
+转载：http://www.cnblogs.com/chaosimple/p/4153083.html
 本文是对pandas官方网站上《10 Minutes to pandas》的一个简单的翻译，原文在[这里](http://pandas.pydata.org/pandas-docs/stable/10min.html)。这篇文章是对pandas的一个简单的介绍，详细的介绍请参考：[*Cookbook*](http://pandas.pydata.org/pandas-docs/stable/cookbook.html#cookbook) 。习惯上，我们会按下面格式引入所需要的包：
 
 ![](http://upload-images.jianshu.io/upload_images/1713353-dfd774ed2bebfaca.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
