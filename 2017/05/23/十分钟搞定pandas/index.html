@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.3.4 -->
+
+    <!-- Title -->
+    
+    <title>
+        
+            十分钟搞定pandas | 
+        
+        穿林打叶又何妨
+    </title>
+
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+        <link rel="dns-prefetch" href="http://oceas72q5.bkt.clouddn.com/hexo/material"/>
+    
+    
+    
+    
+    
+    
+        <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+    
+
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Jlan">
+    <meta name="description" content="生活、学习记录">
+    <meta name="keywords" content="null,pandas">
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.ico">
+    <link rel="icon" sizes="192x192" href="/img/favicon.ico">
+    <link rel="apple-touch-icon" href="/img/favicon.ico">
+
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="穿林打叶又何妨">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://jlan.me">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="十分钟搞定pandas | 穿林打叶又何妨">
+    <meta property="og:description" content="生活、学习记录">
+    <meta property="og:article:tag" content="pandas"> 
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS & jQuery -->
+    
+        <link rel="stylesheet" href="http://oceas72q5.bkt.clouddn.com/hexo/material/css/material.min.css">
+        <link rel="stylesheet" href="http://oceas72q5.bkt.clouddn.com/hexo/material/css/style.min.css">
+        <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+        <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/jquery.min.js"></script>
+        <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/queue.js"></script>
+		
+    
+
+    <!-- UC Browser Compatible -->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write("<link rel=\"stylesheet\" href=\"/css/uc.css\">");
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
+
+    
+
+    
+
+
+    <!-- Bing Background -->
+    
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#转载：http-www-cnblogs-com-chaosimple-p-4153083-html"><span class="post-toc-number">1.</span> <span class="post-toc-text">转载：http://www.cnblogs.com/chaosimple/p/4153083.html</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一、-创建对象"><span class="post-toc-number">2.</span> <span class="post-toc-text">一、            创建对象</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二、-查看数据"><span class="post-toc-number">3.</span> <span class="post-toc-text">二、            查看数据</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三、-选择"><span class="post-toc-number">4.</span> <span class="post-toc-text">三、            选择</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#获取"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">获取</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#通过标签选择"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">通过标签选择</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#通过位置选择"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">通过位置选择</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#布尔索引"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">布尔索引</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设置"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">设置</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#四、-缺失值处理"><span class="post-toc-number">5.</span> <span class="post-toc-text">四、            缺失值处理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#五、-相关操作"><span class="post-toc-number">6.</span> <span class="post-toc-text">五、            相关操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#统计（相关操作通常情况下不包括缺失值）"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">统计（相关操作通常情况下不包括缺失值）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Apply"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">Apply</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#直方图"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">直方图</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字符串方法"><span class="post-toc-number">6.4.</span> <span class="post-toc-text">字符串方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#六、-合并"><span class="post-toc-number">7.</span> <span class="post-toc-text">六、            合并</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Concat"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">Concat</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Join"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">Join</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Append"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">Append</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#七、-分组groupby"><span class="post-toc-number">8.</span> <span class="post-toc-text">七、            分组groupby</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#八、-Reshaping"><span class="post-toc-number">9.</span> <span class="post-toc-text">八、            Reshaping</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Stack"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">Stack</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据透视表"><span class="post-toc-number">9.2.</span> <span class="post-toc-text">数据透视表</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#九、-时间序列"><span class="post-toc-number">10.</span> <span class="post-toc-text">九、            时间序列</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#十、-Categorical"><span class="post-toc-number">11.</span> <span class="post-toc-text">十、            Categorical</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#十一、-画图"><span class="post-toc-number">12.</span> <span class="post-toc-text">十一、           画图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#十二、-导入和保存数据"><span class="post-toc-number">13.</span> <span class="post-toc-text">十二、           导入和保存数据</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CSV，参考：Writing-to-a-csv-file"><span class="post-toc-number">13.1.</span> <span class="post-toc-text">CSV，参考：Writing to a csv file</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#HDF5"><span class="post-toc-number">13.2.</span> <span class="post-toc-text">HDF5</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Excel"><span class="post-toc-number">13.3.</span> <span class="post-toc-text">Excel</span></a></li></ol></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 19 );
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/' + randomNum + '.gif');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                十分钟搞定pandas
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/logo-me.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Jlan</strong>
+        <span>May 23, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/pandas/">pandas</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=十分钟搞定pandas&url=http://jlan.me//2017/05/23/十分钟搞定pandas/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=十分钟搞定pandas&url=http://jlan.me//2017/05/23/十分钟搞定pandas/index.html&via=Jlan" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://jlan.me//2017/05/23/十分钟搞定pandas/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://jlan.me//2017/05/23/十分钟搞定pandas/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="转载：http-www-cnblogs-com-chaosimple-p-4153083-html"><a href="#转载：http-www-cnblogs-com-chaosimple-p-4153083-html" class="headerlink" title="转载：http://www.cnblogs.com/chaosimple/p/4153083.html"></a>转载：<a href="http://www.cnblogs.com/chaosimple/p/4153083.html" target="_blank" rel="external">http://www.cnblogs.com/chaosimple/p/4153083.html</a></h2><p>本文是对pandas官方网站上《10 Minutes to pandas》的一个简单的翻译，原文在<a href="http://pandas.pydata.org/pandas-docs/stable/10min.html" target="_blank" rel="external">这里</a>。这篇文章是对pandas的一个简单的介绍，详细的介绍请参考：<a href="http://pandas.pydata.org/pandas-docs/stable/cookbook.html#cookbook" target="_blank" rel="external"><em>Cookbook</em></a> 。习惯上，我们会按下面格式引入所需要的包：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-dfd774ed2bebfaca.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="一、-创建对象"><a href="#一、-创建对象" class="headerlink" title="一、            创建对象"></a>一、            创建对象</h2><p>可以通过 <a href="http://pandas.pydata.org/pandas-docs/stable/dsintro.html#dsintro" target="_blank" rel="external">Data Structure Intro Setion</a> 来查看有关该节内容的详细信息。</p>
+<p>1、可以通过传递一个list对象来创建一个Series，pandas会默认创建整型索引</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-ddb42b747b1b79e3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>2、通过传递一个numpy array，时间索引以及列标签来创建一个DataFrame</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-81aaa38badc895b8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>3、通过传递一个能够被转换成类似序列结构的字典对象来创建一个DataFrame</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-94cf23eb77506117.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>4、查看不同列的数据类型</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-4d2ccb2c538c9135.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>5、如果你使用的是IPython，使用Tab自动补全功能会自动识别所有的属性以及自定义的列，下图中是所有能够被自动识别的属性的一个子集</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-670dd2d89bfca1ee.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="二、-查看数据"><a href="#二、-查看数据" class="headerlink" title="二、            查看数据"></a>二、            查看数据</h2><p>详情请参阅：<a href="http://pandas.pydata.org/pandas-docs/stable/basics.html#basics" target="_blank" rel="external">Basics Section</a></p>
+<p>1、  查看frame中头部和尾部的行</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-fbc4a0e5ad615551.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>2、  显示索引、列和底层的numpy数据</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-ac3898808f1f973d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>3、  describe()函数对于数据的快速统计汇总</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-9c65e343e671f126.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>4、  对数据的转置</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-d61650bc59ee1ee9.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>5、  按轴进行排序</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-796aa72a17b68d2c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>6、  按值进行排序</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-3e0a8c118906c711.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="三、-选择"><a href="#三、-选择" class="headerlink" title="三、            选择"></a>三、            选择</h2><p>虽然标准的Python/Numpy的选择和设置表达式都能够直接派上用场，但是作为工程使用的代码，我们推荐使用经过优化的pandas数据访问方式：.at, .iat, .loc, .iloc 和 .ix详情请参阅<a href="http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing" target="_blank" rel="external">Indexing and Selecing Data</a> 和 <a href="http://pandas.pydata.org/pandas-docs/stable/advanced.html#advanced" target="_blank" rel="external">MultiIndex / Advanced Indexing</a>。</p>
+<h3 id="获取"><a href="#获取" class="headerlink" title="获取"></a>获取</h3><p>1、 选择一个单独的列，这将会返回一个Series，等同于df.A：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-1400e9d502365b00.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>2、 通过[]进行选择，这将会对行进行切片</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-6e0267abc8e1015b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="通过标签选择"><a href="#通过标签选择" class="headerlink" title="通过标签选择"></a>通过标签选择</h3><p>1、 使用标签来获取一个交叉的区域</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-63f0fd2319b82f42.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>2、 通过标签来在多个轴上进行选择</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-2ae02229f13bd18f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>3、 标签切片</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-a929c6c0a280ba21.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>4、 对于返回的对象进行维度缩减</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-4b83fbb3abbce743.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>5、 获取一个标量</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-f9c7d391f0209914.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>6、 快速访问一个标量（与上一个方法等价）</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-19e09829443aa48b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="通过位置选择"><a href="#通过位置选择" class="headerlink" title="通过位置选择"></a>通过位置选择</h3><p>1、 通过传递数值进行位置选择（选择的是行）</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-cf434591f4cb29bf.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>2、 通过数值进行切片，与numpy/python中的情况类似</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-466470876fb9dc8c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>3、 通过指定一个位置的列表，与numpy/python中的情况类似</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-f73c2d384d211480.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>4、 对行进行切片</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-9804069e3af205e7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>5、 对列进行切片</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-7bc2f3d0b65e2a11.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>6、 获取特定的值</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-e2d47762b46e283e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="布尔索引"><a href="#布尔索引" class="headerlink" title="布尔索引"></a>布尔索引</h3><p>1、 使用一个单独列的值来选择数据</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-9de1220192dc9bb4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>2、 使用where操作来选择数据</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-7323aae0cf830405.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>3、 使用isin()方法来过滤</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-6f275ea1bf339f52.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""> </p>
+<h3 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h3><p>1、 设置一个新的列</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-b6c874f1f619c85c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>2、 通过标签设置新的值</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-74d758b132cb8e20.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>3、 通过位置设置新的值</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-0ea35ded04b6bedb.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>4、 通过一个numpy数组设置一组新值</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-35a73ff0eb880e00.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>上述操作结果如下：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-ee4bacac40e9fe44.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>5、 通过where操作来设置新的值</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-9302c44bdb45f033.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="四、-缺失值处理"><a href="#四、-缺失值处理" class="headerlink" title="四、            缺失值处理"></a>四、            缺失值处理</h2><p>在pandas中，使用np.nan来代替缺失值，这些值将默认不会包含在计算中，详情请参阅：<a href="http://pandas.pydata.org/pandas-docs/stable/missing_data.html#missing-data" target="_blank" rel="external">Missing Data Section</a>。</p>
+<p>1、  reindex()方法可以对指定轴上的索引进行改变/增加/删除操作，这将返回原始数据的一个拷贝：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-95f9c35ef832b06f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>2、  去掉包含缺失值的行</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-ae4d2e8ba2cd41ed.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>3、  对缺失值进行填充</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-06564a4322d30232.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>4、  对数据进行布尔填充</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-7fd698c9d9a95490.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="五、-相关操作"><a href="#五、-相关操作" class="headerlink" title="五、            相关操作"></a>五、            相关操作</h2><p>详情请参与 <a href="http://pandas.pydata.org/pandas-docs/stable/basics.html#basics-binop" target="_blank" rel="external">Basic Section On Binary Ops</a></p>
+<h3 id="统计（相关操作通常情况下不包括缺失值）"><a href="#统计（相关操作通常情况下不包括缺失值）" class="headerlink" title="统计（相关操作通常情况下不包括缺失值）"></a>统计（相关操作通常情况下不包括缺失值）</h3><p>1、  执行描述性统计</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-879b119d3a4d3490.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>2、  在其他轴上进行相同的操作</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-5ca87404a20c51bf.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>3、  对于拥有不同维度，需要对齐的对象进行操作。Pandas会自动的沿着指定的维度进行广播</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-14adfdc648d61296.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="Apply"><a href="#Apply" class="headerlink" title="Apply"></a>Apply</h3><p>1、  对数据应用函数</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-ecf8c1f85e3f93a7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="直方图"><a href="#直方图" class="headerlink" title="直方图"></a>直方图</h3><p>具体请参照：<a href="http://pandas.pydata.org/pandas-docs/stable/basics.html#basics-discretization" target="_blank" rel="external"><em>Histogramming and Discretization</em></a></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-a293657c64c9a288.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="字符串方法"><a href="#字符串方法" class="headerlink" title="字符串方法"></a>字符串方法</h3><p>Series对象在其str属性中配备了一组字符串处理方法，可以很容易的应用到数组中的每个元素，如下段代码所示。更多详情请参考：<a href="http://pandas.pydata.org/pandas-docs/stable/text.html#text-string-methods" target="_blank" rel="external"><em>Vectorized String Methods</em></a>.</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-9376cb8ecd849f6f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="六、-合并"><a href="#六、-合并" class="headerlink" title="六、            合并"></a>六、            合并</h2><p>Pandas提供了大量的方法能够轻松的对Series，DataFrame和Panel对象进行各种符合各种逻辑关系的合并操作。具体请参阅：<a href="http://pandas.pydata.org/pandas-docs/stable/merging.html#merging" target="_blank" rel="external"><em>Merging section</em></a></p>
+<h3 id="Concat"><a href="#Concat" class="headerlink" title="Concat"></a>Concat</h3><p><img src="http://upload-images.jianshu.io/upload_images/1713353-327b3bc6654dc123.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="Join"><a href="#Join" class="headerlink" title="Join"></a>Join</h3><p>类似于SQL类型的合并，具体请参阅：<a href="http://pandas.pydata.org/pandas-docs/stable/merging.html#merging-join" target="_blank" rel="external"><em>Database style joining</em></a></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-2dceed5445496414.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="Append"><a href="#Append" class="headerlink" title="Append"></a>Append</h3><p>将一行连接到一个DataFrame上，具体请参阅<a href="http://pandas.pydata.org/pandas-docs/stable/merging.html#merging-concatenation" target="_blank" rel="external"><em>Appending</em></a>：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-f78e2dbf7459edca.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="七、-分组groupby"><a href="#七、-分组groupby" class="headerlink" title="七、            分组groupby"></a>七、            分组groupby</h2><p>对于”group by”操作，我们通常是指以下一个或多个操作步骤：</p>
+<ul>
+<li><p>（Splitting）按照一些规则将数据分为不同的组；</p>
+</li>
+<li><p>（Applying）对于每组数据分别执行一个函数；</p>
+</li>
+<li><p>（Combining）将结果组合到一个数据结构中；</p>
+</li>
+</ul>
+<p>详情请参阅：<a href="http://pandas.pydata.org/pandas-docs/stable/groupby.html#groupby" target="_blank" rel="external"><em>Grouping section</em></a></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-e8d0e83216a73434.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>1、  分组并对每个分组执行sum函数</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-897742e63f1a516c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>2、  通过多个列进行分组形成一个层次索引，然后执行函数</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-9e6ccb9bf1d84670.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>统计每个分组的数量<br><img src="http://upload-images.jianshu.io/upload_images/1713353-cce4da70255aca29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="深度截图20170523093706.png"></p>
+<h2 id="八、-Reshaping"><a href="#八、-Reshaping" class="headerlink" title="八、            Reshaping"></a>八、            Reshaping</h2><p>详情请参阅 <a href="http://pandas.pydata.org/pandas-docs/stable/advanced.html#advanced-hierarchical" target="_blank" rel="external"><em>Hierarchical Indexing</em></a> 和 <a href="http://pandas.pydata.org/pandas-docs/stable/reshaping.html#reshaping-stacking" target="_blank" rel="external"><em>Reshaping</em></a>。</p>
+<h3 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h3><p><img src="http://upload-images.jianshu.io/upload_images/1713353-fb8289469618264a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-2c93f7da169b27be.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-dec24a06730e707c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="数据透视表"><a href="#数据透视表" class="headerlink" title="数据透视表"></a>数据透视表</h3><p>详情请参阅：<a href="http://pandas.pydata.org/pandas-docs/stable/reshaping.html#reshaping-pivot" target="_blank" rel="external"><em>Pivot Tables</em></a>.</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-085763f337ceb2df.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>可以从这个数据中轻松的生成数据透视表：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-a36a387c2b2b4671.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="九、-时间序列"><a href="#九、-时间序列" class="headerlink" title="九、            时间序列"></a>九、            时间序列</h2><p>Pandas在对频率转换进行重新采样时拥有简单、强大且高效的功能（如将按秒采样的数据转换为按5分钟为单位进行采样的数据）。这种操作在金融领域非常常见。具体参考：<a href="http://pandas.pydata.org/pandas-docs/stable/timeseries.html#timeseries" target="_blank" rel="external"><em>Time Series section</em></a>。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-69e1450be5c56505.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>1、  时区表示：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-f024087929c6ac35.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>2、  时区转换：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-1919bf0f7feb9012.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>3、  时间跨度转换：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-c6ef92ab2625707f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>4、  时期和时间戳之间的转换使得可以使用一些方便的算术函数。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-109643399f55db0d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="十、-Categorical"><a href="#十、-Categorical" class="headerlink" title="十、            Categorical"></a>十、            Categorical</h2><p>从0.15版本开始，pandas可以在DataFrame中支持Categorical类型的数据，详细 介绍参看：<a href="http://pandas.pydata.org/pandas-docs/stable/categorical.html#categorical" target="_blank" rel="external"><em>categorical introduction</em></a>和<a href="http://pandas.pydata.org/pandas-docs/stable/api.html#api-categorical" target="_blank" rel="external"><em>API documentation</em></a>。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-de952ff4417c61ca.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>1、  将原始的grade转换为Categorical数据类型</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-81d1a1e2ea849ffd.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>2、  将Categorical类型数据重命名为更有意义的名称</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-b9e976b63d40f377.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>3、  对类别进行重新排序，增加缺失的类别</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-54938c689f3a5d22.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>4、  排序是按照Categorical的顺序进行的而不是按照字典顺序进行</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-541f26ba6f0c1831.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>5、  对Categorical列进行排序时存在空的类别</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-82bf487d4f77ba58.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="十一、-画图"><a href="#十一、-画图" class="headerlink" title="十一、           画图"></a>十一、           画图</h2><p>具体文档参看：<a href="http://pandas.pydata.org/pandas-docs/stable/visualization.html#visualization" target="_blank" rel="external"><em>Plotting</em></a> docs</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-8227cd7e4c0a6391.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>对于DataFrame来说，plot是一种将所有列及其标签进行绘制的简便方法：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-810d399bc1fa6961.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-9399e8796578cf14.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="十二、-导入和保存数据"><a href="#十二、-导入和保存数据" class="headerlink" title="十二、           导入和保存数据"></a>十二、           导入和保存数据</h2><h3 id="CSV，参考：Writing-to-a-csv-file"><a href="#CSV，参考：Writing-to-a-csv-file" class="headerlink" title="CSV，参考：Writing to a csv file"></a>CSV，参考：<a href="http://pandas.pydata.org/pandas-docs/stable/io.html#io-store-in-csv" target="_blank" rel="external"><em>Writing to a csv file</em></a></h3><p>1、  写入csv文件</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-2af8d6b333da49c9.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>2、  从csv文件中读取</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-1127cb23ed5154a9.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="HDF5"><a href="#HDF5" class="headerlink" title="HDF5"></a>HDF5</h3><p>参考：<a href="http://pandas.pydata.org/pandas-docs/stable/io.html#io-hdf5" target="_blank" rel="external"><em>HDFStores</em></a></p>
+<p>1、  写入HDF5存储</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-7a59a38fc659cb04.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>2、  从HDF5存储中读取</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-f6052a47257f81fd.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="Excel"><a href="#Excel" class="headerlink" title="Excel"></a>Excel</h3><p>参考：<a href="http://pandas.pydata.org/pandas-docs/stable/io.html#io-excel" target="_blank" rel="external"><em>MS Excel</em></a></p>
+<p>1、  写入excel文件</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-2acee68edb072926.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>2、  从excel文件中读取</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-ba06500c20590760.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #0097A7 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #0097A7 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #0097A7 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread"
+        data-thread-key="2017/05/23/十分钟搞定pandas/"
+        data-url="http://jlan.me/2017/05/23/十分钟搞定pandas/"
+        data-title="十分钟搞定pandas">
+    </div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/05/18/Python之collections模块/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/logo-me.jpg" alt="Jlan's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        jllan@126.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/" target="_self">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">December 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">November 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">September 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">August 2016<span class="sidebar_archives-count">5</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/IT技术/">IT技术<span class="sidebar_archives-count">28</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="关于">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">label</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">30</span>
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/jllan" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-github.svg);">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/jlan" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-zhihu.svg);">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;穿林打叶又何妨
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+    <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/lazyload.min.js"></script>
+    <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/js.min.js"></script>
+
+
+
+    <script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/nprogress.js"></script>
+
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    <!-- 多说公共 js 代码 start -->
+    <script type="text/javascript">
+        queue.offer(function(){
+            var duoshuoQuery = {
+                short_name: 'jlan'
+            };
+            (function() {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';
+                ds.async = true;
+                ds.src = 'https://static.duoshuo.com/embed.js';
+                ds.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0]
+                 || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+        });
+    </script>
+    <!-- 多说公共 js 代码 end -->
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+    <!--<script src="http://oceas72q5.bkt.clouddn.com/hexo/material/js/mathjax.js"></script>-->
+	<script charset="utf-8" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script>
+    <!-- Offer LazyLoad -->
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    <!-- Start Queue -->
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
