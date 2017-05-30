@@ -10,7 +10,7 @@
     
     <title>
         
-            卡西欧5174说明书 | 
+            virtualbox使用问题总结 | 
         
         穿林打叶又何妨
     </title>
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Jlan">
     <meta name="description" content="生活、学习记录">
-    <meta name="keywords" content="null,essay">
+    <meta name="keywords" content="null,linux,virtualbox">
 
     <!-- Favicons -->
     <link rel="icon shortcut" type="image/ico" href="/img/favicon.ico">
@@ -62,9 +62,9 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://jlan.me">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="卡西欧5174说明书 | 穿林打叶又何妨">
+    <meta property="og:title" content="virtualbox使用问题总结 | 穿林打叶又何妨">
     <meta property="og:description" content="生活、学习记录">
-    <meta property="og:article:tag" content="essay"> 
+    <meta property="og:article:tag" content="linux"> <meta property="og:article:tag" content="virtualbox"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -252,7 +252,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#接收电波"><span class="post-toc-number">1.</span> <span class="post-toc-text">接收电波</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自动接收电波"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">自动接收电波</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#手动接收电波"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">手动接收电波</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#检查上次是否成功接收电波"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">检查上次是否成功接收电波</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#五种模式"><span class="post-toc-number">2.</span> <span class="post-toc-text">五种模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#计时模式"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">计时模式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#秒表模式"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">秒表模式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#倒数模式"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">倒数模式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#闹铃模式"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">闹铃模式</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设置共享目录"><span class="post-toc-number">1.</span> <span class="post-toc-text">设置共享目录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-安装功能增强包"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1 安装功能增强包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-配置共享目录"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2 配置共享目录</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-挂载"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3 挂载</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-问题"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">4 问题</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用usb设备"><span class="post-toc-number">2.</span> <span class="post-toc-text">使用usb设备</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-安装Oracle-VM-VirtualBox-Extension-Pack"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1. 安装Oracle_VM_VirtualBox_Extension_Pack</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-设置-gt-usb设备-gt-添加筛选器"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2. 设置->usb设备->添加筛选器</span></a></li></ol></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -289,7 +289,7 @@
         
     
             <p class="article-headline-p">
-                卡西欧5174说明书
+                virtualbox使用问题总结
             </p>
         </div>
 
@@ -308,7 +308,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Jlan</strong>
-        <span>May 17, 2017</span>
+        <span>May 30, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -332,7 +332,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/essay/">essay</a>
+        <a class="post_tag-link" href="/tags/linux/">linux</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/virtualbox/">virtualbox</a>
     </ul>
     
 
@@ -359,7 +359,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=卡西欧5174说明书&url=http://jlan.me//2017/05/17/卡西欧5174说明书/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=virtualbox使用问题总结&url=http://jlan.me//2017/05/30/virtualbox使用问题总结/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -368,7 +368,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=卡西欧5174说明书&url=http://jlan.me//2017/05/17/卡西欧5174说明书/index.html&via=Jlan" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=virtualbox使用问题总结&url=http://jlan.me//2017/05/30/virtualbox使用问题总结/index.html&via=Jlan" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -377,7 +377,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://jlan.me//2017/05/17/卡西欧5174说明书/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://jlan.me//2017/05/30/virtualbox使用问题总结/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -386,7 +386,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://jlan.me//2017/05/17/卡西欧5174说明书/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://jlan.me//2017/05/30/virtualbox使用问题总结/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -410,29 +410,15 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>去年老婆从日本回来给买了一款卡西欧的光动能电波表，说明书好几页，密密麻麻的，看起来都吓人，这两天仔细研究了下，做了一个常用功能的简单总结以备后用。<br><img src="http://upload-images.jianshu.io/upload_images/1713353-3669ae38c8b0a6e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="深度截图20170517102351.png"></p>
-<h2 id="接收电波"><a href="#接收电波" class="headerlink" title="接收电波"></a>接收电波</h2><h3 id="自动接收电波"><a href="#自动接收电波" class="headerlink" title="自动接收电波"></a>自动接收电波</h3><ol>
-<li>确认手表在计时模式中</li>
-<li>将手表放在开阔的地方，最好是在夜晚，夜晚信号好</li>
-<li>电波信号的接收需要2~7分钟，有时可能需要14分钟，在接收信号过程中，不要进行任何按钮操作，也不要移动手表</li>
-<li>自动接收模式中，手表每天午夜至早上五点之间最多接收6次电波（中国是5次），接收成功一次后，当天不再接收剩余几次的电波信号</li>
-</ol>
-<h3 id="手动接收电波"><a href="#手动接收电波" class="headerlink" title="手动接收电波"></a>手动接收电波</h3><p><img src="http://upload-images.jianshu.io/upload_images/1713353-1c15b3c7652d0e0e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="深度截图20170517104249.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1713353-1312e7d061d9522e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="深度截图20170517104258.png"></p>
-<h3 id="检查上次是否成功接收电波"><a href="#检查上次是否成功接收电波" class="headerlink" title="检查上次是否成功接收电波"></a>检查上次是否成功接收电波</h3><p><img src="http://upload-images.jianshu.io/upload_images/1713353-9e691dd72ef219f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="深度截图20170517104347.png"></p>
-<h2 id="五种模式"><a href="#五种模式" class="headerlink" title="五种模式"></a>五种模式</h2><p><img src="http://upload-images.jianshu.io/upload_images/1713353-60f378664d2cde79.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="深度截图20170517100259.png"></p>
-<h3 id="计时模式"><a href="#计时模式" class="headerlink" title="计时模式"></a>计时模式</h3><p>按C两秒后可进入计时模式</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1713353-4fab96e63c71d73c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="深度截图20170517100521.png"></p>
-<h3 id="秒表模式"><a href="#秒表模式" class="headerlink" title="秒表模式"></a>秒表模式</h3><p>按C直到左子盘指向0处进入秒表模式</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1713353-25561f99651a7492.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="深度截图20170517100717.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1713353-0ff64ebcedd9652f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="深度截图20170517100726.png"></p>
-<h3 id="倒数模式"><a href="#倒数模式" class="headerlink" title="倒数模式"></a>倒数模式</h3><p>按C直到左子盘指向TR处进入倒数模式</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1713353-841ab1a76a903300.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="深度截图20170517100934.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1713353-cb4aa11433c186e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="深度截图20170517100946.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1713353-6a185ebb5736480d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="深度截图20170517101019.png"></p>
-<h3 id="闹铃模式"><a href="#闹铃模式" class="headerlink" title="闹铃模式"></a>闹铃模式</h3><p>按C直到左子盘指向AL处进入闹铃模式</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1713353-3edbf5312edf5113.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="深度截图20170517101500.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1713353-a56eee7de62673e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="深度截图20170517101040.png"></p>
+        <h2 id="设置共享目录"><a href="#设置共享目录" class="headerlink" title="设置共享目录"></a>设置共享目录</h2><h3 id="1-安装功能增强包"><a href="#1-安装功能增强包" class="headerlink" title="1 安装功能增强包"></a>1 安装功能增强包</h3><p>选择virtualbox菜单”设备”-&gt;”安装增强功能”。</p>
+<h3 id="2-配置共享目录"><a href="#2-配置共享目录" class="headerlink" title="2 配置共享目录"></a>2 配置共享目录</h3><p><img src="http://upload-images.jianshu.io/upload_images/1713353-6c7fd772f4c0c065.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="virtualbox设置共享目录.png"></p>
+<h3 id="3-挂载"><a href="#3-挂载" class="headerlink" title="3 挂载"></a>3 挂载</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo mount -t vboxsf E_DRIVE /mnt/E    #手动挂载</div><div class="line">sudo echo &apos;E_DRIVE /mnt/E vboxsf defaults 0 0&apos; &gt;&gt; /etc/fstab    #设置开机自动挂载</div></pre></td></tr></table></figure>
+<h3 id="4-问题"><a href="#4-问题" class="headerlink" title="4 问题"></a>4 问题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo mount -t vboxsf E /mnt/E/    #挂载点名和共享目录名一样</div><div class="line">#这样会出现如下问题：</div><div class="line">/sbin/mount.vboxsf: mounting failed with the error: Protocol error</div></pre></td></tr></table></figure>
+<p>原因是共享目录名和挂载点名相同，修改共享目录名就可以了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo mount -t vboxsf E_DRIVE /mnt/E/</div></pre></td></tr></table></figure></p>
+<p>这样就可以了。</p>
+<hr>
+<h2 id="使用usb设备"><a href="#使用usb设备" class="headerlink" title="使用usb设备"></a>使用usb设备</h2><h3 id="1-安装Oracle-VM-VirtualBox-Extension-Pack"><a href="#1-安装Oracle-VM-VirtualBox-Extension-Pack" class="headerlink" title="1. 安装Oracle_VM_VirtualBox_Extension_Pack"></a>1. 安装<a href="http://download.virtualbox.org/virtualbox/5.1.22/Oracle_VM_VirtualBox_Extension_Pack-5.1.22-115126.vbox-extpack" target="_blank" rel="external">Oracle_VM_VirtualBox_Extension_Pack</a></h3><h3 id="2-设置-gt-usb设备-gt-添加筛选器"><a href="#2-设置-gt-usb设备-gt-添加筛选器" class="headerlink" title="2. 设置-&gt;usb设备-&gt;添加筛选器"></a>2. 设置-&gt;usb设备-&gt;添加筛选器</h3><p><img src="http://upload-images.jianshu.io/upload_images/1713353-218513f6a54d6e77.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="深度截图20170530165225.png"><br>如果没有可供选择的筛选器，需要在host进行如下操作：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo groupadd vboxusers</div><div class="line">sudo groupadd usbfs</div><div class="line">sudo adduser jlan vboxusers</div><div class="line">sudo adduser jlan usbfs</div></pre></td></tr></table></figure></p>
+<p>然后重启电脑应该就可以啦。</p>
 
     
 
@@ -461,9 +447,9 @@
 <div id="comments">
     <!-- 多说评论框 start -->
     <div class="ds-thread"
-        data-thread-key="2017/05/17/卡西欧5174说明书/"
-        data-url="http://jlan.me/2017/05/17/卡西欧5174说明书/"
-        data-title="卡西欧5174说明书">
+        data-thread-key="2017/05/30/virtualbox使用问题总结/"
+        data-url="http://jlan.me/2017/05/30/virtualbox使用问题总结/"
+        data-title="virtualbox使用问题总结">
     </div>
     <!-- 多说评论框 end -->
 </div>
@@ -483,21 +469,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/05/18/Python之collections模块/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/05/11/《Python-CookBook》读书笔记-数据结构和算法（二）/" id="post_nav-older" class="next-content">
+        <a href="/2017/05/23/十分钟搞定pandas/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
