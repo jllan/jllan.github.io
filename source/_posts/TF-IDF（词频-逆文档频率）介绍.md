@@ -1,6 +1,6 @@
 ---
 title: TF-IDF（词频-逆文档频率）介绍
-date: 2017-06-03 12:22:27
+date: 2017-05-27 12:22:27
 categories: IT技术
 tags: nlp
 ---
