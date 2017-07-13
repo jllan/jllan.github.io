@@ -10,7 +10,7 @@
     
     <title>
         
-            Python之yield详解 | 
+            MySQL数据导出与导入 | 
         
         穿林打叶又何妨
     </title>
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Jlan">
     <meta name="description" content="生活、学习记录">
-    <meta name="keywords" content="null,python">
+    <meta name="keywords" content="null,数据库">
 
     <!-- Favicons -->
     <link rel="icon shortcut" type="image/ico" href="/img/favicon.ico">
@@ -62,9 +62,9 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://jlan.me">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Python之yield详解 | 穿林打叶又何妨">
+    <meta property="og:title" content="MySQL数据导出与导入 | 穿林打叶又何妨">
     <meta property="og:description" content="生活、学习记录">
-    <meta property="og:article:tag" content="python"> 
+    <meta property="og:article:tag" content="数据库"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -252,7 +252,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#导出"><span class="post-toc-number">1.</span> <span class="post-toc-text">导出</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#导入"><span class="post-toc-number">2.</span> <span class="post-toc-text">导入</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#注意事项"><span class="post-toc-number">3.</span> <span class="post-toc-text">注意事项</span></a></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -289,7 +289,7 @@
         
     
             <p class="article-headline-p">
-                Python之yield详解
+                MySQL数据导出与导入
             </p>
         </div>
 
@@ -308,7 +308,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Jlan</strong>
-        <span>Jul 01, 2017</span>
+        <span>Jul 13, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -332,7 +332,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/python/">python</a>
+        <a class="post_tag-link" href="/tags/数据库/">数据库</a>
     </ul>
     
 
@@ -359,7 +359,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Python之yield详解&url=http://jlan.me//2017/07/01/Python之yield详解/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=MySQL数据导出与导入&url=http://jlan.me//2017/07/13/MySQL数据导出与导入/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -368,7 +368,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Python之yield详解&url=http://jlan.me//2017/07/01/Python之yield详解/index.html&via=Jlan" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=MySQL数据导出与导入&url=http://jlan.me//2017/07/13/MySQL数据导出与导入/index.html&via=Jlan" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -377,7 +377,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://jlan.me//2017/07/01/Python之yield详解/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://jlan.me//2017/07/13/MySQL数据导出与导入/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -386,7 +386,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://jlan.me//2017/07/01/Python之yield详解/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://jlan.me//2017/07/13/MySQL数据导出与导入/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -410,7 +410,98 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>yield执行流程<br><img src="http://upload-images.jianshu.io/upload_images/1713353-942f8e872a8a826f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+        <p>转载自 <a href="http://blog.chinaunix.net/uid-16844903-id-3411118.html" target="_blank" rel="external">http://blog.chinaunix.net/uid-16844903-id-3411118.html</a></p>
+<h2 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h2><ol>
+<li><p>导出全库备份到本地的目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqldump -u$USER -p$PASSWD -h127.0.0.1 -P3306 --routines --default-character-set=utf8 --lock-all-tables --add-drop-database -A &gt; db.all.sql</div></pre></td></tr></table></figure>
+</li>
+<li><p>导出指定库到本地的目录(例如mysql库)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqldump -u$USER -p$PASSWD -h127.0.0.1 -P3306 --routines --default-character-set=utf8 --databases mysql &gt; db.sql</div></pre></td></tr></table></figure>
+</li>
+<li><p>导出某个库的表到本地的目录(例如mysql库的user表)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqldump -u$USER -p$PASSWD -h127.0.0.1 -P3306 --routines --default-character-set=utf8 --tables mysql user&gt; db.table.sql</div></pre></td></tr></table></figure>
+</li>
+<li><p>导出指定库的表(仅数据)到本地的目录(例如mysql库的user表,带过滤条件)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqldump -u$USER -p$PASSWD -h127.0.0.1 -P3306 --routines --default-character-set=utf8 --no-create-db --no-create-info --tables mysql user --where=&quot;host=&apos;localhost&apos;&quot;&gt; db.table.sql</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>导出某个库的所有表结构mysqldump -u$USER -p$PASSWD -h127.0.0.1 -P3306 –routines –default-character-set=utf8 –no-data –databases mysql &gt; db.nodata.sql</p>
+<ol>
+<li><p>导出某个查询sql的数据为txt格式文件到本地的目录(各数据值之间用”制表符”分隔)例如sql为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&apos;select user,host,password from mysql.user;</div><div class="line">&apos;mysql -u$USER -p$PASSWD -h127.0.0.1 -P3306 --default-character-set=utf8 --skip-column-names -B -e &apos;select user,host,password from mysql.user;&apos; &gt; mysql_user.txt</div></pre></td></tr></table></figure>
+</li>
+<li><p>导出某个查询sql的数据为txt格式文件到MySQL服务器.登录MySQL,将默认的制表符换成逗号.(适应csv格式文件).指定的路径,mysql要有写的权限.最好用tmp目录,文件用完之后,再删除!</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT user,host,password FROM mysql.user INTO OUTFILE &apos;/tmp/mysql_user.csv&apos; FIELDS TERMINATED BY &apos;,&apos;;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h2 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h2><ol>
+<li><p>恢复全库数据到MySQL,因为包含mysql库的权限表,导入完成需要执行FLUSH PRIVILEGES;</p>
+<ul>
+<li><p>命令第一种方法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u$USER -p$PASSWD -h127.0.0.1 -P3306 --default-character-set=utf8 &lt; db.all.sql</div></pre></td></tr></table></figure>
+</li>
+<li><p>第二种方法:登录MySQL,执行source命令,后面的文件名要用绝对路径…….</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql&gt; source /tmp/db.all.sql;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>恢复某个库的数据(mysql库的user表)</p>
+<ul>
+<li><p>第一种方法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u$USER -p$PASSWD -h127.0.0.1 -P3306 --default-character-set=utf8 mysql &lt; db.table.sql</div></pre></td></tr></table></figure>
+</li>
+<li><p>第二种方法:<br>登录MySQL,执行source命令,后面的文件名要用绝对路径.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mysql -u$USER -p$PASSWD -h127.0.0.1 -P3306 --default-character-set=utf8......</div><div class="line">mysql&gt; use mysql;</div><div class="line">mysql&gt; source /tmp/db.table.sql;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>恢复MySQL服务器上面的txt格式文件(需要FILE权限,各数据值之间用”制表符”分隔)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mysql -u$USER -p$PASSWD -h127.0.0.1 -P3306 --default-character-set=utf8......</div><div class="line">mysql&gt; use mysql;</div><div class="line">mysql&gt; LOAD DATA INFILE &apos;/tmp/mysql_user.txt&apos; INTO TABLE user ;</div></pre></td></tr></table></figure>
+</li>
+<li><p>恢复MySQL服务器上面的csv格式文件(需要FILE权限,各数据值之间用”逗号”分隔)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mysql -u$USER -p$PASSWD -h127.0.0.1 -P3306 --default-character-set=utf8......</div><div class="line">mysql&gt; use mysql;</div><div class="line">mysql&gt; LOAD DATA INFILE &apos;/tmp/mysql_user.csv&apos; INTO TABLE user FIELDS TERMINATED BY &apos;,&apos;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>恢复本地的txt或csv文件到MySQL</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">mysql -u$USER -p$PASSWD -h127.0.0.1 -P3306 --default-character-set=utf8......</div><div class="line">mysql&gt; use mysql;</div><div class="line"># txt</div><div class="line">mysql&gt; LOAD DATA LOCAL INFILE &apos;/tmp/mysql_user.csv&apos; INTO TABLE user;</div><div class="line"># csv</div><div class="line">mysql&gt; LOAD DATA LOCAL INFILE &apos;/tmp/mysql_user.csv&apos; INTO TABLE user FIELDS TERMINATED BY &apos;,&apos;;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
+<li><p>关于MySQL连接</p>
+<ul>
+<li>-u$USER 用户名</li>
+<li>-p$PASSWD 密码</li>
+<li>-h127.0.0.1 如果连接远程服务器,请用对应的主机名或者IP地址替换</li>
+<li>-P3306 端口</li>
+<li>–default-character-set=utf8 指定字符集</li>
+</ul>
+</li>
+<li><p>关于mysql参数</p>
+<ul>
+<li>–skip-column-names 不显示数据列的名字</li>
+<li>-B 以批处理的方式运行mysql程序.查询结果将显示为制表符间隔格式.</li>
+<li>-e 执行命令后,退出</li>
+</ul>
+</li>
+<li>关于mysqldump参数<ul>
+<li>-A 全库备份</li>
+<li>–routines 备份存储过程和函数</li>
+<li>–default-character-set=utf8 设置字符集</li>
+<li>–lock-all-tables 全局一致性锁</li>
+<li>–add-drop-database 在每次执行建表语句之前,先执行DROP TABLE IF EXIST语句</li>
+<li>–no-create-db 不输出CREATE DATABASE语句</li>
+<li>–no-create-info 不输出CREATE TABLE语句</li>
+<li>–databases 将后面的参数都解析为库名</li>
+<li>–tables 第一个参数为库名 后续为表名</li>
+</ul>
+</li>
+<li>关于LOAD DATA语法<ul>
+<li>如果LOAD DATA语句不带LOCAL关键字,就在MySQL的服务器上直接读取文件,且要具有FILE权限.</li>
+<li>如果带LOCAL关键字,就在客户端本地读取数据文件,通过网络传到MySQL.</li>
+<li>LOAD DATA语句,同样被记录到binlog,不过是内部的机制.</li>
+</ul>
+</li>
+</ol>
 
     
 
@@ -439,9 +530,9 @@
 <div id="comments">
     <!-- 多说评论框 start -->
     <div class="ds-thread"
-        data-thread-key="2017/07/01/Python之yield详解/"
-        data-url="http://jlan.me/2017/07/01/Python之yield详解/"
-        data-title="Python之yield详解">
+        data-thread-key="2017/07/13/MySQL数据导出与导入/"
+        data-url="http://jlan.me/2017/07/13/MySQL数据导出与导入/"
+        data-title="MySQL数据导出与导入">
     </div>
     <!-- 多说评论框 end -->
 </div>
@@ -461,21 +552,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/07/09/基于新标注模式的实体和关系联合抽取方法/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/06/05/TextRank算法提取文本摘要/" id="post_nav-older" class="next-content">
+        <a href="/2017/07/09/基于新标注模式的实体和关系联合抽取方法/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
