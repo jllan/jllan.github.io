@@ -424,9 +424,9 @@
 <li><p>导出指定库的表(仅数据)到本地的目录(例如mysql库的user表,带过滤条件)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqldump -u$USER -p$PASSWD -h127.0.0.1 -P3306 --routines --default-character-set=utf8 --no-create-db --no-create-info --tables mysql user --where=&quot;host=&apos;localhost&apos;&quot;&gt; db.table.sql</div></pre></td></tr></table></figure>
 </li>
-</ol>
-<p>导出某个库的所有表结构mysqldump -u$USER -p$PASSWD -h127.0.0.1 -P3306 –routines –default-character-set=utf8 –no-data –databases mysql &gt; db.nodata.sql</p>
-<ol>
+<li><p>导出某个库的所有表结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqldump -u$USER -p$PASSWD -h127.0.0.1 -P3306 --routines --default-character-set=utf8 --no-data --databases mysql &gt; db.nodata.sql</div></pre></td></tr></table></figure>
+</li>
 <li><p>导出某个查询sql的数据为txt格式文件到本地的目录(各数据值之间用”制表符”分隔)例如sql为</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&apos;select user,host,password from mysql.user;</div><div class="line">&apos;mysql -u$USER -p$PASSWD -h127.0.0.1 -P3306 --default-character-set=utf8 --skip-column-names -B -e &apos;select user,host,password from mysql.user;&apos; &gt; mysql_user.txt</div></pre></td></tr></table></figure>
 </li>
