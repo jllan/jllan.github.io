@@ -252,7 +252,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#导出"><span class="post-toc-number">1.</span> <span class="post-toc-text">导出</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#导入"><span class="post-toc-number">2.</span> <span class="post-toc-text">导入</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#注意事项"><span class="post-toc-number">3.</span> <span class="post-toc-text">注意事项</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#导出"><span class="post-toc-number">1.</span> <span class="post-toc-text">导出</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#导出全库备份到本地的目录"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">导出全库备份到本地的目录</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#导出指定库到本地的目录-例如mysql库"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">导出指定库到本地的目录(例如mysql库)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#导出某个库的表到本地的目录-例如mysql库的user表"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">导出某个库的表到本地的目录(例如mysql库的user表)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#导出指定库的表-仅数据-到本地的目录-例如mysql库的user表-带过滤条件"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">导出指定库的表(仅数据)到本地的目录(例如mysql库的user表,带过滤条件)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#导出某个库的所有表结构"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">导出某个库的所有表结构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#导出某个查询sql的数据为txt格式文件到本地的目录-各数据值之间用”制表符”分隔-例如sql为"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">导出某个查询sql的数据为txt格式文件到本地的目录(各数据值之间用”制表符”分隔)例如sql为</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#导出某个查询sql的数据为txt格式文件到MySQL服务器-登录MySQL-将默认的制表符换成逗号-适应csv格式文件-指定的路径-mysql要有写的权限-最好用tmp目录-文件用完之后-再删除"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">导出某个查询sql的数据为txt格式文件到MySQL服务器.登录MySQL,将默认的制表符换成逗号.(适应csv格式文件).指定的路径,mysql要有写的权限.最好用tmp目录,文件用完之后,再删除!</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#导入"><span class="post-toc-number">2.</span> <span class="post-toc-text">导入</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#恢复全库数据到MySQL-因为包含mysql库的权限表-导入完成需要执行FLUSH-PRIVILEGES"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">恢复全库数据到MySQL,因为包含mysql库的权限表,导入完成需要执行FLUSH PRIVILEGES;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#恢复某个库的数据-mysql库的user表"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">恢复某个库的数据(mysql库的user表)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#恢复MySQL服务器上面的txt格式文件-需要FILE权限-各数据值之间用”制表符”分隔"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">恢复MySQL服务器上面的txt格式文件(需要FILE权限,各数据值之间用”制表符”分隔)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#恢复MySQL服务器上面的csv格式文件-需要FILE权限-各数据值之间用”逗号”分隔"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">恢复MySQL服务器上面的csv格式文件(需要FILE权限,各数据值之间用”逗号”分隔)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#恢复本地的txt或csv文件到MySQL"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">恢复本地的txt或csv文件到MySQL</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#注意事项"><span class="post-toc-number">3.</span> <span class="post-toc-text">注意事项</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于MySQL连接"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">关于MySQL连接</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于mysql参数"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">关于mysql参数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于mysqldump参数"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">关于mysqldump参数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于LOAD-DATA语法"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">关于LOAD DATA语法</span></a></li></ol></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -411,33 +411,15 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>转载自 <a href="http://blog.chinaunix.net/uid-16844903-id-3411118.html" target="_blank" rel="external">http://blog.chinaunix.net/uid-16844903-id-3411118.html</a></p>
-<h2 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h2><ol>
-<li><p>导出全库备份到本地的目录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqldump -u$USER -p$PASSWD -h127.0.0.1 -P3306 --routines --default-character-set=utf8 --lock-all-tables --add-drop-database -A &gt; db.all.sql</div></pre></td></tr></table></figure>
-</li>
-<li><p>导出指定库到本地的目录(例如mysql库)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqldump -u$USER -p$PASSWD -h127.0.0.1 -P3306 --routines --default-character-set=utf8 --databases mysql &gt; db.sql</div></pre></td></tr></table></figure>
-</li>
-<li><p>导出某个库的表到本地的目录(例如mysql库的user表)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqldump -u$USER -p$PASSWD -h127.0.0.1 -P3306 --routines --default-character-set=utf8 --tables mysql user&gt; db.table.sql</div></pre></td></tr></table></figure>
-</li>
-<li><p>导出指定库的表(仅数据)到本地的目录(例如mysql库的user表,带过滤条件)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqldump -u$USER -p$PASSWD -h127.0.0.1 -P3306 --routines --default-character-set=utf8 --no-create-db --no-create-info --tables mysql user --where=&quot;host=&apos;localhost&apos;&quot;&gt; db.table.sql</div></pre></td></tr></table></figure>
-</li>
-<li><p>导出某个库的所有表结构</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqldump -u$USER -p$PASSWD -h127.0.0.1 -P3306 --routines --default-character-set=utf8 --no-data --databases mysql &gt; db.nodata.sql</div></pre></td></tr></table></figure>
-</li>
-<li><p>导出某个查询sql的数据为txt格式文件到本地的目录(各数据值之间用”制表符”分隔)例如sql为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&apos;select user,host,password from mysql.user;</div><div class="line">&apos;mysql -u$USER -p$PASSWD -h127.0.0.1 -P3306 --default-character-set=utf8 --skip-column-names -B -e &apos;select user,host,password from mysql.user;&apos; &gt; mysql_user.txt</div></pre></td></tr></table></figure>
-</li>
-<li><p>导出某个查询sql的数据为txt格式文件到MySQL服务器.登录MySQL,将默认的制表符换成逗号.(适应csv格式文件).指定的路径,mysql要有写的权限.最好用tmp目录,文件用完之后,再删除!</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT user,host,password FROM mysql.user INTO OUTFILE &apos;/tmp/mysql_user.csv&apos; FIELDS TERMINATED BY &apos;,&apos;;</div></pre></td></tr></table></figure>
-</li>
-</ol>
+<h2 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h2><h3 id="导出全库备份到本地的目录"><a href="#导出全库备份到本地的目录" class="headerlink" title="导出全库备份到本地的目录"></a>导出全库备份到本地的目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqldump -u$USER -p$PASSWD -h127.0.0.1 -P3306 --routines --default-character-set=utf8 --lock-all-tables --add-drop-database -A &gt; db.all.sql</div></pre></td></tr></table></figure>
+<h3 id="导出指定库到本地的目录-例如mysql库"><a href="#导出指定库到本地的目录-例如mysql库" class="headerlink" title="导出指定库到本地的目录(例如mysql库)"></a>导出指定库到本地的目录(例如mysql库)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqldump -u$USER -p$PASSWD -h127.0.0.1 -P3306 --routines --default-character-set=utf8 --databases mysql &gt; db.sql</div></pre></td></tr></table></figure>
+<h3 id="导出某个库的表到本地的目录-例如mysql库的user表"><a href="#导出某个库的表到本地的目录-例如mysql库的user表" class="headerlink" title="导出某个库的表到本地的目录(例如mysql库的user表)"></a>导出某个库的表到本地的目录(例如mysql库的user表)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqldump -u$USER -p$PASSWD -h127.0.0.1 -P3306 --routines --default-character-set=utf8 --tables mysql user&gt; db.table.sql</div></pre></td></tr></table></figure>
+<h3 id="导出指定库的表-仅数据-到本地的目录-例如mysql库的user表-带过滤条件"><a href="#导出指定库的表-仅数据-到本地的目录-例如mysql库的user表-带过滤条件" class="headerlink" title="导出指定库的表(仅数据)到本地的目录(例如mysql库的user表,带过滤条件)"></a>导出指定库的表(仅数据)到本地的目录(例如mysql库的user表,带过滤条件)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqldump -u$USER -p$PASSWD -h127.0.0.1 -P3306 --routines --default-character-set=utf8 --no-create-db --no-create-info --tables mysql user --where=&quot;host=&apos;localhost&apos;&quot;&gt; db.table.sql</div></pre></td></tr></table></figure>
+<h3 id="导出某个库的所有表结构"><a href="#导出某个库的所有表结构" class="headerlink" title="导出某个库的所有表结构"></a>导出某个库的所有表结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqldump -u$USER -p$PASSWD -h127.0.0.1 -P3306 --routines --default-character-set=utf8 --no-data --databases mysql &gt; db.nodata.sql</div></pre></td></tr></table></figure>
+<h3 id="导出某个查询sql的数据为txt格式文件到本地的目录-各数据值之间用”制表符”分隔-例如sql为"><a href="#导出某个查询sql的数据为txt格式文件到本地的目录-各数据值之间用”制表符”分隔-例如sql为" class="headerlink" title="导出某个查询sql的数据为txt格式文件到本地的目录(各数据值之间用”制表符”分隔)例如sql为"></a>导出某个查询sql的数据为txt格式文件到本地的目录(各数据值之间用”制表符”分隔)例如sql为</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&apos;select user,host,password from mysql.user;</div><div class="line">&apos;mysql -u$USER -p$PASSWD -h127.0.0.1 -P3306 --default-character-set=utf8 --skip-column-names -B -e &apos;select user,host,password from mysql.user;&apos; &gt; mysql_user.txt</div></pre></td></tr></table></figure>
+<h3 id="导出某个查询sql的数据为txt格式文件到MySQL服务器-登录MySQL-将默认的制表符换成逗号-适应csv格式文件-指定的路径-mysql要有写的权限-最好用tmp目录-文件用完之后-再删除"><a href="#导出某个查询sql的数据为txt格式文件到MySQL服务器-登录MySQL-将默认的制表符换成逗号-适应csv格式文件-指定的路径-mysql要有写的权限-最好用tmp目录-文件用完之后-再删除" class="headerlink" title="导出某个查询sql的数据为txt格式文件到MySQL服务器.登录MySQL,将默认的制表符换成逗号.(适应csv格式文件).指定的路径,mysql要有写的权限.最好用tmp目录,文件用完之后,再删除!"></a>导出某个查询sql的数据为txt格式文件到MySQL服务器.登录MySQL,将默认的制表符换成逗号.(适应csv格式文件).指定的路径,mysql要有写的权限.最好用tmp目录,文件用完之后,再删除!</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT user,host,password FROM mysql.user INTO OUTFILE &apos;/tmp/mysql_user.csv&apos; FIELDS TERMINATED BY &apos;,&apos;;</div></pre></td></tr></table></figure>
 <hr>
-<h2 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h2><ol>
-<li><p>恢复全库数据到MySQL,因为包含mysql库的权限表,导入完成需要执行FLUSH PRIVILEGES;</p>
-<ul>
+<h2 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h2><h3 id="恢复全库数据到MySQL-因为包含mysql库的权限表-导入完成需要执行FLUSH-PRIVILEGES"><a href="#恢复全库数据到MySQL-因为包含mysql库的权限表-导入完成需要执行FLUSH-PRIVILEGES" class="headerlink" title="恢复全库数据到MySQL,因为包含mysql库的权限表,导入完成需要执行FLUSH PRIVILEGES;"></a>恢复全库数据到MySQL,因为包含mysql库的权限表,导入完成需要执行FLUSH PRIVILEGES;</h3><ul>
 <li><p>命令第一种方法:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u$USER -p$PASSWD -h127.0.0.1 -P3306 --default-character-set=utf8 &lt; db.all.sql</div></pre></td></tr></table></figure>
 </li>
@@ -445,9 +427,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql&gt; source /tmp/db.all.sql;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-</li>
-<li><p>恢复某个库的数据(mysql库的user表)</p>
-<ul>
+<h3 id="恢复某个库的数据-mysql库的user表"><a href="#恢复某个库的数据-mysql库的user表" class="headerlink" title="恢复某个库的数据(mysql库的user表)"></a>恢复某个库的数据(mysql库的user表)</h3><ul>
 <li><p>第一种方法:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u$USER -p$PASSWD -h127.0.0.1 -P3306 --default-character-set=utf8 mysql &lt; db.table.sql</div></pre></td></tr></table></figure>
 </li>
@@ -455,35 +435,20 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mysql -u$USER -p$PASSWD -h127.0.0.1 -P3306 --default-character-set=utf8......</div><div class="line">mysql&gt; use mysql;</div><div class="line">mysql&gt; source /tmp/db.table.sql;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-</li>
-<li><p>恢复MySQL服务器上面的txt格式文件(需要FILE权限,各数据值之间用”制表符”分隔)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mysql -u$USER -p$PASSWD -h127.0.0.1 -P3306 --default-character-set=utf8......</div><div class="line">mysql&gt; use mysql;</div><div class="line">mysql&gt; LOAD DATA INFILE &apos;/tmp/mysql_user.txt&apos; INTO TABLE user ;</div></pre></td></tr></table></figure>
-</li>
-<li><p>恢复MySQL服务器上面的csv格式文件(需要FILE权限,各数据值之间用”逗号”分隔)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mysql -u$USER -p$PASSWD -h127.0.0.1 -P3306 --default-character-set=utf8......</div><div class="line">mysql&gt; use mysql;</div><div class="line">mysql&gt; LOAD DATA INFILE &apos;/tmp/mysql_user.csv&apos; INTO TABLE user FIELDS TERMINATED BY &apos;,&apos;;</div></pre></td></tr></table></figure>
-</li>
-<li><p>恢复本地的txt或csv文件到MySQL</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">mysql -u$USER -p$PASSWD -h127.0.0.1 -P3306 --default-character-set=utf8......</div><div class="line">mysql&gt; use mysql;</div><div class="line"># txt</div><div class="line">mysql&gt; LOAD DATA LOCAL INFILE &apos;/tmp/mysql_user.csv&apos; INTO TABLE user;</div><div class="line"># csv</div><div class="line">mysql&gt; LOAD DATA LOCAL INFILE &apos;/tmp/mysql_user.csv&apos; INTO TABLE user FIELDS TERMINATED BY &apos;,&apos;;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
-<li><p>关于MySQL连接</p>
-<ul>
+<h3 id="恢复MySQL服务器上面的txt格式文件-需要FILE权限-各数据值之间用”制表符”分隔"><a href="#恢复MySQL服务器上面的txt格式文件-需要FILE权限-各数据值之间用”制表符”分隔" class="headerlink" title="恢复MySQL服务器上面的txt格式文件(需要FILE权限,各数据值之间用”制表符”分隔)"></a>恢复MySQL服务器上面的txt格式文件(需要FILE权限,各数据值之间用”制表符”分隔)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mysql -u$USER -p$PASSWD -h127.0.0.1 -P3306 --default-character-set=utf8......</div><div class="line">mysql&gt; use mysql;</div><div class="line">mysql&gt; LOAD DATA INFILE &apos;/tmp/mysql_user.txt&apos; INTO TABLE user ;</div></pre></td></tr></table></figure>
+<h3 id="恢复MySQL服务器上面的csv格式文件-需要FILE权限-各数据值之间用”逗号”分隔"><a href="#恢复MySQL服务器上面的csv格式文件-需要FILE权限-各数据值之间用”逗号”分隔" class="headerlink" title="恢复MySQL服务器上面的csv格式文件(需要FILE权限,各数据值之间用”逗号”分隔)"></a>恢复MySQL服务器上面的csv格式文件(需要FILE权限,各数据值之间用”逗号”分隔)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mysql -u$USER -p$PASSWD -h127.0.0.1 -P3306 --default-character-set=utf8......</div><div class="line">mysql&gt; use mysql;</div><div class="line">mysql&gt; LOAD DATA INFILE &apos;/tmp/mysql_user.csv&apos; INTO TABLE user FIELDS TERMINATED BY &apos;,&apos;;</div></pre></td></tr></table></figure>
+<h3 id="恢复本地的txt或csv文件到MySQL"><a href="#恢复本地的txt或csv文件到MySQL" class="headerlink" title="恢复本地的txt或csv文件到MySQL"></a>恢复本地的txt或csv文件到MySQL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">mysql -u$USER -p$PASSWD -h127.0.0.1 -P3306 --default-character-set=utf8......</div><div class="line">mysql&gt; use mysql;</div><div class="line"># txt</div><div class="line">mysql&gt; LOAD DATA LOCAL INFILE &apos;/tmp/mysql_user.csv&apos; INTO TABLE user;</div><div class="line"># csv</div><div class="line">mysql&gt; LOAD DATA LOCAL INFILE &apos;/tmp/mysql_user.csv&apos; INTO TABLE user FIELDS TERMINATED BY &apos;,&apos;;</div></pre></td></tr></table></figure>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><h3 id="关于MySQL连接"><a href="#关于MySQL连接" class="headerlink" title="关于MySQL连接"></a>关于MySQL连接</h3><ul>
 <li>-u$USER 用户名</li>
 <li>-p$PASSWD 密码</li>
 <li>-h127.0.0.1 如果连接远程服务器,请用对应的主机名或者IP地址替换</li>
 <li>-P3306 端口</li>
 <li>–default-character-set=utf8 指定字符集</li>
 </ul>
-</li>
-<li><p>关于mysql参数</p>
-<ul>
+<h3 id="关于mysql参数"><a href="#关于mysql参数" class="headerlink" title="关于mysql参数"></a>关于mysql参数</h3><ul>
 <li>–skip-column-names 不显示数据列的名字</li>
 <li>-B 以批处理的方式运行mysql程序.查询结果将显示为制表符间隔格式.</li>
-<li>-e 执行命令后,退出</li>
-</ul>
-</li>
-<li>关于mysqldump参数<ul>
+<li>-e 执行命令后,退出<h3 id="关于mysqldump参数"><a href="#关于mysqldump参数" class="headerlink" title="关于mysqldump参数"></a>关于mysqldump参数</h3></li>
 <li>-A 全库备份</li>
 <li>–routines 备份存储过程和函数</li>
 <li>–default-character-set=utf8 设置字符集</li>
@@ -492,16 +457,11 @@
 <li>–no-create-db 不输出CREATE DATABASE语句</li>
 <li>–no-create-info 不输出CREATE TABLE语句</li>
 <li>–databases 将后面的参数都解析为库名</li>
-<li>–tables 第一个参数为库名 后续为表名</li>
-</ul>
-</li>
-<li>关于LOAD DATA语法<ul>
+<li>–tables 第一个参数为库名 后续为表名<h3 id="关于LOAD-DATA语法"><a href="#关于LOAD-DATA语法" class="headerlink" title="关于LOAD DATA语法"></a>关于LOAD DATA语法</h3></li>
 <li>如果LOAD DATA语句不带LOCAL关键字,就在MySQL的服务器上直接读取文件,且要具有FILE权限.</li>
 <li>如果带LOCAL关键字,就在客户端本地读取数据文件,通过网络传到MySQL.</li>
 <li>LOAD DATA语句,同样被记录到binlog,不过是内部的机制.</li>
 </ul>
-</li>
-</ol>
 
     
 
