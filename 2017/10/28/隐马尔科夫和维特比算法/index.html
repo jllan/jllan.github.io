@@ -10,7 +10,7 @@
     
     <title>
         
-            Ubuntu上搭建pptp服务 | 
+            隐马尔科夫和维特比算法 | 
         
         穿林打叶又何妨
     </title>
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Jlan">
     <meta name="description" content="生活、学习记录">
-    <meta name="keywords" content="null,linux">
+    <meta name="keywords" content="null,nlp">
 
     <!-- Favicons -->
     <link rel="icon shortcut" type="image/ico" href="/img/favicon.ico">
@@ -62,9 +62,9 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://jlan.me">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Ubuntu上搭建pptp服务 | 穿林打叶又何妨">
+    <meta property="og:title" content="隐马尔科夫和维特比算法 | 穿林打叶又何妨">
     <meta property="og:description" content="生活、学习记录">
-    <meta property="og:article:tag" content="linux"> 
+    <meta property="og:article:tag" content="nlp"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -252,7 +252,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-安装PPTP"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 安装PPTP</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-PPTP相关配置"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. PPTP相关配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-其他配置"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. 其他配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-创建账号"><span class="post-toc-number">4.</span> <span class="post-toc-text">4. 创建账号</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-启动服务"><span class="post-toc-number">5.</span> <span class="post-toc-text">5. 启动服务</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#HMM概念介绍"><span class="post-toc-number">1.</span> <span class="post-toc-text">HMM概念介绍</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#HMM的三个问题"><span class="post-toc-number">2.</span> <span class="post-toc-text">HMM的三个问题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#问题解决"><span class="post-toc-number">3.</span> <span class="post-toc-text">问题解决</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#维特比算法"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">维特比算法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#HMM和维特比算法在NLP上的应用"><span class="post-toc-number">4.</span> <span class="post-toc-text">HMM和维特比算法在NLP上的应用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">5.</span> <span class="post-toc-text">参考</span></a></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -289,7 +289,7 @@
         
     
             <p class="article-headline-p">
-                Ubuntu上搭建pptp服务
+                隐马尔科夫和维特比算法
             </p>
         </div>
 
@@ -308,7 +308,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Jlan</strong>
-        <span>Mar 03, 2017</span>
+        <span>Oct 28, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -332,7 +332,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/linux/">linux</a>
+        <a class="post_tag-link" href="/tags/nlp/">nlp</a>
     </ul>
     
 
@@ -359,7 +359,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Ubuntu上搭建pptp服务&url=http://jlan.me//2017/03/03/Ubuntu上搭建pptp服务/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=隐马尔科夫和维特比算法&url=http://jlan.me//2017/10/28/隐马尔科夫和维特比算法/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -368,7 +368,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Ubuntu上搭建pptp服务&url=http://jlan.me//2017/03/03/Ubuntu上搭建pptp服务/index.html&via=Jlan" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=隐马尔科夫和维特比算法&url=http://jlan.me//2017/10/28/隐马尔科夫和维特比算法/index.html&via=Jlan" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -377,7 +377,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://jlan.me//2017/03/03/Ubuntu上搭建pptp服务/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://jlan.me//2017/10/28/隐马尔科夫和维特比算法/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -386,7 +386,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://jlan.me//2017/03/03/Ubuntu上搭建pptp服务/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://jlan.me//2017/10/28/隐马尔科夫和维特比算法/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -410,28 +410,55 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h2 id="1-安装PPTP"><a href="#1-安装PPTP" class="headerlink" title="1. 安装PPTP"></a>1. 安装PPTP</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install pptpd</div></pre></td></tr></table></figure>
-<h2 id="2-PPTP相关配置"><a href="#2-PPTP相关配置" class="headerlink" title="2. PPTP相关配置"></a>2. PPTP相关配置</h2><ul>
-<li><p>配置ip<br><code>sudo vim /etc/pptpd.conf</code><br>取消<strong>localip</strong>和<strong>remoteip</strong>的注释（192.168.0.1改为你的服务器固定IP）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">localip 服务器ip</div><div class="line">remoteip 192.168.0.234-238,192.168.0.245</div></pre></td></tr></table></figure>
+        <h2 id="HMM概念介绍"><a href="#HMM概念介绍" class="headerlink" title="HMM概念介绍"></a>HMM概念介绍</h2><p>HMM是关于时序的概率模型，描述一个隐藏的马尔科夫链随机生成不可观测的状态随机序列，再由各个状态生成一个可观测的随机序列的过程。</p>
+<p>下面用一个例子来解释：<br>我在东京的女朋友每天根据天气{下雨，天晴}决定当天的活动{散步，购物，清理房间}中的一种，她不告诉我每天东京的天气状况，我只能从他的朋友圈看到他今天的活动。<br>这个例子其中{下雨，天晴}便是<strong>隐含状态链</strong>；{散步，购物，清理房间}是<strong>可见状态链</strong>；隐含状态（天气）之间的相互转换概率叫做<strong>状态转移概率</strong>；尽管可见状态（活动）之间没有转换概率，但是隐含状态和可见状态之间有一个概率（即不同的天气状况下进行不同的活动的概率）叫做<strong>发射概率</strong>；还有个<strong>初始概率</strong>即最开始是晴天还是雨天的概率。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1713353-f2607fd8538d1f56.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hmm.png"></p>
+<p>任何一个HMM都可以通过下列五元组来描述：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">:param obs:观测序列</div><div class="line">:param states:隐状态</div><div class="line">:param start_p:初始概率（隐状态）</div><div class="line">:param trans_p:转移概率（隐状态）</div><div class="line">:param emit_p: 发射概率 （隐状态表现为显状态的概率）</div></pre></td></tr></table></figure></p>
+<h2 id="HMM的三个问题"><a href="#HMM的三个问题" class="headerlink" title="HMM的三个问题"></a>HMM的三个问题</h2><p>HMM有三个基本问题：</p>
+<ol>
+<li><p>预测问题（解码问题）<br>知道天气有几种状况（隐含状态数量），天气之间的转换概率（转移概率），根据每天的活动情况（可见状态链），我想知道每天的天气状况（隐含状态链）。</p>
 </li>
-<li><p>配置DNS<br><code>sudo vim /etc/ppp/pptpd-options</code><br>取消<strong>ms-dns</strong>的注释，改成你喜欢的DNS，比如：8.8.8.8,8.8.4.4</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ms-dns 8.8.8.8</div><div class="line">ms-dns 8.8.4.4</div></pre></td></tr></table></figure>
+<li><p>概率计算问题<br>知道天气有几种状况（隐含状态数量），天气之间的转换概率（转移概率），根据每天的活动情况（可见状态链），我想知道今天做了这种活动的概率。</p>
+</li>
+<li><p>学习问题<br>知道天气有几种状况（隐含状态数量），不知道天气之间的转换概率（转移概率），根据每天的活动情况（可见状态链），我想反推出天气之间的转换概率（转移概率）。</p>
+</li>
+</ol>
+<h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><p>本文重点介绍第一个问题的解决算法维特比算法。</p>
+<h3 id="维特比算法"><a href="#维特比算法" class="headerlink" title="维特比算法"></a>维特比算法</h3><p>假设我在朋友圈看到我女朋友最近三天的活动分别是{散步、购物、清理房间}，那我该如何估算这三天的天气状况。<br>预测问题可以用维特比算法来解决。维特比算法实际是用动态规划求解隐马尔科夫模型预测问题，即用动态规划求概率最大路径，即每天最可能的天气状况。</p>
+<p>很明显，第一天天晴还是下雨可以算出来：</p>
+<ol>
+<li><p>定义 <code>V[时间][今天天气] = 概率</code>，注意今天天气指的是，前几天的天气都确定下来了（概率最大）今天天气是X的概率，这里的概率就是一个累乘的概率了。</p>
+</li>
+<li><p>因为第一天我的朋友去散步了，所以第一天下雨的概率<code>V[第一天][下雨] = 初始概率[下雨] * 发射概率[下雨][散步] = 0.6 * 0.1 = 0.06</code>，同理可得<code>V[第一天][天晴] = 0.24</code> 。从直觉上来看，因为第一天朋友出门了，她一般喜欢在天晴的时候散步，所以第一天天晴的概率比较大，数字与直觉统一了。</p>
+</li>
+<li><p>从第二天开始，对于每种天气Y，都有<code>前一天天气是X的概率 * X转移到Y的概率 * Y天气下朋友进行这天这种活动的概率</code>。因为前一天天气X有两种可能，所以Y的概率有两个，选取其中较大一个作为<code>V[第二天][天气Y]的概率</code>，同时将今天的天气加入到结果序列中。</p>
+</li>
+<li><p>比较<code>V[最后一天][下雨]</code>和<code>[最后一天][天晴]</code>的概率，找出较大的哪一个对应的序列，就是最终结果。</p>
+</li>
+</ol>
+<p><strong>Python实现</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div></pre></td><td class="code"><pre><div class="line"> </div><div class="line"><span class="comment"># 打印路径概率表</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_dptable</span><span class="params">(V)</span>:</span></div><div class="line">    print(<span class="string">"    "</span>, end=<span class="string">' '</span>)</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(V)): </div><div class="line">        print(<span class="string">"%7d"</span> % i, end=<span class="string">' '</span>)</div><div class="line">    print(<span class="string">'\n'</span>)</div><div class="line"> </div><div class="line">    <span class="keyword">for</span> y <span class="keyword">in</span> V[<span class="number">0</span>].keys():</div><div class="line">        print(<span class="string">"%.5s: "</span> % y, end=<span class="string">' '</span>)</div><div class="line">        <span class="keyword">for</span> t <span class="keyword">in</span> range(len(V)):</div><div class="line">            print(<span class="string">"%.7s"</span> % (<span class="string">"%f"</span> % V[t][y]), end=<span class="string">' '</span>)</div><div class="line">        print(<span class="string">'\n'</span>)</div><div class="line"> </div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">viterbi</span><span class="params">(obs, states, start_p, trans_p, emit_p)</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line">    :param obs:观测序列</div><div class="line">    :param states:隐状态</div><div class="line">    :param start_p:初始概率（隐状态）</div><div class="line">    :param trans_p:转移概率（隐状态）</div><div class="line">    :param emit_p: 发射概率（隐状态表现为显状态的概率）</div><div class="line">    :return:</div><div class="line">    """</div><div class="line">    <span class="comment"># 路径概率表 V[时间][隐状态] = 概率</span></div><div class="line">    V = [&#123;&#125;]</div><div class="line">    <span class="comment"># 一个中间变量，代表当前状态是哪个隐状态</span></div><div class="line">    path = &#123;&#125;</div><div class="line"> </div><div class="line">    <span class="comment"># 初始化初始状态 (t == 0)</span></div><div class="line">    <span class="keyword">for</span> y <span class="keyword">in</span> states:</div><div class="line">        V[<span class="number">0</span>][y] = start_p[y] * emit_p[y][obs[<span class="number">0</span>]]</div><div class="line">        path[y] = [y]</div><div class="line"> </div><div class="line">    <span class="comment"># 对 t &gt; 0 跑一遍维特比算法</span></div><div class="line">    <span class="keyword">for</span> t <span class="keyword">in</span> range(<span class="number">1</span>, len(obs)):</div><div class="line">        V.append(&#123;&#125;)</div><div class="line">        newpath = &#123;&#125;</div><div class="line"> </div><div class="line">        <span class="keyword">for</span> y <span class="keyword">in</span> states:</div><div class="line">            <span class="comment"># 概率 隐状态 =    前状态是y0的概率 * y0转移到y的概率 * y表现为当前状态的概率</span></div><div class="line">            (prob, state) = max([(V[t - <span class="number">1</span>][y0] * trans_p[y0][y] * emit_p[y][obs[t]], y0) <span class="keyword">for</span> y0 <span class="keyword">in</span> states])</div><div class="line">            <span class="comment"># 记录最大概率</span></div><div class="line">            V[t][y] = prob</div><div class="line">            <span class="comment"># 记录路径</span></div><div class="line">            newpath[y] = path[state] + [y]</div><div class="line"> </div><div class="line">        <span class="comment"># 不需要保留旧路径</span></div><div class="line">        path = newpath</div><div class="line"> </div><div class="line">    print_dptable(V)</div><div class="line">    (prob, state) = max([(V[len(obs) - <span class="number">1</span>][y], y) <span class="keyword">for</span> y <span class="keyword">in</span> states])</div><div class="line">    <span class="keyword">return</span> (prob, path[state])</div><div class="line"> </div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">    states = (<span class="string">'Rainy'</span>, <span class="string">'Sunny'</span>)</div><div class="line">    observations = (<span class="string">'walk'</span>, <span class="string">'shop'</span>, <span class="string">'clean'</span>)</div><div class="line">    start_probability = &#123;<span class="string">'Rainy'</span>: <span class="number">0.6</span>, <span class="string">'Sunny'</span>: <span class="number">0.4</span>&#125;</div><div class="line">    transition_probability = &#123;</div><div class="line">        <span class="string">'Rainy'</span> : &#123;<span class="string">'Rainy'</span>: <span class="number">0.7</span>, <span class="string">'Sunny'</span>: <span class="number">0.3</span>&#125;,</div><div class="line">        <span class="string">'Sunny'</span> : &#123;<span class="string">'Rainy'</span>: <span class="number">0.4</span>, <span class="string">'Sunny'</span>: <span class="number">0.6</span>&#125;,</div><div class="line">    &#125;</div><div class="line">    emission_probability = &#123;</div><div class="line">        <span class="string">'Rainy'</span> : &#123;<span class="string">'walk'</span>: <span class="number">0.1</span>, <span class="string">'shop'</span>: <span class="number">0.4</span>, <span class="string">'clean'</span>: <span class="number">0.5</span>&#125;,</div><div class="line">        <span class="string">'Sunny'</span> : &#123;<span class="string">'walk'</span>: <span class="number">0.6</span>, <span class="string">'shop'</span>: <span class="number">0.3</span>, <span class="string">'clean'</span>: <span class="number">0.1</span>&#125;,</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    result = viterbi(observations,</div><div class="line">                   states,</div><div class="line">                   start_probability,</div><div class="line">                   transition_probability,</div><div class="line">                   emission_probability)</div><div class="line">    <span class="keyword">return</span> result</div><div class="line"> </div><div class="line"> </div><div class="line">result = main()</div><div class="line">print(result)</div></pre></td></tr></table></figure>
+<pre><code>           0       1       2 
+
+Rainy:  0.06000 0.03840 0.01344 
+
+Sunny:  0.24000 0.04320 0.00259 
+
+(0.01344, [&apos;Sunny&apos;, &apos;Rainy&apos;, &apos;Rainy&apos;])
+</code></pre><h2 id="HMM和维特比算法在NLP上的应用"><a href="#HMM和维特比算法在NLP上的应用" class="headerlink" title="HMM和维特比算法在NLP上的应用"></a>HMM和维特比算法在NLP上的应用</h2><p>具体到分词系统，可以将天气当成“标签”，活动当成“字或词”。那么，几个NLP的问题就可以转化为：</p>
+<ul>
+<li><p>词性标注<br>给定一个词的序列（也就是句子），找出最可能的词性序列（标签是词性）。如ansj分词和ICTCLAS分词等。</p>
+</li>
+<li><p>分词<br>给定一个字的序列，找出最可能的标签序列（断句符号：[词尾]或[非词尾]构成的序列）。结巴分词目前就是利用BMES标签来分词的，B（开头）,M（中间),E(结尾),S(独立成词）</p>
+</li>
+<li><p>命名实体识别<br>给定一个词的序列，找出最可能的标签序列（内外符号：[内]表示词属于命名实体，[外]表示不属于）。如ICTCLAS实现的人名识别、翻译人名识别、地名识别都是用同一个Tagger实现的。</p>
 </li>
 </ul>
-<h2 id="3-其他配置"><a href="#3-其他配置" class="headerlink" title="3. 其他配置"></a>3. 其他配置</h2><ul>
-<li><p>开启内核IP转发<br><code>sudo vim /etc/sysctl.conf</code><br>取消<strong>net.ipv4.ip_forward=1</strong> 这一行的注释.<br>然后运行<code>sysctl -p</code> 让上面的修改立即生效</p>
-</li>
-<li><p>添加iptables转发规则</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install iptables # 安装iptables</div><div class="line">iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -j SNAT --to-source 服务器ip   # 设置iptables转发规则</div></pre></td></tr></table></figure>
-</li>
+<hr>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://www.hankcs.com/nlp/hmm-and-segmentation-tagging-named-entity-recognition.html" target="_blank" rel="external">http://www.hankcs.com/nlp/hmm-and-segmentation-tagging-named-entity-recognition.html</a></li>
+<li><a href="https://www.zhihu.com/question/20962240" target="_blank" rel="external">https://www.zhihu.com/question/20962240</a></li>
 </ul>
-<h2 id="4-创建账号"><a href="#4-创建账号" class="headerlink" title="4. 创建账号"></a>4. 创建账号</h2><p><code>sudo vim /etc/ppp/chap-secrets</code><br>在里面添加账户按如下格式<br><code>username  pptpd  &quot;password&quot;  *</code></p>
-<blockquote>
-<p>username为你的用户名，password为你的密码，密码用引号引起,*号表示允许在任意IP连接到服务</p>
-</blockquote>
-<h2 id="5-启动服务"><a href="#5-启动服务" class="headerlink" title="5. 启动服务"></a>5. 启动服务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">chkconfig pptpd on  # 设置开机自动启动</div><div class="line">chkconfig iptables on</div><div class="line">sudo service pptpd restart  # 启动服务</div></pre></td></tr></table></figure>
-<p>至此全部OK。</p>
 
     
 
@@ -460,9 +487,9 @@
 <div id="comments">
     <!-- 多说评论框 start -->
     <div class="ds-thread"
-        data-thread-key="2017/03/03/Ubuntu上搭建pptp服务/"
-        data-url="http://jlan.me/2017/03/03/Ubuntu上搭建pptp服务/"
-        data-title="Ubuntu上搭建pptp服务">
+        data-thread-key="2017/10/28/隐马尔科夫和维特比算法/"
+        data-url="http://jlan.me/2017/10/28/隐马尔科夫和维特比算法/"
+        data-title="隐马尔科夫和维特比算法">
     </div>
     <!-- 多说评论框 end -->
 </div>
@@ -482,21 +509,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/03/11/django使用mongoengine/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2016/12/30/Linux源码编译软件安装和卸载方法/" id="post_nav-older" class="next-content">
+        <a href="/2017/09/01/IPython-Notebook远程访问配置/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
