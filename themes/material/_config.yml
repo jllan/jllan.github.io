@@ -150,9 +150,9 @@ qrcode: false
 # When you set 'use' as true, the needed css, js, font file will have a new src.
 # The new src will have the base domain you configured in 'base'.
 materialcdn: 
-    use: true
-    #base: https://materialcdn.nfz.moe/hexo/1.3.2
-    base: http://oceas72q5.bkt.clouddn.com/hexo/material
+    use: 
+    # base: https://materialcdn.nfz.moe/hexo/1.3.2
+    # base: http://oceas72q5.bkt.clouddn.com/hexo/material
 
 # Comment Systems
 # Available value of "use":
